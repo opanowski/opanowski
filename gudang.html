@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventaris Gudang — Bunker Opanowski</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F5F0E8;
+  --dark:#1C1A14;
+  --gold:#C8972A;
+  --gold-light:rgba(200,151,42,0.15);
+  --gold-border:rgba(200,151,42,0.25);
+  --dim:#0E0D09;
+  --surface:#1e1b13;
+  --surface2:#252018;
+  --border:rgba(200,151,42,0.12);
+  --text-muted:rgba(245,240,232,0.45);
+  --green:#4caf7d;
+  --blue:#5b8dee;
+  --purple:#b57bee;
+  --font-display:'Playfair Display',serif;
+  --font-body:'DM Sans',sans-serif;
+  --font-mono:'Space Mono',monospace
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--cream);font-family:var(--font-body);min-height:100vh;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(28,26,20,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold-border)}
+.nav-logo{font-family:var(--font-display);font-size:1.1rem;color:var(--gold);letter-spacing:2px;text-decoration:none}
+.nav-back{display:flex;align-items:center;gap:0.5rem;color:var(--cream);text-decoration:none;font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;opacity:0.55;transition:all 0.2s}
+.nav-back:hover{opacity:1;color:var(--gold)}
+
+/* HEADER */
+.page-header{padding:7rem 2.5rem 3rem;background:linear-gradient(180deg,var(--dim) 0%,var(--dark) 100%);border-bottom:1px solid var(--gold-border)}
+.page-header .container{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-family:var(--font-mono)}
+.page-title{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.1;margin-bottom:0.75rem}
+.page-title em{color:var(--gold);font-style:italic}
+.page-sub{opacity:0.5;font-size:0.88rem;font-family:var(--font-mono)}
+
+/* STATS BAR */
+.stats-bar{background:var(--dim);border-bottom:1px solid var(--gold-border);padding:1.25rem 2.5rem}
+.stats-bar .container{max-width:1100px;margin:0 auto;display:flex;gap:2rem;flex-wrap:wrap;align-items:center}
+.stat-item{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:1.8rem;color:var(--gold);line-height:1}
+.stat-label{font-size:0.62rem;opacity:0.4;letter-spacing:2px;text-transform:uppercase;font-family:var(--font-mono);margin-top:3px}
+.stats-divider{width:1px;height:40px;background:var(--gold-border);flex-shrink:0}
+
+/* CONTROLS */
+.controls{background:var(--dark);padding:1.25rem 2.5rem;border-bottom:1px solid var(--gold-border);position:sticky;top:57px;z-index:50}
+.controls .container{max-width:1100px;margin:0 auto;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.search-wrap{flex:1;min-width:200px}
+.search-input{width:100%;background:var(--surface);border:1px solid var(--gold-border);border-radius:6px;padding:0.65rem 1rem;color:var(--cream);font-family:var(--font-mono);font-size:0.8rem;outline:none;transition:border-color 0.2s}
+.search-input:focus{border-color:var(--gold)}
+.search-input::placeholder{color:var(--text-muted)}
+.filter-tabs{display:flex;gap:0.5rem;flex-wrap:wrap}
+.tab{background:var(--surface);border:1px solid var(--gold-border);border-radius:20px;padding:0.4rem 1rem;font-size:0.75rem;font-weight:500;cursor:pointer;color:var(--text-muted);transition:all 0.2s;font-family:var(--font-body)}
+.tab:hover{border-color:var(--gold);color:var(--gold)}
+.tab.active{background:var(--gold);border-color:var(--gold);color:var(--dark);font-weight:600}
+
+/* TABLE SECTION */
+.table-section{max-width:1100px;margin:0 auto;padding:2rem 2.5rem 4rem}
+.section-info{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:0.5rem}
+.section-info h3{font-family:var(--font-display);font-size:1.1rem;color:var(--cream);opacity:0.7}
+.count-badge{background:var(--gold-light);border:1px solid var(--gold-border);color:var(--gold);padding:0.25rem 0.85rem;border-radius:20px;font-size:0.72rem;font-family:var(--font-mono)}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse}
+thead tr{border-bottom:2px solid var(--gold-border)}
+th{font-family:var(--font-mono);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:0.75rem 1rem;text-align:left}
+td{padding:0.9rem 1rem;border-bottom:1px solid rgba(200,151,42,0.07);vertical-align:middle;line-height:1.5}
+tbody tr{transition:background 0.15s}
+tbody tr:hover td{background:rgba(200,151,42,0.04)}
+
+.num-col{font-family:var(--font-mono);font-size:0.68rem;color:var(--text-muted);width:36px;text-align:right}
+.name-main{font-weight:500;font-size:0.88rem;color:var(--cream)}
+.name-sub{font-size:0.72rem;color:var(--text-muted);font-family:var(--font-mono);margin-top:3px}
+
+/* BADGES */
+.cat-badge{display:inline-block;padding:0.2rem 0.65rem;border-radius:4px;font-size:0.62rem;font-weight:600;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap}
+.badge-SPAREPART{background:rgba(91,141,238,0.12);color:#5b8dee;border:1px solid rgba(91,141,238,0.2)}
+.badge-CAIRAN{background:rgba(76,175,125,0.12);color:#4caf7d;border:1px solid rgba(76,175,125,0.2)}
+.badge-TOOLS{background:rgba(200,151,42,0.12);color:var(--gold);border:1px solid rgba(200,151,42,0.2)}
+.badge-ELEKTRONIK{background:rgba(181,123,238,0.12);color:#b57bee;border:1px solid rgba(181,123,238,0.2)}
+
+.ket-cell{font-size:0.8rem;color:var(--text-muted);max-width:240px}
+.status-ok{color:#4caf7d;font-family:var(--font-mono);font-size:0.75rem}
+
+/* NO RESULT */
+.no-result{text-align:center;padding:5rem 2rem;font-family:var(--font-mono);font-size:0.82rem;color:var(--text-muted);display:none}
+
+/* BACK BUTTON */
+.back-section{padding:0 2.5rem 2rem;max-width:1100px;margin:0 auto}
+.back-btn{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold);text-decoration:none;font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;opacity:0.7;transition:opacity 0.2s;font-family:var(--font-mono)}
+.back-btn:hover{opacity:1}
+
+/* FOOTER */
+footer{background:var(--dim);padding:2.5rem;text-align:center;border-top:1px solid var(--gold-border)}
+.footer-logo{font-family:var(--font-display);font-size:1.5rem;color:var(--gold);margin-bottom:0.4rem}
+.footer-sub{font-size:0.72rem;opacity:0.3;font-family:var(--font-mono)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem}
+  .page-header,.stats-bar,.controls,.table-section,.back-section{padding-left:1.25rem;padding-right:1.25rem}
+  .controls .container{flex-direction:column;align-items:stretch}
+  .filter-tabs{gap:0.4rem}
+  .tab{padding:0.35rem 0.75rem;font-size:0.72rem}
+  th:nth-child(3),td:nth-child(3){display:none}
+  .stats-bar .container{gap:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BUNKER OPANOWSKI</a>
+  <a class="nav-back" href="index.html">← Kembali</a>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <div class="section-label">Bengkel Pribadi</div>
+    <h1 class="page-title">Inventaris <em>Gudang</em></h1>
+    <p class="page-sub">Villa Ciracas · Ciracas, Jakarta Timur · Om Opan</p>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="container">
+    <div class="stat-item">
+      <div class="stat-num">97</div>
+      <div class="stat-label">Total Item</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Unit Motor</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">70</div>
+      <div class="stat-label">Tools & Alat</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">11</div>
+      <div class="stat-label">Sparepart</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">10</div>
+      <div class="stat-label">Servis Elektronik</div>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="container">
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="searchInput" placeholder="🔍  Cari item inventaris..." oninput="doSearch()">
+    </div>
+    <div class="filter-tabs">
+      <button class="tab active" onclick="filterCat('ALL',this)">Semua</button>
+      <button class="tab" onclick="filterCat('SPAREPART',this)">⚙️ Sparepart</button>
+      <button class="tab" onclick="filterCat('TOOLS',this)">🛠️ Tools</button>
+      <button class="tab" onclick="filterCat('CAIRAN',this)">🧴 Cairan</button>
+      <button class="tab" onclick="filterCat('ELEKTRONIK',this)">📱 Elektronik</button>
+    </div>
+  </div>
+</div>
+
+<div class="table-section">
+  <div class="section-info">
+    <h3>Daftar Inventaris</h3>
+    <span class="count-badge" id="count-badge">97 item</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th class="num-col">#</th>
+        <th>Nama Item</th>
+        <th>Kategori</th>
+        <th>Keterangan</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="no-result" id="no-result">Tidak ada item yang cocok 🔍</div>
+</div>
+
+<div class="back-section">
+  <a class="back-btn" href="index.html">← Kembali ke Bunker Opanowski</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Bunker Opanowski</div>
+  <p class="footer-sub">Inventaris Gudang · Villa Ciracas · Updated Apr 2026</p>
+</footer>
+
+<script>
+const data = [
+  // SPAREPART
+  {no:1,  nama:"Bearing Pulley Belakang", sub:"Bantalan Jarum 20x29x18 & Bantalan Bola 6902U", cat:"SPAREPART", ket:"Original AHM — Beat/Vario 110"},
+  {no:2,  nama:"Seal Pulley Belakang",    sub:"Oil Seal 34x52x3 & O-Ring 38.5x2",              cat:"SPAREPART", ket:"Beat/Vario 110"},
+  {no:3,  nama:"V-Belt Kit",              sub:"K44-V01",                                        cat:"SPAREPART", ket:"Vario 110 FI"},
+  {no:4,  nama:"Seal Shock Depan",        sub:"26x37x10.5",                                     cat:"SPAREPART", ket:"2 Pasang stok"},
+  {no:5,  nama:"Gasket / Paking Full Set",sub:"Merk FEDERAL",                                   cat:"SPAREPART", ket:"Beat/Vario 110"},
+  {no:6,  nama:"Repair Kit Karburator",   sub:"Aspira KVY + Slider BeAT NPP",                   cat:"SPAREPART", ket:"BeAT Karbu"},
+  {no:7,  nama:"Kabel Spidometer",        sub:"",                                               cat:"SPAREPART", ket:"Stok umum"},
+  {no:8,  nama:"Kabel RPM",               sub:"",                                               cat:"SPAREPART", ket:"Stok umum"},
+  {no:9,  nama:"Gearbox Roda Depan",      sub:"",                                               cat:"SPAREPART", ket:"Stok umum"},
+  {no:10, nama:"Kampas Rem Depan NPP",    sub:"",                                               cat:"SPAREPART", ket:"2 buah — Vario 110 & 125 FI"},
+  {no:11, nama:"Kampas Rem Belakang NPP", sub:"",                                               cat:"SPAREPART", ket:"3 buah stok"},
+  // CAIRAN
+  {no:12, nama:"Rexco 81 Carb Cleaner",   sub:"",                                               cat:"CAIRAN",    ket:"500ml — stok aman"},
+  {no:13, nama:"Injector Cleaner",         sub:"",                                               cat:"CAIRAN",    ket:"500ml x2 — cadangan"},
+  {no:14, nama:"Oli Shock",                sub:"",                                               cat:"CAIRAN",    ket:"2 pasang stok"},
+  {no:15, nama:"Minyak Rem Suzuki Ecstar DOT 3", sub:"",                                        cat:"CAIRAN",    ket:"Stok umum"},
+  {no:16, nama:"Cat Sapporo Hi-Temp Black",sub:"",                                               cat:"CAIRAN",    ket:"Tahan panas"},
+  {no:17, nama:"Cat Hitam Doff",           sub:"",                                               cat:"CAIRAN",    ket:"Literan"},
+  // TOOLS
+  {no:18, nama:"Kompresor Izumi",          sub:"24 liter 1 HP Oilless",                          cat:"TOOLS",     ket:"Untuk steam, spray gun, air tools"},
+  {no:19, nama:"Las Izumi MO 128",         sub:"450 Watt",                                       cat:"TOOLS",     ket:"Las listrik"},
+  {no:20, nama:"Tang Lancip 9 Inci",       sub:"",                                               cat:"TOOLS",     ket:"Pembuka lensa kaca"},
+  {no:21, nama:"Gerinda 4\" RYU RSG 100-4",sub:"",                                              cat:"TOOLS",     ket:"+ Casta batu gerinda amplas no.1000"},
+  {no:22, nama:"Air Chipping Hammer Kit",  sub:"150mm",                                          cat:"TOOLS",     ket:"Pneumatik"},
+  {no:23, nama:"Kunci T Gagang Karet 7mm", sub:"Lippro",                                        cat:"TOOLS",     ket:"+ HL Premier kunci ring pas 7mm"},
+  {no:24, nama:"Treker Penahan Rumah Roller Universal Honda", sub:"",                            cat:"TOOLS",     ket:"Khusus Honda"},
+  {no:25, nama:"Deep Impact Socket 1/2\" — 17 & 19mm", sub:"Mollar",                            cat:"TOOLS",     ket:"Impact grade"},
+  {no:26, nama:"Tester Autoled Volt USB-C",sub:"",                                               cat:"TOOLS",     ket:"Pengukur tegangan"},
+  {no:27, nama:"Deep Impact Socket 1/2\" Extra Long 8mm", sub:"American Tool",                   cat:"TOOLS",     ket:"Extra long"},
+  {no:28, nama:"AVO Meter DT 830B",        sub:"",                                               cat:"TOOLS",     ket:"Multimeter analog/digital"},
+  {no:29, nama:"Kunci T Mini Pendek CR-V 8mm & 10mm", sub:"",                                   cat:"TOOLS",     ket:"CR-V steel"},
+  {no:30, nama:"Dongkrak Jembatan Mobil Manual", sub:"",                                         cat:"TOOLS",     ket:"Jack stand"},
+  {no:31, nama:"Kunci Torsi 3/8\" 5-25 Nm",sub:"Jetjo Tools",                                   cat:"TOOLS",     ket:"Presisi torsi kecil"},
+  {no:32, nama:"Feeler Gauge 0.05-1mm",    sub:"Jetjo Tools",                                    cat:"TOOLS",     ket:"Ukur celah klep"},
+  {no:33, nama:"Adapter Kunci Sock 3/8 x 1/2\"", sub:"",                                        cat:"TOOLS",     ket:"Sambungan socket"},
+  {no:34, nama:"Mata Obeng Ketok PH1, PH2, PH3", sub:"Jetjo Tools",                             cat:"TOOLS",     ket:"Phillips set"},
+  {no:35, nama:"Kunci Torsi Rachet 1/2\" 28-210 Nm", sub:"Lippro",                              cat:"TOOLS",     ket:"Torsi besar"},
+  {no:36, nama:"Digital Caliper / Jangka Sorong", sub:"2 unit (Digital)",                        cat:"TOOLS",     ket:"Ukur presisi komponen"},
+  {no:37, nama:"Tire Inflator 3 Fungsi",   sub:"Prohex",                                         cat:"TOOLS",     ket:"Pompa ban + gauge"},
+  {no:38, nama:"Spray Gun Meiji F75",       sub:"Tabung bawah",                                  cat:"TOOLS",     ket:"Untuk cat"},
+  {no:39, nama:"Spray Gun Auarita F3",      sub:"Nozzle 1.0 Original",                           cat:"TOOLS",     ket:"Presisi tinggi"},
+  {no:40, nama:"Treker Kaki 3 — 3\"",      sub:"",                                               cat:"TOOLS",     ket:"Cabut bearing/pulley"},
+  {no:41, nama:"Saringan Udara Mini 1 Tabung", sub:"Tekiro",                                     cat:"TOOLS",     ket:"Filter udara kompresor"},
+  {no:42, nama:"Selang Spiral 6-15 Meter", sub:"Tekiro — Hijau",                                cat:"TOOLS",     ket:"Selang kompresor"},
+  {no:43, nama:"Air Duster Tekiro",         sub:"",                                               cat:"TOOLS",     ket:"Semprot debu"},
+  {no:44, nama:"Mesin Bor Cordless 13mm",  sub:"Bagawa NCB02-13",                                cat:"TOOLS",     ket:"Baterai — bor serbaguna"},
+  {no:45, nama:"Siku Magnet Las Arrow",     sub:"25-75 lbs — 3 in 1",                            cat:"TOOLS",     ket:"Welding holder"},
+  {no:46, nama:"Brushless Impact Driver 21V", sub:"Nagawa NID213K",                              cat:"TOOLS",     ket:"Impact driver brushless"},
+  {no:47, nama:"Auto Voltage Tester",       sub:"Tekiro",                                         cat:"TOOLS",     ket:"Test tegangan otomatis"},
+  {no:48, nama:"Tang Mini 4.5\"",           sub:"Tekiro",                                         cat:"TOOLS",     ket:"Presisi kecil"},
+  {no:49, nama:"Gunting Seng",              sub:"Tekiro",                                         cat:"TOOLS",     ket:"Potong plat tipis"},
+  {no:50, nama:"Alat Pasang Komstir Universal", sub:"",                                          cat:"TOOLS",     ket:"Pasang bearing komstir"},
+  {no:51, nama:"Treker Cuil Seal Shock Depan", sub:"",                                           cat:"TOOLS",     ket:"Cabut seal shock"},
+  {no:52, nama:"Treker Lepas Komstir Universal", sub:"",                                         cat:"TOOLS",     ket:"Cabut bearing komstir"},
+  {no:53, nama:"Congkel Ban Ulir 13",       sub:"",                                               cat:"TOOLS",     ket:"Bongkar pasang ban"},
+  {no:54, nama:"Kunci Komstir 45-52mm Universal", sub:"2 unit",                                  cat:"TOOLS",     ket:"Kunci steering head"},
+  {no:55, nama:"Fuelpump Tester",           sub:"Grip On 6x6",                                    cat:"TOOLS",     ket:"Test tekanan fuel pump"},
+  {no:56, nama:"Pick Hook Set 4 Pcs",       sub:"",                                               cat:"TOOLS",     ket:"Cungkil seal/gasket/O-ring"},
+  {no:57, nama:"Alat Pembersih Injector",   sub:"",                                               cat:"TOOLS",     ket:"Motor & mobil"},
+  {no:58, nama:"DLC Short Connector",       sub:"",                                               cat:"TOOLS",     ket:"Reset manual injeksi Honda"},
+  {no:59, nama:"Alat Congkel Dashboard",    sub:"",                                               cat:"TOOLS",     ket:"Bongkar trim interior"},
+  {no:60, nama:"Mini Heat Gun 300W",        sub:"Low Watt 220V",                                  cat:"TOOLS",     ket:"Shrink tube, stiker"},
+  {no:61, nama:"Treker Magnet Puller No.8", sub:"Mollar",                                        cat:"TOOLS",     ket:"Cabut magnet rotor"},
+  {no:62, nama:"Brushless Impact Wrench",   sub:"Nagawa — Unit ke-3",                             cat:"TOOLS",     ket:"Impact wrench brushless"},
+  {no:63, nama:"Bor Mini JLD",              sub:"JLD",                                            cat:"TOOLS",     ket:"✅ Normal — sudah diservice mandiri", status:"ok"},
+  {no:64, nama:"Palu Besi & Palu Karet",   sub:"",                                               cat:"TOOLS",     ket:"2 jenis"},
+  {no:65, nama:"Kunci Inggris",             sub:"",                                               cat:"TOOLS",     ket:"Adjustable wrench"},
+  {no:66, nama:"Kunci Ring Pas Set Lippro", sub:"8mm - 19mm",                                    cat:"TOOLS",     ket:"Set lengkap"},
+  {no:67, nama:"Tang Tekiro",               sub:"",                                               cat:"TOOLS",     ket:"Set"},
+  {no:68, nama:"Obeng Ketok Set",           sub:"Tekiro",                                         cat:"TOOLS",     ket:"Impact screwdriver set"},
+  {no:69, nama:"Kunci T Grip On",           sub:"8, 10, 12, 14mm",                               cat:"TOOLS",     ket:"4 ukuran"},
+  {no:70, nama:"Kunci Ring Pas Tekiro",     sub:"17, 19, 24mm",                                   cat:"TOOLS",     ket:"3 ukuran besar"},
+  {no:71, nama:"Pipa Besi 30cm",            sub:"1\" & 2\"",                                      cat:"TOOLS",     ket:"Alat bantu/perpanjang kunci"},
+  {no:72, nama:"As Shock Bekas",            sub:"",                                               cat:"TOOLS",     ket:"Alat bantu pukul/ganjal"},
+  {no:73, nama:"Treker CVT Manual",         sub:"Grip On",                                        cat:"TOOLS",     ket:"Buka tutup CVT"},
+  {no:74, nama:"Kunci Buka Pulley Manual",  sub:"Grip On",                                        cat:"TOOLS",     ket:"Tahan pulley saat buka mur"},
+  {no:75, nama:"Kunci Shock Set",           sub:"8mm - 22mm",                                     cat:"TOOLS",     ket:"Set lengkap"},
+  {no:76, nama:"Kunci Shock Khusus Pulley", sub:"",                                               cat:"TOOLS",     ket:"Ukuran lupa — cek langsung"},
+  {no:77, nama:"Tang Buaya 10\"",           sub:"Tekiro",                                         cat:"TOOLS",     ket:"Locking plier"},
+  {no:78, nama:"Treker Bearing",            sub:"Grip On",                                        cat:"TOOLS",     ket:"Bongkar pasang bearing"},
+  {no:79, nama:"Kunci Pulley 39x41mm",      sub:"",                                               cat:"TOOLS",     ket:"Khusus pulley"},
+  {no:80, nama:"Magnetic Parts Tray",       sub:"",                                               cat:"TOOLS",     ket:"Wadah baut magnet"},
+  {no:81, nama:"Kunci L Set + Kunci L Bintang Set", sub:"",                                      cat:"TOOLS",     ket:"Hex + Torx set"},
+  {no:82, nama:"Nampan Aluminium",          sub:"2 buah",                                         cat:"TOOLS",     ket:"Tatakan alat + cuci pakai bensin"},
+  {no:83, nama:"Kunci Busi Flexible",       sub:"",                                               cat:"TOOLS",     ket:"Buka busi di posisi sempit"},
+  {no:84, nama:"Digital Clamp Meter STARMEC TS202+", sub:"",                                     cat:"TOOLS",     ket:"True RMS, NCV, Temp"},
+  {no:85, nama:"Digital Multimeter ZOTEC 6000 Counts", sub:"",                                   cat:"TOOLS",     ket:"True RMS"},
+  {no:86, nama:"Air Duster Hansch 15cm",    sub:"",                                               cat:"TOOLS",     ket:"Gaya pendek"},
+  {no:87, nama:"Sikat Kawat Set (untuk Bor)", sub:"",                                             cat:"TOOLS",     ket:"Aneka bentuk"},
+  // ELEKTRONIK
+  {no:88, nama:"Power Supply (PSU)",        sub:"Rekomendasi: Wanptek NPS3010W / DPS3010U",      cat:"ELEKTRONIK",ket:"30V 10A — diagnosa & nyalakan tanpa baterai"},
+  {no:89, nama:"Solder T12-D / OSS Team",   sub:"",                                               cat:"ELEKTRONIK",ket:"Cepat panas & stabil"},
+  {no:90, nama:"Blower 858D Digital",       sub:"",                                               cat:"ELEKTRONIK",ket:"Cabut IC & konektor SMD"},
+  {no:91, nama:"Timah Mechanic 0.3mm + Flux Amtech", sub:"",                                     cat:"ELEKTRONIK",ket:"Bahan solder SMD"},
+  {no:92, nama:"USB Analyzer",              sub:"",                                               cat:"ELEKTRONIK",ket:"Cek arus pengisian HP"},
+  {no:93, nama:"Obeng Set Jakemy / Kaiwei", sub:"",                                               cat:"ELEKTRONIK",ket:"Presisi elektronik"},
+  {no:94, nama:"Pinset Anti-statis",        sub:"Lurus & Lengkung",                               cat:"ELEKTRONIK",ket:"Handling komponen SMD"},
+  {no:95, nama:"Lem LCD Zhanlida",          sub:"T-7000 / B-7000",                                cat:"ELEKTRONIK",ket:"Pasang LCD & frame"},
+  {no:96, nama:"Silicone Mat Biru",         sub:"",                                               cat:"ELEKTRONIK",ket:"Anti panas — alas servis"},
+  {no:97, nama:"Kaca Pembesar Lampu Meja LED", sub:"",                                            cat:"ELEKTRONIK",ket:"Lihat komponen kecil"},
+];
+
+let currentCat = 'ALL';
+let currentSearch = '';
+
+function render(){
+  const tbody = document.getElementById('tbody');
+  const noResult = document.getElementById('no-result');
+  const badge = document.getElementById('count-badge');
+  const q = currentSearch.toLowerCase();
+  let rows = '';
+  let count = 0;
+
+  data.forEach(item => {
+    const matchCat = currentCat === 'ALL' || item.cat === currentCat;
+    const matchSearch = !q ||
+      item.nama.toLowerCase().includes(q) ||
+      (item.sub && item.sub.toLowerCase().includes(q)) ||
+      (item.ket && item.ket.toLowerCase().includes(q)) ||
+      item.cat.toLowerCase().includes(q);
+    if(!matchCat || !matchSearch) return;
+    count++;
+
+    const ketHtml = item.status === 'ok'
+      ? `<span class="status-ok">✅ Normal — diservice mandiri</span>`
+      : item.ket;
+
+    rows += `
+      <tr>
+        <td class="num-col">${item.no}</td>
+        <td>
+          <div class="name-main">${item.nama}</div>
+          ${item.sub ? `<div class="name-sub">${item.sub}</div>` : ''}
+        </td>
+        <td><span class="cat-badge badge-${item.cat}">${item.cat}</span></td>
+        <td class="ket-cell">${ketHtml}</td>
+      </tr>`;
+  });
+
+  tbody.innerHTML = rows;
+  badge.textContent = count + ' item';
+  noResult.style.display = count === 0 ? 'block' : 'none';
+}
+
+function filterCat(cat, el){
+  currentCat = cat;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function doSearch(){
+  currentSearch = document.getElementById('searchInput').value;
+  render();
+}
+
+render();
+</script>
+</body>
+</html>

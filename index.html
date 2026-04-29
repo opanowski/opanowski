@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bunker Opanowski — Villa Ciracas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F5F0E8;
+  --dark:#1C1A14;
+  --gold:#C8972A;
+  --gold-light:rgba(200,151,42,0.15);
+  --gold-border:rgba(200,151,42,0.25);
+  --dim:#0E0D09;
+  --font-display:'Playfair Display',serif;
+  --font-body:'DM Sans',sans-serif
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--cream);font-family:var(--font-body);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(28,26,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold-border)}
+.nav-logo{font-family:var(--font-display);font-size:1.1rem;color:var(--gold);letter-spacing:2px;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--cream);text-decoration:none;font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;opacity:0.55;transition:all 0.2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center center;background-image:url('https://i.imgur.com/nJFlqNX.jpg')}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(28,26,20,0.88) 0%,rgba(28,26,20,0.45) 55%,rgba(28,26,20,0.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:9rem 5rem 5rem;max-width:720px}
+.hero-badge{display:inline-block;background:var(--gold-light);border:1px solid var(--gold-border);color:var(--gold);font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;padding:0.35rem 1.2rem;border-radius:20px;margin-bottom:1.75rem}
+.hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,7vw,6.5rem);line-height:1.05;margin-bottom:1.25rem}
+.hero-title span{color:var(--gold);font-style:italic;display:block}
+.hero-sub{font-size:0.95rem;opacity:0.6;line-height:2;max-width:460px;margin-bottom:3rem}
+.hero-stats{display:flex;gap:3rem;flex-wrap:wrap}
+.stat-num{font-family:var(--font-display);font-size:2.4rem;color:var(--gold);line-height:1}
+.stat-label{font-size:0.68rem;opacity:0.45;letter-spacing:2px;text-transform:uppercase;margin-top:5px}
+
+.hero-portrait{position:absolute;right:5rem;bottom:5rem;z-index:2;width:220px;height:220px;border-radius:50%;overflow:hidden;border:3px solid rgba(200,151,42,0.45);box-shadow:0 0 60px rgba(200,151,42,0.15)}
+.hero-portrait img{width:100%;height:100%;object-fit:cover}
+
+/* SECTIONS */
+section{padding:6rem 2.5rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.8rem);margin-bottom:1.5rem;line-height:1.2}
+.section-title em{color:var(--gold);font-style:italic}
+
+/* ABOUT */
+.about{background:var(--dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-text p{opacity:0.62;line-height:1.95;margin-bottom:1.1rem;font-size:0.9rem}
+.about-photo-wrap{position:relative}
+.about-photo-wrap img{width:100%;height:480px;object-fit:cover;border-radius:12px;display:block}
+.about-badge{position:absolute;bottom:-1.25rem;left:-1.25rem;background:var(--gold);color:var(--dark);padding:1rem 1.5rem;border-radius:8px;font-family:var(--font-display);font-size:1rem;font-weight:700;line-height:1.4}
+
+/* GALLERY */
+.gallery{background:var(--dim)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:250px;gap:12px;margin-top:2.5rem}
+.g-item{border-radius:10px;overflow:hidden;position:relative;cursor:pointer}
+.g-item.tall{grid-row:span 2}
+.g-item.wide{grid-column:span 2}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;display:block}
+.g-item:hover img{transform:scale(1.06)}
+.g-overlay{position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,0.75));display:flex;align-items:flex-end;padding:1.1rem;opacity:0;transition:opacity 0.3s}
+.g-item:hover .g-overlay{opacity:1}
+.g-overlay span{font-size:0.78rem;color:rgba(255,255,255,0.9);letter-spacing:0.5px}
+
+/* VILLA */
+.villa{background:var(--dark)}
+.villa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.v-card{background:rgba(255,255,255,0.025);border:1px solid rgba(200,151,42,0.12);border-radius:12px;padding:1.6rem;transition:all 0.3s;cursor:default}
+.v-card:hover{border-color:rgba(200,151,42,0.35);background:rgba(200,151,42,0.04);transform:translateY(-4px)}
+.v-icon{font-size:1.9rem;margin-bottom:0.8rem}
+.v-card h3{font-family:var(--font-display);font-size:1.05rem;color:var(--gold);margin-bottom:0.5rem}
+.v-card p{font-size:0.82rem;opacity:0.55;line-height:1.75}
+
+/* SETUP */
+.setup{background:var(--dim)}
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:2rem}
+.s-item{display:flex;align-items:center;gap:0.85rem;padding:0.9rem 1.1rem;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.055);border-radius:8px;transition:all 0.2s}
+.s-item:hover{border-color:var(--gold-border);background:var(--gold-light)}
+.s-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.s-item span{font-size:0.82rem;opacity:0.72}
+
+/* NYOKAP */
+.nyokap{background:var(--dark)}
+.nyokap-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.nyokap-img{border-radius:12px;overflow:hidden;height:420px}
+.nyokay-img img{width:100%;height:100%;object-fit:cover;display:block}
+.nyokap-text p{opacity:0.62;line-height:1.95;font-size:0.9rem;margin-bottom:1rem}
+.menu-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
+.menu-tag{background:var(--gold-light);border:1px solid var(--gold-border);color:var(--gold);padding:0.3rem 0.9rem;border-radius:20px;font-size:0.76rem}
+
+/* ASET */
+.aset{background:var(--dim)}
+.aset-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+.aset-card{text-align:center;padding:1.75rem 1rem;background:rgba(255,255,255,0.025);border:1px solid rgba(200,151,42,0.1);border-radius:12px;transition:all 0.3s}
+.aset-card:hover{border-color:var(--gold-border);transform:translateY(-3px)}
+.aset-icon{font-size:2.2rem;margin-bottom:0.75rem}
+.aset-card h3{font-family:var(--font-display);font-size:0.95rem;color:var(--gold);margin-bottom:0.4rem}
+.aset-card p{font-size:0.78rem;opacity:0.5;line-height:1.6}
+
+/* FILOSOFI */
+.filosofi{background:var(--dark)}
+.f-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
+.f-card{padding:1.75rem 1.75rem 1.75rem 2rem;border-left:2px solid var(--gold);background:rgba(200,151,42,0.03);border-radius:0 8px 8px 0;transition:background 0.2s}
+.f-card:hover{background:rgba(200,151,42,0.07)}
+.f-card p{font-family:var(--font-display);font-size:1.02rem;color:var(--cream);line-height:1.8;opacity:0.88;font-style:italic}
+.f-source{font-size:0.68rem;color:var(--gold);margin-top:0.8rem;letter-spacing:2px;text-transform:uppercase;font-style:normal;font-family:var(--font-body);opacity:0.8}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid rgba(200,151,42,0.12);margin:0}
+
+/* FOOTER */
+footer{background:#090906;padding:3.5rem 2.5rem;text-align:center;border-top:1px solid rgba(200,151,42,0.1)}
+.footer-logo{font-family:var(--font-display);font-size:2.2rem;color:var(--gold);margin-bottom:0.75rem}
+.footer-tagline{opacity:0.4;font-size:0.82rem;line-height:2;margin-bottom:0.5rem}
+.footer-credits{margin-top:2rem;font-size:0.7rem;opacity:0.18}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp 0.75s ease forwards;opacity:0}
+.hero-badge{animation-delay:0.1s}
+.hero-title{animation-delay:0.25s}
+.hero-sub{animation-delay:0.4s}
+.hero-stats{animation-delay:0.55s}
+.hero-portrait{animation:fadeUp 1s ease 0.7s forwards;opacity:0}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid,.nyokap-grid{grid-template-columns:1fr}
+  .villa-grid{grid-template-columns:repeat(2,1fr)}
+  .aset-grid{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .g-item.tall,.g-item.wide{grid-row:auto;grid-column:auto}
+  .hero-content{padding:8rem 2rem 4rem}
+  .hero-portrait{display:none}
+  .setup-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  section{padding:4rem 1.5rem}
+}
+@media(max-width:480px){
+  .villa-grid,.aset-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">BUNKER OPANOWSKI</a>
+  <ul class="nav-links">
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#gallery">Galeri</a></li>
+    <li><a href="#villa">Villa</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#podcast">🎙️ Podcast</a></li>
+        <li><a href="#video">🎬 Video</a></li>
+    <li><a href="#filosofi">Filosofi</a></li>
+    <li><a href="gudang.html" style="color:var(--gold);opacity:1;border:1px solid rgba(200,151,42,0.35);padding:0.3rem 0.9rem;border-radius:20px;transition:all 0.2s" onmouseover="this.style.background='rgba(200,151,42,0.15)'" onmouseout="this.style.background='transparent'">🔧 Gudang</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Villa Ciracas · Jakarta Timur · Indonesia</div>
+    <h1 class="hero-title">Bunker<span>Opanowski</span></h1>
+    <p class="hero-sub">Autodidak · Lifelong Learner · DIY Master · Pejuang Ketahanan Pangan Mandiri · Anti Hutang · Anti FOMO · Belajar Sampai Menutup Mata</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Tahun Mandiri</div></div>
+      <div class="stat"><div class="stat-num">150m²</div><div class="stat-label">Villa Ciracas</div></div>
+      <div class="stat"><div class="stat-num">11th</div><div class="stat-label">Mac Mid 2015</div></div>
+      <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Aset Properti</div></div>
+    </div>
+  </div>
+  <div class="hero-portrait">
+    <img src="https://i.imgur.com/tJxtFee.jpg" alt="Om Opan">
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">Tentang Om Opan</div>
+        <h2 class="section-title">Sederhana tapi <em>Luar Biasa</em></h2>
+        <p>Pekerja informal yang telah mandiri lebih dari 20 tahun. Anti
+ hutang seumur hidup, anti riba, dan selalu mencari keberkahan dalam 
+setiap langkah kehidupan.</p>
+        <p>Tinggal di Villa Ciracas bersama nyokap tercinta berusia 76 
+tahun. Setiap pagi ditemani kicauan kutilang, bunglon berburu belalang, 
+dan secangkir Top Kopi Gula Aren.</p>
+        <p>Autodidak di berbagai bidang — otomotif, teknologi, pertanian, peternakan, hingga bangunan. Prinsip hidup: <em>efisien, fungsional, berkah.</em> Filosofi gadget: <em>"Gunakan sampai benar-benar mati."</em></p>
+        <p>Pernah melunasi hutang 150 juta almarhum adik tanpa berhutang
+ sepeser pun. Bukan keberuntungan — itu buah dari keikhlasan dan 
+tawakkal kepada Allah.</p>
+      </div>
+      <div class="about-photo-wrap">
+        <img src="https://i.imgur.com/tJxtFee.jpg" alt="Om Opan di Bunker Opan's Space">
+        <div class="about-badge">Villa<br>Ciracas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-label">Galeri</div>
+    <h2 class="section-title">Kehidupan di <em>Villa Ciracas</em></h2>
+    <div class="gallery-grid">
+      <div class="g-item tall">
+        <img src="https://i.imgur.com/tJxtFee.jpg" alt="Bunker Opan">
+        <div class="g-overlay"><span>Bunker Opan's Space — tempat semua lahir</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://i.imgur.com/8wfC76J.jpg" alt="Nyokap">
+        <div class="g-overlay"><span>Nyokap — jiwa Villa Ciracas</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://i.imgur.com/fxIlIUa.png" alt="Keluarga">
+        <div class="g-overlay"><span>Momen keluarga di alam terbuka</span></div>
+      </div>
+      <div class="g-item wide">
+        <img src="https://i.imgur.com/iCX8amy.jpg" alt="Power Rangers AI Edit">
+        <div class="g-overlay"><span>Kreasi AI — Power Rangers edition! 😂</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://i.imgur.com/NvkpOIH.jpg" alt="Villa Ciracas">
+        <div class="g-overlay"><span>Suasana Villa Ciracas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- VILLA -->
+<section class="villa" id="villa">
+  <div class="container">
+    <div class="section-label">Villa Ciracas</div>
+    <h2 class="section-title">Surga <em>150m²</em> di Tengah Kota</h2>
+    <div class="villa-grid">
+      <div class="v-card">
+        <div class="v-icon">🐔</div>
+        <h3>Aviary Mini</h3>
+        <p>2 ayam betina broiler + 2 puyuh jantan. Sistem deep litter 
+kandang — kotoran terurai sendiri. Telur rutin dibagikan ke tetangga 
+&amp; sodara.</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon">🍇</div>
+        <h3>Kebun &amp; Grafting</h3>
+        <p>Anggur Heliodor, Tamaki, Moondrop — umur 2 bulan sudah 2 
+meter! Jambu air citra, delima, kedondong mini, sayuran &amp; apotek 
+hidup.</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon">🐰</div>
+        <h3>Peternakan Mini</h3>
+        <p>Kelinci 1 ekor. Air lindi + kotoran kelinci jadi pupuk alami. Ekosistem self-sustaining yang seimbang &amp; berkelanjutan.</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon">🔧</div>
+        <h3>Bengkel Rumahan</h3>
+        <p>Kompresor Izumi 24L, las 450W, 97 item tools &amp; sparepart terdaftar. Servis 3 motor sendiri — CVT, rem, shock, karbu, injeksi, elektronik. Full DIY master!</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon">☕</div>
+        <h3>Ruang Santai</h3>
+        <p>WiFi 24 jam gratis, karaoke, gitar akustik (string &amp; nylon), organ, Mac &amp; tablet siap. Motor belasan bisa parkir. Semua orang betah &amp; betah nginep!</p>
+      </div>
+      <div class="v-card">
+        <div class="v-icon">🏆</div>
+        <h3>Rumah Sehat Juara</h3>
+        <p>Terpilih se-RT untuk lomba rumah sehat se-Kecamatan Ciracas! Konblok hexagon — nyaman, bersih, produktif &amp; penuh berkah.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="gudang.html" style="display:inline-flex;align-items:center;gap:0.75rem;background:rgba(200,151,42,0.1);border:1px solid rgba(200,151,42,0.35);color:var(--gold);text-decoration:none;padding:0.9rem 2rem;border-radius:8px;font-size:0.88rem;letter-spacing:1px;text-transform:uppercase;transition:all 0.3s;font-family:var(--font-body)" onmouseover="this.style.background='rgba(200,151,42,0.2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(200,151,42,0.1)';this.style.transform='translateY(0)'">
+        🔧 <span>Lihat Inventaris Gudang Lengkap — 97 Item</span> →
+      </a>
+    </div>
+  </div>
+</section>
+<section class="setup" id="setup">
+  <div class="container">
+    <div class="section-label">Bunker Setup</div>
+    <h2 class="section-title">Senjata <em>Sehari-hari</em></h2>
+    <p style="opacity:0.55;font-size:0.88rem;line-height:1.9;max-width:520px;margin-bottom:0.5rem">Sederhana tapi fungsional. Setiap gadget dipilih dengan riset mendalam, dirawat dengan sepenuh hati. "Till death do us part!"</p>
+    <div class="setup-grid">
+      <div class="s-item"><div class="s-dot"></div><span>💻 MacBook Pro 15" Mid 2015 — RAM 16GB / SSD 512GB / Dual GPU — LEGENDARIS! "Till death do us part!"</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>📱 Lenovo Xiaoxin Pad 2024 — 8/128GB + TinyPC Debian (desktop mirip Windows 10) + WPS Office PC + keyboard/mouse/stylus wireless</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>📱 Oppo Reno 4 — daily driver yang setia menemani</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>💾 HDD External — 512GB + 1TB + 2TB — backup berlapis & aman!</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>🔊 Speaker GMC 899Q + Kiip DTS 16 — audio experience josss</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>🎧 Vivan Liberty H200 — headphone menemani sesi belajar & musik</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>🎙️ Mic LGT 240 + Soundcard F998 — siap rekam kapan saja</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>🔋 Powerbank Vivan 20.000mAh — daya tahan maksimal</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>🎸 Gitar Akustik String & Nylon — jiwa musik yang tak pernah padam</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>🤖 Claude (utama) + Gemini (Google/YT) + ChatGPT — triple AI combo yang mematikan!</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>🏍️ Beat Karbu 2009 + Vario 110 FI + Vario 125 ESP — armada 3 motor josss</span></div>
+      <div class="s-item"><div class="s-dot"></div><span>☕ Top Kopi Gula Aren — bahan bakar utama Bunker Opan!</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- NYOKAP -->
+<section class="nyokap" id="nyokap">
+  <div class="container">
+    <div class="nyokap-grid">
+      <div class="nyokap-img">
+        <img src="https://i.imgur.com/8wfC76J.jpg" alt="Nyokap — Chef Legendaris Villa Ciracas" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div class="nyokap-text">
+        <div class="section-label">Chef Legendaris</div>
+        <h2 class="section-title">Nyokap — <em>Jiwa Villa Ciracas</em></h2>
+        <p>Berusia 76 tahun, masih aktif memasak setiap hari dengan 
+penuh semangat dan cinta. Masakannya adalah perekat keluarga yang tak 
+tergantikan oleh restoran manapun.</p>
+        <p>Bumbu kacang siomay diulek manual — bukan diblender. Karena 
+di setiap ulekan ada doa dan kasih sayang yang ikut tertuang untuk 
+keluarga.</p>
+        <p>Semua hasil kebun — sayuran, buah, telur ayam — lebih sering 
+dibagikan ke tetangga &amp; sodara daripada dijual. Itulah sedekah yang 
+paling berkah.</p>
+        <div class="menu-tags">
+          <span class="menu-tag">Seblak Kerupuk</span>
+          <span class="menu-tag">Siomay Ulek Manual</span>
+          <span class="menu-tag">Sambal Chili Oil</span>
+          <span class="menu-tag">Pisang Goreng Tepung</span>
+          <span class="menu-tag">Ngeliwet</span>
+          <span class="menu-tag">Bakar-bakaran</span>
+          <span class="menu-tag">Shabu-shabu</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ASET -->
+<section class="aset" id="aset">
+  <div class="container">
+    <div class="section-label">Portofolio Aset</div>
+    <h2 class="section-title">Dibangun <em>Pelan tapi Pasti</em></h2>
+    <div class="aset-grid">
+      <div class="aset-card">
+        <div class="aset-icon">🏡</div>
+        <h3>Rumah Ciracas</h3>
+        <p>150m² tempat tinggal utama. Villa Ciracas — Bunker Opan's Space.</p>
+      </div>
+      <div class="aset-card">
+        <div class="aset-icon">🏘️</div>
+        <h3>Kontrakan 3 Pintu</h3>
+        <p>Renovasi 80%. Passive income Rp3jt/bulan. Investasi masa depan.</p>
+      </div>
+      <div class="aset-card">
+        <div class="aset-icon">🏠</div>
+        <h3>2 Rumah Bandung</h3>
+        <p>Aset properti di kota Bandung. Dikelola dengan bijak &amp; amanah.</p>
+      </div>
+      <div class="aset-card">
+        <div class="aset-icon">🌱</div>
+        <h3>Kebun + Sawah</h3>
+        <p>Kebun 1400m² + Sawah 700m² di Bandung. Ketahanan pangan mandiri.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FILOSOFI -->
+<section class="filosofi" id="filosofi">
+  <div class="container">
+    <div class="section-label">Filosofi Hidup</div>
+    <h2 class="section-title">Prinsip yang <em>Tak Tergoyahkan</em></h2>
+    <div class="f-grid">
+      <div class="f-card">
+        <p>"Tekanan hidup berbanding lurus dengan gaya hidup. Makin besar gaya hidup, makin besar tekanannya."</p>
+        <div class="f-source">Hukum Fisika Om Opan</div>
+      </div>
+      <div class="f-card">
+        <p>"Keinginan dikalahkan kebutuhan. Makin banyak riset, makin males upgrade."</p>
+        <div class="f-source">Anti FOMO Philosophy</div>
+      </div>
+      <div class="f-card">
+        <p>"Anti hutang &amp; riba seumur hidup. Mencari keberkahan — bukan sekadar kekayaan."</p>
+        <div class="f-source">Prinsip Finansial</div>
+      </div>
+      <div class="f-card">
+        <p>"Yang penting hati tenang &amp; happy. Lihat ke bawah, jangan sering lihat ke atas."</p>
+        <div class="f-source">Qona'ah &amp; Tawakkal</div>
+      </div>
+      <div class="f-card">
+        <p>"Sedekah terbaik adalah dari hasil keringat sendiri. Panen dibagi — bukan untuk dijual."</p>
+        <div class="f-source">Filosofi Berbagi</div>
+      </div>
+      <div class="f-card">
+        <p>"Dibalik setiap kesulitan, pasti ada kemudahan. Ikhlas adalah kunci dari setiap ujian."</p>
+        <div class="f-source">QS. Al-Insyirah: 5-6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section style="background:var(--dim);padding:4rem 2.5rem;border-top:1px solid rgba(200,151,42,0.12)" id="podcast">
+  <div style="max-width:700px;margin:0 auto">
+    <div style="font-size:0.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;font-family:var(--font-mono)">🎙️ Podcast</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:0.5rem">Om OPAN <em style="color:var(--gold);font-style:italic">Podcast</em></h2>
+    <p style="opacity:0.45;font-size:0.88rem;margin-bottom:2rem;font-family:var(--font-mono)">Cerita sehari-hari Bunker Opanowski · Powered by AI · Available on Spotify</p>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6GUbAhPAwCruHVihepl5jP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <p style="margin-top:1.25rem;font-size:0.78rem;opacity:0.35;font-family:var(--font-mono);text-align:center">Dengarkan juga di <a href="https://open.spotify.com/show/0IjFXGMOWSwEfNLuZPrqxx" target="_blank" style="color:var(--gold);text-decoration:none">Spotify ↗</a></p>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section style="background:var(--dark);padding:4rem 2.5rem;border-top:1px solid rgba(200,151,42,0.12)" id="video">
+  <div style="max-width:700px;margin:0 auto">
+    <div style="font-size:0.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem">🎬 Video</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:0.5rem">Bunker <em style="color:var(--gold);font-style:italic">Opanowski</em> Channel</h2>
+    <p style="opacity:0.45;font-size:0.88rem;margin-bottom:2rem">Cerita, filosofi & kehidupan sehari-hari dari Villa Ciracas · Available on YouTube</p>
+    <div style="border-radius:12px;overflow:hidden;background:#000">
+      <iframe width="100%" height="394" src="https://www.youtube.com/embed/Dwudwaqvd6A" title="Nol Sampah, Nol Hutang — Bunker Opanowski" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="display:block"></iframe>
+    </div>
+    <p style="margin-top:1.25rem;font-size:0.78rem;opacity:0.35;text-align:center">Tonton lebih banyak di <a href="https://www.youtube.com/@TyoAjjah" target="_blank" style="color:var(--gold);text-decoration:none">YouTube Bunker Opanowski ↗</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Bunker Opanowski</div>
+  <p class="footer-tagline">Villa Ciracas · Jakarta Timur · Indonesia</p>
+  <p class="footer-tagline">Istiqomah · Qona'ah · Tawakkal · Berkah</p>
+  <p class="footer-credits">Made with ☕ Top Kopi Gula Aren &amp; Claude AI · Updated Apr 2026</p>
+</footer>
+
+
+
+</body></html>
