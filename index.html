@@ -261,25 +261,37 @@ tawakkal kepada Allah.</p>
     <div class="section-label">Galeri</div>
     <h2 class="section-title">Kehidupan di <em>Villa Ciracas</em></h2>
     <div class="gallery-grid">
-      <div class="g-item tall">
-        <img src="https://i.imgur.com/tJxtFee.jpg" alt="Bunker Opan">
+      <div class="g-item">
+        <img src="https://i.imgur.com/zbVR8RC.jpg" alt="Menikmati Udara Segar di Pedesaan">
+        <div class="g-overlay"><span>Menikmati Udara Segar di Pedesaan</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://i.imgur.com/KOpgB8c.jpg" alt="Muda Mudi Naik Beat Karbu">
+        <div class="g-overlay"><span>Muda Mudi Menikmati Alam Pedesaan Naik Beat Karbu 🛵</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://i.imgur.com/fxIlIUa.png" alt="Bunker Opan's Space">
         <div class="g-overlay"><span>Bunker Opan's Space — tempat semua lahir</span></div>
       </div>
-      <div class="g-item">
-        <img src="https://i.imgur.com/8wfC76J.jpg" alt="Nyokap">
-        <div class="g-overlay"><span>Nyokap — jiwa Villa Ciracas</span></div>
+      <div class="g-item wide">
+        <img src="https://i.imgur.com/j30cMZJ.jpg" alt="Nyokap — Jiwa Villa Ciracas">
+        <div class="g-overlay"><span>Nyokap — jiwa Villa Ciracas ❤️</span></div>
       </div>
       <div class="g-item">
-        <img src="https://i.imgur.com/fxIlIUa.png" alt="Keluarga">
-        <div class="g-overlay"><span>Momen keluarga di alam terbuka</span></div>
+        <img src="https://i.imgur.com/NvkpOIH.jpg" alt="Botram di Pedesaan">
+        <div class="g-overlay"><span>Botram di Pedesaan</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://i.imgur.com/ClsiNy9.jpg" alt="Gadis Desa">
+        <div class="g-overlay"><span>Gadis desa — pesona alam pedesaan</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://i.imgur.com/ZL9QHZX.jpg" alt="Beat Karbu Modif Proper">
+        <div class="g-overlay"><span>Beat Karbu Modif Proper 🛵</span></div>
       </div>
       <div class="g-item wide">
-        <img src="https://i.imgur.com/iCX8amy.jpg" alt="Power Rangers AI Edit">
-        <div class="g-overlay"><span>Kreasi AI — Power Rangers edition! 😂</span></div>
-      </div>
-      <div class="g-item">
-        <img src="https://i.imgur.com/NvkpOIH.jpg" alt="Villa Ciracas">
-        <div class="g-overlay"><span>Suasana Villa Ciracas</span></div>
+        <img src="https://i.imgur.com/bVny0zS.jpg" alt="Kehidupan di Desa yang Indah">
+        <div class="g-overlay"><span>Kehidupan di Desa yang Indah</span></div>
       </div>
     </div>
   </div>
@@ -573,7 +585,7 @@ paling berkah.</p>
     <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:860px">
 
       <!-- ARTIKEL 1 -->
-      <div class="acc-item" onclick="toggleAcc(this)">
+      <div class="acc-item" id="blog-m4a-mp3" onclick="toggleAcc(this)">
         <div class="acc-header">
           <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
             <span style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.7">April 2026</span>
@@ -581,7 +593,7 @@ paling berkah.</p>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.5rem">
             <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--cream);margin:0">🛠️ Konversi M4A ke MP3 di Mac Jadul — <em style="color:var(--gold)">Tanpa Aplikasi Berbayar</em></h3>
-            <span class="acc-icon">＋</span>
+            <span class="acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
           </div>
         </div>
         <div class="acc-body">
@@ -625,13 +637,24 @@ paling berkah.</p>
 </section>
 
 <style>
-.acc-item{background:rgba(200,151,42,0.04);border:1px solid rgba(200,151,42,0.15);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color 0.2s}
-.acc-item:hover{border-color:rgba(200,151,42,0.35)}
-.acc-item.open{border-color:rgba(200,151,42,0.35)}
+.acc-item{border:1px solid rgba(200,151,42,0.15);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color 0.2s}
+.acc-item:hover{border-color:rgba(200,151,42,0.4)}
+.acc-item.open{border-color:rgba(200,151,42,0.45)}
+/* Warna header berbeda tiap item */
+.acc-item:nth-child(1){background:rgba(200,151,42,0.04)}
+.acc-item:nth-child(2){background:rgba(91,141,238,0.04)}
+.acc-item:nth-child(3){background:rgba(76,175,125,0.04)}
+.acc-item:nth-child(4){background:rgba(181,123,238,0.04)}
+.acc-item:nth-child(5){background:rgba(224,90,90,0.04)}
+.acc-item:nth-child(n+6){background:rgba(200,151,42,0.04)}
 .acc-header{padding:1.5rem 2rem}
-.acc-icon{font-size:1.4rem;color:var(--gold);opacity:0.7;transition:transform 0.3s;flex-shrink:0;margin-left:1rem}
-.acc-item.open .acc-icon{transform:rotate(45deg)}
-.acc-body{display:none;padding:0 2rem 1.75rem;border-top:1px solid rgba(200,151,42,0.1)}
+/* Chevron SVG — rotate saat open */
+.acc-icon{width:22px;height:22px;flex-shrink:0;margin-left:1rem;color:var(--gold);opacity:0.75;transition:transform 0.35s ease}
+.acc-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.acc-item.open .acc-icon{transform:rotate(180deg);opacity:1}
+/* Smooth sliding body */
+.acc-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;padding:0 2rem;border-top:0px solid rgba(200,151,42,0.1)}
+.acc-item.open .acc-body{max-height:2000px;padding:0 2rem 1.75rem;border-top:1px solid rgba(200,151,42,0.1)}
 .acc-item.open .acc-body{display:block}
 .acc-box{margin:1rem 0;padding:1.25rem;border-radius:10px}
 .acc-box.red{background:rgba(224,90,90,0.06);border:1px solid rgba(224,90,90,0.2)}
@@ -799,8 +822,26 @@ paling berkah.</p>
 
 <script>
 function toggleAcc(el){
+  const wasOpen = el.classList.contains('open');
   el.classList.toggle('open');
+  // Deep-link: update URL hash saat buka
+  if(!wasOpen && el.id){
+    history.replaceState(null,null,'#'+el.id);
+  } else if(wasOpen){
+    history.replaceState(null,null,window.location.pathname+window.location.search);
+  }
 }
+// Auto-buka accordion jika ada hash di URL
+window.addEventListener('DOMContentLoaded',function(){
+  const hash = window.location.hash.slice(1);
+  if(hash){
+    const target = document.getElementById(hash);
+    if(target && target.classList.contains('acc-item')){
+      target.classList.add('open');
+      setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),200);
+    }
+  }
+});
 function toggleMenu(){
   const menu = document.getElementById('mobileMenu');
   const hamburger = document.getElementById('hamburger');
