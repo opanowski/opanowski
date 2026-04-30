@@ -185,6 +185,7 @@ footer{background:#090906;padding:3.5rem 2.5rem;text-align:center;border-top:1px
     <li><a href="#setup">Setup</a></li>
     <li><a href="#podcast">🎙️ Podcast</a></li>
     <li><a href="#video">🎬 Video</a></li>
+    <li><a href="#blog">📝 Blog</a></li>
     <li><a href="#filosofi">Filosofi</a></li>
     <li><a href="gudang.html" style="color:var(--gold);opacity:1;border:1px solid rgba(200,151,42,0.35);padding:0.3rem 0.9rem;border-radius:20px;transition:all 0.2s" onmouseover="this.style.background='rgba(200,151,42,0.15)'" onmouseout="this.style.background='transparent'">🔧 Gudang</a></li>
   </ul>
@@ -201,6 +202,7 @@ footer{background:#090906;padding:3.5rem 2.5rem;text-align:center;border-top:1px
   <a href="#setup" onclick="closeMenu()">Setup</a>
   <a href="#podcast" onclick="closeMenu()">🎙️ Podcast</a>
   <a href="#video" onclick="closeMenu()">🎬 Video</a>
+  <a href="#blog" onclick="closeMenu()">📝 Blog</a>
   <a href="#filosofi" onclick="closeMenu()">Filosofi</a>
   <a href="gudang.html" class="gudang-link" onclick="closeMenu()">🔧 Gudang</a>
 </div>
@@ -557,6 +559,90 @@ paling berkah.</p>
 </section>
 
 
+<!-- CATATAN BENGKEL DIGITAL -->
+<section style="background:var(--dark);padding:6rem 2.5rem" id="blog">
+  <div class="container">
+    <div class="section-label">Catatan Bengkel Digital</div>
+    <h2 class="section-title">DIY, Debug, <em>Done.</em></h2>
+    <p style="opacity:0.55;font-size:0.88rem;line-height:1.9;max-width:680px;margin-bottom:3.5rem">
+      Sama seperti bengkel motor di gudang — kalau ada yang rusak, diperbaiki sendiri dulu. 
+      Baru minta tolong kalau udah beneran mentok. Ini dokumentasinya.
+    </p>
+
+    <!-- ACCORDION WRAPPER -->
+    <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:860px">
+
+      <!-- ARTIKEL 1 -->
+      <div class="acc-item" onclick="toggleAcc(this)">
+        <div class="acc-header">
+          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+            <span style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.7">April 2026</span>
+            <span style="background:rgba(200,151,42,0.1);border:1px solid rgba(200,151,42,0.2);border-radius:20px;padding:2px 10px;font-size:0.62rem;color:var(--gold)">macOS · Audio · Tutorial</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.5rem">
+            <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--cream);margin:0">🛠️ Konversi M4A ke MP3 di Mac Jadul — <em style="color:var(--gold)">Tanpa Aplikasi Berbayar</em></h3>
+            <span class="acc-icon">＋</span>
+          </div>
+        </div>
+        <div class="acc-body">
+          <p style="opacity:0.6;font-size:0.88rem;line-height:1.95;margin-bottom:1rem">
+            MacBook Pro Mid 2015. File <code class="code-tag">.m4a</code> 41.9 MB hasil rekaman audio konten 
+            <em>"AI Canggih di Balik Bengkel Ciracas"</em>. Tujuan sederhana: konversi ke 
+            <code class="code-tag">.mp3</code> biar lebih ringan & kompatibel buat web dan sosmed. 
+            Ternyata tidak semudah kelihatannya.
+          </p>
+          <div class="acc-box red">
+            <div class="acc-box-label">⚠️ Yang Gagal Dicoba</div>
+            <div style="opacity:0.7;font-size:0.85rem;line-height:2.2">
+              <div>❌ <strong>iTunes/Music App</strong> — bunyi "cling", tanda seru, file dianggap missing</div>
+              <div>❌ <strong>Finder Quick Actions</strong> — <code class="code-tag">Error -2700</code> sistem menolak encode file terkompresi</div>
+              <div>❌ <strong>Terminal afconvert</strong> — flag <code class="code-tag">-f 'mpg3' -d 'mpg3'</code> ditolak, format string invalid di macOS 2015</div>
+              <div>❌ <strong>VLC awal</strong> — hasil konversi cuma 3 KB, file corrupt tidak terbaca</div>
+            </div>
+          </div>
+          <div class="acc-box green">
+            <div class="acc-box-label">✅ Solusi Yang Berhasil — The Om Opan Way</div>
+            <div style="opacity:0.7;font-size:0.85rem;line-height:2.2">
+              <div><strong>1.</strong> Buka <strong>VLC Media Player</strong> → menu <strong>File → Convert/Stream</strong></div>
+              <div><strong>2.</strong> Pilih profil <strong>Audio - MP3</strong></div>
+              <div><strong>3.</strong> Tentukan lokasi output → klik <strong>Save</strong></div>
+              <div><strong>4.</strong> Hasil output tidak terbaca? Jangan panik — <strong>rename manual</strong>, tambahkan ekstensi <code class="code-tag">.mp3</code> di akhir nama file</div>
+              <div><strong>5.</strong> File langsung terbaca sebagai audio — <strong>28.9 MB, berfungsi sempurna ✅</strong></div>
+            </div>
+          </div>
+          <p style="opacity:0.6;font-size:0.88rem;line-height:1.95;margin-top:1rem;margin-bottom:0">
+            Pelajaran dari bengkel digital malam itu: kadang solusinya sesederhana menambahkan 
+            <code class="code-tag">.mp3</code> di akhir nama file. Sama seperti di bengkel motor — 
+            sebelum beli sparepart baru, coba dulu yang paling sederhana.
+          </p>
+          <div class="acc-quote">"Troubleshoot dulu, minta tolong belakangan. Kalau ketemu solusinya — dokumentasikan." 🔧</div>
+        </div>
+      </div>
+      <!-- TAMBAH ARTIKEL BARU DI SINI -->
+
+    </div>
+  </div>
+</section>
+
+<style>
+.acc-item{background:rgba(200,151,42,0.04);border:1px solid rgba(200,151,42,0.15);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color 0.2s}
+.acc-item:hover{border-color:rgba(200,151,42,0.35)}
+.acc-item.open{border-color:rgba(200,151,42,0.35)}
+.acc-header{padding:1.5rem 2rem}
+.acc-icon{font-size:1.4rem;color:var(--gold);opacity:0.7;transition:transform 0.3s;flex-shrink:0;margin-left:1rem}
+.acc-item.open .acc-icon{transform:rotate(45deg)}
+.acc-body{display:none;padding:0 2rem 1.75rem;border-top:1px solid rgba(200,151,42,0.1)}
+.acc-item.open .acc-body{display:block}
+.acc-box{margin:1rem 0;padding:1.25rem;border-radius:10px}
+.acc-box.red{background:rgba(224,90,90,0.06);border:1px solid rgba(224,90,90,0.2)}
+.acc-box.green{background:rgba(76,175,125,0.06);border:1px solid rgba(76,175,125,0.2)}
+.acc-box-label{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem}
+.acc-box.red .acc-box-label{color:#e05a5a}
+.acc-box.green .acc-box-label{color:#4caf7d}
+.acc-quote{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(200,151,42,0.15);font-style:italic;color:var(--gold);font-size:0.85rem;opacity:0.8}
+.code-tag{background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;font-size:0.82rem;font-family:monospace}
+</style>
+
 <hr class="divider">
 
 <!-- CATATAN LAMA -->
@@ -712,6 +798,9 @@ paling berkah.</p>
 
 
 <script>
+function toggleAcc(el){
+  el.classList.toggle('open');
+}
 function toggleMenu(){
   const menu = document.getElementById('mobileMenu');
   const hamburger = document.getElementById('hamburger');
