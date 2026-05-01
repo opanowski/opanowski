@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Log Harian — Bunker Opanowski</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap');
-
   :root {
     --bg: #0f1117;
     --surface: #1a1d27;
@@ -20,370 +19,131 @@
     --blue: #5b8dee;
     --purple: #b57bee;
     --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Syne', sans-serif;
-    min-height: 100vh;
-  }
-
-  /* ── HEADER ── */
+  /* HEADER */
   header {
     background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
     border-bottom: 2px solid var(--accent);
     padding: 28px 24px 22px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    position: sticky; top: 0; z-index: 100;
   }
-
   .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    margin-bottom: 14px;
-    transition: color 0.2s;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; margin-bottom: 14px; transition: color 0.2s;
   }
   .back-link:hover { color: var(--accent); }
-
-  .header-top {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
+  .header-top { display: flex; align-items: center; gap: 14px; }
   .header-icon { font-size: 26px; line-height: 1; }
+  h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+  .header-sub { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--text-muted); margin-top: 3px; }
 
-  h1 {
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
-
-  .header-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    margin-top: 3px;
-  }
-
-  /* ── STATS STRIP ── */
-  .stats {
-    display: flex;
-    gap: 12px;
-    padding: 14px 24px;
-    overflow-x: auto;
-    border-bottom: 1px solid var(--border);
-    scrollbar-width: none;
-  }
+  /* STATS */
+  .stats { display: flex; gap: 12px; padding: 14px 24px; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
   .stats::-webkit-scrollbar { display: none; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 18px; text-align: center; min-width: 90px; flex-shrink: 0; }
+  .stat-num { font-size: 1.5rem; font-weight: 800; color: var(--accent); line-height: 1; font-family: 'Space Mono', monospace; }
+  .stat-label { font-size: 0.62rem; color: var(--text-muted); font-family: 'Space Mono', monospace; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 10px 18px;
-    text-align: center;
-    min-width: 90px;
-    flex-shrink: 0;
-  }
-
-  .stat-num {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1;
-    font-family: 'Space Mono', monospace;
-  }
-
-  .stat-label {
-    font-size: 0.62rem;
-    color: var(--text-muted);
-    font-family: 'Space Mono', monospace;
-    margin-top: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  /* ── FILTER TABS ── */
-  .filter-tabs {
-    display: flex;
-    gap: 8px;
-    padding: 12px 24px;
-    overflow-x: auto;
-    border-bottom: 1px solid var(--border);
-    scrollbar-width: none;
-  }
+  /* FILTER TABS */
+  .filter-tabs { display: flex; gap: 8px; padding: 12px 24px; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
   .filter-tabs::-webkit-scrollbar { display: none; }
-
-  .tab {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 5px 14px;
-    font-size: 0.76rem;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    color: var(--text-muted);
-    transition: all 0.2s;
-    font-family: 'Syne', sans-serif;
-  }
+  .tab { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 0.76rem; font-weight: 600; cursor: pointer; white-space: nowrap; color: var(--text-muted); transition: all 0.2s; font-family: 'Syne', sans-serif; }
   .tab:hover { border-color: var(--accent); color: var(--accent); }
   .tab.active { background: var(--accent); border-color: var(--accent); color: #0f1117; }
 
-  /* ── SEARCH ── */
-  .search-wrap {
-    padding: 12px 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .search-input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 16px;
-    color: var(--text);
-    font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
-    outline: none;
-    transition: border-color 0.2s;
-  }
+  /* SEARCH */
+  .search-wrap { padding: 12px 24px; border-bottom: 1px solid var(--border); }
+  .search-input { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 16px; color: var(--text); font-family: 'Space Mono', monospace; font-size: 0.82rem; outline: none; transition: border-color 0.2s; }
   .search-input:focus { border-color: var(--accent); }
   .search-input::placeholder { color: var(--text-muted); }
 
-  /* ── SECTION HEADER ── */
-  .section-header {
-    padding: 18px 24px 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    font-family: 'Space Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  /* SECTION HEADER */
+  .section-header { padding: 18px 24px 10px; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+  .section-header .count { background: var(--surface2); border-radius: 10px; padding: 2px 8px; font-size: 0.68rem; color: var(--accent); }
 
-  .section-header .count {
-    background: var(--surface2);
-    border-radius: 10px;
-    padding: 2px 8px;
-    font-size: 0.68rem;
-    color: var(--accent);
-  }
+  /* LOG LIST */
+  .log-list { padding: 0 24px 40px; display: flex; flex-direction: column; gap: 14px; }
 
-  /* ── LOG CARDS ── */
-  .log-list {
-    padding: 0 24px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
+  /* LOG CARD — untuk Log Harian baru */
   .log-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 22px;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: all 0.2s;
-    position: relative;
-    overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 22px; text-decoration: none; color: inherit; display: block;
+    transition: all 0.2s; position: relative; overflow: hidden;
   }
-
-  .log-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-    background: var(--accent);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  .log-card:hover {
-    border-color: var(--accent);
-    background: #1e2130;
-    transform: translateX(3px);
-  }
-
+  .log-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0; transition: opacity 0.2s; }
+  .log-card:hover { border-color: var(--accent); background: #1e2130; transform: translateX(3px); }
   .log-card:hover::before { opacity: 1; }
-
-  .log-card-top {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-  }
-
-  .log-num-badge {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--accent);
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 8px;
-  }
-
-  .log-date {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-muted);
-  }
-
-  .log-tags {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-left: auto;
-  }
-
-  .tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-  }
-
-  .tag-youtube   { background: #2a1e1e; color: #e05a5a; }
-  .tag-farming   { background: #1e3d2a; color: #4caf7d; }
-  .tag-mekanik   { background: #3d2a0a; color: #f5a623; }
-  .tag-gadget    { background: #2d1e3d; color: #b57bee; }
-  .tag-filosofi  { background: #1e3a5f; color: #5b8dee; }
-  .tag-ternak    { background: #1e3d2a; color: #4caf7d; }
-  .tag-workshop  { background: #3d2a0a; color: #f5a623; }
-
-  .log-title {
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: var(--text);
-    letter-spacing: -0.3px;
-    margin-bottom: 6px;
-    line-height: 1.3;
-  }
-
-  .log-desc {
-    font-size: 0.83rem;
-    color: var(--text-muted);
-    line-height: 1.65;
-    margin-bottom: 12px;
-  }
-
-  .log-card-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .log-sections {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .section-pill {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--text-muted);
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 7px;
-  }
-
-  .log-arrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--accent);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
+  .log-card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .log-num-badge { font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700; color: var(--accent); background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; }
+  .log-date { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--text-muted); }
+  .log-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .tag-youtube { background: #2a1e1e; color: #e05a5a; }
+  .tag-farming { background: #1e3d2a; color: #4caf7d; }
+  .tag-mekanik { background: #3d2a0a; color: #f5a623; }
+  .tag-gadget  { background: #2d1e3d; color: #b57bee; }
+  .tag-filosofi{ background: #1e3a5f; color: #5b8dee; }
+  .tag-macos   { background: #3d2a0a; color: #f5a623; }
+  .tag-audio   { background: #2d1e3d; color: #b57bee; }
+  .tag-tutorial{ background: #1e3a5f; color: #5b8dee; }
+  .tag-ai      { background: #1e3d2a; color: #4caf7d; }
+  .tag-web     { background: #2a1e1e; color: #e05a5a; }
+  .log-title { font-size: 1.05rem; font-weight: 800; color: var(--text); letter-spacing: -0.3px; margin-bottom: 6px; line-height: 1.3; }
+  .log-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
+  .log-card-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .log-sections { display: flex; gap: 6px; flex-wrap: wrap; }
+  .section-pill { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--text-muted); background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; }
+  .log-arrow { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--accent); opacity: 0; transition: opacity 0.2s; }
   .log-card:hover .log-arrow { opacity: 1; }
 
-  /* ── COMING SOON CARD ── */
-  .log-card-empty {
-    background: var(--surface);
-    border: 1px dashed var(--border);
-    border-radius: 12px;
-    padding: 20px 22px;
-    opacity: 0.45;
-    cursor: default;
+  /* ARTIKEL CARD — untuk artikel lama (accordion style) */
+  .artikel-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; transition: border-color 0.2s; position: relative;
   }
+  .artikel-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold); }
+  .artikel-card:hover { border-color: rgba(200,151,42,0.45); }
+  .artikel-header { padding: 18px 22px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .artikel-header-left { flex: 1; }
+  .artikel-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .artikel-date { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--gold); opacity: 0.8; letter-spacing: 1px; text-transform: uppercase; }
+  .artikel-badge { background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.25); border-radius: 20px; padding: 2px 10px; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--gold); }
+  .artikel-badge-blue { background: rgba(91,141,238,0.1); border: 1px solid rgba(91,141,238,0.25); color: #5b8dee; }
+  .artikel-title { font-family: var(--font-display); font-size: 1rem; color: var(--cream); line-height: 1.35; }
+  .artikel-title em { color: var(--gold); font-style: italic; }
+  .chevron { width: 20px; height: 20px; flex-shrink: 0; color: var(--gold); opacity: 0.7; transition: transform 0.3s; }
+  .chevron svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .artikel-card.open .chevron { transform: rotate(180deg); opacity: 1; }
+  .artikel-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; padding: 0 22px; border-top: 0px solid var(--border); }
+  .artikel-card.open .artikel-body { max-height: 2000px; padding: 0 22px 20px; border-top: 1px solid var(--border); }
+  .artikel-body p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 10px; margin-top: 14px; }
+  .acc-box { margin: 10px 0; padding: 14px 16px; border-radius: 8px; }
+  .acc-box.red { background: rgba(224,90,90,0.06); border: 1px solid rgba(224,90,90,0.2); }
+  .acc-box.green { background: rgba(76,175,125,0.06); border: 1px solid rgba(76,175,125,0.2); }
+  .acc-box.gold { background: rgba(200,151,42,0.06); border: 1px solid rgba(200,151,42,0.2); }
+  .acc-box.blue { background: rgba(91,141,238,0.06); border: 1px solid rgba(91,141,238,0.2); }
+  .acc-box-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+  .acc-box.red .acc-box-label { color: #e05a5a; }
+  .acc-box.green .acc-box-label { color: #4caf7d; }
+  .acc-box.gold .acc-box-label { color: var(--gold); }
+  .acc-box.blue .acc-box-label { color: #5b8dee; }
+  .acc-box div { font-size: 0.82rem; color: var(--text-muted); line-height: 2.1; }
+  .code-tag { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 4px; font-size: 0.8rem; font-family: 'Space Mono', monospace; }
+  .acc-quote { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-style: italic; color: var(--gold); font-size: 0.83rem; font-family: var(--font-display); }
 
-  .log-card-empty .log-title { color: var(--text-muted); }
-
-  /* ── NO RESULT ── */
-  .no-result {
-    text-align: center;
-    padding: 48px 24px;
-    color: var(--text-muted);
-    font-family: 'Space Mono', monospace;
-    font-size: 0.8rem;
-    display: none;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    padding: 20px 24px;
-    text-align: center;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
-  }
-
-  .updated-tag {
-    display: inline-block;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 0.62rem;
-    color: var(--accent);
-    margin-left: 6px;
-  }
-
-  /* ── PULSE DOT ── */
-  .live-dot {
-    display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    margin-right: 4px;
-    animation: pulse 2s infinite;
-    vertical-align: middle;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.35; }
-  }
-
-  /* hidden rows */
-  .log-card.hidden, .log-card-empty.hidden { display: none; }
+  /* MISC */
+  .no-result { text-align: center; padding: 48px 24px; color: var(--text-muted); font-family: 'Space Mono', monospace; font-size: 0.8rem; display: none; }
+  footer { padding: 20px 24px; text-align: center; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .updated-tag { display: inline-block; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 0.62rem; color: var(--accent); margin-left: 6px; }
+  .live-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-right: 4px; animation: pulse 2s infinite; vertical-align: middle; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
 </style>
 </head>
 <body>
@@ -400,45 +160,128 @@
 </header>
 
 <div class="stats">
-  <div class="stat-card">
-    <div class="stat-num" id="stat-total">1</div>
-    <div class="stat-label">Total Log</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">2026</div>
-    <div class="stat-label">Tahun Aktif</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">4</div>
-    <div class="stat-label">Topik</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num" id="stat-visible">1</div>
-    <div class="stat-label">Ditampilkan</div>
-  </div>
+  <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Total Entri</div></div>
+  <div class="stat-card"><div class="stat-num">2026</div><div class="stat-label">Tahun Aktif</div></div>
+  <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Topik</div></div>
+  <div class="stat-card"><div class="stat-num" id="stat-visible">3</div><div class="stat-label">Ditampilkan</div></div>
 </div>
 
 <div class="filter-tabs">
-  <button class="tab active" onclick="filterTag('ALL', this)">📓 Semua</button>
-  <button class="tab" onclick="filterTag('youtube', this)">📺 YouTube</button>
-  <button class="tab" onclick="filterTag('farming', this)">🌱 Urban Farming</button>
-  <button class="tab" onclick="filterTag('mekanik', this)">🔧 Mekanik</button>
-  <button class="tab" onclick="filterTag('gadget', this)">💻 Gadget</button>
-  <button class="tab" onclick="filterTag('filosofi', this)">🧭 Filosofi</button>
+  <button class="tab active" onclick="filterTag('ALL',this)">📓 Semua</button>
+  <button class="tab" onclick="filterTag('youtube',this)">📺 YouTube</button>
+  <button class="tab" onclick="filterTag('mekanik',this)">🔧 Mekanik</button>
+  <button class="tab" onclick="filterTag('tipstrik',this)">💡 Tips & Trik</button>
+  <button class="tab" onclick="filterTag('ai',this)">🤖 AI</button>
+  <button class="tab" onclick="filterTag('farming',this)">🌱 Urban Farming</button>
+  <button class="tab" onclick="filterTag('filosofi',this)">🧭 Filosofi</button>
 </div>
 
 <div class="search-wrap">
-  <input class="search-input" type="text" id="searchInput" placeholder="🔍  Cari log..." oninput="doSearch()">
+  <input class="search-input" type="text" id="searchInput" placeholder="🔍  Cari log & artikel..." oninput="doSearch()">
 </div>
 
 <div class="section-header">
-  📅 Semua Entri <span class="count" id="visible-count">1 log</span>
+  📅 Semua Entri <span class="count" id="visible-count">3 entri</span>
 </div>
 
-<div class="log-list" id="log-list">
-  <!-- Rendered by JS -->
+<div class="log-list" id="main-list">
+
+  <!-- LOG #001 — dinamis dari JS -->
+  <a class="log-card" id="entry-log001" href="log-bunker-opanowski-01.html" data-tags="youtube">
+    <div class="log-card-top">
+      <span class="log-num-badge">#001</span>
+      <span class="log-date"><span class="live-dot"></span>Kamis, 1 Mei 2026</span>
+      <div class="log-tags">
+        <span class="tag tag-youtube">YouTube</span>
+      </div>
+    </div>
+    <div class="log-title">Peresmian Markas Digital</div>
+    <div class="log-desc">Hari bersejarah: 4 pilar konten YouTube resmi dibangun, video perdana 'Nol Sampah, Nol Hutang' diluncurkan ke publik, dan workflow perangkat diatur ulang untuk efisiensi maksimal.</div>
+    <div class="log-card-bottom">
+      <div class="log-sections">
+        <span class="section-pill">Ekosistem YouTube</span>
+        <span class="section-pill">Video Launch</span>
+        <span class="section-pill">Strategi Device</span>
+      </div>
+      <span class="log-arrow">Baca →</span>
+    </div>
+  </a>
+
+  <!-- ARTIKEL 2: Website AI -->
+  <div class="artikel-card" id="entry-website-ai" data-tags="ai,web" onclick="toggleArtikel(this)">
+    <div class="artikel-header">
+      <div class="artikel-header-left">
+        <div class="artikel-meta">
+          <span class="artikel-date">Mei 2026</span>
+          <span class="artikel-badge artikel-badge-blue">AI · Web · Autodidak</span>
+        </div>
+        <div class="artikel-title">🌐 Website Pribadi Ala Opanowski — <em>3 Hari, 3 AI, Tanpa Coding</em></div>
+      </div>
+      <span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="artikel-body">
+      <p>Siapa bilang bikin website itu harus ngerti coding dulu? Di era 2026 ini, seorang autodidak dari Ciracas yang lebih akrab sama kunci ring dan kompresor daripada <code class="code-tag">JavaScript</code> — berhasil bikin website pribadi yang proper hanya dalam 3 hari. Senjatanya? Tiga AI sekaligus. Dan secangkir <strong style="color:var(--cream)">Top Kopi Gula Aren</strong> di subuh hari.</p>
+      <div class="acc-box gold">
+        <div class="acc-box-label">📅 Dulu vs Sekarang</div>
+        <div>❌ <strong>Belajar coding dulu</strong> — HTML, CSS, JS. Butuh berbulan-bulan, belum tentu hasilnya memuaskan</div>
+        <div>❌ <strong>Bayar developer</strong> — Keluar jutaan rupiah, hasilnya belum tentu sesuai visi</div>
+        <div>❌ <strong>Pakai template</strong> — Hasilnya generik, tidak personal, tidak berkarakter</div>
+        <div>✅ <strong>Kolaborasi 3 AI — 3 hari — Gratis — Hasilnya custom & personal</strong> 🔥</div>
+      </div>
+      <div class="acc-box green">
+        <div class="acc-box-label">🤖 Strategi: Orkestrasi 3 AI</div>
+        <div><strong style="color:#5b8dee">Claude</strong> → Diskusi konsep, struktur konten, problem solving, teman ngobrol ide</div>
+        <div><strong style="color:#4caf7d">Gemini</strong> → Riset referensi, rangkum inspirasi dari YouTube & Google ecosystem</div>
+        <div><strong style="color:#e05a5a">ChatGPT</strong> → Cross-check hasil, alternatif solusi, second opinion</div>
+      </div>
+      <p>Kuncinya bukan cuma <em>pakai</em> AI — tapi <em>mengorkestrasikan</em> beberapa AI sesuai keunggulan masing-masing. Kombinasikan — hasilnya jauh lebih kaya.</p>
+      <div class="acc-box blue">
+        <div class="acc-box-label">💡 Yang Paling Penting: AI Literacy</div>
+        <div>✦ <strong>Mendeskripsikan</strong> — jelaskan apa yang lo mau dengan jelas & spesifik</div>
+        <div>✦ <strong>Mengevaluasi</strong> — tau mana yang bagus, mana yang perlu direvisi</div>
+        <div>✦ <strong>Iterasi</strong> — tanya ulang, perbaiki, tanya lagi sampai sesuai visi</div>
+      </div>
+      <p>Tidak ngerti coding bukan halangan. Yang dibutuhkan adalah kemampuan <em>mengarahkan</em> — seperti seorang mandor yang tidak harus bisa tukang, tapi harus tau hasil yang dia mau. Itu namanya <strong style="color:var(--cream)">AI Literacy</strong> — skill paling relevan di 2026.</p>
+      <div class="acc-quote">"Belajar sampai menutup mata — termasuk belajar ngobrol sama AI." 🤖☕</div>
+    </div>
+  </div>
+
+  <!-- ARTIKEL 1: M4A ke MP3 -->
+  <div class="artikel-card" id="entry-m4a-mp3" data-tags="tipstrik" onclick="toggleArtikel(this)">
+    <div class="artikel-header">
+      <div class="artikel-header-left">
+        <div class="artikel-meta">
+          <span class="artikel-date">April 2026</span>
+          <span class="artikel-badge" style="background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);color:#f5a623">💡 Tips & Trik</span>
+        </div>
+        <div class="artikel-title">🛠️ Konversi M4A ke MP3 di Mac Jadul — <em>Tanpa Aplikasi Berbayar</em></div>
+      </div>
+      <span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="artikel-body">
+      <p>MacBook Pro Mid 2015. File <code class="code-tag">.m4a</code> 41.9 MB hasil rekaman audio konten "AI Canggih di Balik Bengkel Ciracas". Tujuan sederhana: konversi ke <code class="code-tag">.mp3</code> biar lebih ringan & kompatibel buat web dan sosmed. Ternyata tidak semudah kelihatannya.</p>
+      <div class="acc-box red">
+        <div class="acc-box-label">⚠️ Yang Gagal Dicoba</div>
+        <div>❌ <strong>iTunes/Music App</strong> — bunyi "cling", tanda seru, file dianggap missing</div>
+        <div>❌ <strong>Finder Quick Actions</strong> — <code class="code-tag">Error -2700</code> sistem menolak encode file terkompresi</div>
+        <div>❌ <strong>Terminal afconvert</strong> — flag <code class="code-tag">-f 'mpg3' -d 'mpg3'</code> ditolak, format string invalid di macOS 2015</div>
+        <div>❌ <strong>VLC awal</strong> — hasil konversi cuma 3 KB, file corrupt tidak terbaca</div>
+      </div>
+      <div class="acc-box green">
+        <div class="acc-box-label">✅ Solusi Yang Berhasil — The Om Opan Way</div>
+        <div><strong>1.</strong> Buka <strong>VLC Media Player</strong> → menu <strong>File → Convert/Stream</strong></div>
+        <div><strong>2.</strong> Pilih profil <strong>Audio - MP3</strong></div>
+        <div><strong>3.</strong> Tentukan lokasi output → klik <strong>Save</strong></div>
+        <div><strong>4.</strong> Hasil output tidak terbaca? Jangan panik — <strong>rename manual</strong>, tambahkan ekstensi <code class="code-tag">.mp3</code> di akhir nama file</div>
+        <div><strong>5.</strong> File langsung terbaca sebagai audio — <strong>28.9 MB, berfungsi sempurna ✅</strong></div>
+      </div>
+      <p>Pelajaran dari bengkel digital malam itu: kadang solusinya sesederhana menambahkan <code class="code-tag">.mp3</code> di akhir nama file. Sama seperti di bengkel motor — sebelum beli sparepart baru, coba dulu yang paling sederhana.</p>
+      <div class="acc-quote">"Troubleshoot dulu, minta tolong belakangan. Kalau ketemu solusinya — dokumentasikan." 🔧</div>
+    </div>
+  </div>
+
 </div>
-<div class="no-result" id="no-result">Tidak ada log yang cocok 🔍</div>
+<div class="no-result" id="no-result">Tidak ada entri yang cocok 🔍</div>
 
 <footer>
   Bunker Opanowski — Log Harian
@@ -446,112 +289,44 @@
 </footer>
 
 <script>
-const logs = [
-  {
-    num: "001",
-    date: "Kamis, 1 Mei 2026",
-    title: "Peresmian Markas Digital",
-    desc: "Hari bersejarah: 4 pilar konten YouTube resmi dibangun, video perdana 'Nol Sampah, Nol Hutang' diluncurkan ke publik, dan workflow perangkat diatur ulang untuk efisiensi maksimal.",
-    tags: ["youtube", "gadget", "filosofi"],
-    sections: ["Ekosistem YouTube", "Video Launch", "Strategi Device"],
-    url: "log-bunker-opanowski-01.html",
-    live: true
-  },
-  // ── Tambahkan log baru di sini ──
-  // {
-  //   num: "002",
-  //   date: "...",
-  //   title: "...",
-  //   desc: "...",
-  //   tags: ["..."],
-  //   sections: ["...", "..."],
-  //   url: "log-bunker-opanowski-02.html",
-  //   live: false
-  // },
-];
-
-const tagLabels = {
-  youtube:  { cls: "tag-youtube",  label: "YouTube" },
-  farming:  { cls: "tag-farming",  label: "Farming" },
-  mekanik:  { cls: "tag-mekanik",  label: "Mekanik" },
-  gadget:   { cls: "tag-gadget",   label: "Gadget" },
-  filosofi: { cls: "tag-filosofi", label: "Filosofi" },
-  ternak:   { cls: "tag-ternak",   label: "Ternak" },
-  workshop: { cls: "tag-workshop", label: "Workshop" },
-};
+function toggleArtikel(el) {
+  el.classList.toggle('open');
+}
 
 let currentTag = 'ALL';
 let currentSearch = '';
 
-function render() {
-  const list = document.getElementById('log-list');
-  const noResult = document.getElementById('no-result');
-  const visCount = document.getElementById('visible-count');
-  const statVis = document.getElementById('stat-visible');
-  const q = currentSearch.toLowerCase();
-
-  let html = '';
-  let count = 0;
-
-  logs.forEach(log => {
-    const matchTag = currentTag === 'ALL' || log.tags.includes(currentTag);
-    const matchSearch = !q ||
-      log.title.toLowerCase().includes(q) ||
-      log.desc.toLowerCase().includes(q) ||
-      log.tags.some(t => t.includes(q)) ||
-      log.sections.some(s => s.toLowerCase().includes(q)) ||
-      log.num.includes(q);
-
-    if (!matchTag || !matchSearch) return;
-    count++;
-
-    const tagsHtml = log.tags.map(t => {
-      const meta = tagLabels[t] || { cls: 'tag-filosofi', label: t };
-      return `<span class="tag ${meta.cls}">${meta.label}</span>`;
-    }).join('');
-
-    const sectionsHtml = log.sections.map(s =>
-      `<span class="section-pill">${s}</span>`
-    ).join('');
-
-    const liveDot = log.live ? `<span class="live-dot"></span>` : '';
-
-    html += `
-      <a class="log-card" href="${log.url}">
-        <div class="log-card-top">
-          <span class="log-num-badge">#${log.num}</span>
-          <span class="log-date">${liveDot}${log.date}</span>
-          <div class="log-tags">${tagsHtml}</div>
-        </div>
-        <div class="log-title">${log.title}</div>
-        <div class="log-desc">${log.desc}</div>
-        <div class="log-card-bottom">
-          <div class="log-sections">${sectionsHtml}</div>
-          <span class="log-arrow">Baca →</span>
-        </div>
-      </a>`;
-  });
-
-  list.innerHTML = html || '';
-  visCount.textContent = count + ' log';
-  statVis.textContent = count;
-  noResult.style.display = count === 0 ? 'block' : 'none';
-}
-
-function filterTag(tag, el) {
+function filterTag(tag, btn) {
   currentTag = tag;
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  render();
+  btn.classList.add('active');
+  applyFilter();
 }
 
 function doSearch() {
-  currentSearch = document.getElementById('searchInput').value;
-  render();
+  currentSearch = document.getElementById('searchInput').value.toLowerCase();
+  applyFilter();
 }
 
-document.getElementById('stat-total').textContent = logs.length;
-render();
+function applyFilter() {
+  const entries = document.querySelectorAll('[data-tags]');
+  let count = 0;
+  entries.forEach(el => {
+    const tags = el.getAttribute('data-tags');
+    const text = el.innerText.toLowerCase();
+    const matchTag = currentTag === 'ALL' || tags.includes(currentTag);
+    const matchSearch = !currentSearch || text.includes(currentSearch) || tags.includes(currentSearch);
+    if (matchTag && matchSearch) {
+      el.style.display = '';
+      count++;
+    } else {
+      el.style.display = 'none';
+    }
+  });
+  document.getElementById('visible-count').textContent = count + ' entri';
+  document.getElementById('stat-visible').textContent = count;
+  document.getElementById('no-result').style.display = count === 0 ? 'block' : 'none';
+}
 </script>
 </body>
 </html>
