@@ -572,163 +572,19 @@ paling berkah.</p>
 
 
 <!-- CATATAN BENGKEL DIGITAL -->
-<section style="background:var(--dark);padding:6rem 2.5rem" id="blog">
+<section style="background:var(--dark);padding:4rem 2.5rem" id="blog">
   <div class="container">
     <div class="section-label">Catatan Bengkel Digital</div>
     <h2 class="section-title">DIY, Debug, <em>Done.</em></h2>
-    <p style="opacity:0.55;font-size:0.88rem;line-height:1.9;max-width:680px;margin-bottom:3.5rem">
+    <p style="opacity:0.55;font-size:0.88rem;line-height:1.9;max-width:680px;margin-bottom:2.5rem">
       Sama seperti bengkel motor di gudang — kalau ada yang rusak, diperbaiki sendiri dulu. 
       Baru minta tolong kalau udah beneran mentok. Ini dokumentasinya.
     </p>
-
-    <!-- ACCORDION WRAPPER -->
-    <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:860px">
-
-      <!-- ARTIKEL 1 -->
-      <div class="acc-item" id="blog-m4a-mp3" onclick="toggleAcc(this)">
-        <div class="acc-header">
-          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-            <span style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.7">April 2026</span>
-            <span style="background:rgba(200,151,42,0.1);border:1px solid rgba(200,151,42,0.2);border-radius:20px;padding:2px 10px;font-size:0.62rem;color:var(--gold)">macOS · Audio · Tutorial</span>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.5rem">
-            <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--cream);margin:0">🛠️ Konversi M4A ke MP3 di Mac Jadul — <em style="color:var(--gold)">Tanpa Aplikasi Berbayar</em></h3>
-            <span class="acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </div>
-        </div>
-        <div class="acc-body">
-          <p style="opacity:0.6;font-size:0.88rem;line-height:1.95;margin-bottom:1rem">
-            MacBook Pro Mid 2015. File <code class="code-tag">.m4a</code> 41.9 MB hasil rekaman audio konten 
-            <em>"AI Canggih di Balik Bengkel Ciracas"</em>. Tujuan sederhana: konversi ke 
-            <code class="code-tag">.mp3</code> biar lebih ringan & kompatibel buat web dan sosmed. 
-            Ternyata tidak semudah kelihatannya.
-          </p>
-          <div class="acc-box red">
-            <div class="acc-box-label">⚠️ Yang Gagal Dicoba</div>
-            <div style="opacity:0.7;font-size:0.85rem;line-height:2.2">
-              <div>❌ <strong>iTunes/Music App</strong> — bunyi "cling", tanda seru, file dianggap missing</div>
-              <div>❌ <strong>Finder Quick Actions</strong> — <code class="code-tag">Error -2700</code> sistem menolak encode file terkompresi</div>
-              <div>❌ <strong>Terminal afconvert</strong> — flag <code class="code-tag">-f 'mpg3' -d 'mpg3'</code> ditolak, format string invalid di macOS 2015</div>
-              <div>❌ <strong>VLC awal</strong> — hasil konversi cuma 3 KB, file corrupt tidak terbaca</div>
-            </div>
-          </div>
-          <div class="acc-box green">
-            <div class="acc-box-label">✅ Solusi Yang Berhasil — The Om Opan Way</div>
-            <div style="opacity:0.7;font-size:0.85rem;line-height:2.2">
-              <div><strong>1.</strong> Buka <strong>VLC Media Player</strong> → menu <strong>File → Convert/Stream</strong></div>
-              <div><strong>2.</strong> Pilih profil <strong>Audio - MP3</strong></div>
-              <div><strong>3.</strong> Tentukan lokasi output → klik <strong>Save</strong></div>
-              <div><strong>4.</strong> Hasil output tidak terbaca? Jangan panik — <strong>rename manual</strong>, tambahkan ekstensi <code class="code-tag">.mp3</code> di akhir nama file</div>
-              <div><strong>5.</strong> File langsung terbaca sebagai audio — <strong>28.9 MB, berfungsi sempurna ✅</strong></div>
-            </div>
-          </div>
-          <p style="opacity:0.6;font-size:0.88rem;line-height:1.95;margin-top:1rem;margin-bottom:0">
-            Pelajaran dari bengkel digital malam itu: kadang solusinya sesederhana menambahkan 
-            <code class="code-tag">.mp3</code> di akhir nama file. Sama seperti di bengkel motor — 
-            sebelum beli sparepart baru, coba dulu yang paling sederhana.
-          </p>
-          <div class="acc-quote">"Troubleshoot dulu, minta tolong belakangan. Kalau ketemu solusinya — dokumentasikan." 🔧</div>
-        </div>
-      </div>
-      <!-- TAMBAH ARTIKEL BARU DI SINI -->
-
-      <!-- ARTIKEL 2 -->
-      <div class="acc-item" id="blog-website-ai" onclick="toggleAcc(this)">
-        <div class="acc-header">
-          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-            <span style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.7">Mei 2026</span>
-            <span style="background:rgba(91,141,238,0.1);border:1px solid rgba(91,141,238,0.25);border-radius:20px;padding:2px 10px;font-size:0.62rem;color:#5b8dee">AI · Web · Autodidak</span>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.5rem">
-            <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--cream);margin:0">🌐 Website Pribadi Ala Opanowski — <em style="color:var(--gold)">3 Hari, 3 AI, Tanpa Coding</em></h3>
-            <span class="acc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-          </div>
-        </div>
-        <div class="acc-body">
-          <p style="opacity:0.6;font-size:0.88rem;line-height:1.95;margin-bottom:1rem">
-            Siapa bilang bikin website itu harus ngerti coding dulu? Di era 2026 ini, seorang autodidak 
-            dari Ciracas yang lebih akrab sama kunci ring dan kompresor daripada <code class="code-tag">JavaScript</code> — 
-            berhasil bikin website pribadi yang proper hanya dalam 3 hari. Senjatanya? Tiga AI sekaligus. 
-            Dan secangkir <strong style="color:var(--cream)">Top Kopi Gula Aren</strong> di subuh hari.
-          </p>
-
-          <div class="acc-box" style="background:rgba(200,151,42,0.06);border:1px solid rgba(200,151,42,0.2);margin:1rem 0;padding:1.25rem;border-radius:10px">
-            <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:0.75rem">📅 Dulu vs Sekarang</div>
-            <div style="opacity:0.7;font-size:0.85rem;line-height:2.2">
-              <div>❌ <strong>Belajar coding dulu</strong> — HTML, CSS, JS. Butuh berbulan-bulan, belum tentu hasilnya memuaskan</div>
-              <div>❌ <strong>Bayar developer</strong> — Keluar jutaan rupiah, hasilnya belum tentu sesuai visi</div>
-              <div>❌ <strong>Pakai template</strong> — Hasilnya generik, tidak personal, tidak berkarakter</div>
-              <div>✅ <strong>Kolaborasi 3 AI — 3 hari — Gratis — Hasilnya custom & personal</strong> 🔥</div>
-            </div>
-          </div>
-
-          <div class="acc-box green">
-            <div class="acc-box-label">🤖 Strategi: Orkestrasi 3 AI</div>
-            <div style="opacity:0.7;font-size:0.85rem;line-height:2.2">
-              <div><strong style="color:#5b8dee">Claude</strong> → Diskusi konsep, struktur konten, problem solving, teman ngobrol ide</div>
-              <div><strong style="color:#4caf7d">Gemini</strong> → Riset referensi, rangkum inspirasi dari YouTube & Google ecosystem</div>
-              <div><strong style="color:#e05a5a">ChatGPT</strong> → Cross-check hasil, alternatif solusi, second opinion</div>
-            </div>
-          </div>
-
-          <p style="opacity:0.6;font-size:0.88rem;line-height:1.95;margin:1rem 0">
-            Kuncinya bukan cuma <em>pakai</em> AI — tapi <em>mengorkestrasikan</em> beberapa AI sesuai keunggulan 
-            masing-masing. Kebanyakan orang cuma pakai satu AI terus frustrasi hasilnya kurang. Padahal masing-masing 
-            punya karakter beda. Kombinasikan — hasilnya jauh lebih kaya.
-          </p>
-
-          <div class="acc-box" style="background:rgba(91,141,238,0.06);border:1px solid rgba(91,141,238,0.2);margin:1rem 0;padding:1.25rem;border-radius:10px">
-            <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:#5b8dee;margin-bottom:0.75rem">💡 Yang Paling Penting: AI Literacy</div>
-            <div style="opacity:0.7;font-size:0.85rem;line-height:2.2">
-              <div>✦ <strong>Mendeskripsikan</strong> — jelaskan apa yang lo mau dengan jelas & spesifik</div>
-              <div>✦ <strong>Mengevaluasi</strong> — tau mana yang bagus, mana yang perlu direvisi</div>
-              <div>✦ <strong>Iterasi</strong> — tanya ulang, perbaiki, tanya lagi sampai sesuai visi</div>
-            </div>
-          </div>
-
-          <p style="opacity:0.6;font-size:0.88rem;line-height:1.95;margin-bottom:0">
-            Tidak ngerti coding bukan halangan. Yang dibutuhkan adalah kemampuan <em>mengarahkan</em> — 
-            seperti seorang mandor yang tidak harus bisa tukang, tapi harus tau hasil yang dia mau. 
-            Itu namanya <strong style="color:var(--cream)">AI Literacy</strong> — skill paling relevan di 2026, 
-            dan ironisnya banyak anak muda yang belum paham cara pakainya dengan benar.
-          </p>
-          <div class="acc-quote">"Belajar sampai menutup mata — termasuk belajar ngobrol sama AI." 🤖☕</div>
-        </div>
-      </div>
-
-    </div>
+    <a href="blog.html" style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(200,151,42,0.08);border:1px solid rgba(200,151,42,0.35);color:var(--gold);text-decoration:none;padding:0.85rem 1.75rem;border-radius:10px;font-size:0.88rem;font-weight:600;letter-spacing:0.5px;transition:all 0.2s" onmouseover="this.style.background='rgba(200,151,42,0.18)'" onmouseout="this.style.background='rgba(200,151,42,0.08)'">
+      📓 Buka Log Harian →
+    </a>
   </div>
 </section>
-
-<style>
-.acc-item{border:1px solid rgba(200,151,42,0.15);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color 0.2s}
-.acc-item:hover{border-color:rgba(200,151,42,0.4)}
-.acc-item.open{border-color:rgba(200,151,42,0.45)}
-/* Warna header berbeda tiap item */
-.acc-item:nth-child(1){background:rgba(200,151,42,0.04)}
-.acc-item:nth-child(2){background:rgba(91,141,238,0.04)}
-.acc-item:nth-child(3){background:rgba(76,175,125,0.04)}
-.acc-item:nth-child(4){background:rgba(181,123,238,0.04)}
-.acc-item:nth-child(5){background:rgba(224,90,90,0.04)}
-.acc-item:nth-child(n+6){background:rgba(200,151,42,0.04)}
-.acc-header{padding:1.5rem 2rem}
-/* Chevron SVG — rotate saat open */
-.acc-icon{width:22px;height:22px;flex-shrink:0;margin-left:1rem;color:var(--gold);opacity:0.75;transition:transform 0.35s ease}
-.acc-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.acc-item.open .acc-icon{transform:rotate(180deg);opacity:1}
-/* Smooth sliding body */
-.acc-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;padding:0 2rem;border-top:0px solid rgba(200,151,42,0.1)}
-.acc-item.open .acc-body{max-height:2000px;padding:0 2rem 1.75rem;border-top:1px solid rgba(200,151,42,0.1)}
-.acc-item.open .acc-body{display:block}
-.acc-box{margin:1rem 0;padding:1.25rem;border-radius:10px}
-.acc-box.red{background:rgba(224,90,90,0.06);border:1px solid rgba(224,90,90,0.2)}
-.acc-box.green{background:rgba(76,175,125,0.06);border:1px solid rgba(76,175,125,0.2)}
-.acc-box-label{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:0.75rem}
-.acc-box.red .acc-box-label{color:#e05a5a}
-.acc-box.green .acc-box-label{color:#4caf7d}
-.acc-quote{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(200,151,42,0.15);font-style:italic;color:var(--gold);font-size:0.85rem;opacity:0.8}
-.code-tag{background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;font-size:0.82rem;font-family:monospace}
-</style>
 
 <hr class="divider">
 
