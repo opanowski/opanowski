@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log Harian — Bunker Opanowski</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap');
+
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --accent2: #e85d04;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --red: #e05a5a;
+    --blue: #5b8dee;
+    --purple: #b57bee;
+    --border: #2e3248;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 28px 24px 22px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .header-icon { font-size: 26px; line-height: 1; }
+
+  h1 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+
+  .header-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  /* ── STATS STRIP ── */
+  .stats {
+    display: flex;
+    gap: 12px;
+    padding: 14px 24px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border);
+    scrollbar-width: none;
+  }
+  .stats::-webkit-scrollbar { display: none; }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-align: center;
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+
+  .stat-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .stat-label {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── FILTER TABS ── */
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 12px 24px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border);
+    scrollbar-width: none;
+  }
+  .filter-tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--text-muted);
+    transition: all 0.2s;
+    font-family: 'Syne', sans-serif;
+  }
+  .tab:hover { border-color: var(--accent); color: var(--accent); }
+  .tab.active { background: var(--accent); border-color: var(--accent); color: #0f1117; }
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .search-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .search-input::placeholder { color: var(--text-muted); }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    padding: 18px 24px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-header .count {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 0.68rem;
+    color: var(--accent);
+  }
+
+  /* ── LOG CARDS ── */
+  .log-list {
+    padding: 0 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .log-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .log-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .log-card:hover {
+    border-color: var(--accent);
+    background: #1e2130;
+    transform: translateX(3px);
+  }
+
+  .log-card:hover::before { opacity: 1; }
+
+  .log-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .log-num-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
+
+  .log-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+  }
+
+  .log-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .tag-youtube   { background: #2a1e1e; color: #e05a5a; }
+  .tag-farming   { background: #1e3d2a; color: #4caf7d; }
+  .tag-mekanik   { background: #3d2a0a; color: #f5a623; }
+  .tag-gadget    { background: #2d1e3d; color: #b57bee; }
+  .tag-filosofi  { background: #1e3a5f; color: #5b8dee; }
+  .tag-ternak    { background: #1e3d2a; color: #4caf7d; }
+  .tag-workshop  { background: #3d2a0a; color: #f5a623; }
+
+  .log-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .log-desc {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .log-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .log-sections {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .section-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
+
+  .log-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .log-card:hover .log-arrow { opacity: 1; }
+
+  /* ── COMING SOON CARD ── */
+  .log-card-empty {
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  .log-card-empty .log-title { color: var(--text-muted); }
+
+  /* ── NO RESULT ── */
+  .no-result {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    display: none;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 20px 24px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  .updated-tag {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.62rem;
+    color: var(--accent);
+    margin-left: 6px;
+  }
+
+  /* ── PULSE DOT ── */
+  .live-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 4px;
+    animation: pulse 2s infinite;
+    vertical-align: middle;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  /* hidden rows */
+  .log-card.hidden, .log-card-empty.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/#">← Kembali ke Beranda</a>
+  <div class="header-top">
+    <span class="header-icon">📓</span>
+    <div>
+      <h1>Log Harian — Bunker Opanowski</h1>
+      <div class="header-sub">Catatan lapangan dari Villa Ciracas · Ciracas, Jakarta Timur</div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat-card">
+    <div class="stat-num" id="stat-total">1</div>
+    <div class="stat-label">Total Log</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">2026</div>
+    <div class="stat-label">Tahun Aktif</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Topik</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num" id="stat-visible">1</div>
+    <div class="stat-label">Ditampilkan</div>
+  </div>
+</div>
+
+<div class="filter-tabs">
+  <button class="tab active" onclick="filterTag('ALL', this)">📓 Semua</button>
+  <button class="tab" onclick="filterTag('youtube', this)">📺 YouTube</button>
+  <button class="tab" onclick="filterTag('farming', this)">🌱 Urban Farming</button>
+  <button class="tab" onclick="filterTag('mekanik', this)">🔧 Mekanik</button>
+  <button class="tab" onclick="filterTag('gadget', this)">💻 Gadget</button>
+  <button class="tab" onclick="filterTag('filosofi', this)">🧭 Filosofi</button>
+</div>
+
+<div class="search-wrap">
+  <input class="search-input" type="text" id="searchInput" placeholder="🔍  Cari log..." oninput="doSearch()">
+</div>
+
+<div class="section-header">
+  📅 Semua Entri <span class="count" id="visible-count">1 log</span>
+</div>
+
+<div class="log-list" id="log-list">
+  <!-- Rendered by JS -->
+</div>
+<div class="no-result" id="no-result">Tidak ada log yang cocok 🔍</div>
+
+<footer>
+  Bunker Opanowski — Log Harian
+  <span class="updated-tag"><span class="live-dot"></span>1 Mei 2026</span>
+</footer>
+
+<script>
+const logs = [
+  {
+    num: "001",
+    date: "Kamis, 1 Mei 2026",
+    title: "Peresmian Markas Digital",
+    desc: "Hari bersejarah: 4 pilar konten YouTube resmi dibangun, video perdana "Nol Sampah, Nol Hutang" diluncurkan ke publik, dan workflow perangkat diatur ulang untuk efisiensi maksimal.",
+    tags: ["youtube", "gadget", "filosofi"],
+    sections: ["Ekosistem YouTube", "Video Launch", "Strategi Device"],
+    url: "log-bunker-opanowski-01.html",
+    live: true
+  },
+  // ── Tambahkan log baru di sini ──
+  // {
+  //   num: "002",
+  //   date: "...",
+  //   title: "...",
+  //   desc: "...",
+  //   tags: ["..."],
+  //   sections: ["...", "..."],
+  //   url: "log-bunker-opanowski-02.html",
+  //   live: false
+  // },
+];
+
+const tagLabels = {
+  youtube:  { cls: "tag-youtube",  label: "YouTube" },
+  farming:  { cls: "tag-farming",  label: "Farming" },
+  mekanik:  { cls: "tag-mekanik",  label: "Mekanik" },
+  gadget:   { cls: "tag-gadget",   label: "Gadget" },
+  filosofi: { cls: "tag-filosofi", label: "Filosofi" },
+  ternak:   { cls: "tag-ternak",   label: "Ternak" },
+  workshop: { cls: "tag-workshop", label: "Workshop" },
+};
+
+let currentTag = 'ALL';
+let currentSearch = '';
+
+function render() {
+  const list = document.getElementById('log-list');
+  const noResult = document.getElementById('no-result');
+  const visCount = document.getElementById('visible-count');
+  const statVis = document.getElementById('stat-visible');
+  const q = currentSearch.toLowerCase();
+
+  let html = '';
+  let count = 0;
+
+  logs.forEach(log => {
+    const matchTag = currentTag === 'ALL' || log.tags.includes(currentTag);
+    const matchSearch = !q ||
+      log.title.toLowerCase().includes(q) ||
+      log.desc.toLowerCase().includes(q) ||
+      log.tags.some(t => t.includes(q)) ||
+      log.sections.some(s => s.toLowerCase().includes(q)) ||
+      log.num.includes(q);
+
+    if (!matchTag || !matchSearch) return;
+    count++;
+
+    const tagsHtml = log.tags.map(t => {
+      const meta = tagLabels[t] || { cls: 'tag-filosofi', label: t };
+      return `<span class="tag ${meta.cls}">${meta.label}</span>`;
+    }).join('');
+
+    const sectionsHtml = log.sections.map(s =>
+      `<span class="section-pill">${s}</span>`
+    ).join('');
+
+    const liveDot = log.live ? `<span class="live-dot"></span>` : '';
+
+    html += `
+      <a class="log-card" href="${log.url}">
+        <div class="log-card-top">
+          <span class="log-num-badge">#${log.num}</span>
+          <span class="log-date">${liveDot}${log.date}</span>
+          <div class="log-tags">${tagsHtml}</div>
+        </div>
+        <div class="log-title">${log.title}</div>
+        <div class="log-desc">${log.desc}</div>
+        <div class="log-card-bottom">
+          <div class="log-sections">${sectionsHtml}</div>
+          <span class="log-arrow">Baca →</span>
+        </div>
+      </a>`;
+  });
+
+  list.innerHTML = html || '';
+  visCount.textContent = count + ' log';
+  statVis.textContent = count;
+  noResult.style.display = count === 0 ? 'block' : 'none';
+}
+
+function filterTag(tag, el) {
+  currentTag = tag;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function doSearch() {
+  currentSearch = document.getElementById('searchInput').value;
+  render();
+}
+
+document.getElementById('stat-total').textContent = logs.length;
+render();
+</script>
+</body>
+</html>
