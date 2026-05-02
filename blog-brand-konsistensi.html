@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ3R389NZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WZ3R389NZD');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konsistensi Brand & Optimasi Kerja Digital — Bunker Opanowski</title>
+<meta name="description" content="Dari akun pribadi jadi Bunker Opanowski — strategi brand konsisten, baca data Facebook, sampai tips produktivitas pakai MacBook Pro 2015. Filosofi teknisi yang lagi ngopi.">
+<meta property="og:title" content="Konsistensi Brand & Optimasi Kerja Digital — Bunker Opanowski">
+<meta property="og:description" content="Dari akun pribadi jadi Bunker Opanowski — strategi brand konsisten, baca data Facebook, sampai tips produktivitas pakai MacBook Pro 2015.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F5F0E8;
+  --dark:#1C1A14;
+  --gold:#C8972A;
+  --gold-light:rgba(200,151,42,0.15);
+  --gold-border:rgba(200,151,42,0.25);
+  --dim:#0E0D09;
+  --surface:rgba(255,255,255,0.03);
+  --font-display:'Playfair Display',serif;
+  --font-body:'DM Sans',sans-serif
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--cream);font-family:var(--font-body);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(28,26,20,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold-border)}
+.nav-logo{font-family:var(--font-display);font-size:1.1rem;color:var(--gold);letter-spacing:2px;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--cream);text-decoration:none;font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;opacity:0.55;transition:all 0.2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--cream);transition:all 0.3s;border-radius:2px}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(28,26,20,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold-border);z-index:99;padding:1rem 0}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:0.85rem 2rem;color:var(--cream);text-decoration:none;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;opacity:0.7;transition:all 0.2s;border-bottom:1px solid rgba(200,151,42,0.08)}
+.mobile-menu a:hover{opacity:1;color:var(--gold);background:rgba(200,151,42,0.05)}
+
+/* HERO ARTIKEL */
+.article-hero{padding:9rem 2.5rem 5rem;background:linear-gradient(180deg,var(--dim) 0%,var(--dark) 100%);border-bottom:1px solid var(--gold-border);position:relative;overflow:hidden}
+.article-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 20% 50%,rgba(200,151,42,0.06) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:800px;margin:0 auto;position:relative}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold);text-decoration:none;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;opacity:0.7;transition:opacity 0.2s;margin-bottom:2rem}
+.back-link:hover{opacity:1}
+.back-link svg{transition:transform 0.2s}
+.back-link:hover svg{transform:translateX(-3px)}
+
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0.75rem;margin-bottom:1.75rem}
+.meta-badge{background:var(--gold-light);border:1px solid var(--gold-border);color:var(--gold);font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;padding:0.3rem 1rem;border-radius:20px}
+.meta-date{font-size:0.72rem;opacity:0.4;letter-spacing:1px}
+.meta-read{font-size:0.72rem;opacity:0.4;letter-spacing:1px}
+.meta-dot{opacity:0.2;font-size:0.8rem}
+
+.article-title{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.1;margin-bottom:1.25rem}
+.article-title em{color:var(--gold);font-style:italic;display:block}
+.article-lead{font-size:1.02rem;opacity:0.58;line-height:2;max-width:620px}
+
+/* STAT STRIP */
+.stat-strip{background:var(--dim);border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);padding:1.75rem 2.5rem}
+.stat-strip-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.ss-item{text-align:center}
+.ss-num{font-family:var(--font-display);font-size:2rem;color:var(--gold);line-height:1}
+.ss-label{font-size:0.62rem;opacity:0.4;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+
+/* BODY ARTIKEL */
+.article-body{max-width:800px;margin:0 auto;padding:4rem 2.5rem 2rem}
+
+/* SECTION */
+.log-section{margin-bottom:3.5rem}
+.log-num{font-size:0.65rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;opacity:0.8}
+.log-heading{font-family:var(--font-display);font-size:1.65rem;line-height:1.25;margin-bottom:1.25rem}
+.log-heading em{color:var(--gold);font-style:italic}
+.log-text{opacity:0.62;line-height:2;font-size:0.92rem;margin-bottom:1.1rem}
+
+/* CALLOUT BOX */
+.callout{background:rgba(200,151,42,0.06);border:1px solid var(--gold-border);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.75rem 0}
+.callout-label{font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;opacity:0.8}
+.callout p{font-size:0.88rem;opacity:0.72;line-height:1.9}
+.callout strong{color:var(--cream);opacity:1}
+
+/* PLATFORM GRID */
+.platform-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.85rem;margin:1.75rem 0}
+.plat-card{background:var(--surface);border:1px solid rgba(200,151,42,0.12);border-radius:10px;padding:1.1rem 1.25rem;transition:all 0.3s}
+.plat-card:hover{border-color:var(--gold-border);transform:translateY(-3px)}
+.plat-icon{font-size:1.4rem;margin-bottom:0.5rem}
+.plat-name{font-size:0.82rem;font-weight:500;color:var(--cream);margin-bottom:3px}
+.plat-handle{font-size:0.7rem;opacity:0.4;letter-spacing:0.5px}
+.plat-strategy{font-size:0.72rem;opacity:0.55;margin-top:6px;line-height:1.6}
+
+/* STATS INLINE */
+.inline-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem;margin:2rem 0}
+.is-card{background:var(--surface);border:1px solid rgba(200,151,42,0.12);border-radius:10px;padding:1.25rem;text-align:center;transition:all 0.3s}
+.is-card:hover{border-color:var(--gold-border);transform:translateY(-3px)}
+.is-icon{font-size:1.6rem;margin-bottom:0.5rem}
+.is-num{font-family:var(--font-display);font-size:1.6rem;color:var(--gold);line-height:1}
+.is-label{font-size:0.65rem;opacity:0.45;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
+
+/* STEP LIST */
+.step-list{margin:1.75rem 0;display:flex;flex-direction:column;gap:1rem}
+.step-item{display:flex;gap:1.25rem;align-items:flex-start}
+.step-dot{width:34px;height:34px;border-radius:50%;background:var(--gold-light);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:0.85rem;color:var(--gold);flex-shrink:0;margin-top:2px}
+.step-content{}
+.step-title{font-weight:500;font-size:0.9rem;margin-bottom:4px;color:var(--cream)}
+.step-desc{font-size:0.82rem;opacity:0.52;line-height:1.8}
+
+/* CODE TAG */
+.code{background:rgba(255,255,255,0.07);padding:2px 7px;border-radius:4px;font-size:0.82rem;font-family:monospace;color:var(--gold);letter-spacing:0.5px}
+
+/* QUOTE BLOCK */
+.quote-block{border-left:3px solid var(--gold);padding:1.25rem 1.75rem;margin:2rem 0;background:rgba(200,151,42,0.04)}
+.quote-text{font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--cream);line-height:1.8;opacity:0.88}
+.quote-attr{font-size:0.7rem;color:var(--gold);margin-top:0.6rem;letter-spacing:1.5px;text-transform:uppercase;opacity:0.8}
+
+/* TAGS */
+.tags-area{display:flex;flex-wrap:wrap;gap:0.5rem;margin:3rem 0 0}
+.tag{background:rgba(255,255,255,0.04);border:1px solid rgba(200,151,42,0.15);color:rgba(200,151,42,0.75);padding:0.3rem 0.85rem;border-radius:20px;font-size:0.72rem;letter-spacing:0.5px;transition:all 0.2s;cursor:default}
+.tag:hover{background:var(--gold-light);color:var(--gold);border-color:var(--gold-border)}
+
+/* DIVIDER */
+.log-divider{border:none;border-top:1px solid rgba(200,151,42,0.1);margin:3rem 0}
+
+/* ARTICLE NAV */
+.article-nav{background:var(--dim);border-top:1px solid var(--gold-border);padding:3rem 2.5rem}
+.article-nav-inner{max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.nav-back-btn{display:inline-flex;align-items:center;gap:0.6rem;background:var(--gold-light);border:1px solid var(--gold-border);color:var(--gold);text-decoration:none;padding:0.75rem 1.5rem;border-radius:8px;font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;transition:all 0.3s}
+.nav-back-btn:hover{background:rgba(200,151,42,0.25);transform:translateX(-3px)}
+.nav-share{font-size:0.72rem;opacity:0.4;letter-spacing:1.5px;text-transform:uppercase}
+
+/* FOOTER */
+footer{background:#090906;padding:3.5rem 2.5rem;text-align:center;border-top:1px solid rgba(200,151,42,0.1)}
+.footer-logo{font-family:var(--font-display);font-size:2.2rem;color:var(--gold);margin-bottom:0.75rem}
+.footer-tagline{opacity:0.4;font-size:0.82rem;line-height:2;margin-bottom:0.5rem}
+.footer-credits{margin-top:2rem;font-size:0.7rem;opacity:0.18}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.article-hero .hero-inner>*{animation:fadeUp 0.7s ease forwards;opacity:0}
+.back-link{animation-delay:0.05s}
+.article-meta{animation-delay:0.15s}
+.article-title{animation-delay:0.28s}
+.article-lead{animation-delay:0.4s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .stat-strip-inner{grid-template-columns:repeat(2,1fr)}
+  .inline-stats{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+@media(max-width:480px){
+  .article-hero{padding:8rem 1.5rem 4rem}
+  .article-body{padding:3rem 1.5rem 2rem}
+  .stat-strip{padding:1.5rem}
+  .inline-stats{grid-template-columns:1fr}
+  .stat-strip-inner{grid-template-columns:repeat(2,1fr)}
+  .article-nav-inner{flex-direction:column}
+  .platform-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">BUNKER OPANOWSKI</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Tentang</a></li>
+    <li><a href="index.html#gallery">Galeri</a></li>
+    <li><a href="index.html#villa">Villa</a></li>
+    <li><a href="index.html#setup">Setup</a></li>
+    <li><a href="index.html#video">🎬 Video</a></li>
+    <li><a href="blog.html" style="opacity:1;color:var(--gold)">📝 Blog</a></li>
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="gudang.html" style="color:var(--gold);opacity:1;border:1px solid rgba(200,151,42,0.35);padding:0.3rem 0.9rem;border-radius:20px;" onmouseover="this.style.background='rgba(200,151,42,0.15)'" onmouseout="this.style.background='transparent'">🔧 Gudang</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#about" onclick="closeMenu()">Tentang</a>
+  <a href="index.html#gallery" onclick="closeMenu()">Galeri</a>
+  <a href="index.html#villa" onclick="closeMenu()">Villa</a>
+  <a href="index.html#setup" onclick="closeMenu()">Setup</a>
+  <a href="index.html#video" onclick="closeMenu()">🎬 Video</a>
+  <a href="blog.html" onclick="closeMenu()">📝 Blog</a>
+  <a href="index.html#filosofi" onclick="closeMenu()">Filosofi</a>
+  <a href="gudang.html" onclick="closeMenu()">🔧 Gudang</a>
+</div>
+
+<!-- HERO -->
+<div class="article-hero">
+  <div class="hero-inner">
+
+    <a class="back-link" href="blog.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Kembali ke Blog
+    </a>
+
+    <div class="article-meta">
+      <span class="meta-badge">Branding · Produktivitas · Filosofi</span>
+      <span class="meta-dot">·</span>
+      <span class="meta-date">Mei 2026</span>
+      <span class="meta-dot">·</span>
+      <span class="meta-read">7 menit baca</span>
+    </div>
+
+    <h1 class="article-title">
+      Konsistensi Brand &
+      <em>Optimasi Kerja Digital</em>
+    </h1>
+    <p class="article-lead">Dari akun personal jadi Bunker Opanowski yang utuh — satu nama tampilan, satu suara, satu markas. Ditambah cara baca data Facebook kayak baca kartu motor, dan tips produktivitas dari mesin 2015 yang masih kencang.</p>
+
+  </div>
+</div>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="ss-item">
+      <div class="ss-num">5</div>
+      <div class="ss-label">Platform Aktif</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-num">1K+</div>
+      <div class="ss-label">Followers FB</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-num">100%</div>
+      <div class="ss-label">Reach Non-Follower</div>
+    </div>
+    <div class="ss-item">
+      <div class="ss-num">2015</div>
+      <div class="ss-label">MacBook Masih Jalan</div>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="article-body">
+
+  <!-- BAGIAN 1: BRANDING -->
+  <div class="log-section">
+    <p class="log-num">Bagian 01</p>
+    <h2 class="log-heading">Membangun Markas Digital — <em>Satu Nama, Semua Platform</em></h2>
+
+    <p class="log-text">Sebelum ada yang namanya "Bunker Opanowski", akunnya masih berserakan. Di sini pakai nama ini, di sana pakai nama itu. Wajar saja kalau orang bingung — bahkan yang udah follow pun bisa nggak kenal waktu ketemu di platform lain. Itu namanya bocor branding.</p>
+
+    <p class="log-text">Langkah pertama yang paling krusial: <strong>seragamkan Nama Tampilan</strong> di semua platform jadi <em>Bunker Opanowski</em>. Nama tampilan inilah yang muncul di beranda orang, di search result, di share konten. Ini wajah pertama yang dilihat.</p>
+
+    <div class="platform-grid">
+      <div class="plat-card">
+        <div class="plat-icon">👤</div>
+        <div class="plat-name">Facebook</div>
+        <div class="plat-handle">Bunker Opanowski</div>
+        <div class="plat-strategy">Distribusi utama & insight data</div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-icon">📸</div>
+        <div class="plat-name">Instagram</div>
+        <div class="plat-handle">@opanowski</div>
+        <div class="plat-strategy">Visual & foto keseharian</div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-icon">🎵</div>
+        <div class="plat-name">TikTok</div>
+        <div class="plat-handle">@opanowski</div>
+        <div class="plat-strategy">Short video & jangkauan baru</div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-icon">📺</div>
+        <div class="plat-name">YouTube</div>
+        <div class="plat-handle">Bunker Opanowski</div>
+        <div class="plat-strategy">Konten panjang & 4 pilar utama</div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-icon">🧵</div>
+        <div class="plat-name">Threads</div>
+        <div class="plat-handle">@opanowski</div>
+        <div class="plat-strategy">Diskusi & opini singkat</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">💡 Strategi Username</div>
+      <p>Username lama <span class="code">@opanowski</span> sengaja <strong>tidak diganti</strong> — semua link lama tetap hidup dan tidak 404. Yang berubah hanya Nama Tampilan di bagian atas profil. Ini seperti ganti nama toko tapi tetap di lokasi yang sama — pelanggan lama nggak akan nyasar.</p>
+    </div>
+
+    <p class="log-text">Hub utamanya ada di <strong>GitHub Pages</strong> — website yang bisa dikunjungi siapa saja, dari mana saja, tanpa algoritma yang nentuin siapa yang boleh lihat. Kalau sosmed adalah cabang, website adalah kantor pusat. Di sanalah semua profil, log, dan dokumentasi berkumpul jadi satu kartu nama digital yang rapi.</p>
+
+    <div class="quote-block">
+      <div class="quote-text">"Username itu kayak plat nomor motor — jangan ganti kalau tidak perlu. Yang penting catnya sama."</div>
+      <div class="quote-attr">— Om Opan · Ciracas</div>
+    </div>
+  </div>
+
+  <hr class="log-divider">
+
+  <!-- BAGIAN 2: FACEBOOK INSIGHT -->
+  <div class="log-section">
+    <p class="log-num">Bagian 02</p>
+    <h2 class="log-heading">Baca Data Facebook — <em>Kayak Baca Kartu Motor</em></h2>
+
+    <p class="log-text">Banyak yang punya akun Facebook tapi nggak pernah masuk ke Dasbor Profesional. Padahal di sana tersedia data yang jujur: siapa yang nonton, dari mana asalnya, konten mana yang tembus, mana yang nggak. Gratisan pula.</p>
+
+    <div class="inline-stats">
+      <div class="is-card">
+        <div class="is-icon">👥</div>
+        <div class="is-num">1.000+</div>
+        <div class="is-label">Followers Tercapai</div>
+      </div>
+      <div class="is-card">
+        <div class="is-icon">🌍</div>
+        <div class="is-num">100%</div>
+        <div class="is-label">Reach Non-Follower via Reels</div>
+      </div>
+      <div class="is-card">
+        <div class="is-icon">📈</div>
+        <div class="is-num">5.524%</div>
+        <div class="is-label">Lonjakan Tayangan</div>
+      </div>
+    </div>
+
+    <p class="log-text">Yang menarik: konten video bunglon dan kelinci — bukan konten mekanik atau teknologi, bukan target utama — justru yang paling jauh jangkauannya. Tembus ke Singapura, Malaysia, bahkan Amerika. Pelajarannya? <strong>Algoritma nggak peduli kamu siapa, dia peduli orang betah nonton sampai selesai atau nggak.</strong></p>
+
+    <div class="callout">
+      <div class="callout-label">📊 Pelajaran dari Dapur Facebook</div>
+      <p>Reels menjangkau <strong>100% penonton baru</strong> — artinya followers yang ada bukan faktor penentu viralnya konten. Yang menentukan adalah <strong>durasi tonton dan engagement awal</strong>. Jadi fokusnya bukan ngejar follower, tapi bikin konten yang bikin orang betah berdiam 3 detik pertama.</p>
+    </div>
+
+    <p class="log-text">Satu langkah kecil yang sering dilewatkan: <strong>pasang link eksternal di profil Facebook</strong>. Ini bukan sekadar hiasan. Bagi penonton baru yang baru kenal dari satu video, link ke website adalah jembatan kepercayaan. Mereka bisa verifikasi — "oh ini orang beneran, ada websitenya." Kredibilitas naik tanpa harus ngomong apa-apa.</p>
+  </div>
+
+  <hr class="log-divider">
+
+  <!-- BAGIAN 3: PRODUKTIVITAS MACBOOK -->
+  <div class="log-section">
+    <p class="log-num">Bagian 03</p>
+    <h2 class="log-heading">Tips Produktivitas "Tua-tua Keladi" — <em>MacBook Pro 2015</em></h2>
+
+    <p class="log-text">MacBook Pro Mid 2015 sudah jalan lebih dari satu dekade. Di tangan yang salah, ini masalah. Di tangan yang tepat, ini justru bukti bahwa efisiensi bukan soal hardware baru — tapi soal cara pakai yang benar.</p>
+
+    <p class="log-text">Kunci utama multitasking di mesin lama: <strong>Firefox sebagai pusat kerja</strong>. Kenapa Firefox dan bukan browser lain? Karena ada satu fitur yang mengubah segalanya.</p>
+
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-dot">01</div>
+        <div class="step-content">
+          <div class="step-title">Aktifkan "Open previous windows and tabs"</div>
+          <div class="step-desc">Di Preferences Firefox → General → startup. Pastikan centang opsi ini. Kalau aplikasi nggak sengaja ke-close, semua tab riset tetap kembali utuh waktu dibuka lagi. Tidak ada yang hilang.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">02</div>
+        <div class="step-content">
+          <div class="step-title">Pisahkan window per proyek</div>
+          <div class="step-desc">Bukan per tab, tapi per window. Window 1 untuk riset konten, window 2 untuk YouTube Studio, window 3 untuk GitHub. Kalau Mac ngehang, cukup force quit satu window — yang lain tetap aman.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">03</div>
+        <div class="step-content">
+          <div class="step-title">Manfaatkan Spaces (Mission Control)</div>
+          <div class="step-desc">Swipe 4 jari ke kiri-kanan untuk pindah desktop virtual. Satu desktop untuk browser, satu untuk editor, satu untuk komunikasi. Tanpa buka-tutup aplikasi yang buang waktu dan RAM.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">04</div>
+        <div class="step-content">
+          <div class="step-title">Tugas berat ke Xiaoxin Pad via TinyPC Debian</div>
+          <div class="step-desc">TikTok dan Instagram lewat app mobile di Pad — lebih ringan daripada browser Mac. MacBook fokus untuk tugas yang memang butuh layar besar dan keyboard: nulis, edit, manage GitHub Pages.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">🔧 Filosofi Bengkel Digital</div>
+      <p>Sama kayak di bengkel motor — sebelum ganti sparepart, <strong>optimasi dulu yang ada</strong>. MacBook 2015 dengan 16GB RAM masih kencang untuk kerja konten kalau tahu cara pakainya. Yang bikin laptop lama "lemot" biasanya bukan hardwarenya, tapi kebiasaan pakainya.</p>
+    </div>
+  </div>
+
+  <hr class="log-divider">
+
+  <!-- BAGIAN 4: FILOSOFI -->
+  <div class="log-section">
+    <p class="log-num">Bagian 04</p>
+    <h2 class="log-heading">Filosofi Bunker Opanowski — <em>Integrasi Hobi & Teknologi</em></h2>
+
+    <p class="log-text">Bunker Opanowski bukan sekadar akun konten. Ini dokumentasi gaya hidup mandiri — dari mekanik motor, kelistrikan rumah, sampai urban farming. Semuanya satu narasi: <strong>ketahanan dari halaman sendiri.</strong></p>
+
+    <p class="log-text">Kelistrikan rumah yang beres bikin workshop nyaman. Workshop nyaman bikin produktivitas naik. Produktivitas naik bikin konten jadi lebih baik. Konten yang baik menghasilkan komunitas. Komunitas yang tepat mendukung ketahanan pangan mandiri. Semuanya melingkar — tidak ada yang berdiri sendiri.</p>
+
+    <div class="callout">
+      <div class="callout-label">🌱 Misi dari Jakarta Timur</div>
+      <p>Berbagi tips mandiri bukan untuk pamer — tapi karena <strong>kalau satu keluarga di Ciracas bisa melakukannya, keluarga lain juga bisa</strong>. Ketahanan pangan dimulai dari pot di teras, bukan dari kebun sehektar. Dimulai dari satu langkah yang didokumentasikan, bukan dari teori yang menumpuk di kepala.</p>
+    </div>
+
+    <p class="log-text">Digital literacy, mekanik, farming, dan kelistrikan bukan empat dunia terpisah. Di Bunker Opanowski, itu semua adalah satu keterampilan dasar: <em>kemampuan memecahkan masalah sendiri.</em> Belajar sampai menutup mata — apapun bidangnya.</p>
+
+    <div class="quote-block">
+      <div class="quote-text">"Dari tangan yang biasa kotor kena oli dan tanah, sekarang sudah mulai lancar pegang keyboard buat berbagi filosofi hidup. Tapi tangannya tetap siap balik ke kunci ring kapan saja."</div>
+      <div class="quote-attr">— Om Opan · Villa Ciracas, Jakarta Timur</div>
+    </div>
+  </div>
+
+  <!-- TAGS -->
+  <div class="tags-area">
+    <span class="tag">branding</span>
+    <span class="tag">facebook-insight</span>
+    <span class="tag">produktivitas</span>
+    <span class="tag">macbook-2015</span>
+    <span class="tag">firefox</span>
+    <span class="tag">urban-farming</span>
+    <span class="tag">filosofi</span>
+    <span class="tag">bunker-opanowski</span>
+  </div>
+
+</div>
+
+<!-- ARTICLE NAV -->
+<div class="article-nav">
+  <div class="article-nav-inner">
+    <a class="nav-back-btn" href="blog.html">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Kembali ke Semua Log
+    </a>
+    <span class="nav-share">Bunker Opanowski · Villa Ciracas</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Bunker Opanowski</div>
+  <p class="footer-tagline">Villa Ciracas · Jakarta Timur · Indonesia</p>
+  <p class="footer-tagline">Istiqomah · Qona'ah · Tawakkal · Berkah</p>
+  <p class="footer-credits">Made with ☕ Top Kopi Gula Aren & Claude AI · Mei 2026</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('active');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('active');
+}
+</script>
+</body>
+</html>
