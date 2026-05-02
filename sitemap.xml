@@ -1,81 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://opanowski.github.io/opanowski/</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Blog / Log Harian -->
   <url>
     <loc>https://opanowski.github.io/opanowski/blog.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Gudang Inventaris -->
   <url>
-    <loc>https://opanowski.github.io/opanowski/blog-log05-bye-kabel.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://opanowski.github.io/opanowski/gudang.html</loc>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog: Konsistensi Brand -->
+  <url>
+    <loc>https://opanowski.github.io/opanowski/blog-brand-konsistensi.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Evolusi Digital & GitHub -->
   <url>
     <loc>https://opanowski.github.io/opanowski/blog-evolusi-digital.html</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Bye-bye Kabel -->
+  <url>
+    <loc>https://opanowski.github.io/opanowski/blog-log05-bye-kabel.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Log #001: Peresmian Markas Digital -->
   <url>
     <loc>https://opanowski.github.io/opanowski/log-bunker-opanowski-01.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://opanowski.github.io/opanowski/gudang.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://opanowski.github.io/opanowski/#about</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opanowski.github.io/opanowski/#villa</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://opanowski.github.io/opanowski/#setup</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://opanowski.github.io/opanowski/#video</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://opanowski.github.io/opanowski/#filosofi</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
 
 </urlset>
