@@ -421,6 +421,61 @@
     </div>
   </div>
 
+  <!-- ===== FAQ SECTION ===== -->
+  <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.6rem">
+      <span style="font-size:1.1rem">❓</span>
+      <h2 style="font-family:var(--font-display,inherit);font-size:1.1rem;color:var(--accent);margin:0;letter-spacing:-0.3px">Tanya Jawab — Seledri Organik Air Lindi</h2>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:1.8rem;line-height:1.8">Kumpulan pertanyaan yang sering muncul soal nanam seledri organik di rumah. Jawaban dari pengalaman langsung di Villa Ciracas.</p>
+
+    <style>
+      .faq-item { background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color 0.2s; }
+      .faq-item:hover { border-color:rgba(76,175,125,0.5); }
+      .faq-item.open { border-left-color:var(--accent); }
+      .faq-q { padding:14px 18px;font-size:0.85rem;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:12px; }
+      .faq-q::after { content:"▾";font-size:0.75rem;color:var(--text-muted);transition:transform 0.25s;flex-shrink:0; }
+      .faq-item.open .faq-q::after { transform:rotate(180deg);color:var(--accent); }
+      .faq-a { max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s;padding:0 18px;font-size:0.8rem;color:var(--text-muted);line-height:1.85; }
+      .faq-item.open .faq-a { max-height:300px;padding:0 18px 16px; }
+    </style>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🌿 Apa itu air lindi dan kenapa dipake buat seledri?</div>
+        <div class="faq-a">Air lindi adalah cairan yang menetes dari tumpukan sampah organik — sisa cucian sayur, kulit buah, ampas kopi. Kaya nutrisi alami. Gue encerkan 1:10 sama air biasa sebelum disiramkan. Hasilnya? Seledri lebih hijau dan tumbuh lebih cepat dibanding pakai air biasa aja.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🪴 Pot ukuran berapa yang cocok?</div>
+        <div class="faq-a">Pot bekas cat atau ember plastik 5–10 liter sudah cukup. Yang penting ada lubang drainase di bawah supaya akar tidak terendam. Gue pakai pot bekas yang ada di gudang — zero cost, fungsional.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">☀️ Seledri butuh berapa jam sinar matahari?</div>
+        <div class="faq-a">Minimal 4–6 jam sinar langsung per hari. Di Villa Ciracas gue taruh di area yang kena matahari pagi sampai siang. Seledri tidak suka sinar terik seharian penuh — daun bisa layu atau gosong pinggirnya.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">💧 Seberapa sering disiram?</div>
+        <div class="faq-a">Cek tanah pakai jari — kalau 2cm teratas sudah kering, siram. Di Jakarta yang panas, biasanya 1–2 kali sehari saat musim kemarau. Jangan sampai tanah kering total, tapi jangan pula tergenang — akar bisa busuk.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🌱 Lebih baik dari biji atau bibit cabutan?</div>
+        <div class="faq-a">Kalau mau cepat, pakai bibit cabutan dari pasar — tinggal tanam langsung. Dari biji lebih murah tapi butuh 2–3 minggu baru tumbuh proper. Gue biasanya beli bibit 5.000 rupiah segenggam di pasar Ciracas, tahan untuk 10–15 pot kecil.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">📦 Berapa modal awalnya?</div>
+        <div class="faq-a">Dengan pot bekas + tanah campur kompos + bibit dari pasar, total bisa di bawah 20 ribu rupiah untuk satu pot. Kalau pot dan kompos sudah ada, modal bisa nol. Efisien, fungsional, berkah — tidak harus mahal untuk mulai hidup lebih mandiri.</div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== END FAQ ===== -->
+
 </div>
 </div>
 
