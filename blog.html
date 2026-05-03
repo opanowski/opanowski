@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Log Harian — Bunker Opanowski</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ3R389NZD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WZ3R389NZD');
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -71,7 +80,7 @@
   /* LOG LIST */
   .log-list { padding: 0 24px 40px; display: flex; flex-direction: column; gap: 14px; }
 
-  /* LOG CARD — untuk Log Harian baru */
+  /* LOG CARD */
   .log-card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
     padding: 20px 22px; text-decoration: none; color: inherit; display: block;
@@ -85,16 +94,16 @@
   .log-date { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--text-muted); }
   .log-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
-  .tag-youtube { background: #2a1e1e; color: #e05a5a; }
-  .tag-farming { background: #1e3d2a; color: #4caf7d; }
-  .tag-mekanik { background: #3d2a0a; color: #f5a623; }
-  .tag-gadget  { background: #2d1e3d; color: #b57bee; }
-  .tag-filosofi{ background: #1e3a5f; color: #5b8dee; }
-  .tag-macos   { background: #3d2a0a; color: #f5a623; }
-  .tag-audio   { background: #2d1e3d; color: #b57bee; }
-  .tag-tutorial{ background: #1e3a5f; color: #5b8dee; }
-  .tag-ai      { background: #1e3d2a; color: #4caf7d; }
-  .tag-web     { background: #2a1e1e; color: #e05a5a; }
+  .tag-youtube  { background: #2a1e1e; color: #e05a5a; }
+  .tag-farming  { background: #1e3d2a; color: #4caf7d; }
+  .tag-mekanik  { background: #3d2a0a; color: #f5a623; }
+  .tag-gadget   { background: #2d1e3d; color: #b57bee; }
+  .tag-filosofi { background: #1e3a5f; color: #5b8dee; }
+  .tag-macos    { background: #3d2a0a; color: #f5a623; }
+  .tag-audio    { background: #2d1e3d; color: #b57bee; }
+  .tag-tutorial { background: #1e3a5f; color: #5b8dee; }
+  .tag-ai       { background: #1e3d2a; color: #4caf7d; }
+  .tag-web      { background: #2a1e1e; color: #e05a5a; }
   .log-title { font-size: 1.05rem; font-weight: 800; color: var(--text); letter-spacing: -0.3px; margin-bottom: 6px; line-height: 1.3; }
   .log-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
   .log-card-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
@@ -103,7 +112,11 @@
   .log-arrow { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--accent); opacity: 0; transition: opacity 0.2s; }
   .log-card:hover .log-arrow { opacity: 1; }
 
-  /* ARTIKEL CARD — untuk artikel lama (accordion style) */
+  /* HIGHLIGHT NUMBER — angka penting berwarna */
+  .hl-gold { color: var(--accent); font-weight: 800; }
+  .hl-green { color: var(--green); font-weight: 800; }
+
+  /* ARTIKEL CARD — accordion style */
   .artikel-card {
     background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
     overflow: hidden; transition: border-color 0.2s; position: relative;
@@ -116,27 +129,43 @@
   .artikel-date { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--gold); opacity: 0.8; letter-spacing: 1px; text-transform: uppercase; }
   .artikel-badge { background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.25); border-radius: 20px; padding: 2px 10px; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--gold); }
   .artikel-badge-blue { background: rgba(91,141,238,0.1); border: 1px solid rgba(91,141,238,0.25); color: #5b8dee; }
+  .artikel-badge-green { background: rgba(76,175,125,0.1); border: 1px solid rgba(76,175,125,0.25); color: #4caf7d; }
   .artikel-title { font-family: var(--font-display); font-size: 1rem; color: var(--cream); line-height: 1.35; }
   .artikel-title em { color: var(--gold); font-style: italic; }
   .chevron { width: 20px; height: 20px; flex-shrink: 0; color: var(--gold); opacity: 0.7; transition: transform 0.3s; }
   .chevron svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .artikel-card.open .chevron { transform: rotate(180deg); opacity: 1; }
   .artikel-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; padding: 0 22px; border-top: 0px solid var(--border); }
-  .artikel-card.open .artikel-body { max-height: 2000px; padding: 0 22px 20px; border-top: 1px solid var(--border); }
+  .artikel-card.open .artikel-body { max-height: 4000px; padding: 0 22px 20px; border-top: 1px solid var(--border); }
   .artikel-body p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 10px; margin-top: 14px; }
   .acc-box { margin: 10px 0; padding: 14px 16px; border-radius: 8px; }
-  .acc-box.red { background: rgba(224,90,90,0.06); border: 1px solid rgba(224,90,90,0.2); }
-  .acc-box.green { background: rgba(76,175,125,0.06); border: 1px solid rgba(76,175,125,0.2); }
-  .acc-box.gold { background: rgba(200,151,42,0.06); border: 1px solid rgba(200,151,42,0.2); }
-  .acc-box.blue { background: rgba(91,141,238,0.06); border: 1px solid rgba(91,141,238,0.2); }
+  .acc-box.red    { background: rgba(224,90,90,0.06);   border: 1px solid rgba(224,90,90,0.2); }
+  .acc-box.green  { background: rgba(76,175,125,0.06);  border: 1px solid rgba(76,175,125,0.2); }
+  .acc-box.gold   { background: rgba(200,151,42,0.06);  border: 1px solid rgba(200,151,42,0.2); }
+  .acc-box.blue   { background: rgba(91,141,238,0.06);  border: 1px solid rgba(91,141,238,0.2); }
   .acc-box-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
-  .acc-box.red .acc-box-label { color: #e05a5a; }
+  .acc-box.red   .acc-box-label { color: #e05a5a; }
   .acc-box.green .acc-box-label { color: #4caf7d; }
-  .acc-box.gold .acc-box-label { color: var(--gold); }
-  .acc-box.blue .acc-box-label { color: #5b8dee; }
+  .acc-box.gold  .acc-box-label { color: var(--gold); }
+  .acc-box.blue  .acc-box-label { color: #5b8dee; }
   .acc-box div { font-size: 0.82rem; color: var(--text-muted); line-height: 2.1; }
   .code-tag { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 4px; font-size: 0.8rem; font-family: 'Space Mono', monospace; }
   .acc-quote { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-style: italic; color: var(--gold); font-size: 0.83rem; font-family: var(--font-display); }
+
+  /* STAT GRID MINI (inside accordion) */
+  .mini-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px,1fr)); gap: 8px; margin: 14px 0; }
+  .mini-stat { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; text-align: center; }
+  .mini-stat-num { font-family: 'Space Mono', monospace; font-size: 1.15rem; font-weight: 700; color: var(--accent); display: block; line-height: 1; }
+  .mini-stat-num.green { color: var(--green); }
+  .mini-stat-num.blue  { color: var(--blue); }
+  .mini-stat-label { font-family: 'Space Mono', monospace; font-size: 0.55rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; display: block; line-height: 1.3; }
+
+  /* FIGURE inside accordion */
+  .acc-figure { margin: 14px 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07); }
+  .acc-figure img { width: 100%; height: auto; display: block; background: var(--surface2); }
+  .acc-figure-cap { padding: 8px 12px; background: rgba(0,0,0,0.25); border-top: 1px solid rgba(255,255,255,0.05); display: flex; gap: 8px; align-items: flex-start; }
+  .acc-figure-num { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,151,42,0.3); padding: 2px 6px; border-radius: 3px; flex-shrink: 0; margin-top: 1px; }
+  .acc-figure-cap p { font-size: 0.76rem; color: var(--text-muted); line-height: 1.55; }
 
   /* MISC */
   .no-result { text-align: center; padding: 48px 24px; color: var(--text-muted); font-family: 'Space Mono', monospace; font-size: 0.8rem; display: none; }
@@ -160,10 +189,10 @@
 </header>
 
 <div class="stats">
-  <div class="stat-card"><div class="stat-num">10</div><div class="stat-label">Total Entri</div></div>
+  <div class="stat-card"><div class="stat-num">12</div><div class="stat-label">Total Entri</div></div>
   <div class="stat-card"><div class="stat-num">2026</div><div class="stat-label">Tahun Aktif</div></div>
-  <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Topik</div></div>
-  <div class="stat-card"><div class="stat-num" id="stat-visible">11</div><div class="stat-label">Ditampilkan</div></div>
+  <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">Topik</div></div>
+  <div class="stat-card"><div class="stat-num" id="stat-visible">12</div><div class="stat-label">Ditampilkan</div></div>
 </div>
 
 <div class="filter-tabs">
@@ -182,24 +211,25 @@
 </div>
 
 <div class="section-header">
-  📅 Semua Entri <span class="count" id="visible-count">11 entri</span>
+  📅 Semua Entri <span class="count" id="visible-count">12 entri</span>
 </div>
 
 <div class="log-list" id="main-list">
 
+  <!-- ===================================================================== -->
   <!-- LOG #086 — Tebang Pisang, Mulsa, Panen Telur, Distribusi Konten -->
-  <a class="log-card" id="entry-log086" href="blog-log086-pisang-telur.html" data-tags="farming">
+  <!-- ===================================================================== -->
+  <a class="log-card" id="entry-log086" href="blog-log086-pisang-telur.html" data-tags="farming,youtube">
     <div class="log-card-top">
       <span class="log-num-badge">#086</span>
       <span class="log-date"><span class="live-dot"></span>Sabtu, 3 Mei 2026</span>
       <div class="log-tags">
         <span class="tag tag-farming">🌱 Urban Farming</span>
         <span class="tag tag-youtube">📺 YouTube</span>
-        <span class="tag tag-farming">♻️ Zero Waste</span>
       </div>
     </div>
     <div class="log-title">Tebang Pisang, Mulsa Organik & Panen Telur — Distribusi ke Belasan Grup Urban Farming</div>
-    <div class="log-desc">Pohon pisang ditebang hari ini: daun ke dapur ibu, batang dicacah jadi mulsa organik "kulkas alami" pendingin pot di cuaca panas Jakarta Timur. Panen telur harian dari kandang aviary tetap lancar. Dua Shorts baru (ayam bertelur & bunglon security) langsung di-crosspost admin ke belasan grup Urban Farming besar. Seledri organik pagi ini tembus 70 tayangan di Facebook Profesional.</div>
+    <div class="log-desc">Pohon pisang ditebang hari ini: daun ke dapur ibu, batang dicacah jadi mulsa organik. Panen telur harian aviary tetap lancar. Dua Shorts baru di-crosspost admin ke belasan grup Urban Farming besar. Seledri organik tembus <span class="hl-gold">70 tayangan</span> di Facebook Profesional.</div>
     <div class="log-card-bottom">
       <div class="log-sections">
         <span class="section-pill">Batang Pisang → Mulsa</span>
@@ -211,31 +241,194 @@
     </div>
   </a>
 
-  <!-- ARTIKEL: Evolusi Digital & Swasembada — Dari Ciracas ke Lingkar Arktik (FINAL) -->
-  <a class="log-card" id="entry-evolusi-digital-swasembada" href="blog-evolusi-digital-swasembada.html" data-tags="web,filosofi,farming">
-    <div class="log-card-top">
-      <span class="log-num-badge">Artikel</span>
-      <span class="log-date"><span class="live-dot"></span>Sabtu, 3 Mei 2026</span>
-      <div class="log-tags">
-        <span class="tag tag-web">🌐 Digital</span>
-        <span class="tag tag-farming">🌱 Urban Farming</span>
-        <span class="tag tag-filosofi">🧭 Filosofi</span>
+  <!-- ===================================================================== -->
+  <!-- ARTIKEL: HASIL & VIRALITAS GLOBAL — "Dari Ciracas ke Lingkar Arktik" -->
+  <!-- ===================================================================== -->
+  <div class="artikel-card" id="entry-hasil-viralitas" data-tags="web,farming,filosofi,youtube" onclick="toggleArtikel(this)">
+    <div class="artikel-header">
+      <div class="artikel-header-left">
+        <div class="artikel-meta">
+          <span class="artikel-date">Mei 2026</span>
+          <span class="artikel-badge">📊 Hasil & Viralitas</span>
+          <span class="artikel-badge artikel-badge-green">🌍 Global</span>
+        </div>
+        <div class="artikel-title">📈 Evolusi Digital & Swasembada: <em>Dari Ciracas ke Lingkar Arktik</em> — Hasil & Data Lengkap</div>
       </div>
+      <span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
     </div>
-    <div class="log-title">Evolusi Digital & Swasembada: Dari Ciracas ke Lingkar Arktik</div>
-    <div class="log-desc">Jangkauan profil meledak +9.622% dengan 1.750 tayangan. 99.8% penonton adalah non-pengikut. Reel 'Siapa Sangka' tembus 700 views, 408 orang baru dijangkau. Ada pengunjung dari Luleå, Swedia — 10.000km+ dari Ciracas. Dan kandang aviary yang sudah 4 bulan mandiri telur. Satu cerita tentang konsistensi yang berbuah.</div>
-    <div class="log-card-bottom">
-      <div class="log-sections">
-        <span class="section-pill">+9.622% Jangkauan</span>
-        <span class="section-pill">99.8% Non-Pengikut</span>
-        <span class="section-pill">Ciracas → Arktik</span>
-        <span class="section-pill">Aviary 4 Bulan Telur</span>
-      </div>
-      <span class="log-arrow">Baca →</span>
-    </div>
-  </a>
+    <div class="artikel-body">
 
-  <!-- LOG Artikel: Evolusi Digital & Swasembada Ciracas -->
+      <p>Ini bukan cerita pamer angka. Ini laporan kerja — dari meja lesehan Villa Ciracas yang punya sirkulasi angin alami dari lorong 1×9 meter. MacBook Pro 2015, Top Kopi Gula Aren, dan konsistensi tanpa drama.</p>
+
+      <!-- BIG STATS -->
+      <div class="mini-stat-grid">
+        <div class="mini-stat"><span class="mini-stat-num hl-gold">+9.622%</span><span class="mini-stat-label">Lonjakan Jangkauan FB</span></div>
+        <div class="mini-stat"><span class="mini-stat-num green">99.8%</span><span class="mini-stat-label">Non-Pengikut</span></div>
+        <div class="mini-stat"><span class="mini-stat-num blue">1.750</span><span class="mini-stat-label">Total Tayangan / Bulan</span></div>
+        <div class="mini-stat"><span class="mini-stat-num">700</span><span class="mini-stat-label">Tayangan Reel 'Siapa Sangka'</span></div>
+        <div class="mini-stat"><span class="mini-stat-num">408</span><span class="mini-stat-label">Orang Baru Dijangkau</span></div>
+        <div class="mini-stat"><span class="mini-stat-num green">5.000+</span><span class="mini-stat-label">Views YouTube / Bulan</span></div>
+      </div>
+
+      <!-- FIG 1: Statistik Utama FB -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/4s6T36U.jpeg" alt="Statistik Facebook — jangkauan meledak +9.622% dengan 1.750 tayangan" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.01 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.01</span>
+          <p>Grafik Facebook Insights — jangkauan profil meledak <strong style="color:var(--accent)">+9.622%</strong> menjadi <strong style="color:var(--accent)">1.750 tayangan</strong>. Bukan iklan, bukan trik. Konsistensi murni.</p>
+        </div>
+      </div>
+
+      <!-- FIG 2: YouTube 5rb Views -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/Vhjbbd7.jpeg" alt="YouTube Studio — 5.000 penayangan dalam sebulan" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.02 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.02</span>
+          <p>YouTube Studio: <strong style="color:var(--green)">5.000+ penayangan</strong> dalam sebulan. Channel yang konsisten konten Urban Farming-nya mulai ditemukan algoritma.</p>
+        </div>
+      </div>
+
+      <!-- FIG 3: Realtime gila 6.6k -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/jyVZfHF.jpeg" alt="YouTube Realtime — 6.600 views" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.03 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.03</span>
+          <p>Realtime analytics YouTube: sempat tembus <strong style="color:var(--green)">6.600 views</strong> — momen ketika konten menyentuh audiens yang tepat di waktu yang tepat.</p>
+        </div>
+      </div>
+
+      <!-- FIG 4: Viralitas 99.8% non-pengikut -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/8HFaff4.jpeg" alt="Facebook Insights — 99.8% penonton non-pengikut" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.04 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.04</span>
+          <p>Angka yang bicara sendiri: <strong style="color:var(--green)">99.8% penonton adalah non-pengikut</strong>. Viralitas murni — konten ditemukan orang yang belum pernah follow.</p>
+        </div>
+      </div>
+
+      <!-- FIG 5: Demografi audiens -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/mhxQOhD.jpeg" alt="Demografi audiens Facebook — usia 25-34 terbanyak" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.05 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.05</span>
+          <p>Demografi audiens: <strong style="color:var(--accent)">57.8% usia 25–34</strong> (generasi produktif yang relate sama filosofi mandiri) dan <strong style="color:var(--accent)">23.4% usia 65+</strong> (konten yang melintas generasi).</p>
+        </div>
+      </div>
+
+      <div class="acc-box blue">
+        <div class="acc-box-label">🧊 Koneksi dari Lingkar Arktik</div>
+        <div>Ada pengunjung website dari <strong>Luleå, Swedia</strong> — kota di dalam Lingkar Arktik, lebih dari <strong>10.000 km dari Ciracas</strong>. Di sana matahari nggak terbenam di musim panas. Di sini kita kepanasan. Tapi teks yang lahir dari meja lesehan Jakarta Timur bisa melintas sampai sana.</div>
+      </div>
+
+      <div class="acc-box gold">
+        <div class="acc-box-label">🥚 Swasembada Pangan: 4 Bulan Mandiri Telur</div>
+        <div>Di waktu yang sama, kandang aviary terbuka Villa Ciracas terus berjalan. Sistem alas tanah 15cm di atas konblok + daun kering sebagai litter alami. <strong>4 bulan mandiri telur</strong> dari DOC sendiri. Video kandang yang di-crosspost ke belasan grup Urban Farming tembus <strong>401 views</strong>.</div>
+      </div>
+
+      <div class="acc-quote">"Perangkat tua dan lahan terbatas bukan halangan untuk go-international. MacBook 2015 masih bisa kirim tulisan ke Lingkar Arktik." ☕🔧</div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- ARTIKEL: DI BALIK LAYAR — 5 Hari Membangun Ekosistem Digital -->
+  <!-- ===================================================================== -->
+  <div class="artikel-card" id="entry-balik-layar" data-tags="web,ai,filosofi" onclick="toggleArtikel(this)">
+    <div class="artikel-header">
+      <div class="artikel-header-left">
+        <div class="artikel-meta">
+          <span class="artikel-date">Mei 2026</span>
+          <span class="artikel-badge">🔧 Proses & Workspace</span>
+          <span class="artikel-badge artikel-badge-blue">AI · Autodidak</span>
+        </div>
+        <div class="artikel-title">🛠️ Di Balik Layar: <em>5 Hari Membangun Ekosistem Digital dari Ciracas</em></div>
+      </div>
+      <span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="artikel-body">
+
+      <p>Bagaimana seorang autodidak dari Ciracas — yang lebih akrab sama kunci ring dan kompresor daripada terminal Mac — bisa bikin ekosistem digital yang proper? Jawabannya: <strong style="color:var(--cream)">5 hari, 51 revisi kode, 3 AI, dan angin alami dari lorong 1×9 meter.</strong></p>
+
+      <!-- FIG 1: The Bunker / Workspace -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/t2fX3yy.jpeg" alt="The Bunker — ruang santai lesehan Villa Ciracas tempat semua konten dibuat" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.01 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.01</span>
+          <p><strong>The Bunker</strong> — meja lesehan di ruang santai Villa Ciracas. Di sinilah 51 revisi kode dibuat, konten direncanakan, dan semua keputusan digital diambil. Adem karena lorong terbuka 1×9 meter di belakang mesin cuci menangkap angin langsung dari langit.</p>
+        </div>
+      </div>
+
+      <div class="acc-box gold">
+        <div class="acc-box-label">📅 Timeline 5 Hari</div>
+        <div>🗓️ <strong>Hari 1–2</strong> — Eksplorasi struktur, pilih design language, mulai index.html versi 1</div>
+        <div>🗓️ <strong>Hari 3</strong> — Revisi besar: layout, color palette, typography system</div>
+        <div>🗓️ <strong>Hari 4</strong> — Iterasi micro-detail: hover state, animasi, mobile responsive</div>
+        <div>🗓️ <strong>Hari 5</strong> — Final audit, deploy ke GitHub Pages, versi index(51).html publish ✅</div>
+      </div>
+
+      <div class="acc-box blue">
+        <div class="acc-box-label">🤖 Orkestrasi 3 AI</div>
+        <div><strong style="color:#5b8dee">Claude</strong> → Diskusi konsep, struktur kode, problem solving, teman ngobrol ide</div>
+        <div><strong style="color:#4caf7d">Gemini</strong> → Riset referensi, rangkum inspirasi dari YouTube & Google ecosystem</div>
+        <div><strong style="color:#e05a5a">ChatGPT</strong> → Cross-check hasil, alternatif solusi, second opinion</div>
+      </div>
+
+      <!-- FIG 2: Social Proof — notifikasi komunitas -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/LRdmdXF.jpeg" alt="Notifikasi dari komunitas — KMMI, Urban Farming, Grup Modul Elektronik" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.02 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.02</span>
+          <p><strong>Social Proof</strong> — notifikasi masuk dari komunitas besar: KMMI, Urban Farming, dan Grup Modul Elektronik. Konten yang otentik menarik komunitas yang tepat.</p>
+        </div>
+      </div>
+
+      <p>Salah satu interaksi paling berkesan datang dari <strong style="color:var(--cream)">Pak Muhtarom</strong> — yang nanya soal <em>"Apotik Hidup"</em> lewat kolom komentar Facebook. Satu pertanyaan sederhana yang membuktikan: konten tentang tanaman dan swasembada menyentuh orang yang tepat.</p>
+
+      <!-- FIG 3: Interaksi netizen -->
+      <div class="acc-figure">
+        <img src="https://i.imgur.com/WpdY6tP.jpeg" alt="Respon komunitas dan interaksi netizen di Facebook" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;padding:2rem;text-align:center;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.72rem">[Fig.03 — Screenshot tidak dapat dimuat]</div>
+        <div class="acc-figure-cap">
+          <span class="acc-figure-num">Fig.03</span>
+          <p>Respon komunitas di Facebook — bukti bahwa konten Urban Farming dari Villa Ciracas membangun koneksi nyata, bukan sekadar angka tayangan.</p>
+        </div>
+      </div>
+
+      <div class="mini-stat-grid">
+        <div class="mini-stat"><span class="mini-stat-num hl-gold">51×</span><span class="mini-stat-label">Revisi kode sebelum publish</span></div>
+        <div class="mini-stat"><span class="mini-stat-num blue">3</span><span class="mini-stat-label">AI yang diorkestrasikan</span></div>
+        <div class="mini-stat"><span class="mini-stat-num green">4 bln</span><span class="mini-stat-label">Mandiri telur dari DOC</span></div>
+        <div class="mini-stat"><span class="mini-stat-num">29</span><span class="mini-stat-label">Pengunjung dari 4 benua</span></div>
+      </div>
+
+      <div class="acc-box green">
+        <div class="acc-box-label">💡 AI Literacy — Skill Paling Relevan 2026</div>
+        <div>✦ <strong>Mendeskripsikan</strong> — jelaskan apa yang lo mau dengan jelas & spesifik</div>
+        <div>✦ <strong>Mengevaluasi</strong> — tau mana yang bagus, mana yang perlu direvisi</div>
+        <div>✦ <strong>Iterasi</strong> — tanya ulang, perbaiki, tanya lagi sampai sesuai visi</div>
+      </div>
+
+      <div class="acc-quote">"Tidak ngerti coding bukan halangan. Yang dibutuhkan adalah kemampuan mengarahkan — seperti mandor yang tidak harus bisa tukang, tapi harus tau hasil yang dia mau." 🤖☕</div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- ARTIKEL: Evolusi Digital & Swasembada Ciracas (link ke halaman penuh) -->
+  <!-- ===================================================================== -->
   <a class="log-card" id="entry-evolusi-swasembada" href="blog-evolusi-swasembada.html" data-tags="web,filosofi">
     <div class="log-card-top">
       <span class="log-num-badge">Artikel</span>
@@ -258,8 +451,10 @@
     </div>
   </a>
 
+  <!-- ===================================================================== -->
   <!-- ARTIKEL: Konsistensi Brand & Optimasi Kerja Digital -->
-  <a class="log-card" id="entry-brand-konsistensi" href="blog-brand-konsistensi.html" data-tags="filosofi">
+  <!-- ===================================================================== -->
+  <a class="log-card" id="entry-brand-konsistensi" href="blog-brand-konsistensi.html" data-tags="filosofi,web">
     <div class="log-card-top">
       <span class="log-num-badge">Artikel</span>
       <span class="log-date"><span class="live-dot"></span>Mei 2026</span>
@@ -281,14 +476,15 @@
     </div>
   </a>
 
+  <!-- ===================================================================== -->
   <!-- LOG #004 — Seledri Organik -->
-  <a class="log-card" id="entry-log004" href="blog-seledri-organik.html" data-tags="farming,lifestyle">
+  <!-- ===================================================================== -->
+  <a class="log-card" id="entry-log004" href="blog-seledri-organik.html" data-tags="farming">
     <div class="log-card-top">
       <span class="log-num-badge">#004</span>
       <span class="log-date"><span class="live-dot"></span>Minggu, 4 Mei 2026</span>
       <div class="log-tags">
-        <span class="tag tag-farming">Kebun</span>
-        <span class="tag tag-web">Lifestyle</span>
+        <span class="tag tag-farming">🌱 Kebun</span>
       </div>
     </div>
     <div class="log-title">Seledri di Pot, Healing di Pagi Hari</div>
@@ -303,7 +499,9 @@
     </div>
   </a>
 
+  <!-- ===================================================================== -->
   <!-- LOG #003 — Bye-bye Kabel -->
+  <!-- ===================================================================== -->
   <a class="log-card" id="entry-log003" href="blog-log05-bye-kabel.html" data-tags="gadget,web">
     <div class="log-card-top">
       <span class="log-num-badge">#003</span>
@@ -314,7 +512,7 @@
       </div>
     </div>
     <div class="log-title">Bye-bye Kabel! Optimasi Transfer Data & Branding Baru</div>
-    <div class="log-desc">LocalSend kirim 80MB video kebun dalam sekejap, TikTok resmi seragam jadi @opanowski satu komando, dan Facebook Pro tiba-tiba nunjukin kenaikan tayangan 5.524% yang bikin kopi pagi makin manis.</div>
+    <div class="log-desc">LocalSend kirim 80MB video kebun dalam sekejap, TikTok resmi seragam jadi @opanowski satu komando, dan Facebook Pro tiba-tiba nunjukin kenaikan tayangan <span class="hl-gold">5.524%</span> yang bikin kopi pagi makin manis.</div>
     <div class="log-card-bottom">
       <div class="log-sections">
         <span class="section-pill">LocalSend Transfer</span>
@@ -325,8 +523,10 @@
     </div>
   </a>
 
+  <!-- ===================================================================== -->
   <!-- LOG #002 — Evolusi Digital & GitHub -->
-  <a class="log-card" id="entry-log002" href="blog-evolusi-digital.html" data-tags="web">
+  <!-- ===================================================================== -->
+  <a class="log-card" id="entry-log002" href="blog-evolusi-digital.html" data-tags="web,ai">
     <div class="log-card-top">
       <span class="log-num-badge">#002</span>
       <span class="log-date">Mei 2026</span>
@@ -336,7 +536,7 @@
       </div>
     </div>
     <div class="log-title">Evolusi Digital & Markas Global di GitHub</div>
-    <div class="log-desc">Migrasi total tinggalkan Netlify, konsolidasi ke GitHub Pages satu pintu. Video Sniper Bunglon tembus 14.900 menit tayang setara 248 jam, pengunjung website masuk dari Singapura, AS, hingga Swedia.</div>
+    <div class="log-desc">Migrasi total tinggalkan Netlify, konsolidasi ke GitHub Pages satu pintu. Video Sniper Bunglon tembus <span class="hl-green">14.900 menit tayang</span> setara 248 jam, pengunjung website masuk dari Singapura, AS, hingga Swedia.</div>
     <div class="log-card-bottom">
       <div class="log-sections">
         <span class="section-pill">GitHub Pages</span>
@@ -347,13 +547,15 @@
     </div>
   </a>
 
-  <!-- LOG #001 — dinamis dari JS -->
+  <!-- ===================================================================== -->
+  <!-- LOG #001 — Peresmian Markas Digital -->
+  <!-- ===================================================================== -->
   <a class="log-card" id="entry-log001" href="log-bunker-opanowski-01.html" data-tags="youtube">
     <div class="log-card-top">
       <span class="log-num-badge">#001</span>
       <span class="log-date"><span class="live-dot"></span>Kamis, 1 Mei 2026</span>
       <div class="log-tags">
-        <span class="tag tag-youtube">YouTube</span>
+        <span class="tag tag-youtube">📺 YouTube</span>
       </div>
     </div>
     <div class="log-title">Peresmian Markas Digital</div>
@@ -368,8 +570,10 @@
     </div>
   </a>
 
-  <!-- ARTIKEL 2: Website AI -->
-  <div class="artikel-card" id="entry-website-ai" data-tags="ai" onclick="toggleArtikel(this)">
+  <!-- ===================================================================== -->
+  <!-- ARTIKEL: Website AI — 3 Hari, 3 AI, Tanpa Coding -->
+  <!-- ===================================================================== -->
+  <div class="artikel-card" id="entry-website-ai" data-tags="ai,web" onclick="toggleArtikel(this)">
     <div class="artikel-header">
       <div class="artikel-header-left">
         <div class="artikel-meta">
@@ -389,26 +593,21 @@
         <div>❌ <strong>Pakai template</strong> — Hasilnya generik, tidak personal, tidak berkarakter</div>
         <div>✅ <strong>Kolaborasi 3 AI — 3 hari — Gratis — Hasilnya custom & personal</strong> 🔥</div>
       </div>
-      <div class="acc-box green">
+      <div class="acc-box blue">
         <div class="acc-box-label">🤖 Strategi: Orkestrasi 3 AI</div>
         <div><strong style="color:#5b8dee">Claude</strong> → Diskusi konsep, struktur konten, problem solving, teman ngobrol ide</div>
         <div><strong style="color:#4caf7d">Gemini</strong> → Riset referensi, rangkum inspirasi dari YouTube & Google ecosystem</div>
         <div><strong style="color:#e05a5a">ChatGPT</strong> → Cross-check hasil, alternatif solusi, second opinion</div>
       </div>
       <p>Kuncinya bukan cuma <em>pakai</em> AI — tapi <em>mengorkestrasikan</em> beberapa AI sesuai keunggulan masing-masing. Kombinasikan — hasilnya jauh lebih kaya.</p>
-      <div class="acc-box blue">
-        <div class="acc-box-label">💡 Yang Paling Penting: AI Literacy</div>
-        <div>✦ <strong>Mendeskripsikan</strong> — jelaskan apa yang lo mau dengan jelas & spesifik</div>
-        <div>✦ <strong>Mengevaluasi</strong> — tau mana yang bagus, mana yang perlu direvisi</div>
-        <div>✦ <strong>Iterasi</strong> — tanya ulang, perbaiki, tanya lagi sampai sesuai visi</div>
-      </div>
-      <p>Tidak ngerti coding bukan halangan. Yang dibutuhkan adalah kemampuan <em>mengarahkan</em> — seperti seorang mandor yang tidak harus bisa tukang, tapi harus tau hasil yang dia mau. Itu namanya <strong style="color:var(--cream)">AI Literacy</strong> — skill paling relevan di 2026.</p>
       <div class="acc-quote">"Belajar sampai menutup mata — termasuk belajar ngobrol sama AI." 🤖☕</div>
     </div>
   </div>
 
-  <!-- ARTIKEL 1: M4A ke MP3 -->
-  <div class="artikel-card" id="entry-m4a-mp3" data-tags="tipstrik" onclick="toggleArtikel(this)">
+  <!-- ===================================================================== -->
+  <!-- ARTIKEL: M4A ke MP3 -->
+  <!-- ===================================================================== -->
+  <div class="artikel-card" id="entry-m4a-mp3" data-tags="tipstrik,mekanik" onclick="toggleArtikel(this)">
     <div class="artikel-header">
       <div class="artikel-header-left">
         <div class="artikel-meta">
@@ -446,7 +645,7 @@
 
 <footer>
   Bunker Opanowski — Log Harian
-  <span class="updated-tag"><span class="live-dot"></span>3 Mei 2026</span>
+  <span class="updated-tag"><span class="live-dot"></span>4 Mei 2026</span>
   <div style="display:flex;justify-content:center;gap:12px;margin-top:12px;flex-wrap:wrap">
     <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:#8b8fa8;text-decoration:none;font-size:0.7rem;transition:color 0.2s" onmouseover="this.style.color='#f5a623'" onmouseout="this.style.color='#8b8fa8'">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
@@ -492,7 +691,7 @@ function applyFilter() {
   entries.forEach(el => {
     const tags = el.getAttribute('data-tags');
     const text = el.innerText.toLowerCase();
-    const matchTag = currentTag === 'ALL' || tags.includes(currentTag);
+    const matchTag = currentTag === 'ALL' || tags.split(',').some(t => t.trim() === currentTag);
     const matchSearch = !currentSearch || text.includes(currentSearch) || tags.includes(currentSearch);
     if (matchTag && matchSearch) {
       el.style.display = '';
