@@ -33,6 +33,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: Panen Telur & Zero Waste Batang Pisang -->
+  <url>
+    <loc>https://opanowski.github.io/opanowski/blog-panen-telur-batang-pisang.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog: Evolusi Digital & GitHub -->
   <url>
     <loc>https://opanowski.github.io/opanowski/blog-evolusi-digital.html</loc>
