@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seledri di Pot, Healing di Pagi Hari — Bunker Opanowski</title>
+<meta name="description" content="Pagi di Villa Ciracas, secangkir kopi, dan seledri organik yang tumbuh diam-diam. Cerita Om Opan soal kenapa menanam itu bukan sekadar hobi — tapi cara paling murah buat warasin kepala.">
+<meta property="og:title" content="Seledri di Pot, Healing di Pagi Hari — Bunker Opanowski">
+<meta property="og:description" content="Pagi di Villa Ciracas, secangkir kopi, dan seledri organik yang tumbuh diam-diam. Kenapa menanam itu obat paling murah buat kepala yang pusing.">
+<meta property="og:image" content="https://i.imgur.com/xbM5dBY.jpg">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    max-height: 480px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.6);
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2.5rem 2rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.5) 60%, transparent 100%);
+  }
+  .hero-tags {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;
+  }
+  .tag-pill {
+    background: rgba(76,175,125,0.2); border: 1px solid rgba(76,175,125,0.4);
+    color: #4caf7d; font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: 'Space Mono', monospace;
+  }
+  .tag-pill.gold {
+    background: rgba(200,151,42,0.15); border-color: rgba(200,151,42,0.4); color: var(--gold);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* KONTEN */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .artikel-body p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    opacity: 0.88;
+  }
+
+  .artikel-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  /* FOTO INLINE */
+  .foto-block {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .foto-block img {
+    width: 100%;
+    display: block;
+    loading: lazy;
+  }
+  .foto-caption {
+    background: var(--surface);
+    padding: 0.6rem 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  /* TIPS BOX */
+  .tips-box {
+    background: rgba(76,175,125,0.05);
+    border: 1px solid rgba(76,175,125,0.2);
+    border-left: 3px solid var(--green);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin: 1.75rem 0;
+  }
+  .tips-box-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .tips-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 0.65rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .tips-item:last-child { margin-bottom: 0; }
+  .tips-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(200,151,42,0.05);
+    border: 1px solid rgba(200,151,42,0.2);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.6;
+  }
+  .quote-source {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--gold);
+    margin-top: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.75rem 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* SHARE / CTA */
+  .cta-block {
+    margin-top: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .cta-block p {
+    font-size: 0.85rem !important;
+    opacity: 0.6 !important;
+    margin-bottom: 1rem !important;
+  }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600;
+    transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px;
+    font-size: 0.6rem; color: var(--accent); margin-left: 6px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="blog.html">← Kembali ke Log Harian</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="https://i.imgur.com/xbM5dBY.jpg" alt="Seledri organik di pot — Villa Ciracas">
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill">🌱 Urban Farming</span>
+      <span class="tag-pill">🧘 Healing</span>
+      <span class="tag-pill gold">Villa Ciracas</span>
+    </div>
+    <h1 class="hero-title">Seledri di Pot,<br><em>Healing di Pagi Hari</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+    </div>
+  </div>
+</div>
+
+<!-- KONTEN ARTIKEL -->
+<div class="container">
+<div class="artikel-body">
+
+  <p>Subuh tadi, sebelum Top Kopi Gula Aren sempat habis, gue udah jalan keluar. Bukan ke mana-mana — cuma ke sudut kebun di Villa Ciracas. Ada yang mau dicek: seledri di pot yang udah beberapa hari gue tinggal tanpa banyak drama.</p>
+
+  <p>Dan ternyata dia tumbuh. Diam-diam, tanpa minta perhatian, tanpa notifikasi. Daunnya hijau, rapat, segar. Ada embun tipis di ujung daun. Di latar belakang ada suara burung yang entah darimana. Pagi itu, 5 menit berdiri di situ rasanya lebih menenangkan dari scrolling 30 menit.</p>
+
+  <div class="foto-block">
+    <img src="https://i.imgur.com/xbM5dBY.jpg" alt="Seledri organik tumbuh subur di pot Villa Ciracas" loading="lazy">
+    <div class="foto-caption">📍 Villa Ciracas — Seledri organik pagi hari, masih ada embunnya</div>
+  </div>
+
+  <div class="quote-box">
+    <div class="quote-text">"Tanaman itu jujur. Kasih cukup air, cukup cahaya, cukup sabar — dia akan kasih balik hasilnya. Gak ada drama, gak ada excuses."</div>
+    <div class="quote-source">— Om Opan, Bunker Opanowski</div>
+  </div>
+
+  <h2>Kenapa Seledri? Kenapa <em>Bukan yang Lain?</em></h2>
+
+  <p>Gue bukan petani. Gue bukan ahli botani. Gue cuma orang yang pengen makan sayuran yang gue tau persis dari mana asalnya — bukan dari mana entah, disemprot entah apa, diangkut berhari-hari sebelum nyampe meja makan.</p>
+
+  <p>Seledri dipilih bukan karena keren. Dipilih karena <strong style="color:var(--cream)">fungsional</strong>. Ini sayuran yang sering dipake sehari-hari — tumisan, sup, mie — dan harganya lumayan kalau beli terus. Tanam sendiri, masalah beres.</p>
+
+  <div class="tips-box">
+    <div class="tips-box-label">🌿 5 Alasan Seledri Organik Layak Ditanam di Rumah</div>
+    <div class="tips-item">
+      <span class="tips-icon">1️⃣</span>
+      <span><strong style="color:var(--cream)">Modal mepet, hasil nyata.</strong> Cukup pot bekas, tanah campur kompos, dan biji atau bibit seledri. Total modal bisa di bawah 20 ribu.</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">2️⃣</span>
+      <span><strong style="color:var(--cream)">Cocok buat lahan sempit.</strong> Pot kecil di sudut teras, di pinggir tembok, di mana pun yang kena sinar — bisa jalan.</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">3️⃣</span>
+      <span><strong style="color:var(--cream)">Low maintenance.</strong> Siram pagi, pastiin drainase bagus, sisanya biarkan alam kerja. Gak perlu diasihin tiap jam.</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">4️⃣</span>
+      <span><strong style="color:var(--cream)">Organik beneran.</strong> Lo yang kontrol — gak ada pestisida kecuali lo yang izinin. Mau pakai pupuk kompos dari dapur sendiri? Bisa.</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">5️⃣</span>
+      <span><strong style="color:var(--cream)">Therapy gratis.</strong> Ini yang paling underrated. Ngeliat tanaman tumbuh setiap hari — ada sesuatu yang tenang masuk ke kepala. Ilmu psikologi nyebutnya <em>biophilic effect</em>. Gue nyebutnya healing murahan yang works.</span>
+    </div>
+  </div>
+
+  <h2>Soal <em>"Healing"</em> yang Sering Disalahpahami</h2>
+
+  <p>Orang sering mikir healing itu mahal. Harus staycation, harus ke kafe estetik, harus beli sesuatu. Padahal kadang yang dibutuhin cuma <strong style="color:var(--cream)">5 menit berdiri di depan pot tanaman</strong> sambil pegang cangkir kopi.</p>
+
+  <p>Rutinitas pagi di Villa Ciracas itu sederhana banget. Bangun subuh, sholat, cek tanaman, baru ngopi. Urutannya penting. Cek tanaman dulu — karena itu yang reset kepala sebelum mulai hari yang mungkin ribet.</p>
+
+  <p>Kalau lo lagi pusing sama kerjaan, bosen sama rutinitas, atau ngerasa hidup cuma ngulang-ngulang hal yang sama — coba tanam sesuatu. Mulai dari yang paling gampang. Seledri, bayam, kemangi. Taruh di depan kamar atau di teras. Siram pagi. Liat tiap hari.</p>
+
+  <div class="info-box">
+    <div class="info-box-label">🔧 Setup Tanam Seledri ala Villa Ciracas</div>
+    <div class="tips-item">
+      <span class="tips-icon">🪴</span>
+      <span><strong>Pot:</strong> Pot plastik diameter 20–30cm, pastiin ada lubang bawah buat drainage</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">🌱</span>
+      <span><strong>Media tanam:</strong> Campuran tanah kebun + kompos (perbandingan 2:1)</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">💧</span>
+      <span><strong>Siram:</strong> Pagi hari, jangan sampai tergenang, jangan sampai kering total</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">☀️</span>
+      <span><strong>Cahaya:</strong> Minimal 4–6 jam sinar matahari langsung. Kalau indoor, taruh dekat jendela</span>
+    </div>
+    <div class="tips-item">
+      <span class="tips-icon">✂️</span>
+      <span><strong>Panen:</strong> Potong dari luar ke dalam, sisakan bagian tengah biar terus tumbuh</span>
+    </div>
+  </div>
+
+  <h2>Ketahanan Pangan Dimulai dari <em>Satu Pot</em></h2>
+
+  <p>Gue punya filosofi sederhana soal ini: <strong style="color:var(--cream)">ketahanan pangan mandiri itu bukan tentang punya ladang berhektar-hektar.</strong> Itu tentang kebiasaan. Tentang tahu bahwa lo bisa menanam — meski di pot kecil, meski di Jakarta, meski lahan cuma sepetak teras.</p>
+
+  <p>Satu pot seledri organik itu bukan solusi pangan dunia. Tapi itu langkah pertama. Dan dari satu pot, bisa jadi dua. Dari dua jadi sepuluh. Dari sepuluh, lo udah punya kebun urban yang proper — kayak yang pelan-pelan gue bangun di Villa Ciracas.</p>
+
+  <p>Lo gak harus langsung besar. Yang penting mulai.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Menanam itu bukan soal punya lahan luas. Tapi soal keputusan untuk tidak sepenuhnya bergantung pada orang lain untuk hal yang bisa lo urus sendiri."</div>
+    <div class="quote-source">— Filosofi Om Opan · Villa Ciracas</div>
+  </div>
+
+  <p>Kalau lo udah pernah nyoba nanam atau lagi pengen mulai — yuk ngobrol di kolom komentar. Atau kalau lo di Jakarta dan punya pertanyaan soal urban farming skala rumahan, drop aja pertanyaannya. Gue bukan ahlinya, tapi kita bisa belajar bareng.</p>
+
+  <p>Selamat pagi. Semoga hari ini lebih tenang dari kemarin. ☕🌿</p>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#UrbanFarming</span>
+    <span class="hashtag">#SeledriOrganik</span>
+    <span class="hashtag">#FilosofiOmOpan</span>
+    <span class="hashtag">#KetahananPangan</span>
+    <span class="hashtag">#HealingMurahan</span>
+    <span class="hashtag">#TanamSendiri</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Artikel ini berguna? Share ke teman yang lagi butuh alasan buat mulai nanam 🌱</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="blog.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  Bunker Opanowski — Log Harian
+  <span class="updated-tag"><span class="live-dot"></span>Mei 2026</span>
+</footer>
+
+</body>
+</html>
