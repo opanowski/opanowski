@@ -1,0 +1,117 @@
+/* ============================================
+   BUNKER OPANOWSKI — shared.css
+   CSS Global · Dark & Gold Theme
+   Import di semua portal: <link rel="stylesheet" href="/opanowski/shared.css">
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* === CSS VARIABLES === */
+:root {
+  --bg:           #0f1117;
+  --surface:      #1a1d27;
+  --surface2:     #22263a;
+  --accent:       #f5a623;
+  --accent2:      #e85d04;
+  --text:         #e8eaf0;
+  --text-muted:   #8b8fa8;
+  --green:        #4caf7d;
+  --red:          #e05a5a;
+  --blue:         #5b8dee;
+  --purple:       #b57bee;
+  --border:       #2e3248;
+  --gold:         #C8972A;
+  --cream:        #F5F0E8;
+  --font-mono:    'Space Mono', monospace;
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'Syne', sans-serif;
+}
+
+/* === RESET === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3 { letter-spacing: -0.5px; }
+a { color: inherit; text-decoration: none; }
+
+/* === UTILITIES === */
+.mono        { font-family: var(--font-mono); }
+.text-accent { color: var(--accent); }
+.text-muted  { color: var(--text-muted); }
+.text-gold   { color: var(--gold); }
+.text-green  { color: var(--green); }
+.text-red    { color: var(--red); }
+.text-blue   { color: var(--blue); }
+
+/* === LIVE DOT ANIMATION === */
+.live-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-right: 4px;
+  vertical-align: middle;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* === SHARED FOOTER === */
+.site-footer {
+  padding: 20px 24px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+.site-footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.site-footer .social-links a {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  transition: color 0.2s;
+}
+.site-footer .social-links a:hover { color: var(--accent); }
+
+/* === BACK LINK (shared di semua portal) === */
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.7rem;
+  color: var(--text-muted); transition: color 0.2s;
+}
+.back-link:hover { color: var(--accent); }
+
+/* === TAG STYLES (reuse di blog & projects) === */
+.tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-family: var(--font-mono); font-size: 0.6rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px;
+}
+.tag-youtube  { background: #2a1e1e; color: #e05a5a; }
+.tag-farming  { background: #1e3d2a; color: #4caf7d; }
+.tag-mekanik  { background: #3d2a0a; color: #f5a623; }
+.tag-gadget   { background: #2d1e3d; color: #b57bee; }
+.tag-filosofi { background: #1e3a5f; color: #5b8dee; }
+.tag-ai       { background: #1e3d2a; color: #4caf7d; }
+.tag-web      { background: #2a1e1e; color: #e05a5a; }
+.tag-tipstrik { background: #3d2a0a; color: #f5a623; }
