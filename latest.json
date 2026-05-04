@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Seledri di Pot, Healing di Pagi Hari",
+    "desc": "Secangkir Top Kopi Gula Aren, subuh di Villa Ciracas, dan seledri organik yang tumbuh diam-diam.",
+    "link": "blog-seledri-organik.html",
+    "date": "4 Mei 2026",
+    "badge": "#004",
+    "tags": ["Kebun", "Lifestyle"]
+  },
+  {
+    "title": "Konsistensi Brand & Optimasi Kerja Digital",
+    "desc": "Dari akun personal jadi Bunker Opanowski yang utuh — satu nama di 5 platform, baca data Facebook kayak baca kartu motor.",
+    "link": "blog-brand-konsistensi.html",
+    "date": "Mei 2026",
+    "badge": "Artikel",
+    "tags": ["Filosofi", "Web"]
+  },
+  {
+    "title": "Bye-bye Kabel! Optimasi Transfer Data & Branding Baru",
+    "desc": "LocalSend kirim 80MB video kebun, TikTok seragam jadi @opanowski, kenaikan tayangan 5.524%.",
+    "link": "blog-log05-bye-kabel.html",
+    "date": "2 Mei 2026",
+    "badge": "#003",
+    "tags": ["Gadget", "Branding"]
+  }
+]
