@@ -5,7 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* === CSS VARIABLES (tambah kontras) === */
+/* === CSS VARIABLES (KONTRAST MAX) === */
 :root {
   --bg:           #0a0c10;
   --surface:      #14181f;
@@ -16,8 +16,8 @@
   --text-muted:   #b8c0cc;
   --green:        #5dcc8a;
   --red:          #e05a5a;
-  --blue:         #6d9eff;
-  --purple:       #c27eff;
+  --blue:         #7aaeff;
+  --purple:       #d0a0ff;
   --border:       #3a4050;
   --gold:         #e6b53e;
   --cream:        #fef7e6;
@@ -50,6 +50,7 @@ a { color: inherit; text-decoration: none; }
 .text-green  { color: var(--green); }
 .text-red    { color: var(--red); }
 .text-blue   { color: var(--blue); }
+.text-purple { color: var(--purple); }
 
 /* === LIVE DOT === */
 .live-dot {
@@ -100,17 +101,17 @@ a { color: inherit; text-decoration: none; }
 }
 .back-link:hover { color: var(--gold); }
 
-/* === TAG STYLES === */
+/* === TAG STYLES (WARNA TERANG & KONTRAST) === */
 .tag {
   display: inline-block; padding: 3px 10px; border-radius: 20px;
   font-family: var(--font-mono); font-size: 0.65rem;
   font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
 }
-.tag-youtube  { background: #3a1e1e; color: #ff6b6b; }
-.tag-farming  { background: #1e3a2a; color: #6fcf97; }
-.tag-mekanik  { background: #3a2e1e; color: #f5a623; }
-.tag-gadget   { background: #2e1e3a; color: #c27eff; }
-.tag-filosofi { background: #1e2e5a; color: #7a9eff; }
-.tag-ai       { background: #1e3a2a; color: #6fcf97; }
-.tag-web      { background: #3a1e1e; color: #ff6b6b; }
-.tag-tipstrik { background: #3a2e1e; color: #f5a623; }
+.tag-youtube  { background: #3a1e1e; color: #ff8a8a; }
+.tag-farming  { background: #1e3a2a; color: #8fdfb0; }
+.tag-mekanik  { background: #3a2e1e; color: #f5c48a; }
+.tag-gadget   { background: #2e1e3a; color: #d0a0ff; }
+.tag-filosofi { background: #1e2e5a; color: #8aaeff; }
+.tag-ai       { background: #1e3a2a; color: #8fdfb0; }
+.tag-web      { background: #3a1e1e; color: #ff8a8a; }
+.tag-tipstrik { background: #3a2e1e; color: #f5c48a; }
