@@ -63,12 +63,13 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
 
 /* STEPS / TIMELINE */
 .timeline{margin:1.5rem 0;display:flex;flex-direction:column;gap:0}
-.step{display:flex;gap:1rem;position:relative}
+.step{display:flex;gap:1rem;position:relative;flex-wrap:nowrap;align-items:flex-start}
 .step:not(:last-child)::before{content:'';position:absolute;left:15px;top:32px;bottom:0;width:1px;background:var(--gold-border)}
 .step-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.7rem;font-weight:700;flex-shrink:0;margin-top:4px}
 .step-num.ok{background:var(--green-light);border:1px solid var(--green-border);color:var(--green)}
 .step-num.fail{background:var(--red-light);border:1px solid var(--red-border);color:var(--red)}
-.step-body{padding-bottom:1.75rem;flex:1}
+.step-body{padding-bottom:1.75rem;flex:1;min-width:0}
+.step-body .img-wrap{margin-top:1rem;width:100%}
 .step-title{font-family:var(--font-display);font-size:1rem;color:var(--cream);margin-bottom:0.35rem;font-weight:600}
 .step-desc{font-size:0.88rem;opacity:0.6;line-height:1.8}
 
