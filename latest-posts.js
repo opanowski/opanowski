@@ -15,7 +15,16 @@ const LATEST_POSTS = [
   // ──────────────────────────────────────────────
   // TAMBAH ENTRI BARU DI SINI (paling atas = paling baru)
   // ──────────────────────────────────────────────
-
+{
+    href: "blog-log087-nama-file-baru.html",
+    badge: "#087",
+    tags: ["Urban Farming", "Tips"],
+    tagColor: "#4caf7d",
+    tagBg: "rgba(76,175,125,",
+    date: "6 Mei 2026",
+    title: "Judul Log Terbaru",
+    desc: "Deskripsi singkat 1-2 kalimat tentang isi log.",
+  },
   {
     href: "blog-log086-pisang-telur.html",
     badge: "#086",
