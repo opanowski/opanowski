@@ -1,0 +1,26 @@
+[
+  {
+    "title": "2 Hari Berperang dengan Kode & Warna",
+    "desc": "Cerita di balik layar: pindah 17 gambar dari Imgur ke GitHub, rename file puluhan kali, dan berantem sama warna ungu yang membandel.",
+    "link": "blog/blog-pindah-gambar-ganti-warna.html",
+    "date": "5 Mei 2026",
+    "badge": "Artikel",
+    "tags": ["Dibalik Layar", "GitHub"]
+  },
+  {
+    "title": "Seledri di Pot, Healing di Pagi Hari",
+    "desc": "Secangkir Top Kopi Gula Aren, subuh di Villa Ciracas, dan seledri organik yang tumbuh diam-diam.",
+    "link": "blog-seledri-organik.html",
+    "date": "4 Mei 2026",
+    "badge": "#004",
+    "tags": ["Kebun", "Lifestyle"]
+  },
+  {
+    "title": "Bye-bye Kabel! Optimasi Transfer Data & Branding Baru",
+    "desc": "LocalSend kirim 80MB video kebun, TikTok seragam jadi @opanowski, kenaikan tayangan 5.524%.",
+    "link": "blog-log05-bye-kabel.html",
+    "date": "2 Mei 2026",
+    "badge": "#003",
+    "tags": ["Gadget", "Branding"]
+  }
+]
