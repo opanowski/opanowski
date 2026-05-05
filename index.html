@@ -431,35 +431,4 @@ function closeMenu(){
 }
 </script>
 </body>
-  <script>
-  async function loadLatestUpdates() {
-    const container = document.getElementById('latest-update-container');
-    if (!container) return;
-    try {
-      const response = await fetch('latest.json');
-      if (!response.ok) throw new Error();
-      const updates = await response.json();
-      if (!updates || updates.length === 0) return;
-      const colors = ['#4caf7d', '#5b8dee', '#ffffff', '#C8972A'];
-      let html = '';
-      updates.slice(0, 3).forEach((item, index) => {
-        const borderColor = colors[index % colors.length];
-        html += `
-          <a href="${item.link}" style="text-decoration:none;display:flex;flex-direction:column;background:#0f0f12;border:1px solid rgba(200,151,42,0.18);border-top:3px solid ${borderColor};border-radius:12px;padding:1.6rem;transition:all 0.3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.85rem;flex-wrap:wrap">
-              <span style="background:rgba(76,175,125,0.15);color:${borderColor};font-size:0.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 9px;border-radius:20px">${item.badge}</span>
-              ${item.tags.map(tag => `<span style="background:rgba(76,175,125,0.1);color:${borderColor};font-size:0.58rem;letter-spacing:1px;text-transform:uppercase;padding:2px 9px;border-radius:20px">${tag}</span>`).join('')}
-              <span style="margin-left:auto;font-size:0.6rem;color:${borderColor};opacity:0.6">${item.date}</span>
-            </div>
-            <h3 style="font-family:var(--font-display);font-size:1.02rem;color:var(--cream);margin-bottom:0.6rem">${item.title}</h3>
-            <p style="font-size:0.8rem;opacity:0.45;line-height:1.7;margin-bottom:1rem;color:#b8c0cc">${item.desc}</p>
-            <span style="font-size:0.7rem;color:${borderColor};letter-spacing:1px;text-transform:uppercase;opacity:0.8">Baca →</span>
-          </a>
-        `;
-      });
-      container.innerHTML = html;
-    } catch(e) {}
-  }
-  if(document.getElementById('latest-update-container')) loadLatestUpdates();
-</script>
 </html>
