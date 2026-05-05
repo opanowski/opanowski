@@ -16,7 +16,7 @@ const LATEST_POSTS = [
   // TAMBAH ENTRI BARU DI SINI (paling atas = paling baru)
   // ──────────────────────────────────────────────
 {
-    href: "blog-log087-nama-file-baru.html",
+    href: "coming-soon.html",
     badge: "#087",
     tags: ["Urban Farming", "Tips"],
     tagColor: "#4caf7d",
