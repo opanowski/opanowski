@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Swasembada: Sekarang Bisa Traktir Kopi di Bunker Opanowski! — Bunker Opanowski</title>
+<meta name="description" content="Tombol donasi akhirnya landing di Bunker Opanowski. Cerita di balik pemasangannya — dari drama z-index terminal Mac sampai filosofi kenapa karya digital juga butuh 'pupuk'.">
+<meta property="og:title" content="Digital Swasembada: Sekarang Bisa Traktir Kopi di Bunker Opanowski!">
+<meta property="og:description" content="Floating button donasi via Trakteer & Saweria kini hadir di Bunker. Bukan soal cuan — tapi soal ekosistem yang saling menghidupi.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog-pasang-tombol-donasi.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #1C1A14 0%, #0f1117 60%, #1a1500 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--gold) 0px,
+      var(--gold) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  }
+  .hero-emoji-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 2.5rem 2rem 2.5rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;
+  }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: 'Space Mono', monospace;
+  }
+  .tag-pill.green {
+    background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--gold); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* KONTEN */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .artikel-body p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    opacity: 0.88;
+  }
+
+  .artikel-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  /* SPEK BOX */
+  .spek-box {
+    background: rgba(200,151,42,0.05);
+    border: 1px solid rgba(200,151,42,0.2);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .spek-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* TERMINAL BOX */
+  .terminal-box {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1.75rem 0;
+  }
+  .terminal-header {
+    background: #161b22;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #30363d;
+  }
+  .terminal-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .terminal-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: #8b949e;
+    margin-left: 4px;
+    letter-spacing: 1px;
+  }
+  .terminal-body {
+    padding: 1rem 1.4rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.8;
+    color: #c9d1d9;
+  }
+  .terminal-body .cmd { color: #79c0ff; }
+  .terminal-body .out { color: #8b949e; }
+  .terminal-body .ok { color: #56d364; }
+  .terminal-body .err { color: #f85149; }
+  .terminal-body .warn { color: #e3b341; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(200,151,42,0.05);
+    border: 1px solid rgba(200,151,42,0.2);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.6;
+  }
+  .quote-source {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--gold);
+    margin-top: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.75rem 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+
+  /* DONASI PREVIEW */
+  .donasi-preview {
+    background: linear-gradient(135deg, rgba(200,151,42,0.08) 0%, rgba(15,17,23,0) 100%);
+    border: 1px solid rgba(200,151,42,0.25);
+    border-radius: 14px;
+    padding: 1.8rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .donasi-preview-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+  .donasi-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .donasi-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.7rem 1.4rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'Space Mono', monospace;
+  }
+  .donasi-btn.trakteer {
+    background: rgba(232,67,67,0.1);
+    border: 1px solid rgba(232,67,67,0.3);
+    color: #e84343;
+  }
+  .donasi-btn.trakteer:hover { background: rgba(232,67,67,0.2); }
+  .donasi-btn.saweria {
+    background: rgba(200,151,42,0.1);
+    border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold);
+  }
+  .donasi-btn.saweria:hover { background: rgba(200,151,42,0.2); }
+  .donasi-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CTA */
+  .cta-block {
+    margin-top: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .cta-block p {
+    font-size: 0.85rem !important;
+    opacity: 0.6 !important;
+    margin-bottom: 1rem !important;
+  }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600;
+    transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px;
+    font-size: 0.6rem; color: var(--accent); margin-left: 6px;
+  }
+
+  /* FAQ */
+  .faq-item { background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color 0.2s; }
+  .faq-item:hover { border-color:rgba(200,151,42,0.5); }
+  .faq-item.open { border-left-color:var(--accent); }
+  .faq-q { padding:14px 18px;font-size:0.85rem;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:12px; }
+  .faq-q::after { content:"▾";font-size:0.75rem;color:var(--text-muted);transition:transform 0.25s;flex-shrink:0; }
+  .faq-item.open .faq-q::after { transform:rotate(180deg);color:var(--accent); }
+  .faq-a { max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s;padding:0 18px;font-size:0.8rem;color:var(--text-muted);line-height:1.85; }
+  .faq-item.open .faq-a { max-height:300px;padding:0 18px 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">☕</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill">☕ Donasi</span>
+      <span class="tag-pill">🔧 Dev Log</span>
+      <span class="tag-pill green">Digital Swasembada</span>
+    </div>
+    <h1 class="hero-title">Sekarang Bisa Traktir Kopi<br><em>di Bunker Opanowski!</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>☕ Ditulis sambil Top Kopi Gula Aren</span>
+    </div>
+  </div>
+</div>
+
+<!-- KONTEN ARTIKEL -->
+<div class="container">
+<div class="artikel-body">
+
+  <p>Halo bray!</p>
+
+  <p>Setelah belakangan ini waktu gw bener-bener habis buat ngurusin <strong style="color:var(--cream)">tanaman</strong> sama <strong style="color:var(--cream)">hewan peliharaan</strong> di rumah — maklum lah, urusan makhluk hidup nggak bisa ditinggal tidur kayak kodingan — akhirnya hari ini gw sempetin lagi buat <em>"ngebengkel"</em> digital di website <strong style="color:var(--cream)">Bunker Opanowski</strong>.</p>
+
+  <p>Dan hasilnya? Floating button donasi akhirnya landing. Elegan, fungsional, nggak ganggu konten — persis kayak filosofi Bunker ini dari awal.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Bukan cuma kebun organik yang butuh pupuk — semangat nulis dan ngonten di sini juga butuh bensin."</div>
+    <div class="quote-source">— Om Opan, ngebengkel di Villa Ciracas</div>
+  </div>
+
+  <h2>Latar Belakang: <em>Kenapa Baru Sekarang?</em></h2>
+
+  <p>Banyak yang nanya di Facebook atau pas lagi mampir ke Ciracas: <em>"Om, gimana cara support Bunker?"</em>. Selama ini jawaban gw cukup satu baris — "cukup baca dan share aja". Dan itu genuine, bukan basa-basi.</p>
+
+  <p>Tapi gw pikir lagi. Ada yang udah rutin mampir ke sini. Ada yang share artikel soal kandang aviary ke grup Urban Farming. Ada yang ngikutin cerita seledri organik dari awal. Kalau mereka pengen kasih lebih dari sekadar klik — kenapa gw block jalannya?</p>
+
+  <p>Jadi ini bukan soal monetisasi agresif. Ini soal <strong style="color:var(--cream)">membuka pintu</strong> buat yang emang mau masuk. Sisanya tetap gratis, tetap bebas, tetap sama.</p>
+
+  <h2>Spek Tombol: <em>Macho tapi Santun</em></h2>
+
+  <div class="spek-box">
+    <div class="spek-box-label">⚙️ Spesifikasi Tombol Donasi</div>
+    <div class="spek-item">
+      <span class="spek-icon">🎨</span>
+      <span><strong style="color:var(--cream)">Warna Macho.</strong> Skema gelap <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:0.8em">#1C1A14</code> dengan aksen emas <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:0.8em">#C8972A</code> — sinkron penuh sama desain Bunker yang sekarang. Nggak tempel-tempel kayak iklan copas.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">⚡</span>
+      <span><strong style="color:var(--cream)">Double Power.</strong> Dua jalur tersedia: <strong>Trakteer</strong> buat yang mau kirim "Cendol" dan <strong>Saweria</strong> buat yang mau kirim "Kopi". Pilihan ada di tangan lo.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">📱</span>
+      <span><strong style="color:var(--cream)">Minimalis & Responsif.</strong> Tombolnya <em>floating</em> di pojok kanan bawah — nggak bakal nutupin tulisan, nggak ganggu baca, nggak bikin mual. Dari MacBook atau HP sama enaknya.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🔒</span>
+      <span><strong style="color:var(--cream)">Zero tracking.</strong> Tombol donasi ini nggak pasang pixel iklan, nggak install cookie tersembunyi. Lo klik, langsung ke platform donasi. Bersih.</span>
+    </div>
+  </div>
+
+  <h2>Drama Terminal: <em>z-index Minta Diajak Ribut</em></h2>
+
+  <p>Jujur, tadi sempat ada drama dikit bray. Pas tombol baru dipasang, eh... halaman depan malah <strong style="color:var(--cream)">"mogok"</strong> — area hero section nggak bisa diklik sama sekali. Tombol navigasi, link artikel, semua mati. Padahal secara visual kelihatan normal.</p>
+
+  <p>Duduk sebentar, diagnosa masalah. Ketemu: <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:0.8em">hero-overlay</code> punya <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:0.8em">pointer-events</code> yang nge-block semua klik di bawahnya, plus <code style="background:var(--surface);padding:2px 6px;border-radius:4px;font-size:0.8em">z-index</code> floating button yang konflik sama elemen lain.</p>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#febc2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <span class="terminal-title">Terminal — MacBook Pro · Villa Ciracas</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="out"># Diagnosa: hero-overlay nge-block semua klik</span></div>
+      <div><span class="err">→ pointer-events: auto pada .hero-overlay → BLOCKER</span></div>
+      <div><span class="err">→ z-index: 9999 pada donate-widget konflik dengan nav</span></div>
+      <div>&nbsp;</div>
+      <div><span class="out"># Fix yang diaplikasikan:</span></div>
+      <div><span class="cmd">$ sed -i '' 's/pointer-events: auto/pointer-events: none/' donate-widget.js</span></div>
+      <div><span class="ok">✓ hero-overlay: pointer-events: none (klik tembus ke bawah)</span></div>
+      <div><span class="cmd">$ git add . && git commit -m "fix: pointer-events donate widget"</span></div>
+      <div><span class="cmd">$ git push</span></div>
+      <div><span class="ok">✓ Everything running normal.</span></div>
+      <div>&nbsp;</div>
+      <div><span class="warn">Pelajaran: z-index itu kayak urutan antrian. Kalau salah, semua kacau.</span></div>
+    </div>
+  </div>
+
+  <p>Setelah fix, semua normal lagi. Total waktu debugging: sekitar 20 menit. Termasuk ngopi dulu sebelum mulai. Priorities. ☕</p>
+
+  <p>Ini yang gw suka dari ngurusin website statis di GitHub Pages — tiap error langsung kelihatan, tiap fix langsung bisa diverifikasi. <strong style="color:var(--cream)">Nggak ada magic, nggak ada middleman.</strong> Lo yang tanam, lo yang siram, lo yang panen.</p>
+
+  <h2>Cara Pakai: <em>Semudah Jajan Bakso</em></h2>
+
+  <div class="info-box">
+    <div class="info-box-label">☕ Cara Traktir Om Opan</div>
+    <div class="spek-item">
+      <span class="spek-icon">1️⃣</span>
+      <span>Lihat pojok kanan bawah halaman mana pun di Bunker Opanowski — ada icon ☕</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2️⃣</span>
+      <span>Klik iconnya, pilih platform: <strong>Trakteer</strong> (Cendol) atau <strong>Saweria</strong> (Kopi)</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">3️⃣</span>
+      <span>Ikutin proses di platform yang lo pilih — ada berbagai nominal, mulai dari yang paling kecil</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">4️⃣</span>
+      <span>Done. Gw lanjut nulis, lo lanjut baca. Ekosistem jalan terus.</span>
+    </div>
+  </div>
+
+  <!-- DONASI PREVIEW -->
+  <div class="donasi-preview">
+    <div class="donasi-preview-label">☕ Traktir Om Opan Langsung dari Sini</div>
+    <div class="donasi-btns">
+      <a class="donasi-btn trakteer" href="https://trakteer.id/opanowski" target="_blank" rel="noopener">
+        🍹 Kirim Cendol via Trakteer
+      </a>
+      <a class="donasi-btn saweria" href="https://saweria.co/opanowski" target="_blank" rel="noopener">
+        ☕ Kirim Kopi via Saweria
+      </a>
+    </div>
+    <div class="donasi-note">
+      Tanpa akun? Tenang — bisa donasi sebagai tamu.<br>
+      Semua dukungan langsung ke dapur operasional Bunker Opanowski.
+    </div>
+  </div>
+
+  <h2>Filosofi di Balik <em>Tombol Kecil Ini</em></h2>
+
+  <p>Gw autodidak. Semua yang ada di Bunker ini — dari desain, kode, konten, sampai kandang aviary — dikerjain sendiri. MacBook 2015 yang udah jadi partner setia, koneksi internet yang kadang moodnya nggak jelas, dan kopi gula aren yang selalu ada.</p>
+
+  <p>Nggak ada investor, nggak ada sponsor, nggak ada iklan. Dan gw nggak mau ada. Tapi kalau lo ngerasa konten di sini kasih nilai — entah itu soal urban farming, oprekan gadget, atau sekadar cerita kehidupan sehari-hari dari Ciracas — tombol itu ada buat lo.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Swasembada itu bukan berarti nolak bantuan. Tapi milih bantuan yang datang dari tempat yang bener — dari yang genuine mau support, bukan dari yang mau kontrol."</div>
+    <div class="quote-source">— Filosofi Om Opan · Bunker Opanowski</div>
+  </div>
+
+  <p>Kalau lo nggak mau donasi — ya nggak masalah. Baca, share, tinggalin komentar. Itu juga bentuk support yang sama berartinya. Yang penting kita jaga ekosistem ini sama-sama.</p>
+
+  <p><em>Salam Oprek dari Ciracas! 🔧</em></p>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#DevLog</span>
+    <span class="hashtag">#Trakteer</span>
+    <span class="hashtag">#Saweria</span>
+    <span class="hashtag">#DigitalSwasembada</span>
+    <span class="hashtag">#FilosofiOmOpan</span>
+    <span class="hashtag">#GitHubPages</span>
+    <span class="hashtag">#WebDev</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Konten ini bermanfaat? Share ke yang lagi bangun presence digital-nya 🔧</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.6rem">
+      <span style="font-size:1.1rem">❓</span>
+      <h2 style="font-family:var(--font-display,inherit);font-size:1.1rem;color:var(--accent);margin:0;letter-spacing:-0.3px">Tanya Jawab — Soal Donasi & Support</h2>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:1.8rem;line-height:1.8">Pertanyaan yang mungkin muncul soal sistem donasi di Bunker Opanowski.</p>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">☕ Donasi dipakai buat apa?</div>
+        <div class="faq-a">Operasional Bunker — domain, hosting backup, dan yang paling penting: stok Top Kopi Gula Aren biar sesi nulis dan ngoding tetap jalan. Semua transparan, nggak ada pos tersembunyi.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🔒 Aman nggak donasinya?</div>
+        <div class="faq-a">Proses donasi 100% di platform masing-masing (Trakteer & Saweria) — keduanya platform kreator Indonesia yang established. Bunker Opanowski nggak menyimpan data pembayaran lo sama sekali.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🍹 Bedanya Trakteer vs Saweria?</div>
+        <div class="faq-a">Basically sama — keduanya platform support kreator lokal. Trakteer pakai sistem "Cendol" sebagai satuan, Saweria pakai "Kopi". Pilih yang lo punya akunnya atau yang paling gampang buat lo.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">💬 Kalau nggak mau donasi, bisa support lain?</div>
+        <div class="faq-a">Tentu. Share artikel ke grup Urban Farming, FB, atau WA group — itu sama berartinya. Tinggalin komentar di Facebook. Atau sekadar baca sampai habis tiap artikel baru tayang. Konsistensi audiens itu bahan bakar paling sustain buat kreator.</div>
+      </div>
+
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🔧 Kenapa website ini nggak pasang iklan aja?</div>
+        <div class="faq-a">Karena iklan artinya ada pihak ketiga yang punya kepentingan di sini. Bunker Opanowski independen — kontennya nggak bisa dibeli, arahnya nggak bisa didikte. Donasi langsung dari pembaca jauh lebih bersih dari revenue iklan mana pun.</div>
+      </div>
+
+    </div>
+  </div>
+  <!-- END FAQ -->
+
+</div>
+</div>
+
+<footer>
+  Bunker Opanowski — Log Harian
+  <span class="updated-tag"><span class="live-dot"></span>Mei 2026</span>
+</footer>
+
+<script src="/opanowski/donate-widget.js"></script>
+</body>
+</html>
