@@ -25,18 +25,18 @@
   document.body.appendChild(fab);
 
   var open = false;
-  document.getElementById('donate-trigger').addEventListener('click', function(e){
+  document.getElementById('donate-trigger').onclick = function(e){
     e.stopPropagation();
     open = !open;
     document.getElementById('donate-panel').className = open ? 'open' : '';
     this.style.background = open ? '#1C1A14' : '#C8972A';
     this.style.border = open ? '2px solid #C8972A' : 'none';
-  });
+  };
   document.addEventListener('click', function(e){
     if(!open) return;
     var fab = document.getElementById('donate-fab');
     if(fab && !fab.contains(e.target)){
       document.getElementById('donate-trigger').click();
     }
-  });
+  };
 })();
