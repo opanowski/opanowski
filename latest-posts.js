@@ -11,16 +11,6 @@
  */
 
 const LATEST_POSTS = [
-  {
-    href: "blog-pasang-tombol-donasi.html",
-    badge: "DevLog",
-    tags: ["DevLog", "Web"],
-    tagColor: "#f5a623",
-    tagBg: "rgba(245,166,35,",
-    date: "7 Mei 2026",
-    desc: "Tombol donasi akhirnya landing di Bunker. Dari drama z-index terminal Mac sampai filosofi kenapa karya digital juga butuh pupuk.",
-  },
-
 
   // ──────────────────────────────────────────────
   // TAMBAH ENTRI BARU DI SINI (paling atas = paling baru)
