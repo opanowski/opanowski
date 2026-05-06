@@ -15,26 +15,7 @@ const LATEST_POSTS = [
   // ──────────────────────────────────────────────
   // TAMBAH ENTRI BARU DI SINI (paling atas = paling baru)
   // ──────────────────────────────────────────────
-  {
-    href: "blog-pasang-tombol-donasi.html",
-    badge: "DevLog",
-    tags: ["DevLog", "Web"],
-    tagColor: "#f5a623",
-    tagBg: "rgba(245,166,35,",
-    date: "7 Mei 2026",
-    title: "Digital Swasembada: Sekarang Bisa Traktir Kopi di Bunker Opanowski!",
-    desc: "Tombol donasi akhirnya landing di Bunker. Dari drama z-index terminal Mac sampai filosofi kenapa karya digital juga butuh 'pupuk'.",
-  },
-{
-    href: "pajak_zonk.html", 
-    badge: "#087",
-    tags: ["Digital", "Pajak"], 
-    tagColor: "#f5a623", 
-    tagBg: "rgba(245,166,35,", 
-    date: "5 Mei 2026",
-    title: "Navigasi Sistem Coretax: Era Baru Perpajakan",
-    desc: "Bedah tuntas tampilan dan alur sistem Coretax yang baru. Dokumentasi pengerjaan dari meja kerja Villa Ciracas.",
-},
+
   {
     href: "blog-log086-pisang-telur.html",
     badge: "#086",
