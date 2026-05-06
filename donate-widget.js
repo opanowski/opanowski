@@ -7,7 +7,7 @@
   + '.dbtn:hover{background:#e0aa30}'
   + '.dbtn-dom{font-size:10px;opacity:0.6;margin-left:auto;padding-left:10px}'
   + '.dlabel{text-align:center;font-size:10px;color:#C8972A;letter-spacing:2px;text-transform:uppercase;padding:2px 0}'
-  + '#donate-trigger{width:52px;height:52px;border-radius:50%;background:#1C1A14;border:2px solid #C8972A;cursor:pointer;font-size:22px;line-height:1;box-shadow:0 4px 20px rgba(0,0,0,0.8);animation:gpulse 3s ease-in-out infinite}'
+  + '#donate-trigger{width:52px;height:52px;border-radius:50%;background:#1C1A14;border:2px solid #C8972A;cursor:pointer;font-size:22px;line-height:1;box-shadow:0 4px 20px rgba(0,0,0,0.8);animation:gpulse 3s ease-in-out infinite;position:relative;z-index:999999}'
   + '#donate-trigger:hover{transform:scale(1.08);animation:none}'
   + '@keyframes gpulse{0%,100%{box-shadow:0 4px 20px rgba(0,0,0,0.8),0 0 0 0 rgba(200,151,42,0.5)}50%{box-shadow:0 4px 20px rgba(0,0,0,0.8),0 0 0 10px rgba(200,151,42,0)}}';
   document.head.appendChild(s);
