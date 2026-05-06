@@ -21,7 +21,7 @@
     }
     .donate-btn {
       display: flex; align-items: center; gap: 10px;
-      background: #1C1A14; border: 1px solid rgba(200,151,42,0.55);
+      background: rgba(28,26,20,0.92); border: 1.5px solid #C8972A;
       border-radius: 10px; padding: 10px 16px;
       text-decoration: none; color: #F5F0E8;
       font-size: 0.82rem; font-weight: 500;
