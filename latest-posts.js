@@ -18,6 +18,7 @@ const LATEST_POSTS = [
     tagColor: "#f5a623",
     tagBg: "rgba(245,166,35,",
     date: "7 Mei 2026",
+    title: "Digital Swasembada: Traktir Kopi di Bunker Opanowski!",
     desc: "Tombol donasi akhirnya landing di Bunker. Dari drama z-index terminal Mac sampai filosofi kenapa karya digital juga butuh pupuk.",
   },
 
