@@ -1,17 +1,23 @@
 (function(){
-  // Inject CSS
   var style = document.createElement('style');
   style.textContent = `
     #donate-fab {
       position: fixed; bottom: 24px; right: 20px; z-index: 9999;
       display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
       font-family: 'DM Sans', 'Syne', sans-serif;
+      width: fit-content;
+      pointer-events: none;
     }
     #donate-panel {
       display: flex; flex-direction: column; gap: 8px;
       opacity: 0; transform: translateY(12px) scale(0.95);
       pointer-events: none;
       transition: opacity 0.28s ease, transform 0.28s ease;
+      width: fit-content;
+    }
+    #donate-panel.open {
+      opacity: 1; transform: translateY(0) scale(1);
+      pointer-events: auto;
     }
     .donate-btn {
       display: flex; align-items: center; gap: 10px;
@@ -21,6 +27,7 @@
       font-size: 0.82rem; font-weight: 500;
       white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
       transition: background 0.2s, border-color 0.2s, color 0.2s;
+      pointer-events: auto;
     }
     .donate-btn:hover {
       background: #C8972A !important; color: #1C1A14 !important;
@@ -42,6 +49,7 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.6);
       animation: goldPulse 3s ease-in-out infinite;
       transition: transform 0.2s;
+      pointer-events: auto;
     }
     #donate-trigger:hover { transform: scale(1.08); animation: none; }
     #donate-trigger:active { transform: scale(0.96); }
@@ -52,7 +60,6 @@
   `;
   document.head.appendChild(style);
 
-  // Inject HTML
   var fab = document.createElement('div');
   fab.id = 'donate-fab';
   fab.innerHTML = `
@@ -73,7 +80,6 @@
   `;
   document.body.appendChild(fab);
 
-  // Toggle logic
   var open = false;
   document.getElementById('donate-trigger').addEventListener('click', function(e){
     e.stopPropagation();
@@ -81,22 +87,19 @@
     var panel = document.getElementById('donate-panel');
     var btn = document.getElementById('donate-trigger');
     if(open){
-      panel.style.opacity = '1';
-      panel.style.transform = 'translateY(0) scale(1)';
-      panel.style.pointerEvents = 'auto';
+      panel.classList.add('open');
       btn.style.background = '#C8972A';
       btn.style.animation = 'none';
     } else {
-      panel.style.opacity = '0';
-      panel.style.transform = 'translateY(12px) scale(0.95)';
-      panel.style.pointerEvents = 'none';
+      panel.classList.remove('open');
       btn.style.background = '#1C1A14';
       btn.style.animation = 'goldPulse 3s ease-in-out infinite';
     }
   });
   document.addEventListener('click', function(e){
+    if(!open) return;
     var fab = document.getElementById('donate-fab');
-    if(open && fab && !fab.contains(e.target)){
+    if(fab && !fab.contains(e.target)){
       document.getElementById('donate-trigger').click();
     }
   });
