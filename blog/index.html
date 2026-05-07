@@ -178,7 +178,7 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
 <div class="stats">
   <div class="stat-card"><div class="stat-num">12</div><div class="stat-label">Total Entri</div></div>
   <div class="stat-card"><div class="stat-num">2026</div><div class="stat-label">Tahun Aktif</div></div>
-  <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Topik</div></div>
+  <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">Topik</div></div>
   <div class="stat-card"><div class="stat-num" id="stat-visible">12</div><div class="stat-label">Ditampilkan</div></div>
 </div>
 
@@ -191,6 +191,7 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
   <button class="tab" onclick="filterTag('farming',this)">🌱 Urban Farming</button>
   <button class="tab" onclick="filterTag('filosofi',this)">🧭 Filosofi</button>
   <button class="tab" onclick="filterTag('web',this)">🌐 Web</button>
+  <button class="tab" onclick="filterTag('santai',this)">☕ Catatan Santai</button>
 </div>
 
 <div class="search-wrap">
@@ -503,6 +504,33 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
       <span class="log-arrow">Baca →</span>
     </div>
   </a>
+<!-- ============================================================
+     CATATAN SANTAI — Rutinitas harian, obrolan ringan, dll.
+     ============================================================ -->
+<div class="section-header" id="section-santai">
+  ☕ Catatan Santai <span class="count">0 entri</span>
+</div>
+
+<div class="log-list" id="santai-list">
+
+  <!-- PLACEHOLDER — isi saat ada catatan pertama -->
+  <div class="log-card" id="entry-santai-placeholder" data-tags="santai" style="border-style:dashed;opacity:0.5;cursor:default;pointer-events:none;">
+    <div class="log-card-top">
+      <span class="log-num-badge">☕ Santai</span>
+      <span class="log-date">Segera hadir...</span>
+    </div>
+    <div class="log-title">Belum ada catatan santai</div>
+    <div class="log-desc">Nanti diisi: rutinitas pagi, obrolan warung, hal kecil yang layak dicatat. Stay tuned.</div>
+    <div class="log-card-bottom">
+      <div class="log-sections">
+        <span class="section-pill">Rutinitas</span>
+        <span class="section-pill">Harian</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <div class="no-result" id="no-result">Tidak ada entri yang cocok 🔍</div>
 
 <footer class="site-footer">
