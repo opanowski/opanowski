@@ -1,103 +1,399 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOG #006: Analisis Dapur Bunker Opanowski – Dari Ciracas Menuju Global</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0e0e0e; --surface: #161616; --border: #2a2a2a;
-            --accent: #c8ff00; --muted: #555; --text: #d4d4d4;
-            --heading: #f0f0f0; --mono: 'Space Mono', monospace;
-            --sans: 'IBM Plex Sans', sans-serif;
-        }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 1rem; line-height: 1.75; -webkit-font-smoothing: antialiased; }
-        .topbar { border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; gap: 12px; }
-        .topbar-label { font-family: var(--mono); font-size: .7rem; color: var(--muted); letter-spacing: .15em; text-transform: uppercase; }
-        .topbar-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
-        .wrapper { max-width: 760px; margin: 0 auto; padding: 48px 24px 96px; }
-        .log-meta { font-family: var(--mono); font-size: .72rem; color: var(--accent); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 16px; }
-        h1 { font-family: var(--mono); font-size: clamp(1.3rem,4vw,1.9rem); font-weight: 700; color: var(--heading); line-height: 1.25; margin-bottom: 28px; letter-spacing: -.02em; }
-        .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
-        .intro { font-size: 1.05rem; border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 40px; }
-        .section { margin-bottom: 48px; }
-        .section-number { font-family: var(--mono); font-size: .65rem; color: var(--muted); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 6px; }
-        h2 { font-family: var(--mono); font-size: 1rem; font-weight: 700; color: var(--heading); letter-spacing: .02em; text-transform: uppercase; margin-bottom: 16px; }
-        p { margin-bottom: 16px; } p:last-child { margin-bottom: 0; }
-        strong { color: var(--heading); font-weight: 600; }
-        figure { margin: 28px 0; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); }
-        figure img { display: block; width: 100%; height: auto; }
-        figcaption { font-family: var(--mono); font-size: .72rem; color: var(--muted); padding: 10px 14px; border-top: 1px solid var(--border); letter-spacing: .05em; }
-        .stat-callout { display: inline-block; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 2px; }
-        .stat-callout .value { font-family: var(--mono); font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; }
-        .stat-callout .label { font-size: .8rem; color: var(--muted); margin-top: 4px; }
-        .post-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: .75rem; color: var(--muted); text-align: center; letter-spacing: .08em; }
-        .post-footer span { color: var(--accent); }
-        @media (max-width:480px) { .wrapper{padding:32px 18px 72px} h1{font-size:1.2rem} .stat-callout .value{font-size:1.4rem} }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOG #006: Analisis Dapur Bunker Opanowski – Dari Ciracas Menuju Global — Bunker Opanowski</title>
+<meta name="description" content="Bongkar data Analytics dan Search Console Bunker Opanowski. Google Page 1 tercapai, engagement time 4 menit 35 detik, dan trafik sampai Swedia. Data udah bicara.">
+<meta property="og:title" content="LOG #006: Analisis Dapur Bunker Opanowski – Dari Ciracas Menuju Global">
+<meta property="og:description" content="Google udah ngenalin nama Opanowski, engagement time tembus 4:35, dan pengunjung dari Chicago sampai Luleå. Ini bukan keberuntungan — ini data.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/log-006-bunker-opanowski.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #1C1A14 0%, #0f1117 60%, #001a05 100%);
+    min-height: 380px; display: flex; align-items: flex-end; overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 40px);
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem; opacity: 0.06; pointer-events: none; user-select: none;
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%; padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px; font-family: 'Space Mono', monospace;
+  }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .tag-pill.blue  { background: rgba(91,141,238,0.15); border-color: rgba(91,141,238,0.4); color: #5b8dee; }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: 'Space Mono', monospace; font-size: 0.68rem;
+    color: var(--text-muted); display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%; animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text); margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem; color: var(--cream);
+    margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  .spek-box {
+    background: rgba(200,151,42,0.05); border: 1px solid rgba(200,151,42,0.2);
+    border-left: 3px solid var(--gold); border-radius: 10px; padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: 'Space Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6; }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  .stat-callout { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.75rem 0; }
+  .stat-card {
+    flex: 1; min-width: 130px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-top: 3px solid var(--green); border-radius: 10px; padding: 1.2rem 1.4rem; text-align: center;
+  }
+  .stat-card .val { font-family: 'Space Mono', monospace; font-size: 1.6rem; font-weight: 700; color: var(--green); line-height: 1; }
+  .stat-card .lbl { font-size: 0.7rem; color: var(--text-muted); margin-top: 6px; line-height: 1.4; }
+
+  .terminal-box { background: #0d1117; border: 1px solid #30363d; border-radius: 10px; overflow: hidden; margin: 1.75rem 0; }
+  .terminal-header { background: #161b22; padding: 8px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #30363d; }
+  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .terminal-title { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: #8b949e; margin-left: 4px; letter-spacing: 1px; }
+  .terminal-body { padding: 1rem 1.4rem; font-family: 'Space Mono', monospace; font-size: 0.75rem; line-height: 1.8; color: #c9d1d9; }
+  .terminal-body .cmd  { color: #79c0ff; }
+  .terminal-body .out  { color: #8b949e; }
+  .terminal-body .ok   { color: #56d364; }
+  .terminal-body .err  { color: #f85149; }
+  .terminal-body .warn { color: #e3b341; }
+
+  .quote-box {
+    background: rgba(200,151,42,0.05); border: 1px solid rgba(200,151,42,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; color: var(--cream); line-height: 1.6; }
+  .quote-source { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--gold); margin-top: 0.6rem; letter-spacing: 1px; }
+
+  .info-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0; font-size: 0.85rem; line-height: 1.7; }
+  .info-box-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700; }
+
+  figure { margin: 1.75rem 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); }
+  figure img { display: block; width: 100%; height: auto; }
+  figcaption { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--text-muted); padding: 10px 14px; border-top: 1px solid var(--border); letter-spacing: 0.05em; }
+
+  .hashtag-block { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; }
+  .hashtag { background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); font-family: 'Space Mono', monospace; font-size: 0.68rem; padding: 4px 12px; border-radius: 20px; transition: all 0.2s; }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  .cta-block { margin-top: 2.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3); color: var(--gold); text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.75rem; font-weight: 600; transition: all 0.2s; }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  footer { padding: 24px; text-align: center; font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .updated-tag { display: inline-block; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px; }
+
+  .faq-item { background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color 0.2s; }
+  .faq-item:hover { border-color:rgba(200,151,42,0.5); }
+  .faq-item.open { border-left-color:var(--accent); }
+  .faq-q { padding:14px 18px;font-size:0.85rem;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:12px; }
+  .faq-q::after { content:"▾";font-size:0.75rem;color:var(--text-muted);transition:transform 0.25s;flex-shrink:0; }
+  .faq-item.open .faq-q::after { transform:rotate(180deg);color:var(--accent); }
+  .faq-a { max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s;padding:0 18px;font-size:0.8rem;color:var(--text-muted);line-height:1.85; }
+  .faq-item.open .faq-a { max-height:300px;padding:0 18px 16px; }
+</style>
 </head>
 <body>
-<div class="topbar">
-    <div class="topbar-dot"></div>
-    <span class="topbar-label">Bunker Opanowski — Field Log Active</span>
+
+<header>
+  <a class="back-link" href="blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">📊</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill">📊 Analytics</span>
+      <span class="tag-pill">🔍 SEO</span>
+      <span class="tag-pill green">Google Page 1</span>
+      <span class="tag-pill blue">Go International</span>
+    </div>
+    <h1 class="hero-title">Analisis Dapur Bunker Opanowski —<br><em>Dari Ciracas Menuju Global</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> 7 Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>☕ Ditulis sambil Top Kopi Gula Aren</span>
+    </div>
+  </div>
 </div>
-<div class="wrapper">
-    <div class="log-meta">LOG #006 &nbsp;/&nbsp; Analytics &nbsp;/&nbsp; Ciracas, Jakarta Timur</div>
-    <h1>Analisis Dapur Bunker Opanowski –<br>Dari Ciracas Menuju Global</h1>
-    <p class="intro">Setelah beberapa minggu fokus beresin struktur "Bunker Opanowski" di GitHub Pages, akhirnya hari ini gue punya waktu buat bongkar dapur. Gue coba intip <strong>Google Analytics</strong> sama <strong>Search Console</strong> buat lihat sejauh mana sih suara dari Villa Ciracas ini terdengar. Hasilnya? Jujur, di luar ekspektasi gue.</p>
-    <hr class="divider">
-    <div class="section">
-        <div class="section-number">01 &nbsp;/&nbsp; SEO</div>
-        <h2>Validasi Google: Nama Gue Udah "Resmi"</h2>
-        <p>Hal pertama yang bikin gue puas hari ini adalah pas ngetik nama <strong>"Opanowski"</strong> di kolom pencarian Google. Gak pake lama, web Bunker kita langsung nongol di barisan paling atas. Walaupun masih ada beberapa halaman yang statusnya <em>"Di-crawl – saat ini tidak diindeks"</em>, tapi mesin pencari udah mulai ngenalin kalau ada satu tempat di Jakarta Timur yang rajin sharing soal hidup autodidak.</p>
-        <p>Ini penting, bro. Buat kita yang main di platform gratisan kayak GitHub, bisa nembus halaman satu Google itu artinya konten kita dianggap relevan dan unik. Gue lampirin buktinya di bawah biar kalian percaya kalau autodidak juga bisa eksis di SEO.</p>
-        <figure>
-            <img src="images/google-index.jpg" alt="Bukti Bunker Opanowski muncul di Google Page 1">
-            <figcaption>// Bunker Opanowski sudah nongol di Google Page 1</figcaption>
-        </figure>
+
+<div class="container">
+<div class="artikel-body">
+
+  <p>Setelah beberapa minggu fokus beresin struktur <strong style="color:var(--cream)">Bunker Opanowski</strong> di GitHub Pages, akhirnya hari ini gue punya waktu buat bongkar dapur. Gue coba intip <strong style="color:var(--cream)">Google Analytics</strong> sama <strong style="color:var(--cream)">Search Console</strong> buat lihat sejauh mana sih suara dari Villa Ciracas ini terdengar.</p>
+
+  <p>Hasilnya? Jujur, di luar ekspektasi gue.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Data itu jujur. Dia nggak bisa diajak basa-basi. Dan hari ini, data bilang Bunker ini udah dikenal."</div>
+    <div class="quote-source">— Om Opan, bongkar dapur Analytics · Villa Ciracas</div>
+  </div>
+
+  <h2>01 — Validasi Google: <em>Nama Gue Udah "Resmi"</em></h2>
+
+  <p>Hal pertama yang bikin gue puas hari ini adalah pas ngetik nama <strong style="color:var(--cream)">"Opanowski"</strong> di kolom pencarian Google. Gak pake lama, web Bunker kita langsung nongol di barisan paling atas.</p>
+
+  <p>Walaupun masih ada beberapa halaman yang statusnya <em>"Di-crawl – saat ini tidak diindeks"</em>, tapi mesin pencari udah mulai ngenalin kalau ada satu tempat di Jakarta Timur yang rajin sharing soal hidup autodidak.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">🔍 Kenapa ini penting?</div>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span><strong style="color:var(--cream)">Platform gratisan bisa nembus Page 1.</strong> GitHub Pages bukan platform berbayar — tapi kalau kontennya relevan dan unik, Google tetap ngenalin.</span>
     </div>
-    <div class="section">
-        <div class="section-number">02 &nbsp;/&nbsp; Engagement</div>
-        <h2>Rekor Engagement: 4 Menit Bukan Waktu yang Singkat</h2>
-        <p>Gue sempet kaget lihat rata-rata waktu interaksi pengunjung. Angkanya tembus:</p>
-        <div class="stat-callout">
-            <div class="value">4:35</div>
-            <div class="label">Avg. Engagement Time per session</div>
-        </div>
-        <p>Di dunia web sekarang yang orangnya pada pengen serba instan, dapet waktu 4 menit itu berharga banget. Artinya, kalian yang mampir ke sini nggak cuma baca judul terus kabur. Kalian bener-bener ngikutin alur log gue, mungkin sambil ngebayangin gimana rasanya grafting anggur atau dengerin curhatan gue soal sistem yang kadang <em>"membagongkan"</em>.</p>
-        <figure>
-            <img src="images/engagement-stats.jpg" alt="Screenshot Google Analytics engagement time">
-            <figcaption>// Data Engagement: Rata-rata 4 Menit 35 Detik</figcaption>
-        </figure>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span><strong style="color:var(--cream)">Nama unik = SEO gratis.</strong> "Opanowski" bukan kata generik. Sekali Google ngindeks, persaingannya hampir nol.</span>
     </div>
-    <div class="section">
-        <div class="section-number">03 &nbsp;/&nbsp; Geografis</div>
-        <h2>Jejak Digital Sampai ke Luar Negeri</h2>
-        <p>Trafik terbesar emang masih dari <strong>Jakarta</strong> (Halo warga Ciracas!), tapi di data gue ada bendera Singapura, Amerika (Chicago &amp; LA), sampai Swedia mampir ke sini. Entah itu kawan lama atau orang yang kesasar gara-gara keyword — yang jelas suara dari Bunker ini udah go internasional.</p>
-        <p>Gue jadi kepikiran, apa perlu gue bikin versi Bahasa Inggris? Ah, nggak usahlah — bahasa tongkrongan gini aja udah cukup global kok.</p>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span><strong style="color:var(--cream)">Bukti autodidak bisa eksis.</strong> Nggak perlu agensi SEO, nggak perlu bayar backlink. Konsisten nulis aja udah cukup.</span>
     </div>
-    <div class="section">
-        <div class="section-number">04 &nbsp;/&nbsp; Distribusi</div>
-        <h2>Sinkronisasi FB Pro: Main Dua Kaki</h2>
-        <p>Gue juga perhatiin kalau interaksi di <strong>Facebook Professional</strong> gue naik <strong>100%</strong>. Reels yang gue upload di sana jadi pintu masuk (referral) yang paling efektif ke web ini. Ternyata, orang butuh visual singkat di Reels, tapi tetep nyari detail teknisnya di blog.</p>
-        <p>Sinkronisasi ini yang bakal terus gue pertajam biar follower nambah di semua platform.</p>
+  </div>
+
+  <figure>
+    <img src="images/google-index.jpg" alt="Bukti Bunker Opanowski muncul di Google Page 1" loading="lazy">
+    <figcaption>// Screenshot: Bunker Opanowski nongol di Google Page 1 — hasil kerja organik, tanpa bayar iklan</figcaption>
+  </figure>
+
+  <h2>02 — Rekor Engagement: <em>4 Menit Bukan Waktu yang Singkat</em></h2>
+
+  <p>Gue sempet kaget lihat rata-rata waktu interaksi pengunjung. Bukan hitungan detik — tapi menit. Dan bukan 1-2 menit, tapi tembus angka yang cukup bikin gue terdiam sebentar.</p>
+
+  <div class="stat-callout">
+    <div class="stat-card">
+      <div class="val">4:35</div>
+      <div class="lbl">Avg. Engagement Time<br>per session</div>
     </div>
-    <hr class="divider">
-    <div class="section">
-        <div class="section-number">EOF &nbsp;/&nbsp; Kesimpulan</div>
-        <h2>Rencana ke Depan</h2>
-        <p>Bunker Opanowski bukan cuma tempat pamer gadget atau motor, tapi tempat belajar bareng. Gagal grafting? Gue tulis. Berhasil benerin panel listrik? Gue share. Termasuk pengalaman beresin sistem yang validasi hijaunya dipersulit kemarin — itu semua jadi pelajaran mahal.</p>
-        <p>Kedepannya, gue bakal lebih rajin update log harian. Karena data udah bicara kalau kalian betah di sini, gue janji bakal terus kasih konten yang <strong>otentik</strong>, <strong>presisi</strong> (tetep pakai kunci torsi!), dan pastinya bermanfaat buat sesama pegiat DIY.</p>
+    <div class="stat-card" style="border-top-color:var(--accent)">
+      <div class="val" style="color:var(--accent)">100%</div>
+      <div class="lbl">Kenaikan interaksi<br>Facebook Pro</div>
     </div>
-    <div class="post-footer">
-        <span>// TERIMA KASIH SUDAH MAMPIR KE BUNKER.</span><br>
-        TETAP AUTODIDAK, TETAP BERKAH.
+    <div class="stat-card" style="border-top-color:#5b8dee">
+      <div class="val" style="color:#5b8dee">4+</div>
+      <div class="lbl">Negara yang<br>mampir</div>
     </div>
+  </div>
+
+  <p>Di dunia web sekarang yang orangnya pada pengen serba instan, dapet waktu 4 menit itu berharga banget. Artinya, kalian yang mampir ke sini nggak cuma baca judul terus kabur. Kalian bener-bener ngikutin alur log gue — mungkin sambil ngebayangin gimana rasanya grafting anggur, atau dengerin curhatan gue soal sistem yang kadang <em>"membagongkan"</em>.</p>
+
+  <figure>
+    <img src="images/engagement-stats.jpg" alt="Screenshot Google Analytics engagement time rata-rata 4 menit 35 detik" loading="lazy">
+    <figcaption>// Data Google Analytics: Rata-rata Engagement Time 4 Menit 35 Detik — pengunjung betah, bukan cuma lewat</figcaption>
+  </figure>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#febc2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <span class="terminal-title">Google Analytics — Bunker Opanowski · Mei 2026</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="out"># Ringkasan data engagement bulan ini</span></div>
+      <div><span class="ok">✓ Avg. Engagement Time: 4 menit 35 detik</span></div>
+      <div><span class="ok">✓ Bounce Rate: rendah — pengunjung ngikutin konten sampai akhir</span></div>
+      <div><span class="ok">✓ Session Quality: tinggi — bukan bot, bukan klik random</span></div>
+      <div>&nbsp;</div>
+      <div><span class="out"># Interpretasi:</span></div>
+      <div><span class="warn">→ Orang baca karena kontennya relevan, bukan karena clickbait</span></div>
+      <div><span class="warn">→ Gaya bahasa "tongkrongan" ternyata bikin orang betah</span></div>
+      <div><span class="ok">✓ Kesimpulan: Autodidak + otentik = engagement yang genuine</span></div>
+    </div>
+  </div>
+
+  <h2>03 — Jejak Digital: <em>Sampai ke Luar Negeri</em></h2>
+
+  <p>Trafik terbesar emang masih dari <strong style="color:var(--cream)">Jakarta</strong> — halo warga Ciracas! Tapi di data gue, ada bendera yang bikin gue senyum sendiri.</p>
+
+  <div class="info-box">
+    <div class="info-box-label">🌍 Asal Pengunjung Bulan Ini</div>
+    <div class="spek-item">
+      <span class="spek-icon">🇮🇩</span>
+      <span><strong style="color:var(--cream)">Jakarta (dominan)</strong> — basis utama, terutama warga Ciracas dan sekitarnya</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🇸🇬</span>
+      <span><strong style="color:var(--cream)">Singapura</strong> — tetangga terdekat yang mampir lebih dulu dari yang gue kira</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🇺🇸</span>
+      <span><strong style="color:var(--cream)">Amerika Serikat</strong> — Chicago &amp; Los Angeles, entah kawan lama atau kesasar keyword</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🇸🇪</span>
+      <span><strong style="color:var(--cream)">Swedia</strong> — 10.000+ km dari Ciracas, tapi tetap nyasar ke sini. Salam dari Luleå!</span>
+    </div>
+  </div>
+
+  <p>Gue jadi kepikiran, apa perlu gue bikin versi Bahasa Inggris? Ah, nggak usahlah — bahasa tongkrongan gini aja udah cukup global kok. Kalau kontennya otentik, tembok bahasa pun bisa ditembus.</p>
+
+  <h2>04 — Sinkronisasi FB Pro: <em>Main Dua Kaki</em></h2>
+
+  <p>Gue juga perhatiin kalau interaksi di <strong style="color:var(--cream)">Facebook Professional</strong> gue naik signifikan. Reels yang gue upload di sana jadi pintu masuk (referral) yang paling efektif ke web ini.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">📱 Formula yang Jalan</div>
+    <div class="spek-item">
+      <span class="spek-icon">🎬</span>
+      <span><strong style="color:var(--cream)">Reels di Facebook Pro</strong> → visual singkat, hook kuat, bikin penasaran</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🔗</span>
+      <span><strong style="color:var(--cream)">Link ke Blog</strong> → detail teknis, cerita panjang, context lengkap</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🔄</span>
+      <span><strong style="color:var(--cream)">Loop yang berulang</strong> → orang butuh visual di Reels, tapi nyari detail di blog. Dua-duanya saling butuh.</span>
+    </div>
+  </div>
+
+  <p>Sinkronisasi ini yang bakal terus gue pertajam. Bukan karena ngejar angka — tapi karena ini model yang genuinely works untuk konten otentik kayak Bunker ini.</p>
+
+  <h2>Kesimpulan & <em>Rencana ke Depan</em></h2>
+
+  <p>Bunker Opanowski bukan cuma tempat pamer gadget atau motor. Ini tempat belajar bareng. Gagal grafting? Gue tulis. Berhasil benerin panel listrik? Gue share. Termasuk pengalaman beresin sistem yang validasi hijaunya dipersulit kemarin — itu semua jadi pelajaran mahal.</p>
+
+  <p>Data udah bicara kalau kalian betah di sini. Gue janji bakal terus kasih konten yang <strong style="color:var(--cream)">otentik</strong>, <strong style="color:var(--cream)">presisi</strong> (tetep pakai kunci torsi!), dan pastinya bermanfaat buat sesama pegiat DIY.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Suara dari Villa Ciracas sudah terdengar sampai Swedia. Bukan karena viral — tapi karena konsisten."</div>
+    <div class="quote-source">— LOG #006 · Bunker Opanowski · Mei 2026</div>
+  </div>
+
+  <p><em>Salam Oprek dari Ciracas! 🔧</em></p>
+
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#GoogleAnalytics</span>
+    <span class="hashtag">#SEO</span>
+    <span class="hashtag">#DigitalSwasembada</span>
+    <span class="hashtag">#GitHubPages</span>
+    <span class="hashtag">#Autodidak</span>
+    <span class="hashtag">#FilosofiOmOpan</span>
+    <span class="hashtag">#EngagementTime</span>
+    <span class="hashtag">#CiracasGoGlobal</span>
+  </div>
+
+  <div class="cta-block">
+    <p>Konten ini bermanfaat? Share ke yang lagi bangun presence digital-nya 🔧</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.6rem">
+      <span style="font-size:1.1rem">❓</span>
+      <h2 style="font-family:var(--font-display,inherit);font-size:1.1rem;color:var(--accent);margin:0;border:none;padding:0">Tanya Jawab — Soal Analytics & SEO Bunker</h2>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:1.8rem;line-height:1.8">Pertanyaan yang mungkin muncul soal data dan strategi digital Bunker Opanowski.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">📊 Pakai tools apa buat tracking?</div>
+        <div class="faq-a">Google Analytics 4 untuk behavior pengunjung (engagement time, bounce rate, sumber trafik) dan Google Search Console untuk monitoring indexing dan keyword. Keduanya gratis.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🔍 Gimana cara nembus Google Page 1 tanpa bayar?</div>
+        <div class="faq-a">Nama unik + konten konsisten + struktur HTML yang bersih. "Opanowski" bukan kata yang banyak orang pakai, jadi kompetisinya rendah. GitHub Pages juga di-crawl Google dengan cepat kalau sitemap-nya bener.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">🌍 Kok bisa ada pengunjung dari Swedia?</div>
+        <div class="faq-a">Kemungkinan dari konten yang di-share ke grup urban farming atau hortikultura yang punya anggota internasional. Atau memang ada diaspora Indonesia di sana yang nemu via keyword. Yang jelas, bukan hasil boosting berbayar.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">📱 Facebook Pro vs Instagram, mana yang lebih efektif?</div>
+        <div class="faq-a">Untuk referral ke blog, Facebook Pro lebih efektif saat ini — komunitas Urban Farming dan konten sehari-hari lebih banyak engage di Facebook. Instagram lebih ke awareness dan personal branding visual.</div>
+      </div>
+    </div>
+  </div>
+
 </div>
+</div>
+
+<footer>
+  Bunker Opanowski — Log Harian
+  <span class="updated-tag"><span class="live-dot"></span>Mei 2026</span>
+</footer>
+
+<script src="/opanowski/donate-widget.js"></script>
 </body>
 </html>
