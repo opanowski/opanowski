@@ -570,13 +570,19 @@ function applyFilter() {
   const entries = document.querySelectorAll('[data-tags]');
   let count = 0;
   entries.forEach(el => {
-    const tags = el.getAttribute('data-tags');
+    const tags = el.getAttribute('data-tags').split(',').map(t => t.trim());
     const text = el.innerText.toLowerCase();
     const matchTag = currentTag === 'ALL' || tags.includes(currentTag);
-    const matchSearch = !currentSearch || text.includes(currentSearch) || tags.includes(currentSearch);
+    const matchSearch = !currentSearch || text.includes(currentSearch) || tags.some(t => t.includes(currentSearch));
     if (matchTag && matchSearch) { el.style.display = ''; count++; }
     else { el.style.display = 'none'; }
   });
+
+  // Sembunyikan section Catatan Santai kalau filter bukan ALL atau santai
+  const showSantai = currentTag === 'ALL' || currentTag === 'santai';
+  document.getElementById('section-santai').style.display = showSantai ? '' : 'none';
+  document.getElementById('santai-list').style.display = showSantai ? '' : 'none';
+
   document.getElementById('visible-count').textContent = count + ' entri';
   document.getElementById('stat-visible').textContent = count;
   document.getElementById('no-result').style.display = count === 0 ? 'block' : 'none';
