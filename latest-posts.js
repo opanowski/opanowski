@@ -12,6 +12,17 @@
 
 const LATEST_POSTS = [
   {
+    href: "log-006-bunker-opanowski.html",
+    badge: "#006",
+    tags: ["Analytics", "SEO"],
+    tagColor: "#c8ff00",
+    tagBg: "rgba(200,255,0,",
+    date: "7 Mei 2026",
+    title: "Analisis Dapur Bunker: Dari Ciracas Menuju Global",
+    desc: "Google Page 1 tercapai, engagement time 4 menit 35 detik, trafik sampai Swedia dan Amerika. Data udah bicara.",
+  },
+
+  {
     href: "blog-pasang-tombol-donasi.html",
     badge: "DevLog",
     tags: ["DevLog", "Web"],
