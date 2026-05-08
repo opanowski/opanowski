@@ -11,6 +11,16 @@
  */
 
 const LATEST_POSTS = [
+  {
+    href: "log-008-vscode-workflow.html",
+    badge: "#008",
+    tags: ["Web", "Tips & Trik"],
+    tagColor: "#5b8dee",
+    tagBg: "rgba(91,141,238,",
+    date: "8 Mei 2026",
+    title: "Upgrade Workflow: Dari Terminal Buta ke VSCode + Live Server",
+    desc: "Drama git rejected, foto hilang, path gambar kacau — semua terjadi hari ini. Plus cara kerja Live Server yang akhirnya bikin workflow Bunker jauh lebih proper.",
+  },
 {
     href: "digital-legacy-bayu.html",
     badge: "#007",
