@@ -11,17 +11,19 @@
  */
 
 const LATEST_POSTS = [
-  {
-    href: "log-006-bunker-opanowski.html",
-    badge: "#006",
-    tags: ["Analytics", "SEO"],
-    tagColor: "#c8ff00",
-    tagBg: "rgba(200,255,0,",
-    date: "7 Mei 2026",
-    title: "Analisis Dapur Bunker: Dari Ciracas Menuju Global",
-    desc: "Google Page 1 tercapai, engagement time 4 menit 35 detik, trafik sampai Swedia dan Amerika. Data udah bicara.",
+{
+    href: "digital-legacy-bayu.html",
+    badge: "#007",
+    tags: ["Web", "Tips & Trik", "Personal"],
+    tagColor: "#c8972a",
+    tagBg: "rgba(200,151,42,",
+    date: "8 Mei 2026",
+    title: "Digital Legacy: Jurus Amankan Kenangan Si Bontot Biar Abadi di Dunia Maya",
+    desc: "Cara gw menjaga kenangan digital almarhum Bayu (Si Bontot) biar tetap live. Dari backup 3-2-1, legacy contact Facebook, sampai bikin bunker khusus di GitHub Pages.",
   },
-
+  // ──────────────────────────────────────────────
+  // TAMBAH ENTRI BARU DI SINI (paling atas = paling baru)
+  // ──────────────────────────────────────────────
   {
     href: "blog-pasang-tombol-donasi.html",
     badge: "DevLog",
@@ -29,15 +31,19 @@ const LATEST_POSTS = [
     tagColor: "#f5a623",
     tagBg: "rgba(245,166,35,",
     date: "7 Mei 2026",
-    title: "Digital Swasembada: Traktir Kopi di Bunker Opanowski!",
-    desc: "Tombol donasi akhirnya landing di Bunker. Dari drama z-index terminal Mac sampai filosofi kenapa karya digital juga butuh pupuk.",
+    title: "Digital Swasembada: Sekarang Bisa Traktir Kopi di Bunker Opanowski!",
+    desc: "Tombol donasi akhirnya landing di Bunker. Dari drama z-index terminal Mac sampai filosofi kenapa karya digital juga butuh 'pupuk'.",
   },
-
-
-  // ──────────────────────────────────────────────
-  // TAMBAH ENTRI BARU DI SINI (paling atas = paling baru)
-  // ──────────────────────────────────────────────
-
+{
+    href: "pajak_zonk.html", 
+    badge: "#087",
+    tags: ["Digital", "Pajak"], 
+    tagColor: "#f5a623", 
+    tagBg: "rgba(245,166,35,", 
+    date: "5 Mei 2026",
+    title: "Navigasi Sistem Coretax: Era Baru Perpajakan",
+    desc: "Bedah tuntas tampilan dan alur sistem Coretax yang baru. Dokumentasi pengerjaan dari meja kerja Villa Ciracas.",
+},
   {
     href: "blog-log086-pisang-telur.html",
     badge: "#086",

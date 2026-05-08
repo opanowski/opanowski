@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Legacy: Jurus Amankan Kenangan Si Bontot — Bunker Opanowski</title>
+<meta name="description" content="Cara gw menjaga kenangan digital almarhum Bayu (Si Bontot) biar tetap hidup di dunia maya. Dari backup 3-2-1, legacy contact Facebook, sampai bikin bunker khusus di GitHub Pages.">
+<meta property="og:title" content="Digital Legacy: Jurus Amankan Kenangan Si Bontot Biar Abadi di Dunia Maya">
+<meta property="og:description" content="Cara gw menjaga kenangan digital almarhum Bayu (Si Bontot) biar tetap hidup di dunia maya.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+/* ===== BLOG POST STYLES ===== */
+header {
+  background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+  border-bottom: 2px solid var(--accent);
+  padding: 28px 24px 22px;
+  position: sticky; top: 0; z-index: 100;
+}
+.header-top { display: flex; align-items: center; gap: 14px; }
+.header-icon { font-size: 26px; line-height: 1; }
+h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+.header-sub { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 3px; }
+
+/* HERO */
+.post-hero {
+  padding: 32px 24px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.post-meta {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.badge-num {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  color: var(--accent); background: var(--surface2);
+  border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px;
+}
+.badge-tag {
+  font-family: var(--font-mono); font-size: 0.62rem;
+  background: rgba(200,151,42,0.08); border: 1px solid rgba(200,151,42,0.2);
+  border-radius: 20px; padding: 2px 10px; color: var(--accent);
+}
+.post-date {
+  font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+  margin-left: auto;
+}
+.post-title {
+  font-family: var(--font-display); font-size: 1.65rem; font-weight: 800;
+  color: var(--text); line-height: 1.3; margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.post-lead {
+  font-size: 0.92rem; color: var(--text-muted); line-height: 1.8;
+  padding: 14px 18px; background: var(--surface);
+  border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+}
+
+/* CONTENT */
+.post-body {
+  padding: 28px 24px 48px;
+  max-width: 720px;
+}
+.post-body h2 {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;
+  color: var(--text); margin: 32px 0 12px; line-height: 1.3;
+  display: flex; align-items: center; gap: 10px;
+}
+.post-body h2::before {
+  content: ''; display: inline-block; width: 3px; height: 1.1em;
+  background: var(--accent); border-radius: 2px; flex-shrink: 0;
+}
+.post-body p {
+  font-size: 0.88rem; color: var(--text-muted); line-height: 1.9;
+  margin-bottom: 14px;
+}
+.post-body strong { color: var(--text); }
+
+/* INFO BOX */
+.info-box {
+  margin: 20px 0; padding: 16px 18px;
+  border-radius: 10px; background: var(--surface);
+  border: 1px solid var(--border);
+}
+.info-box.gold  { border-color: rgba(200,151,42,0.3); background: rgba(200,151,42,0.05); }
+.info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+.info-box.blue  { border-color: rgba(91,141,238,0.3); background: rgba(91,141,238,0.05); }
+.info-box.red   { border-color: rgba(224,90,90,0.3);  background: rgba(224,90,90,0.05); }
+.info-box-label {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.info-box.gold  .info-box-label { color: var(--accent); }
+.info-box.green .info-box-label { color: #4caf7d; }
+.info-box.blue  .info-box-label { color: #5b8dee; }
+.info-box.red   .info-box-label { color: #e05a5a; }
+.info-box div {
+  font-size: 0.83rem; color: var(--text-muted); line-height: 2.0;
+}
+
+/* INTERUPSI BOX */
+.interupsi-box {
+  margin: 24px 0; padding: 16px 18px;
+  border-radius: 10px; border: 1px dashed rgba(200,151,42,0.35);
+  background: rgba(200,151,42,0.03);
+}
+.interupsi-label {
+  font-family: var(--font-mono); font-size: 0.63rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 10px; opacity: 0.8;
+}
+.interupsi-box p {
+  font-size: 0.83rem; color: var(--text-muted); line-height: 1.85;
+  margin-bottom: 0;
+}
+
+/* FOTO SLOT */
+.foto-slot {
+  margin: 20px 0; border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--border); background: var(--surface);
+}
+.foto-slot img {
+  width: 100%; display: block;
+  object-fit: cover;
+}
+.foto-caption {
+  font-family: var(--font-mono); font-size: 0.63rem;
+  color: var(--text-muted); padding: 10px 14px;
+  border-top: 1px solid var(--border); line-height: 1.6;
+}
+
+/* QUOTE */
+.post-quote {
+  margin: 24px 0; padding: 18px 20px;
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-display); font-size: 1.05rem;
+  color: var(--accent); font-style: italic;
+  background: var(--surface); border-radius: 0 10px 10px 0;
+  line-height: 1.6;
+}
+
+/* STEP LIST */
+.step-list { list-style: none; padding: 0; margin: 12px 0; }
+.step-list li {
+  font-size: 0.85rem; color: var(--text-muted); line-height: 1.9;
+  padding-left: 20px; position: relative; margin-bottom: 4px;
+}
+.step-list li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--accent); font-size: 0.7rem; top: 3px;
+}
+
+/* KESIMPULAN */
+.kesimpulan-box {
+  margin: 32px 0 0; padding: 20px 22px;
+  border-radius: 12px; border: 1px solid rgba(200,151,42,0.3);
+  background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+}
+.kesimpulan-box h3 {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.kesimpulan-box p {
+  font-size: 0.87rem; color: var(--text-muted); line-height: 1.85;
+  margin-bottom: 8px;
+}
+.kesimpulan-box .sign-off {
+  font-family: var(--font-display); font-size: 0.9rem;
+  color: var(--accent); font-style: italic; margin-top: 14px;
+}
+
+/* NAV FOOTER */
+.post-nav {
+  display: flex; gap: 12px; padding: 20px 24px;
+  border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.post-nav a {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  color: var(--text-muted); text-decoration: none;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 14px;
+  transition: all 0.2s;
+}
+.post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);margin-bottom:14px">← Kembali ke Log Harian</a>
+  <div class="header-top">
+    <span class="header-icon">📓</span>
+    <div>
+      <h1>Bunker Opanowski</h1>
+      <div class="header-sub">Catatan lapangan dari Villa Ciracas · Ciracas, Jakarta Timur</div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="post-hero">
+  <div class="post-meta">
+    <span class="badge-num">#007</span>
+    <span class="badge-tag">Web</span>
+    <span class="badge-tag">Tips &amp; Trik</span>
+    <span class="badge-tag">Personal</span>
+    <span class="post-date">📅 8 Mei 2026</span>
+  </div>
+  <div class="post-title">Digital Legacy: Jurus Amankan Kenangan Si Bontot Biar Abadi di Dunia Maya</div>
+  <div class="post-lead">
+    Pernah kepikiran gak sih, kalau kita kehilangan orang tersayang — yang tersisa selain doa itu apa? Yup, file digital. Foto pas dia lagi konyol, video ketawa bareng, sampe chat-chat gak jelas di WhatsApp. LOG #007 ini mungkin yang paling personal buat gw. Misi "007: Skyfall-nya Bunker Opanowski." Karena data bisa terhapus, harddisk bisa rusak, tapi kenangan harus tetap online.
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="post-body">
+
+  <p>Halo bray! Balik lagi di catatan gw di Bunker Opanowski.</p>
+
+  <p>Hari ini, 8 Mei 2026, gw dapet bukti nyata pentingnya jaga akses digital. Gw berhasil pulihin akun Kaskus lawas <strong>'opanowski'</strong> berkat bantuan CS Kaskus yang sigap ganti email mati gw jadi email aktif. Ini bukan cuma soal akun lama, tapi soal sejarah digital yang gak boleh ilang bray!</p>
+
+  <p>Mumpung lagi nunggu jemputan, gw mau bongkar dapur dikit soal cara gw "memagari" semua kenangan Si Bontot biar aman sentosa. Cekidot!</p>
+
+  <!-- STEP 1 -->
+  <h2>1. Kumpulin Semua "Serpihan" Kenangan</h2>
+
+  <p>Jangan biarkan foto-foto doi mencar-mencar. Ada yang di HP emak, ada yang di laptop lama, ada yang di kartu memori yang udah berdebu. Tarik semua ke satu folder master. Kasih nama yang jelas, misal <strong>Bontot_Archive</strong>. Jangan cuma 'New Folder (1)', ntar lo bingung sendiri pas nyari!</p>
+
+  <div class="foto-slot">
+    <img src="../images/foto-alm-1.jpg" alt="Si Bontot Bayu — ekspresi ceria saat ketawa lepas">
+    <div class="foto-caption">📸 Ekspresi ceria Si Bontot pas lagi ketawa lepas. Ini kepingan puzzle yang bikin log ini akhirnya bisa rilis.</div>
+  </div>
+
+  <!-- STEP 2 -->
+  <h2>2. Backup Pake Rumus 3-2-1 (Biar Gak Nangis Darah!)</h2>
+
+  <p>Ini rumus wajib buat para tech-user kayak kita. Jangan cuma simpan di satu tempat:</p>
+
+  <div class="info-box gold">
+    <div class="info-box-label">📦 Rumus Backup 3-2-1</div>
+    <div><strong style="color:var(--accent)">3 Salinan</strong> — Bikin 3 copy data utama.</div>
+    <div><strong style="color:var(--accent)">2 Media Beda</strong> — Simpan di media fisik yang beda. Misal di Harddisk Eksternal satu, di Cloud (Google Photos/Drive) satu.</div>
+    <div><strong style="color:var(--accent)">1 Lokasi Terpisah</strong> — Taruh satu copy di luar rumah (alias di Cloud tadi). Jadi kalau (amit-amit) laptop lo error, kenangan Si Bontot tetep aman di "langit".</div>
+  </div>
+
+  <div class="interupsi-box">
+    <div class="interupsi-label">🐔 Interupsi Dari Kandang Aviary</div>
+    <p>Pas lagi serius-seriusnya gw nyusun baris kode buat log ini, tiba-tiba ada "iklan" lewat. Ayam di kandang aviary gw bunyi petok-petok heboh banget. Alhamdulillah, jam 8 tadi udah nelor, eh sekarang jam 11 nelor lagi! Karena cuma ada 2 ekor, ya maksimal dapet 2 telur hari ini, tapi itu udah rezeki nomplok banget bray. Bgitulah di Villa Ciracas, urusan dunia digital (GitHub) harus sering-sering ngalah sama urusan logistik alam. Gw tinggalin dulu laptop demi jemput protein seger. Ngoding boleh kenceng, tapi stok telor jangan sampe kosong! Hahaha.</p>
+  </div>
+
+  <!-- STEP 3 -->
+  <h2>3. Akun Sosmed? Mode Kenangan On!</h2>
+
+  <p>Sosmed almarhum itu gudang memori. Biar gak ilang atau disalahgunakan orang iseng, atur <strong>Legacy Contact</strong> di Facebook buat ubah akun jadi <strong>'Memorialized Account'</strong>. Jadi orang masih bisa liat foto-fotonya buat lepas kangen, tapi akunnya gak bakal bisa diacak-acak orang asing.</p>
+
+  <div class="info-box blue">
+    <div class="info-box-label">🔒 Cara Set Legacy Contact Facebook</div>
+    <div>1. Buka Pengaturan &amp; Privasi → Pengaturan</div>
+    <div>2. Scroll ke Informasi Umum → Kelola Akun</div>
+    <div>3. Pilih Kontak Warisan → tambahkan nama terpercaya</div>
+    <div>4. Atau minta keluarga lapor ke Facebook buat mode Memorialized</div>
+  </div>
+
+  <div class="foto-slot">
+    <img src="../images/foto-alm-2.jpg" alt="Almarhum Bayu bersama Yani">
+    <div class="foto-caption">📸 Momen hangat almarhum Bayu bareng Yani, adik gw nomor 3. Kenangan yang gak ternilai harganya.</div>
+  </div>
+
+  <!-- STEP 4 -->
+  <h2>4. Bikin "Bunker" Khusus di GitHub</h2>
+
+  <p>Karena gw lagi hobi mainan GitHub Pages, gw buatin satu halaman khusus buat Bayu. Isinya galeri foto pilihan sama cerita singkat. Kelebihannya?</p>
+
+  <div class="info-box green">
+    <div class="info-box-label">✅ Kenapa GitHub Pages?</div>
+    <div>✅ <strong>Gratis</strong> — nol biaya hosting tahunan</div>
+    <div>✅ <strong>Ringan &amp; cepat</strong> — static site, no database</div>
+    <div>✅ <strong>Awet</strong> — selama GitHub ada, halaman itu live</div>
+    <div>✅ <strong>Custom</strong> — bisa tampilin galeri, cerita, video embed</div>
+    <div>✅ <strong>Version control</strong> — gak ada yang bisa terhapus sembarangan</div>
+  </div>
+
+  <p>Selama GitHub masih ada, kenangan itu bakal tetep live tanpa perlu bayar hosting mahal-mahal tiap tahun, bray!</p>
+
+  <div class="post-quote">
+    "Data bisa terhapus, harddisk bisa rusak, tapi kenangan harus tetap online." — Bunker Opanowski, 2026
+  </div>
+
+  <!-- KESIMPULAN -->
+  <div class="kesimpulan-box">
+    <h3>📌 Kesimpulan</h3>
+    <p>Mengamankan data Si Bontot itu cara gw buat bilang: <strong>"Lo tetep ada, Yu."</strong> Kenangan emang di hati, tapi file digital itu bukti sejarah yang harus kita jaga dengan presisi.</p>
+    <p>Empat langkah tadi — kumpulin serpihan, backup 3-2-1, legacy contact sosmed, sama bunker GitHub — itu bukan overkill. Itu standar minimum buat generasi kita yang hidupnya udah separuh di dunia digital.</p>
+    <div class="sign-off">Tetap autodidak, tetap berkah! ☕</div>
+  </div>
+
+</div>
+
+<!-- POST NAV -->
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/log-006-bunker-opanowski.html">← LOG #006: Analisis Dapur Bunker</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer class="site-footer">
+  Bunker Opanowski — LOG #007
+  <span class="updated-tag"><span class="live-dot"></span>8 Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<script src="donate-widget.js"></script>
+</body>
+</html>

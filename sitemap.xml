@@ -4,89 +4,17 @@
   <!-- Homepage -->
   <url>
     <loc>https://opanowski.github.io/opanowski/</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Blog / Log Harian Index -->
+  <!-- Blog / Log Harian -->
   <url>
-    <loc>https://opanowski.github.io/opanowski/blog/index.html</loc>
-    <lastmod>2026-05-07</lastmod>
+    <loc>https://opanowski.github.io/opanowski/blog.html</loc>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-
-  <!-- LOG #006: Analisis Dapur Bunker -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/log-006-bunker-opanowski.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- DevLog: Pasang Tombol Donasi -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/blog-pasang-tombol-donasi.html</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- LOG #087: Drama CoreTax -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/pajak_zonk.html</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- LOG #086: Pisang & Telur -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/blog-log086-pisang-telur.html</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Artikel: Evolusi Digital & Swasembada -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/blog-evolusi-digital-swasembada.html</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Artikel: Evolusi Swasembada Ciracas -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/blog-evolusi-swasembada.html</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Artikel: Konsistensi Brand -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/blog-brand-konsistensi.html</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- LOG #004: Seledri Organik -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/blog-seledri-organik.html</loc>
-    <lastmod>2026-05-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Artikel: 2 Hari Berperang Kode & Warna -->
-  <url>
-    <loc>https://opanowski.github.io/opanowski/blog-pindah-gambar-ganti-warna.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
   <!-- Gudang Inventaris -->
@@ -94,21 +22,21 @@
     <loc>https://opanowski.github.io/opanowski/gudang.html</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Blog: Panen Telur & Batang Pisang -->
+  <!-- Blog: Konsistensi Brand -->
   <url>
-    <loc>https://opanowski.github.io/opanowski/blog-panen-telur-batang-pisang.html</loc>
+    <loc>https://opanowski.github.io/opanowski/blog-brand-konsistensi.html</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog: Bye-bye Kabel -->
+  <!-- Blog: Panen Telur & Zero Waste Batang Pisang -->
   <url>
-    <loc>https://opanowski.github.io/opanowski/blog-log05-bye-kabel.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://opanowski.github.io/opanowski/blog-panen-telur-batang-pisang.html</loc>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -121,7 +49,15 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- LOG #001: Peresmian Markas Digital -->
+  <!-- Blog: Bye-bye Kabel -->
+  <url>
+    <loc>https://opanowski.github.io/opanowski/blog-log05-bye-kabel.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Log #001: Peresmian Markas Digital -->
   <url>
     <loc>https://opanowski.github.io/opanowski/log-bunker-opanowski-01.html</loc>
     <lastmod>2026-05-01</lastmod>
