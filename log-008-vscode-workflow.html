@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upgrade Workflow: Dari Terminal Buta ke VSCode + Live Server — Bunker Opanowski</title>
+<meta name="description" content="Cerita di balik layar Bunker Opanowski: upgrade workflow dari ngetik perintah terminal buta ke VSCode + Live Server. Drama git, path gambar, dan pelajaran berharga soal cara kerja repo lokal vs GitHub Pages.">
+<meta property="og:title" content="Upgrade Workflow: Dari Terminal Buta ke VSCode + Live Server — Bunker Opanowski">
+<meta property="og:description" content="Drama seharian ngurusin repo, git rejected, foto hilang, sampe akhirnya nemu workflow yang bener.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+header {
+  background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+  border-bottom: 2px solid var(--accent);
+  padding: 28px 24px 22px;
+  position: sticky; top: 0; z-index: 100;
+}
+.header-top { display: flex; align-items: center; gap: 14px; }
+.header-icon { font-size: 26px; line-height: 1; }
+h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+.header-sub { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 3px; }
+
+.post-hero {
+  padding: 32px 24px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.post-meta {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.badge-num {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  color: var(--accent); background: var(--surface2);
+  border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px;
+}
+.badge-tag {
+  font-family: var(--font-mono); font-size: 0.62rem;
+  background: rgba(200,151,42,0.08); border: 1px solid rgba(200,151,42,0.2);
+  border-radius: 20px; padding: 2px 10px; color: var(--accent);
+}
+.post-date {
+  font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+  margin-left: auto;
+}
+.post-title {
+  font-family: var(--font-display); font-size: 1.65rem; font-weight: 800;
+  color: var(--text); line-height: 1.3; margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.post-lead {
+  font-size: 0.92rem; color: var(--text-muted); line-height: 1.8;
+  padding: 14px 18px; background: var(--surface);
+  border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+}
+
+.post-body {
+  padding: 28px 24px 48px;
+  max-width: 720px;
+}
+.post-body h2 {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;
+  color: var(--text); margin: 32px 0 12px; line-height: 1.3;
+  display: flex; align-items: center; gap: 10px;
+}
+.post-body h2::before {
+  content: ''; display: inline-block; width: 3px; height: 1.1em;
+  background: var(--accent); border-radius: 2px; flex-shrink: 0;
+}
+.post-body p {
+  font-size: 0.88rem; color: var(--text-muted); line-height: 1.9;
+  margin-bottom: 14px;
+}
+.post-body strong { color: var(--text); }
+
+.info-box {
+  margin: 20px 0; padding: 16px 18px;
+  border-radius: 10px; background: var(--surface);
+  border: 1px solid var(--border);
+}
+.info-box.gold  { border-color: rgba(200,151,42,0.3); background: rgba(200,151,42,0.05); }
+.info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+.info-box.blue  { border-color: rgba(91,141,238,0.3); background: rgba(91,141,238,0.05); }
+.info-box.red   { border-color: rgba(224,90,90,0.3);  background: rgba(224,90,90,0.05); }
+.info-box-label {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;
+}
+.info-box.gold  .info-box-label { color: var(--accent); }
+.info-box.green .info-box-label { color: #4caf7d; }
+.info-box.blue  .info-box-label { color: #5b8dee; }
+.info-box.red   .info-box-label { color: #e05a5a; }
+.info-box div {
+  font-size: 0.83rem; color: var(--text-muted); line-height: 2.0;
+}
+
+.drama-box {
+  margin: 24px 0; padding: 16px 18px;
+  border-radius: 10px; border: 1px dashed rgba(224,90,90,0.4);
+  background: rgba(224,90,90,0.04);
+}
+.drama-label {
+  font-family: var(--font-mono); font-size: 0.63rem; font-weight: 700;
+  color: #e05a5a; text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.drama-box p {
+  font-size: 0.83rem; color: var(--text-muted); line-height: 1.85;
+  margin-bottom: 0;
+}
+
+.code-block {
+  margin: 16px 0; padding: 14px 16px;
+  background: #0a0a0d; border: 1px solid rgba(200,151,42,0.2);
+  border-radius: 8px; border-left: 3px solid var(--accent);
+  font-family: var(--font-mono); font-size: 0.78rem;
+  color: #c8ff00; line-height: 1.8; overflow-x: auto;
+}
+
+.lesson-box {
+  margin: 20px 0; padding: 16px 18px;
+  border-radius: 10px; border: 1px solid rgba(76,175,125,0.3);
+  background: rgba(76,175,125,0.04);
+}
+.lesson-label {
+  font-family: var(--font-mono); font-size: 0.63rem; font-weight: 700;
+  color: #4caf7d; text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.lesson-box div {
+  font-size: 0.83rem; color: var(--text-muted); line-height: 2.0;
+}
+
+.timeline {
+  margin: 20px 0; padding: 0;
+  list-style: none; position: relative;
+}
+.timeline::before {
+  content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+  width: 1px; background: var(--border);
+}
+.timeline li {
+  padding: 0 0 20px 32px; position: relative;
+}
+.timeline li::before {
+  content: ''; position: absolute; left: 6px; top: 5px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--accent);
+}
+.timeline-time {
+  font-family: var(--font-mono); font-size: 0.62rem;
+  color: var(--accent); opacity: 0.7; margin-bottom: 4px;
+}
+.timeline-title {
+  font-size: 0.88rem; font-weight: 700; color: var(--text);
+  margin-bottom: 4px;
+}
+.timeline-desc {
+  font-size: 0.82rem; color: var(--text-muted); line-height: 1.7;
+}
+
+.post-quote {
+  margin: 24px 0; padding: 18px 20px;
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-display); font-size: 1.05rem;
+  color: var(--accent); font-style: italic;
+  background: var(--surface); border-radius: 0 10px 10px 0;
+  line-height: 1.6;
+}
+
+.kesimpulan-box {
+  margin: 32px 0 0; padding: 20px 22px;
+  border-radius: 12px; border: 1px solid rgba(200,151,42,0.3);
+  background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+}
+.kesimpulan-box h3 {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.kesimpulan-box p {
+  font-size: 0.87rem; color: var(--text-muted); line-height: 1.85;
+  margin-bottom: 8px;
+}
+.kesimpulan-box .sign-off {
+  font-family: var(--font-display); font-size: 0.9rem;
+  color: var(--accent); font-style: italic; margin-top: 14px;
+}
+
+.post-nav {
+  display: flex; gap: 12px; padding: 20px 24px;
+  border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.post-nav a {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  color: var(--text-muted); text-decoration: none;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 14px;
+  transition: all 0.2s;
+}
+.post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);margin-bottom:14px">← Kembali ke Log Harian</a>
+  <div class="header-top">
+    <span class="header-icon">📓</span>
+    <div>
+      <h1>Bunker Opanowski</h1>
+      <div class="header-sub">Catatan lapangan dari Villa Ciracas · Ciracas, Jakarta Timur</div>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero">
+  <div class="post-meta">
+    <span class="badge-num">#008</span>
+    <span class="badge-tag">Web</span>
+    <span class="badge-tag">Tips &amp; Trik</span>
+    <span class="post-date">📅 8 Mei 2026</span>
+  </div>
+  <div class="post-title">Upgrade Workflow: Dari Terminal Buta ke VSCode + Live Server di Bunker Opanowski</div>
+  <div class="post-lead">
+    Hari ini gw resmi naik level bro. Dari sebelumnya ngerjain semua hal di website cuma modal Terminal — ngetik perintah, berharap, dan nunggu GitHub Pages buat liat hasilnya — sekarang gw udah punya setup yang lebih proper: VSCode + Live Server. Ini cerita lengkap di balik layar, drama git rejected, foto hilang, sampe pelajaran soal perbedaan lokal vs GitHub Pages yang sering bikin pusing.
+  </div>
+</div>
+
+<div class="post-body">
+
+  <p>Halo bray! Hari ini bukan cuma soal nambah LOG baru ke Bunker — hari ini gw beneran upgrade cara kerja gw ngurusin website ini. Dan seperti biasa di Villa Ciracas, jalannya ga mulus-mulus amat. Haha.</p>
+
+  <!-- TIMELINE -->
+  <h2>Kronologi Hari Ini</h2>
+
+  <ul class="timeline">
+    <li>
+      <div class="timeline-time">Pagi — Sebelum Ashar</div>
+      <div class="timeline-title">Mulai bikin LOG #007 (Digital Legacy Si Bontot)</div>
+      <div class="timeline-desc">Ngetik draf, upload ke Claude, minta rebuild HTML. Semua via Terminal kayak biasanya.</div>
+    </li>
+    <li>
+      <div class="timeline-time">Siang</div>
+      <div class="timeline-title">Ketemu VSCode yang udah terpasang</div>
+      <div class="timeline-desc">Ternyata VSCode udah ada di laptop tapi belum pernah dipake buat website. Claude kasih tau ada extension Live Server — install, langsung jalan di port 5500.</div>
+    </li>
+    <li>
+      <div class="timeline-time">Sore</div>
+      <div class="timeline-title">Drama file, path, dan git rejected</div>
+      <div class="timeline-desc">File ga ke-copy ke tempat yang bener, git push rejected karena remote lebih baru, foto Bayu ga muncul karena path salah. Satu per satu diberesin.</div>
+    </li>
+    <li>
+      <div class="timeline-time">Setelah Magrib</div>
+      <div class="timeline-title">Workflow baru resmi jalan</div>
+      <div class="timeline-desc">LOG #007 live di GitHub Pages, foto Bayu muncul, dan LOG #008 ini mulai ditulis. Alhamdulillah!</div>
+    </li>
+  </ul>
+
+  <!-- SEBELUM vs SESUDAH -->
+  <h2>Workflow Lama vs Workflow Baru</h2>
+
+  <div class="info-box red">
+    <div class="info-box-label">❌ Workflow Lama — Terminal Buta</div>
+    <div>1. Edit file langsung di Terminal pake <strong>nano</strong> atau <strong>cat</strong></div>
+    <div>2. <strong>git add → commit → push</strong> ke GitHub</div>
+    <div>3. Tunggu 1-3 menit GitHub Pages deploy</div>
+    <div>4. Buka browser cek hasilnya</div>
+    <div>5. Kalau salah → ulang dari awal 😅</div>
+  </div>
+
+  <div class="info-box green">
+    <div class="info-box-label">✅ Workflow Baru — VSCode + Live Server</div>
+    <div>1. Buka folder repo di VSCode</div>
+    <div>2. Edit file langsung dengan syntax highlighting</div>
+    <div>3. Klik kanan → <strong>Open with Live Server</strong></div>
+    <div>4. Browser auto-refresh tiap save — <strong>preview instan!</strong></div>
+    <div>5. Kalau udah oke baru <strong>git push</strong> ke GitHub</div>
+  </div>
+
+  <!-- LIVE SERVER -->
+  <h2>Live Server — Game Changer!</h2>
+
+  <p>Extension satu ini yang paling ngubah cara kerja gw. Live Server bikin website lo jalan di browser lokal di alamat <strong>localhost:5500</strong> — tanpa perlu upload ke GitHub dulu. Setiap kali lo save file di VSCode, browser otomatis refresh. Perubahan keliatan dalam hitungan detik!</p>
+
+  <div class="info-box blue">
+    <div class="info-box-label">⚡ Cara Install Live Server di VSCode</div>
+    <div>1. Buka VSCode</div>
+    <div>2. Tekan <strong>Cmd+Shift+X</strong> (buka Extensions)</div>
+    <div>3. Ketik <strong>"Live Server"</strong> → Install (dari Ritwick Dey)</div>
+    <div>4. Buka folder repo: <strong>File → Open Folder</strong></div>
+    <div>5. Klik kanan <strong>index.html</strong> → <strong>Open with Live Server</strong></div>
+    <div>6. Browser otomatis buka di <strong>http://127.0.0.1:5500</strong></div>
+  </div>
+
+  <!-- PELAJARAN GIT -->
+  <h2>Pelajaran Git Hari Ini</h2>
+
+  <p>Ada beberapa hal soal git yang gw pelajari hari ini — terutama waktu push ke GitHub tiba-tiba kena error merah.</p>
+
+  <div class="drama-box">
+    <div class="drama-label">🚨 Drama: Git Push Rejected!</div>
+    <p>Pas mau push LOG #007, Terminal langsung keluar error merah: <strong>"rejected — fetch first"</strong>. Panik? Iya. Tapi ternyata solusinya simpel — ada perubahan di GitHub yang belum ada di lokal. Tinggal <strong>git pull dulu, baru push lagi</strong>.</p>
+  </div>
+
+  <div class="code-block">
+# Kalau kena error "rejected — fetch first":
+git pull origin main --rebase
+git push origin main</div>
+
+  <div class="lesson-box">
+    <div class="lesson-label">📚 Rule of Thumb Git</div>
+    <div>✅ Selalu <strong>git pull</strong> dulu sebelum mulai kerja</div>
+    <div>✅ <strong>git status</strong> buat cek apa aja yang berubah</div>
+    <div>✅ Commit pesan yang jelas: <strong>"Add LOG #008 - ..."</strong></div>
+    <div>✅ Push hanya setelah tes lokal di Live Server</div>
+  </div>
+
+  <!-- PATH GAMBAR -->
+  <h2>Jebakan Path Gambar: Lokal vs GitHub Pages</h2>
+
+  <p>Ini yang paling sering bikin bingung bro. Cara website lo ngakses file gambar itu beda antara di lokal (Live Server) dan di GitHub Pages.</p>
+
+  <div class="info-box gold">
+    <div class="info-box-label">🗺️ Perbedaan Path yang Wajib Dipahami</div>
+    <div><strong style="color:var(--accent)">GitHub Pages:</strong> URL-nya <code style="background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;font-family:var(--font-mono)">/opanowski/images/foto.jpg</code></div>
+    <div><strong style="color:#4caf7d">Live Server (lokal):</strong> URL-nya <code style="background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;font-family:var(--font-mono)">images/foto.jpg</code> atau <code style="background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;font-family:var(--font-mono)">../images/foto.jpg</code></div>
+    <div style="margin-top:8px;font-style:italic;color:rgba(200,151,42,0.7)">💡 Jadi gambar yang hilang di lokal belum tentu hilang di GitHub Pages — dan sebaliknya!</div>
+  </div>
+
+  <p>Hari ini gw kena dua-duanya: foto hero di homepage ilang di lokal tapi oke di GitHub, terus foto Bayu di LOG #007 oke di lokal tapi ilang di GitHub. Habis ngulik, ketauan masalahnya ada di prefix path <strong>../images/</strong> yang harusnya cukup <strong>images/</strong> karena file HTML-nya ada di root folder.</p>
+
+  <!-- KESIMPULAN -->
+  <div class="post-quote">
+    "Tes lokal dulu, push belakangan. Jangan sampe website publik jadi tempat debug." — Bunker Opanowski, 2026
+  </div>
+
+  <div class="kesimpulan-box">
+    <h3>📌 Kesimpulan</h3>
+    <p>Upgrade dari Terminal buta ke VSCode + Live Server itu bukan soal gengsi atau ikut-ikutan. Ini soal efisiensi. Dulu satu perubahan kecil bisa makan waktu 5-10 menit buat liat hasilnya. Sekarang? Detik langsung keliatan.</p>
+    <p>Workflow baru Bunker Opanowski sekarang: <strong>edit di VSCode → preview di Live Server → kalau oke baru push ke GitHub</strong>. Simple, aman, dan ga bikin website publik jadi korban eksperimen.</p>
+    <p>Buat lo yang juga ngurusin website sendiri tanpa background coding — VSCode + Live Server itu investasi waktu 5 menit yang balik modalnya berkali-kali lipat. Coba aja bray!</p>
+    <div class="sign-off">Tetap autodidak, tetap berkah! ☕</div>
+  </div>
+
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/digital-legacy-bayu.html">← LOG #007: Digital Legacy</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer class="site-footer">
+  Bunker Opanowski — LOG #008
+  <span class="updated-tag"><span class="live-dot"></span>8 Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<script src="donate-widget.js"></script>
+</body>
+</html>
