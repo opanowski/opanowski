@@ -12,6 +12,12 @@
 
 const LATEST_POSTS = [
   {
+  title: "LOG #009 — SOP Survival Mac Jadul: Rahasia Ngoding 15 Jam Tanpa Meledak",
+  url: "blog/blog-log-009-mac-survival.html",
+  date: "9 Mei 2026",
+  tags: ["mac", "tips-trik", "sop"]
+},
+  {
     href: "log-008-vscode-workflow.html",
     badge: "#008",
     tags: ["Web", "Tips & Trik"],
