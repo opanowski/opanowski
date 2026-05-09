@@ -12,6 +12,16 @@
 
 const LATEST_POSTS = [
   {
+    href: "blog/blog-tablet-mac-workflow.html",
+    badge: "#010",
+    tags: ["Tips & Trik", "Mac", "Linux"],
+    tagColor: "#4caf7d",
+    tagBg: "rgba(76,175,125,",
+    date: "9 Mei 2026",
+    title: "Dua Device, Satu Bunker: Update Web dari Tablet Linux & Mac Jadul Bergantian",
+    desc: "Siapa bilang update website harus dari device yang sama? MacBook Pro 2015 + Lenovo Xiaoxin Pad Debian Linux — satu repo, nol drama, workflow multi-device pertama Bunker Opanowski.",
+  },
+  {
   href: "blog/blog-log-009-mac-survival.html",
   badge: "#009",
   tags: ["Tips & Trik", "Mac"],
