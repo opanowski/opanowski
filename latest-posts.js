@@ -12,10 +12,14 @@
 
 const LATEST_POSTS = [
   {
-  title: "LOG #009 — SOP Survival Mac Jadul: Rahasia Ngoding 15 Jam Tanpa Meledak",
-  url: "blog/blog-log-009-mac-survival.html",
+  href: "blog/blog-log-009-mac-survival.html",
+  badge: "#009",
+  tags: ["Tips & Trik", "Mac"],
+  tagColor: "#f5a623",
+  tagBg: "rgba(245,166,35,",
   date: "9 Mei 2026",
-  tags: ["mac", "tips-trik", "sop"]
+  title: "LOG #009 — SOP Survival Mac Jadul: Rahasia Ngoding 15 Jam Tanpa Meledak",
+  desc: "MacBook Pro 2015 masih sanggup tempur 15 jam nonstop? Bisa bray. SOP kearifan lokal Ciracas buat jagain si Mac tetep adem dan performa Quad-Core-nya ga turun.",
 },
   {
     href: "log-008-vscode-workflow.html",
