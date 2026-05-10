@@ -12,6 +12,15 @@
 
 const LATEST_POSTS = [
   {
+    href: "blog/blog-kenangan-bandung-nyokap-bayu.html",
+    badge: "#011",
+    tags: ["Catatan Santai", "Keluarga", "In Memoriam"],
+    tagColor: "#C8972A",
+    tagBg: "rgba(200,151,42,0.15)",
+    date: "10 Mei 2026",
+    title: "Jejak Memori di Bandung: Tentang Ramen, Nyokap, dan Kepergian sang Bontot",
+    desc: "Membuka folder lama, ketemu foto Nyokap nikmatin ramen di Bandung bareng almarhum adik bontot, Bayu. Foto diproses ulang pakai GIMP di Mac jadul — sebagai bentuk penghormatan untuk memori indah kami. Al-Fatihah."
+  },
     href: "blog/blog-tablet-mac-workflow.html",
     badge: "#010",
     tags: ["Tips & Trik", "Mac", "Linux"],
