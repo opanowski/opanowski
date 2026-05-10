@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ketika AI Meta Ngacak Bunker: Kronologi, Investigasi, dan Misi Penyelamatan — Bunker Opanowski</title>
+<meta name="description" content="AI Meta niat baik, tapi hasilnya kacau balau — index.html ketuker, kartu post hilang, bug sampah berceceran. Ini kronologi lengkap investigasi dan cara gw selamatin Bunker Opanowski.">
+<meta property="og:title" content="Ketika AI Meta Ngacak Bunker: Kronologi, Investigasi, dan Misi Penyelamatan">
+<meta property="og:description" content="Git adalah penyelamat. Tanpa commit history, Bunker Opanowski bisa hilang selamanya gara-gara AI yang kelewat 'helpful'.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-meta-ai-bunker-opanowski.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #1a0f0f 0%, #0f1117 60%, #1a0a0a 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, #e05a5a 0px, #e05a5a 1px, transparent 1px, transparent 40px);
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem; opacity: 0.06;
+    pointer-events: none; user-select: none;
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: var(--font-mono);
+  }
+  .tag-pill.red { background: rgba(224,90,90,0.15); border-color: rgba(224,90,90,0.4); color: #e05a5a; }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+    margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--cream); margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  /* SOP CARD */
+  .sop-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.2rem 0;
+  }
+  .sop-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .sop-card-title {
+    font-size: 0.95rem; font-weight: 700; color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .sop-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0; }
+
+  /* SPEK BOX */
+  .spek-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-left: 3px solid var(--green); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* TERMINAL BOX */
+  .terminal-box {
+    background: #0d1117; border: 1px solid #30363d;
+    border-radius: 10px; overflow: hidden; margin: 1.75rem 0;
+  }
+  .terminal-header {
+    background: #161b22; padding: 8px 14px;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid #30363d;
+  }
+  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .terminal-title {
+    font-family: var(--font-mono); font-size: 0.6rem;
+    color: #8b949e; margin-left: 4px; letter-spacing: 1px;
+  }
+  .terminal-body {
+    padding: 1rem 1.4rem; font-family: var(--font-mono);
+    font-size: 0.75rem; line-height: 1.8; color: #c9d1d9;
+  }
+  .terminal-body .cmd { color: #79c0ff; }
+  .terminal-body .out { color: #8b949e; }
+  .terminal-body .ok  { color: #56d364; }
+  .terminal-body .warn { color: #e3b341; }
+  .terminal-body .err { color: #f85149; }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: rgba(224,90,90,0.05); border: 1px solid rgba(224,90,90,0.3);
+    border-left: 3px solid #e05a5a; border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.75rem 0;
+  }
+  .warning-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    color: #e05a5a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.75rem;
+  }
+  .warning-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0;
+    font-size: 0.85rem; line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700;
+  }
+  .info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+  .info-box.green .info-box-label { color: #4caf7d; }
+  .info-box.blue { border-color: rgba(91,141,238,0.3); background: rgba(91,141,238,0.05); }
+  .info-box.blue .info-box-label { color: #5b8dee; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(224,90,90,0.04); border: 1px solid rgba(224,90,90,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-style: italic; color: var(--cream); line-height: 1.6;
+  }
+  .quote-source {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: #e05a5a; margin-top: 0.6rem; letter-spacing: 1px;
+  }
+
+  /* TEMUAN BOX */
+  .temuan-box {
+    background: rgba(224,90,90,0.04); border: 1px solid rgba(224,90,90,0.25);
+    border-left: 3px solid #e05a5a; border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.2rem 0;
+  }
+  .temuan-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    color: #e05a5a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.6rem;
+  }
+  .temuan-title {
+    font-size: 0.92rem; font-weight: 700; color: var(--cream); margin-bottom: 0.4rem;
+  }
+  .temuan-box p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
+
+  /* KESIMPULAN */
+  .kesimpulan-box {
+    margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px;
+    border: 1px solid rgba(200,151,42,0.3);
+    background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+  }
+  .kesimpulan-box h3 {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem;
+  }
+  .kesimpulan-box p {
+    font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem;
+  }
+  .sign-off {
+    font-family: var(--font-display); font-size: 0.9rem;
+    color: var(--accent); font-style: italic; margin-top: 1rem; display: block;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 4px 12px; border-radius: 20px; transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CTA */
+  .cta-block {
+    margin-top: 2rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.4rem; text-align: center;
+  }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600; transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* POST NAV */
+  .post-nav {
+    display: flex; gap: 12px; padding: 20px 24px;
+    border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .post-nav a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--text-muted); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; transition: all 0.2s;
+  }
+  .post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px;
+  }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .social-links a {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">💀</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill red">⚠️ Incident Report</span>
+      <span class="tag-pill">🤖 AI Meta</span>
+      <span class="tag-pill green">✅ Fixed</span>
+      <span class="tag-pill">🔧 Git Rescue</span>
+    </div>
+    <h1 class="hero-title">Ketika AI Meta Ngacak Bunker:<br><em>Kronologi, Investigasi & Misi Penyelamatan</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> 10 Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>💥 Incident Report #001</span>
+    </div>
+  </div>
+</div>
+
+<!-- KONTEN -->
+<div class="container">
+<div class="artikel-body">
+
+  <p>Ini bukan cerita kemenangan. Ini cerita tentang bagaimana satu AI — dengan niat yang mungkin baik — berhasil mengacak-acak tiga file inti di Bunker Opanowski dalam sekali sesi. Dan tentang bagaimana gw, dengan bantuan Claude dan git, berhasil menyelamatkan semuanya.</p>
+
+  <p>Tanggal 10 Mei 2026. Gw minta AI Meta bantu optimasi beberapa file di repo <code style="color:var(--accent)">~/Desktop/opanowski/</code>. Hasilnya? Bencana kecil yang makan waktu seharian buat dibenerin.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Git bukan cuma version control. Git adalah asuransi jiwa website lo."</div>
+    <div class="quote-source">— Pelajaran Pahit, Bunker Opanowski — 10 Mei 2026</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>1. Awal Mula: <em>Misi yang Kelewatan</em></h2>
+
+  <p>Awalnya sederhana. Gw minta AI Meta bantu beberapa hal di repo Bunker — termasuk mastiin script <code style="color:var(--accent)">latest-posts.js</code> bisa render kartu post terbaru di halaman utama. Karena ada bug kecil yang belum sempet gw benerin.</p>
+
+  <p>Masalahnya: AI Meta <strong style="color:var(--cream)">tidak paham struktur project secara keseluruhan.</strong> Dia tau satu file tapi tidak tau file lainnya. Dia nulis ulang, replace, "optimasi" — tanpa tahu bahwa yang dia timpa adalah fondasi utama website.</p>
+
+  <div class="warning-box">
+    <div class="warning-label">⚠️ File Yang Dikacaukan AI Meta</div>
+    <p>1. <strong style="color:var(--cream)">index.html (root)</strong> — isinya ketuker total jadi blog/index.html<br>
+    2. <strong style="color:var(--cream)">latest-posts.js</strong> — isinya masih oke, tapi proses yang dia sarankan merusak konteks<br>
+    3. <strong style="color:var(--cream)">index.html di GitHub (live)</strong> — ada bug tag duplikat dan teks literal nyasar</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>2. Investigasi: <em>4 Temuan Kritis</em></h2>
+
+  <p>Setelah gw lapor ke Claude — "<em>3 catatan paling bawah di mainpage ilang semua gegara si META</em>" — investigasi dimulai. Hasilnya? Empat temuan yang makin dalam makin bikin geleng-geleng kepala.</p>
+
+  <div class="temuan-box">
+    <div class="temuan-label">🔴 Temuan 1</div>
+    <div class="temuan-title">index.html Root Ketuker Total</div>
+    <p>File <code style="color:var(--accent)">~/Desktop/opanowski/index.html</code> yang harusnya berisi halaman portal utama "Bunker Opanowski — Villa Ciracas" — isinya adalah <code style="color:var(--accent)">blog/index.html</code> alias halaman Log Harian. Dua file nyaris sama jumlah barisnya (725 vs 726 baris). AI Meta nulis ulang file yang salah ke lokasi yang salah.</p>
+  </div>
+
+  <div class="temuan-box">
+    <div class="temuan-label">🔴 Temuan 2</div>
+    <div class="temuan-title">Script Render Tidak Pernah Ada</div>
+    <p>File index.html asli memang punya tag <code style="color:var(--accent)">&lt;script src="latest-posts.js"&gt;</code> — tapi tidak ada script yang membaca array <code style="color:var(--accent)">LATEST_POSTS</code> dan menginjeknya ke <code style="color:var(--accent)">div#latest-posts-grid</code>. latest-posts.js di-load, tapi hasilnya tidak pernah muncul di halaman. Bug lama yang selama ini didiamkan.</p>
+  </div>
+
+  <div class="temuan-box">
+    <div class="temuan-label">🔴 Temuan 3</div>
+    <div class="temuan-title">Bug Sampah di File GitHub (Live)</div>
+    <p>Di versi live di GitHub, ditemukan:<br>
+    1. Tag <code style="color:var(--accent)">&lt;/script&gt;</code> duplikat yang nyasar<br>
+    2. Teks literal <code style="color:var(--accent)">← TAMBAH INI</code> nempel di dalam tag script<br>
+    3. Tag <code style="color:var(--accent)">&lt;/body&gt;</code> duplikat sebelum script render<br>
+    Hasilnya: browser tidak bisa load latest-posts.js sama sekali.</p>
+  </div>
+
+  <div class="temuan-box">
+    <div class="temuan-label">🟡 Temuan 4</div>
+    <div class="temuan-title">Backup .bak Juga Sudah Rusak</div>
+    <p>Ternyata file <code style="color:var(--accent)">index.html.bak</code> yang dibuat saat sesi berlangsung — isinya sudah file yang salah (blog/index.html). Backup manual gagal total. Satu-satunya harapan: git history.</p>
+  </div>
+
+  <!-- TERMINAL INVESTIGASI -->
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#febc2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <span class="terminal-title">Terminal — Verifikasi Kerusakan</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="out"># Cek isi index.html yang "rusak"</span></div>
+      <div><span class="cmd">$ head -6 ~/Desktop/opanowski/index.html</span></div>
+      <div><span class="err">&lt;title&gt;Log Harian — Bunker Opanowski&lt;/title&gt; ← SALAH!</span></div>
+      <div>&nbsp;</div>
+      <div><span class="out"># Harusnya:</span></div>
+      <div><span class="ok">&lt;title&gt;Bunker Opanowski — Villa Ciracas&lt;/title&gt; ← INI YANG BENER</span></div>
+      <div>&nbsp;</div>
+      <div><span class="out"># Jumlah baris — hampir sama, makanya ga ketahuan sekilas</span></div>
+      <div><span class="cmd">$ wc -l index.html blog/index.html</span></div>
+      <div><span class="warn">  725 index.html</span></div>
+      <div><span class="warn">  726 blog/index.html</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <h2>3. Proses Penyelamatan: <em>Git Jadi Pahlawan</em></h2>
+
+  <p>Satu-satunya jalan keluar: git history. Untungnya, gw punya kebiasaan commit setiap kali ada perubahan yang sudah terbukti berfungsi. Dan commit bersih terakhir — sebelum Meta masuk — masih ada.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">🛡️ Langkah Penyelamatan — 4 Tahap</div>
+    <div class="spek-item">
+      <span class="spek-icon">1.</span>
+      <span><strong style="color:var(--cream)">Cek git log</strong> — temukan commit bersih sebelum Meta ngacak</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2.</span>
+      <span><strong style="color:var(--cream)">Checkout file dari commit lama</strong> — restore index.html dari commit 25a16f0</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">3.</span>
+      <span><strong style="color:var(--cream)">Inject 3 kartu post langsung ke HTML</strong> — tinggalkan pendekatan dynamic loading yang bermasalah</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">4.</span>
+      <span><strong style="color:var(--cream)">Verifikasi di Live Server, baru push</strong> — tidak push sebelum semua terbukti oke di lokal</span>
+    </div>
+  </div>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#febc2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <span class="terminal-title">Terminal — Git Rescue Operation</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="out"># Langkah 1: cek log, temukan commit bersih</span></div>
+      <div><span class="cmd">$ git -C ~/Desktop/opanowski log --oneline -5</span></div>
+      <div><span class="ok">25a16f0 Fix styling kartu + update latest posts ← commit bersih terakhir</span></div>
+      <div><span class="warn">a3f892b Meta: "optimasi" latest-posts integration ← ini biang kerok</span></div>
+      <div>&nbsp;</div>
+      <div><span class="out"># Langkah 2: restore index.html dari commit bersih</span></div>
+      <div><span class="cmd">$ git -C ~/Desktop/opanowski checkout 25a16f0 -- index.html</span></div>
+      <div>&nbsp;</div>
+      <div><span class="out"># Verifikasi: judul harus "Villa Ciracas" bukan "Log Harian"</span></div>
+      <div><span class="cmd">$ head -6 ~/Desktop/opanowski/index.html</span></div>
+      <div><span class="ok">&lt;title&gt;Bunker Opanowski — Villa Ciracas&lt;/title&gt; ✓ BENER!</span></div>
+    </div>
+  </div>
+
+  <p>Setelah index.html dipulihkan, masalah kedua: kartu post tetap tidak muncul karena script render memang belum pernah ada. Solusinya? Gw inject 3 kartu post langsung ke HTML — hardcode, tanpa bergantung pada dynamic loading yang rawan masalah timing.</p>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#febc2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <span class="terminal-title">inject_cards.py — Script Python Penyelamat</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="out"># Script inject kartu langsung ke div#latest-posts-grid</span></div>
+      <div><span class="cmd">$ python3 inject_cards.py</span></div>
+      <div><span class="ok">→ Membaca index.html... ✓</span></div>
+      <div><span class="ok">→ Menemukan div#latest-posts-grid... ✓</span></div>
+      <div><span class="ok">→ Injecting 3 kartu (#011, #010, #009)... ✓</span></div>
+      <div><span class="ok">→ Menulis ulang index.html... ✓</span></div>
+      <div>&nbsp;</div>
+      <div><span class="out"># Verifikasi di Live Server: http://127.0.0.1:5500/index.html</span></div>
+      <div><span class="ok">→ Section "Latest Update" — 3 kartu muncul sempurna ✓</span></div>
+      <div><span class="ok">→ Styling gold, dark background, link bisa diklik ✓</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2>4. Push & Selesai: <em>Hasil Akhir</em></h2>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#febc2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <span class="terminal-title">Terminal — Final Push</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="cmd">$ cd ~/Desktop/opanowski</span></div>
+      <div><span class="cmd">$ git add index.html</span></div>
+      <div><span class="cmd">$ git commit -m "Fix: restore portal utama + inject 3 kartu latest post"</span></div>
+      <div><span class="ok">[main 7f3c2a1] Fix: restore portal utama + inject 3 kartu latest post</span></div>
+      <div><span class="cmd">$ git push origin main</span></div>
+      <div><span class="ok">To github.com:opanowski/opanowski.git</span></div>
+      <div><span class="ok">   25a16f0..7f3c2a1  main → main ✓</span></div>
+    </div>
+  </div>
+
+  <div class="info-box green">
+    <div class="info-box-label">✅ Hasil Akhir — Semua Kembali Normal</div>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span>3 kartu post muncul di section "Latest Update"</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span>Portal utama "BUNKER OPANOWSKI — Villa Ciracas" tampil normal</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span>Styling konsisten: gold, dark background sesuai standar Bunker</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span>Semua link kartu bisa diklik, tidak ada yang 404</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">✅</span>
+      <span>Website live di GitHub Pages kembali normal</span>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2>5. Pelajaran: <em>Yang Bisa Diambil dari Insiden Ini</em></h2>
+
+  <div class="info-box blue">
+    <div class="info-box-label">📋 6 Pelajaran dari Insiden AI Meta</div>
+    <div class="spek-item">
+      <span class="spek-icon">1.</span>
+      <span><strong style="color:var(--cream)">Jangan percayai AI lain untuk edit file langsung.</strong> AI yang tidak kenal struktur project lo bisa menimpa file yang salah tanpa sadar.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2.</span>
+      <span><strong style="color:var(--cream)">Selalu backup sebelum minta AI edit.</strong> <code style="color:var(--accent)">cp file.html file.html.bak</code> sebelum apapun dimulai.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">3.</span>
+      <span><strong style="color:var(--cream)">Git adalah penyelamat mutlak.</strong> Tanpa commit history, file index.html yang ketuker tidak bisa dipulihkan dengan cara apapun.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">4.</span>
+      <span><strong style="color:var(--cream)">Backup .bak tidak bisa diandalkan.</strong> Kalau lo backup di tengah sesi yang sudah kacau, .bak lo juga kacau. Git jauh lebih reliable.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">5.</span>
+      <span><strong style="color:var(--cream)">Masalah timing script? Hardcode saja.</strong> Dynamic loading dari file JS eksternal rawan gagal. Kalau datanya statis, inject langsung ke HTML.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">6.</span>
+      <span><strong style="color:var(--cream)">Live Server dulu, push belakangan.</strong> Tidak ada yang boleh masuk ke GitHub sebelum terbukti berjalan di lokal.</span>
+    </div>
+  </div>
+
+  <div class="sop-card">
+    <div class="sop-card-label">🛡️ Aturan Baru Bunker Opanowski</div>
+    <div class="sop-card-title">AI Lain = Konsultasi, Bukan Akses Langsung</div>
+    <p>Mulai sekarang: AI lain boleh dikonsultasi, boleh diminta sarankan kode — tapi eksekusi tetap di tangan Om Opan. Yang boleh langsung edit file adalah Claude yang sudah kenal workflow Bunker. Bahkan Claude pun harus verifikasi dulu sebelum push.</p>
+  </div>
+
+  <!-- KESIMPULAN -->
+  <div class="kesimpulan-box">
+    <h3>📌 Penutup</h3>
+    <p>Hari ini melelahkan. Tapi juga jadi salah satu hari paling berharga — karena gw belajar secara langsung, dengan konsekuensi nyata, tentang pentingnya git, pentingnya commit yang rajin, dan pentingnya paham dulu sebelum percaya AI apapun untuk edit file production.</p>
+    <p>Bunker Opanowski sudah kembali normal. Dan sekarang punya satu layer pertahanan ekstra: SOP yang lebih ketat, dan pemahaman yang lebih dalam tentang cara kerja website statis ini.</p>
+    <p>AI bisa jadi alat yang luar biasa. Tapi alat tetap butuh tangan yang paham cara pakainya.</p>
+    <span class="sign-off">Belajar sampai menutup mata. 🏴</span>
+  </div>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#IncidentReport</span>
+    <span class="hashtag">#GitRescue</span>
+    <span class="hashtag">#AIGoneWrong</span>
+    <span class="hashtag">#MetaAI</span>
+    <span class="hashtag">#GitIsLife</span>
+    <span class="hashtag">#StaticSite</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#PelajaranPahit</span>
+    <span class="hashtag">#NeverTrustBlindly</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Pernah kena hal serupa? Cerita di kolom komentar! 🔧</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/blog/blog-tablet-mac-workflow.html">← Tablet & Mac Workflow</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Ketika AI Meta Ngacak Bunker
+  <span class="updated-tag"><span class="live-dot"></span>10 Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<!-- KOMENTAR -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+</body>
+</html>
