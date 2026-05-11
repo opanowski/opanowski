@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log Anabul: Tidur Nyenyak Level Dewa di Tengah Kebisingan — Bunker Opanowski</title>
+<meta name="description" content="Kelinci di lubang jetpump, suara gerinda renovasi kenceng, tapi mereka tidur cantik tanpa keganggu sedikit pun. Seni swasembada lahan sempit di Ciracas.">
+<meta property="og:title" content="Log Anabul: Tidur Nyenyak Level Dewa di Tengah Kebisingan">
+<meta property="og:description" content="Lahan sempit bukan halangan buat bikin peliharaan nyaman — butuh kreativitas, bukan luas tanah.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-anak-kelinci-jetpump.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #0f1a10 0%, #0f1117 60%, #0d1a0a 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, var(--green) 0px, var(--green) 1px, transparent 1px, transparent 40px);
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem; opacity: 0.06;
+    pointer-events: none; user-select: none;
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: var(--font-mono);
+  }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .tag-pill.blue { background: rgba(91,141,238,0.15); border-color: rgba(91,141,238,0.4); color: #5b8dee; }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+    margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--cream); margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  .sop-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.2rem 0;
+  }
+  .sop-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .sop-card-title { font-size: 0.95rem; font-weight: 700; color: var(--cream); margin-bottom: 0.5rem; }
+  .sop-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0; }
+
+  .spek-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-left: 3px solid var(--green); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  .video-block { margin: 2rem 0; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .video-caption {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
+  }
+
+  .quote-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; color: var(--cream); line-height: 1.6; }
+  .quote-source { font-family: var(--font-mono); font-size: 0.62rem; color: var(--green); margin-top: 0.6rem; letter-spacing: 1px; }
+
+  .info-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0; font-size: 0.85rem; line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700;
+  }
+  .info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+  .info-box.green .info-box-label { color: #4caf7d; }
+
+  .kesimpulan-box {
+    margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px;
+    border: 1px solid rgba(200,151,42,0.3);
+    background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+  }
+  .kesimpulan-box h3 {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem;
+  }
+  .kesimpulan-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem; }
+  .sign-off { font-family: var(--font-display); font-size: 0.9rem; color: var(--accent); font-style: italic; margin-top: 1rem; display: block; }
+
+  .hashtag-block { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; }
+  .hashtag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 4px 12px; border-radius: 20px; transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  .cta-block { margin-top: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; text-align: center; }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  .post-nav { display: flex; gap: 12px; padding: 20px 24px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .post-nav a {
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; transition: all 0.2s;
+  }
+  .post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+  footer { padding: 24px; text-align: center; font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .updated-tag { display: inline-block; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px; }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .social-links a { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s; }
+  .social-links a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">🐰</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill">🐰 Anabul</span>
+      <span class="tag-pill green">🌱 Urban Farming</span>
+      <span class="tag-pill">🔧 Bunker Life</span>
+      <span class="tag-pill blue">Ciracas</span>
+    </div>
+    <h1 class="hero-title">Log Anabul: Tidur Nyenyak <em>Level Dewa</em><br>di Tengah Kebisingan!</h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> 11 Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>🐰 Anabul Report</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<div class="artikel-body">
+
+  <p>Halo bray!</p>
+
+  <p>Kalian pernah liat nggak ada yang bisa tidur nyenyak pas tepat di sebelahnya lagi ada suara gerinda kenceng gara-gara renovasi rumah? Kalau belum, kenalin nih penghuni baru di <strong style="color:var(--cream)">Bunker Opanowski</strong>.</p>
+
+  <p>Berhubung lahan di rumah Ciracas ini makin sempit — maklum lah, sudah penuh sama tanaman organik dan area oprekan — gw harus putar otak buat cari spot aman buat hewan peliharaan. Akhirnya, anak-anak kelinci ini gw kasih "kamar" di dalam lubang tempat pompa air jetpump.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Lahan sempit bukan halangan buat bikin peliharaan nyaman — butuh kreativitas, bukan luas tanah."</div>
+    <div class="quote-source">— Pelajaran Hari Ini, Bunker Opanowski</div>
+  </div>
+
+  <h2>Kenapa di <em>Situ?</em></h2>
+
+  <div class="spek-box">
+    <div class="spek-box-label">🐇 Alasan Masuk Akal</div>
+    <div class="spek-item">
+      <span class="spek-icon">📐</span>
+      <span><strong style="color:var(--cream)">Pemanfaatan Lahan Sempit.</strong> Di Bunker, setiap jengkal tanah itu berharga. Lubang jetpump yang nganggur ternyata jadi proteksi yang oke buat mereka — terlindung dari panas langsung, adem secara alami.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🔇</span>
+      <span><strong style="color:var(--cream)">Kedap Suara Alami.</strong> Anehnya, meskipun suara gerinda lagi renovasi rumah bising banget, mereka tetep tidur cantik tanpa keganggu sedikit pun. Entah karena lelah atau emang mental baja.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🏴</span>
+      <span><strong style="color:var(--cream)">Vibe Bunker.</strong> Antara kesibukan renovasi, ngerawat tanaman organik, dan ngurus anabul — semuanya harus sinkron. Inilah seninya swasembada di lahan terbatas.</span>
+    </div>
+  </div>
+
+  <h2>Videonya: <em>Lihat Sendiri</em></h2>
+
+  <p>Buat lo yang mau liat gimana santuy-nya mereka, langsung cek aja di bawah. Benar-benar definisi tidur cantik — atau lebih tepatnya, tidur cantik <em>di tengah</em> suara.</p>
+
+  <div class="video-block">
+    <iframe
+      width="315"
+      height="560"
+      src="https://www.youtube.com/embed/al0TvhSUelU"
+      title="Anak Kelinci Tidur Nyenyak di Bunker Opanowski"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="border-radius:12px;border:1px solid #2e3248;max-width:100%">
+    </iframe>
+    <div class="video-caption">📹 Tidur pulas di lubang jetpump pas suara gerinda renovasi lagi kenceng-kencengnya | Ciracas, 11 Mei 2026</div>
+  </div>
+
+  <h2>Filosofi <em>Lahan Sempit</em></h2>
+
+  <p>Bunker Opanowski dari awal emang dibangun di atas prinsip: <strong style="color:var(--cream)">manfaatkan apa yang ada</strong>. Kalau ada orang lain lihat lubang jetpump yang nganggur dan mikir "ah, nggak kepake" — gw lihat potensi.</p>
+
+  <p>Urban farming di lahan sempit itu penuh improvisasi kayak gini. Tanaman di pot-pot bertingkat, kompos dari dapur, dan sekarang anabul yang nempatin spot yang orang lain anggap nggak berguna. Itulah DNA Bunker.</p>
+
+  <div class="sop-card">
+    <div class="sop-card-label">🌱 Urban Farming Mindset</div>
+    <div class="sop-card-title">Setiap Sudut Punya Fungsi</div>
+    <p>Lubang jetpump → shelter anabul. Pot bekas → kebun mini. Atap tambahan → area jemuran sekaligus peneduh. Di Bunker, nggak ada ruang yang nganggur tanpa alasan.</p>
+  </div>
+
+  <h2>Yang Bikin <em>Takjub</em></h2>
+
+  <p>Ini bukan cuma sekali kejadian. Setiap kali ada kegiatan bising di sekitar Bunker — entah itu mesin gerinda, drill, atau suara lain dari proyek renovasi — mereka stay calm.</p>
+
+  <div class="info-box green">
+    <div class="info-box-label">🐰 Teori Sementara</div>
+    <div class="spek-item">
+      <span class="spek-icon">1.</span>
+      <span>Sudah terbiasa sama ritme Bunker yang nggak pernah bener-bener sepi.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2.</span>
+      <span>Lubang jetpump meredam getaran suara lebih baik dari yang gw kira.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">3.</span>
+      <span>Atau emang mental mereka baja dari sananya. 💪</span>
+    </div>
+  </div>
+
+  <p>Apapun alasannya, hasilnya sama: tidur nyenyak level dewa di tengah chaos renovasi. Gw aja yang kerja renovasi malah lebih capek dari mereka.</p>
+
+  <div class="kesimpulan-box">
+    <h3>📌 Penutup</h3>
+    <p>Kadang solusi terbaik bukan yang paling mahal atau paling luas. Lubang jetpump yang nganggur, sedikit kreativitas, dan beres — anabul punya "kamar" yang adem dan aman.</p>
+    <p>Itulah Bunker Opanowski. Sempit, tapi sinkron.</p>
+    <span class="sign-off">Salam Oprek & Sayang Hewan dari Ciracas! 🐰🔧</span>
+  </div>
+
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#AnabulLife</span>
+    <span class="hashtag">#UrbanFarming</span>
+    <span class="hashtag">#KelinciIndonesia</span>
+    <span class="hashtag">#LahanSempit</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#DIY</span>
+    <span class="hashtag">#KelinciSantuy</span>
+  </div>
+
+  <div class="cta-block">
+    <p>Punya peliharaan se-chill ini? Kabarin di kolom komen! 🐰</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/blog/blog-meta-ai-bunker-opanowski.html">← AI Meta Ngacak Bunker</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Log Anabul: Tidur Nyenyak Level Dewa
+  <span class="updated-tag"><span class="live-dot"></span>11 Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+</body>
+</html>

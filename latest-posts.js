@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "013",
+    date: "11 Mei 2026",
+    title: "Log Anabul: Tidur Nyenyak Level Dewa",
+    subtitle: "Kelinci di lubang jetpump, suara gerinda renovasi kenceng, tapi mereka tidur cantik tanpa keganggu sedikit pun. Seni swasembada lahan sempit.",
+    tags: ["Anabul", "Urban Farming", "Ciracas"],
+    emoji: "🐰",
+    url: "blog/blog-anak-kelinci-jetpump.html"
+  },
+  {
     number: "012",
     date: "10 Mei 2026",
     title: "Ketika AI Meta Ngacak Bunker",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Multi-Device", "Git Workflow", "Linux"],
     emoji: "📱",
     url: "blog/blog-tablet-mac-workflow.html"
-  },
-  {
-    number: "010",
-    date: "sebelumnya",
-    title: "Mac Survival Mode",
-    subtitle: "Ngerawat MacBook Pro 2015 biar tetap jalan kenceng — thermal paste, storage, dan ritual harian Om Opan.",
-    tags: ["MacBook", "Tips", "Hardware"],
-    emoji: "🍎",
-    url: "blog/blog-log-009-mac-survival.html"
   }
 ];
 

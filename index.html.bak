@@ -355,8 +355,8 @@ section{padding:6rem 2.5rem}
     <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:0.6rem;line-height:1.2">Apa yang <em style="color:var(--gold);font-style:italic">Lagi Jalan</em></h2>
     <p style="color:#b8bdc9;font-size:0.85rem;line-height:1.9;max-width:600px;margin-bottom:3rem">3 catatan terbaru dari Log Harian — langsung dari bengkel digital Villa Ciracas.</p>
 
-    <div id="latest-posts-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.25rem">
-      Diisi otomatis oleh latest-posts.js -->
+    <div id="latest-posts-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.25rem"><a href="blog/blog-meta-ai-bunker-opanowski.html" style="display:block;text-decoration:none;background:rgba(255,255,255,0.025);border:1px solid rgba(200,151,42,0.12);border-radius:12px;padding:1.6rem"><div style="font-size:0.68rem;color:#C8972A;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem">10 Mei 2026 &middot; #012</div><h3 style="font-family:var(--font-display);font-size:1.05rem;color:var(--cream);line-height:1.4;margin-bottom:0.75rem">Ketika AI Meta Ngacak Bunker</h3><p style="font-size:0.8rem;color:#a8adb9;line-height:1.8">AI Meta ngacak index.html, kartu post hilang, bug berceceran. Git jadi satu-satunya penyelamat.</p><div style="margin-top:1rem;font-size:0.72rem;color:#C8972A">Baca selengkapnya &rarr;</div></a>
+     Diisi otomatis oleh latest-posts.js -->
     </div>
     
     <div style="margin-top:2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
