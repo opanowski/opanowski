@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filosofi 10Mbps: Alur Kerja Efisien Bunker Opanowski — Eznet Ciracas</title>
+<meta name="description" content="Investasi WiFi Rp172.000/bulan dari Eznet ternyata lebih dari cukup untuk menjalankan ekosistem digital Bunker Opanowski. Filosofi efisiensi, bukan kecepatan.">
+<meta property="og:title" content="Filosofi 10Mbps: Alur Kerja Efisien Bunker Opanowski">
+<meta property="og:description" content="Investasi WiFi Rp172.000/bulan dari Eznet ternyata lebih dari cukup untuk menjalankan ekosistem digital Bunker Opanowski.">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-eznet-10mbps-bunker-opanowski.html">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ===== BLOG POST STYLES ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0f1117;
+  color: #e8e4dc;
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+}
+
+/* HEADER */
+.blog-header {
+  background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+  border-bottom: 2px solid var(--accent, #5b8dee);
+  padding: 22px 24px 20px;
+  position: sticky; top: 0; z-index: 100;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+  color: #7a8099; text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #5b8dee; }
+
+/* HERO */
+.hero {
+  padding: 40px 24px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  max-width: 760px;
+  margin: 0 auto;
+}
+.hero-meta {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; margin-bottom: 18px;
+}
+.hero-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 20px;
+}
+.badge-num {
+  background: rgba(91,141,238,0.12);
+  border: 1px solid rgba(91,141,238,0.3);
+  color: #5b8dee;
+}
+.badge-cat {
+  background: rgba(200,151,42,0.1);
+  border: 1px solid rgba(200,151,42,0.25);
+  color: #C8972A;
+}
+.badge-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; color: #7a8099;
+}
+.hero-emoji {
+  font-size: 3rem; margin-bottom: 16px; display: block;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #F5F0E8;
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+.hero-title em { color: #5b8dee; font-style: italic; }
+.hero-subtitle {
+  font-size: 1rem;
+  color: #8b92a8;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.tag-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; font-weight: 600;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #7a8099;
+  padding: 3px 10px; border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* HERO IMAGE */
+.hero-image-wrap {
+  max-width: 760px; margin: 0 auto;
+  padding: 0 24px 28px;
+}
+.hero-image-wrap img {
+  width: 100%; border-radius: 12px;
+  border: 1px solid rgba(91,141,238,0.2);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+.img-caption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; color: #5a6078;
+  text-align: center; margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* CONTENT */
+.content {
+  max-width: 760px; margin: 0 auto;
+  padding: 36px 24px 60px;
+}
+.content p {
+  font-size: 0.95rem;
+  color: #b8bdd0;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-weight: 700;
+  color: #F5F0E8;
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(91,141,238,0.2);
+}
+.content h2 .h2-icon { margin-right: 8px; }
+
+/* INFO BOX */
+.info-box {
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 24px 0;
+}
+.info-box.blue {
+  background: rgba(91,141,238,0.06);
+  border: 1px solid rgba(91,141,238,0.25);
+}
+.info-box.gold {
+  background: rgba(200,151,42,0.06);
+  border: 1px solid rgba(200,151,42,0.25);
+}
+.info-box.green {
+  background: rgba(76,175,125,0.06);
+  border: 1px solid rgba(76,175,125,0.25);
+}
+.info-box.red {
+  background: rgba(224,90,90,0.06);
+  border: 1px solid rgba(224,90,90,0.2);
+}
+.info-box-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.info-box.blue .info-box-label { color: #5b8dee; }
+.info-box.gold .info-box-label { color: #C8972A; }
+.info-box.green .info-box-label { color: #4caf7d; }
+.info-box.red .info-box-label { color: #e05a5a; }
+.info-box div {
+  font-size: 0.85rem; color: #9099b0; line-height: 2;
+}
+.info-box strong { color: #d0d5e8; }
+
+/* SPEC TABLE */
+.spec-table {
+  width: 100%; border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.85rem;
+}
+.spec-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #5b8dee;
+  padding: 10px 14px; text-align: left;
+  border-bottom: 2px solid rgba(91,141,238,0.2);
+}
+.spec-table td {
+  padding: 11px 14px; color: #9099b0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: top;
+}
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table td:first-child { color: #d0d5e8; font-weight: 600; }
+.spec-table tr:hover td { background: rgba(91,141,238,0.03); }
+
+/* QUOTE */
+.blockquote {
+  border-left: 3px solid #C8972A;
+  padding: 14px 20px;
+  margin: 28px 0;
+  background: rgba(200,151,42,0.04);
+  border-radius: 0 8px 8px 0;
+}
+.blockquote p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #C8972A !important;
+  font-size: 1rem !important;
+  margin-bottom: 0 !important;
+  line-height: 1.7 !important;
+}
+
+/* VERDICT */
+.verdict {
+  background: linear-gradient(135deg, rgba(91,141,238,0.08), rgba(91,141,238,0.03));
+  border: 1px solid rgba(91,141,238,0.3);
+  border-radius: 12px;
+  padding: 24px 22px;
+  margin: 36px 0;
+  text-align: center;
+}
+.verdict-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem; text-transform: uppercase;
+  letter-spacing: 2px; color: #5b8dee;
+  margin-bottom: 10px;
+}
+.verdict-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; font-weight: 700;
+  color: #5b8dee; line-height: 1;
+  margin-bottom: 4px;
+}
+.verdict-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem; color: #5a6078;
+  letter-spacing: 0.5px;
+}
+
+/* HASHTAG */
+.hashtags {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.hashtag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; color: #5a6080;
+}
+
+/* POST NAV */
+.post-nav {
+  display: flex; justify-content: space-between;
+  gap: 12px; margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.nav-btn {
+  display: flex; flex-direction: column; gap: 4px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 14px 16px;
+  flex: 1; transition: all 0.2s;
+  max-width: 48%;
+}
+.nav-btn:hover {
+  border-color: rgba(91,141,238,0.4);
+  background: rgba(91,141,238,0.05);
+}
+.nav-dir {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #5a6080;
+}
+.nav-title {
+  font-size: 0.82rem; color: #9099b0; line-height: 1.4;
+}
+.nav-btn.next { text-align: right; }
+
+/* FOOTER */
+.site-footer {
+  text-align: center; padding: 28px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; color: #3a4060;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+</style>
+</head>
+<body>
+
+<header class="blog-header">
+  <a class="back-link" href="index.html">← Log Harian</a>
+</header>
+
+<div class="hero">
+  <div class="hero-meta">
+    <span class="hero-badge badge-num">#015</span>
+    <span class="hero-badge badge-cat">💡 Tips & Trik · 🧭 Filosofi</span>
+    <span class="badge-date">📅 Rabu, 13 Mei 2026</span>
+  </div>
+  <span class="hero-emoji">📡</span>
+  <h1 class="hero-title">Filosofi 10Mbps: <em>Alur Kerja Efisien</em> Bunker Opanowski</h1>
+  <p class="hero-subtitle">Investasi WiFi Eznet Rp172.000/bulan ternyata lebih dari cukup untuk menjalankan ekosistem digital Bunker Opanowski. Kuncinya bukan angka bandwidth — tapi seberapa cerdas kita mengelola prioritas.</p>
+  <div class="hero-tags">
+    <span class="tag-pill">Eznet</span>
+    <span class="tag-pill">10Mbps</span>
+    <span class="tag-pill">Ciracas</span>
+    <span class="tag-pill">GitHub Pages</span>
+    <span class="tag-pill">Mac Jadul</span>
+    <span class="tag-pill">Debian Linux</span>
+  </div>
+</div>
+
+<div class="hero-image-wrap">
+  <img src="../images/eznet_edit.jpg" alt="Setup Eznet WiFi Bunker Opanowski Ciracas" onerror="this.style.display='none'">
+  <div class="img-caption">// Setup konektivitas Bunker Opanowski — Eznet 10Mbps · Ciracas, Jakarta Timur</div>
+</div>
+
+<div class="content">
+
+  <p>Bagi sebagian orang, kecepatan internet 10Mbps mungkin dianggap sebagai masa lalu. Tapi di Bunker Opanowski, angka ini adalah <strong>simbol efisiensi teknis tingkat tinggi</strong>. Dengan biaya bulanan Rp150.000 yang setelah ditambah PPN dan biaya lainnya menjadi sekitar <strong>Rp172.000</strong>, kami berhasil menjalankan operasional digital yang sangat stabil.</p>
+
+  <p>Gerbang utama konektivitas Villa Ciracas ini didukung oleh <strong>Eznet</strong> — dan ini adalah cerita di baliknya.</p>
+
+  <div class="verdict">
+    <div class="verdict-label">💸 Investasi Bulanan</div>
+    <div class="verdict-price">Rp172.000</div>
+    <div class="verdict-sub">Rp150.000 + PPN/Adm · Eznet 10Mbps · Ciracas</div>
+  </div>
+
+  <h2><span class="h2-icon">🔀</span>Satu Jalur, Dua Kebutuhan</h2>
+
+  <p>Jalur 10Mbps ini lebih dari cukup untuk menunjang kehidupan sehari-hari. Gw menggunakannya bersama Nyokap untuk kebutuhan daring rutin sebulan penuh tanpa kendala.</p>
+
+  <p>Kuncinya bukan pada seberapa besar angka bandwidth-nya, melainkan <strong>seberapa cerdas kita mengelola prioritas penggunaannya</strong>. Di tangan Nyokap, jalur ini mengalirkan komunikasi — dan di tangan gw, jalur ini menjadi nadi utama bagi eksistensi website Bunker Opanowski di GitHub Pages.</p>
+
+  <div class="info-box red">
+    <div class="info-box-label">⛔ Bukan untuk Ini</div>
+    <div>❌ "Adu mekanik" di game online berat — latency-sensitive, skip</div>
+    <div>❌ Streaming video resolusi tinggi yang haus data — bukan prioritas</div>
+    <div>❌ Download file besar bersamaan tanpa manajemen — bikin kedodoran</div>
+  </div>
+
+  <div class="info-box green">
+    <div class="info-box-label">✅ Didedikasikan untuk Ini</div>
+    <div>✅ Produktivitas tulisan, kode, dan dokumentasi foto</div>
+    <div>✅ Sinkronisasi repository GitHub Pages tanpa hambatan</div>
+    <div>✅ Update website, git push, terminal operations</div>
+    <div>✅ Komunikasi harian — chat, email, browsing ringan</div>
+  </div>
+
+  <blockquote class="blockquote">
+    <p>"Kami sadar diri: Eznet ini bukan untuk adu kecepatan. Jalur ini didedikasikan untuk produktivitas tulisan, kode, dan dokumentasi foto." 📡</p>
+  </blockquote>
+
+  <h2><span class="h2-icon">🖥️</span>Hierarki Infrastruktur: Mac Jadul & Tiny PC Debian</h2>
+
+  <p>Alur kerja utama dimulai dari <strong>MacBook Pro Mid 2015</strong>. Kombinasi macOS dan GIMP masih tak terkalahkan untuk tugas presisi seperti watermarking. Kecepatan 10Mbps dari Eznet sangat memadai untuk melakukan sinkronisasi repository tanpa hambatan.</p>
+
+  <p>Saat MacBook beristirahat, <strong>Tiny PC Debian di tablet Lenovo Xiaoxin Pad 2024</strong> mengambil alih tugas-tugas ringan namun krusial — seperti memantau server atau melakukan update teks cepat melalui terminal.</p>
+
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Device</th>
+        <th>Peran Utama</th>
+        <th>Koneksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>MacBook Pro Mid 2015</td>
+        <td>Watermarking GIMP, git push, VSCode, main workflow</td>
+        <td>Eznet WiFi 10Mbps</td>
+      </tr>
+      <tr>
+        <td>Lenovo Xiaoxin Pad 2024 (Debian)</td>
+        <td>Terminal, update teks cepat, monitoring, backup workflow</td>
+        <td>Eznet WiFi 10Mbps</td>
+      </tr>
+      <tr>
+        <td>Nyokap's device</td>
+        <td>Komunikasi harian, daring rutin</td>
+        <td>Eznet WiFi 10Mbps (shared)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Inilah harmoni antara hardware yang tepat dan jaringan yang efisien. Bukan soal spec tertinggi — tapi soal sinergi yang tepat sasaran.</p>
+
+  <div class="info-box blue">
+    <div class="info-box-label">📡 Spesifikasi Koneksi</div>
+    <div><strong>Provider:</strong> Eznet</div>
+    <div><strong>Paket:</strong> 10Mbps</div>
+    <div><strong>Tarif dasar:</strong> Rp150.000/bulan</div>
+    <div><strong>Total bayar:</strong> Rp172.000/bulan (termasuk PPN & adm)</div>
+    <div><strong>Coverage:</strong> Villa Ciracas, Ciracas, Jakarta Timur</div>
+    <div><strong>Use case:</strong> Dual user (produktivitas + komunikasi harian)</div>
+  </div>
+
+  <h2><span class="h2-icon">🏆</span>Kesimpulan: Kedaulatan Digital Murah Meriah</h2>
+
+  <p>Bunker Opanowski membuktikan bahwa untuk eksis secara global melalui GitHub, kita <strong>tidak perlu paket internet jutaan rupiah</strong>. Biaya Rp172.000 per bulan adalah investasi yang sangat masuk akal.</p>
+
+  <p>Memang akan terasa "kedodoran" kalau dipaksa untuk live streaming berat. Tapi selama fokus kita adalah <strong>dokumentasi log dan berbagi inspirasi urban farming</strong>, 10Mbps adalah angka kemenangan.</p>
+
+  <div class="info-box gold">
+    <div class="info-box-label">🧭 Filosofi Bunker</div>
+    <div>Kecepatan internet bukan soal angka — tapi soal <strong>kesesuaian dengan kebutuhan nyata</strong>.</div>
+    <div>Rp172.000 per bulan. Satu jalur. Dua pengguna. Satu website global.</div>
+    <div>Itu bukan keterbatasan — itu <strong>efisiensi tingkat tinggi.</strong> 🎯</div>
+  </div>
+
+  <blockquote class="blockquote">
+    <p>"Dokumentasi Strategi Digital Bunker Opanowski — Powered by Eznet 10Mbps. Ciracas, Jakarta Timur." 🏠</p>
+  </blockquote>
+
+  <div class="hashtags">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#Eznet</span>
+    <span class="hashtag">#10Mbps</span>
+    <span class="hashtag">#KedaulatanDigital</span>
+    <span class="hashtag">#GitHubPages</span>
+    <span class="hashtag">#MacJadul</span>
+    <span class="hashtag">#TinyPCDebian</span>
+    <span class="hashtag">#FilosofiDigital</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#UrbanFarming</span>
+  </div>
+
+  <nav class="post-nav">
+    <a class="nav-btn prev" href="blog-mancing-bambu-apus.html">
+      <span class="nav-dir">← Sebelumnya</span>
+      <span class="nav-title">#014 · Setoran Mujair Nila dari Bambu Apus</span>
+    </a>
+    <a class="nav-btn next" href="index.html">
+      <span class="nav-dir">Semua Log →</span>
+      <span class="nav-title">Kembali ke Log Harian</span>
+    </a>
+  </nav>
+
+</div>
+
+<footer class="site-footer">
+  Bunker Opanowski — Log #015 · 13 Mei 2026 · Villa Ciracas, Jakarta Timur
+</footer>
+
+</body>
+</html>

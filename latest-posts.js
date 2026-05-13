@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "015",
+    date: "13 Mei 2026",
+    title: "Filosofi 10Mbps: Alur Kerja Efisien Bunker Opanowski",
+    subtitle: "Eznet 10Mbps seharga Rp172.000/bulan ternyata lebih dari cukup untuk eksis global via GitHub. Kuncinya bukan angka bandwidth — tapi seberapa cerdas kita kelola prioritas.",
+    tags: ["Eznet", "Filosofi Digital", "Ciracas"],
+    emoji: "📡",
+    url: "blog/blog-eznet-10mbps-bunker-opanowski.html"
+  },
+  {
     number: "014",
     date: "13 Mei 2026",
     title: "Setoran Mujair Nila dari Bambu Apus",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Anabul", "Urban Farming", "Ciracas"],
     emoji: "🐰",
     url: "blog/blog-anak-kelinci-jetpump.html"
-  },
-  {
-    number: "012",
-    date: "10 Mei 2026",
-    title: "Ketika AI Meta Ngacak Bunker",
-    subtitle: "Kronologi, investigasi, dan misi penyelamatan website yang hampir lenyap gara-gara AI yang kelewat \"helpful\".",
-    tags: ["Incident Report", "Git Rescue", "AI Meta"],
-    emoji: "💀",
-    url: "blog/blog-meta-ai-bunker-opanowski.html"
   }
 ];
 
