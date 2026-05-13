@@ -242,29 +242,38 @@
     color: var(--accent); margin-top: 0.6rem; letter-spacing: 1px;
   }
 
-  /* YT CTA */
-  .yt-box {
-    background: linear-gradient(135deg, rgba(255,0,0,0.06), rgba(200,151,42,0.05));
-    border: 1px solid rgba(255,80,80,0.3);
-    border-left: 3px solid #ff4444;
-    border-radius: 10px; padding: 1.4rem 1.6rem; margin: 1.75rem 0;
-    display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+  /* YT THUMBNAIL */
+  .yt-embed-wrap { margin: 1.75rem 0; }
+  .yt-embed-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: #ff6666;
+    margin-bottom: 0.75rem;
   }
-  .yt-icon { font-size: 2rem; flex-shrink: 0; }
-  .yt-content { flex: 1; min-width: 200px; }
-  .yt-label {
-    font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase; color: #ff6666; margin-bottom: 0.4rem;
+  .yt-thumb {
+    position: relative; display: block; border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(255,80,80,0.35);
+    box-shadow: 0 0 24px rgba(255,50,50,0.15);
+    transition: box-shadow 0.25s, transform 0.25s;
+    text-decoration: none;
+    max-width: 320px; margin: 0 auto;
   }
-  .yt-link {
-    display: inline-block; color: var(--gold); text-decoration: none;
-    font-size: 0.88rem; font-weight: 700; line-height: 1.5;
-    transition: color 0.2s;
+  .yt-thumb:hover { box-shadow: 0 0 36px rgba(255,50,50,0.35); transform: translateY(-3px); }
+  .yt-thumb img { width: 100%; display: block; aspect-ratio: 9/16; object-fit: cover; }
+  .yt-play-btn {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px; height: 64px;
+    background: rgba(255,0,0,0.88); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   }
-  .yt-link:hover { color: var(--accent); text-decoration: underline; }
-  .yt-url {
+  .yt-thumb:hover .yt-play-btn { background: #ff0000; transform: translate(-50%, -50%) scale(1.1); }
+  .yt-play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
+  .yt-thumb-caption {
+    background: rgba(15,17,23,0.92); padding: 0.75rem 1rem;
     font-family: var(--font-mono); font-size: 0.65rem;
-    color: var(--text-muted); margin-top: 0.3rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
   }
 
   /* KESIMPULAN */
@@ -538,15 +547,22 @@
 
   <p>Video si Latte makan daun belimbing wuluh — dengan narasi Ardi yang berwibawa — udah live. Dari script Python ke YouTube Shorts, semua jalan dari MacBook 2015 di Bunker Ciracas.</p>
 
-  <div class="yt-box">
-    <div class="yt-icon">▶️</div>
-    <div class="yt-content">
-      <div class="yt-label">📺 YouTube Shorts — Tonton Sekarang</div>
-      <a class="yt-link" href="https://youtube.com/shorts/tRN4psZ04Yw" target="_blank" rel="noopener">
-        Aksi Si Latte Makan Daun Belimbing Wuluh — Narasi Ardi Neural
-      </a>
-      <div class="yt-url">youtube.com/shorts/tRN4psZ04Yw</div>
-    </div>
+  <div class="yt-embed-wrap">
+    <div class="yt-embed-label">📺 YouTube Shorts — Klik untuk Tonton</div>
+    <a class="yt-thumb" href="https://youtube.com/shorts/tRN4psZ04Yw" target="_blank" rel="noopener" title="Aksi Si Latte Makan Daun Belimbing Wuluh">
+      <img
+        src="https://i.ytimg.com/vi/tRN4psZ04Yw/hqdefault.jpg"
+        alt="Thumbnail: Aksi Si Latte Makan Daun Belimbing Wuluh — Bunker Opanowski"
+        loading="lazy"
+        onerror="this.src='https://i.ytimg.com/vi/tRN4psZ04Yw/mqdefault.jpg'"
+      >
+      <div class="yt-play-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+      <div class="yt-thumb-caption">▶ Aksi Si Latte Makan Daun Belimbing Wuluh — Bunker Opanowski Shorts</div>
+    </a>
   </div>
 
   <!-- SECTION 6 — Pelajaran -->
