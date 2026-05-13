@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "016",
+    date: "13 Mei 2026",
+    title: "Digitalisasi Si Latte: Produksi Video Otomatis dengan Python & FFmpeg",
+    subtitle: "MacBook 2015, Edge-TTS Ardi Neural, dan FFmpeg bersatu bikin konten video si Latte punya suara sendiri. Dari Bunker Ciracas ke YouTube Shorts — sekedip mata.",
+    tags: ["Anabul", "FFmpeg", "Python"],
+    emoji: "🐰",
+    url: "blog/blog-latte-tts-ffmpeg.html"
+  },
+  {
     number: "015",
     date: "13 Mei 2026",
     title: "Filosofi 10Mbps: Alur Kerja Efisien Bunker Opanowski",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Mancing", "Catatan Santai", "Bambu Apus"],
     emoji: "🎣",
     url: "blog/blog-mancing-bambu-apus.html"
-  },
-  {
-    number: "013",
-    date: "11 Mei 2026",
-    title: "Log Anabul: Tidur Nyenyak Level Dewa",
-    subtitle: "Kelinci di lubang jetpump, suara gerinda renovasi kenceng, tapi mereka tidur cantik tanpa keganggu sedikit pun. Seni swasembada lahan sempit.",
-    tags: ["Anabul", "Urban Farming", "Ciracas"],
-    emoji: "🐰",
-    url: "blog/blog-anak-kelinci-jetpump.html"
   }
 ];
 
