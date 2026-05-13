@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "014",
+    date: "13 Mei 2026",
+    title: "Setoran Mujair Nila dari Bambu Apus",
+    subtitle: "Bagas dan kawannya mampir bawa oleh-oleh mancing: sekantong mujair nila segar, plus video kocak ikan terbang nyangkut di pohon pisang.",
+    tags: ["Mancing", "Catatan Santai", "Bambu Apus"],
+    emoji: "🎣",
+    url: "blog/blog-mancing-bambu-apus.html"
+  },
+  {
     number: "013",
     date: "11 Mei 2026",
     title: "Log Anabul: Tidur Nyenyak Level Dewa",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Incident Report", "Git Rescue", "AI Meta"],
     emoji: "💀",
     url: "blog/blog-meta-ai-bunker-opanowski.html"
-  },
-  {
-    number: "011",
-    date: "9 Mei 2026",
-    title: "Dua Device, Satu Bunker",
-    subtitle: "Update web dari Tablet Linux & Mac Jadul bergantian — satu repo, nol drama, asal ingat pull dulu.",
-    tags: ["Multi-Device", "Git Workflow", "Linux"],
-    emoji: "📱",
-    url: "blog/blog-tablet-mac-workflow.html"
   }
 ];
 

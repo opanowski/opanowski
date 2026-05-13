@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setoran Mujair Nila dari Bambu Apus — Bunker Opanowski</title>
+<meta name="description" content="Bagas dan kawannya dateng bawa oleh-oleh mancing dari Bambu Apus — sekantong mujair nila segar, plus video kocak ikan terbang nyangkut di pohon pisang.">
+<meta property="og:title" content="Setoran Mujair Nila dari Bambu Apus">
+<meta property="og:description" content="Strike, ikan terbang, nyangkut di pohon pisang — mancing Bambu Apus hari ini penuh kejutan. Oleh-oleh langsung dieksekusi Nyokap.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-mancing-bambu-apus.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎣</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #0d1a0d 0%, #0f1117 60%, #001510 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, var(--green) 0px, var(--green) 1px, transparent 1px, transparent 40px);
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem; opacity: 0.06;
+    pointer-events: none; user-select: none;
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: var(--font-mono);
+  }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .tag-pill.blue { background: rgba(91,141,238,0.15); border-color: rgba(91,141,238,0.4); color: #5b8dee; }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+    margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--cream); margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  /* SOP CARD */
+  .sop-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.2rem 0;
+  }
+  .sop-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .sop-card-title {
+    font-size: 0.95rem; font-weight: 700; color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .sop-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0; }
+
+  /* SPEK BOX */
+  .spek-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-left: 3px solid var(--green); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: rgba(224,90,90,0.05); border: 1px solid rgba(224,90,90,0.3);
+    border-left: 3px solid #e05a5a; border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.75rem 0;
+  }
+  .warning-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    color: #e05a5a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.75rem;
+  }
+  .warning-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0;
+    font-size: 0.85rem; line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700;
+  }
+  .info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+  .info-box.green .info-box-label { color: #4caf7d; }
+  .info-box.blue { border-color: rgba(91,141,238,0.3); background: rgba(91,141,238,0.05); }
+  .info-box.blue .info-box-label { color: #5b8dee; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-style: italic; color: var(--cream); line-height: 1.6;
+  }
+  .quote-source {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--green); margin-top: 0.6rem; letter-spacing: 1px;
+  }
+
+  /* FOTO */
+  .foto-block {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .foto-block img { width: 100%; display: block; }
+  .foto-caption {
+    background: var(--surface); padding: 0.7rem 1rem;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
+  }
+
+  /* VIDEO EMBED */
+  .video-block {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .video-block iframe {
+    width: 100%; aspect-ratio: 9/16; max-height: 560px;
+    display: block; border: none;
+  }
+  .video-caption {
+    padding: 0.7rem 1rem;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
+  }
+
+  /* KESIMPULAN */
+  .kesimpulan-box {
+    margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px;
+    border: 1px solid rgba(200,151,42,0.3);
+    background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+  }
+  .kesimpulan-box h3 {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem;
+  }
+  .kesimpulan-box p {
+    font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem;
+  }
+  .sign-off {
+    font-family: var(--font-display); font-size: 0.9rem;
+    color: var(--accent); font-style: italic; margin-top: 1rem; display: block;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 4px 12px; border-radius: 20px; transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CTA */
+  .cta-block {
+    margin-top: 2rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.4rem; text-align: center;
+  }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600; transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* POST NAV */
+  .post-nav {
+    display: flex; gap: 12px; padding: 20px 24px;
+    border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .post-nav a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--text-muted); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; transition: all 0.2s;
+  }
+  .post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px;
+  }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .social-links a {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">🎣</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill green">🎣 Mancing</span>
+      <span class="tag-pill">🐟 Mujair Nila</span>
+      <span class="tag-pill blue">📍 Bambu Apus</span>
+      <span class="tag-pill">☕ Catatan Santai</span>
+    </div>
+    <h1 class="hero-title">Setoran Mujair Nila<br><em>dari Bambu Apus</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> 13 Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>☕ Catatan Santai</span>
+    </div>
+  </div>
+</div>
+
+<!-- KONTEN -->
+<div class="container">
+<div class="artikel-body">
+
+  <p>Hari ini bunker kedatangan tamu tak terduga — Bagas sama kawannya mampir bawa oleh-oleh dari sesi mancing di Bambu Apus. Bukan bawa makanan atau minuman, tapi langsung bawa hasilnya: satu kantong kresek hitam isi anak mujair nila segar. Lumayan bray, rezeki nomplok!</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Mancing itu soal momen, bukan soal seberapa banyak yang lo dapet."</div>
+    <div class="quote-source">— Filosofi Bunker Opanowski, edisi kresek hitam</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>1. Cerita di Balik <em>Kresek Hitam</em></h2>
+
+  <p>Sebenernya yang bikin gw ketawa bukan ikannya — tapi cerita yang dibawa bareng si kresek itu. Bagas cerita, pas lagi sesi mancing tadi ada kejadian kocak yang sayang banget kalau ga diabadiin.</p>
+
+  <p>Bayangin bray: ikan udah kena, strike, semua seneng — eh tiba-tiba ikannya malah <strong style="color:var(--cream)">terbang dan nyangkut di pohon pisang.</strong> Bukan di air, bukan di jaring — di pohon pisang. Kalau lo ga percaya, videonya ada. Cek sendiri di bawah.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">🎣 Kronologi Kejadian Epik</div>
+    <div class="spek-item">
+      <span class="spek-icon">1.</span>
+      <span><strong style="color:var(--cream)">Strike!</strong> Ikan kena, semangat memuncak, udah bayang-bayangin goreng crispy.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2.</span>
+      <span><strong style="color:var(--cream)">Lepas kendali.</strong> Entah gimana caranya, ikan malah terbang bukan ke arah yang bener.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">3.</span>
+      <span><strong style="color:var(--cream)">Nyangkut di pohon pisang.</strong> Epic fail sekaligus epic moment — dan untungnya ke-record kamera.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">4.</span>
+      <span><strong style="color:var(--cream)">Ikan berhasil diselamatkan.</strong> Masuk ke kresek, selamat sampai Bunker Opanowski.</span>
+    </div>
+  </div>
+
+  <!-- VIDEO SECTION -->
+  <h2>2. <em>Cek Videonya</em> — Bukti Hidup!</h2>
+
+  <p>Kejadian kocak ini untungnya ke-capture. Ini bukti otentik dari lokasi kejadian, langsung dari Bambu Apus:</p>
+
+  <div class="video-block">
+    <iframe
+      src="https://www.youtube.com/embed/Ik1O3z0jilo"
+      title="Ikan Terbang Nyangkut Pohon Pisang — Mancing Bambu Apus"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <div class="video-caption">📹 YouTube Shorts: Drama strike ikan yang nyangkut di pohon pisang — Bambu Apus</div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <h2>3. Sampai Bunker: <em>Nyokap Langsung Turun Tangan</em></h2>
+
+  <p>Begitu kresek hitam mendarat di bunker, Nyokap udah siap. Tanpa banyak komentar, beliau langsung turun tangan nyiangin ikan-ikannya satu per satu. Profesional level Nyokap emang beda.</p>
+
+  <div class="sop-card">
+    <div class="sop-card-label">👩‍🍳 SOP Dapur Bunker — Edisi Mujair Segar</div>
+    <div class="sop-card-title">Dari Kresek ke Kulkas dalam Hitungan Menit</div>
+    <p>Nyokap nyiangin ikan: bersihkan, keluarin isi perut, cuci bersih. Setelah semua beres, langsung masuk kulkas. Siap dieksekusi jadi goreng krispi di waktu yang tepat. Gw tinggal nunggu bau wangi dari dapur aja. 😄</p>
+  </div>
+
+  <div class="spek-box">
+    <div class="spek-box-label">🐟 Hasil Tangkapan Hari Ini</div>
+    <div class="spek-item">
+      <span class="spek-icon">🎣</span>
+      <span><strong style="color:var(--cream)">Jenis:</strong> Anak mujair nila segar.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">📍</span>
+      <span><strong style="color:var(--cream)">Lokasi mancing:</strong> Bambu Apus, Jakarta Timur.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">📦</span>
+      <span><strong style="color:var(--cream)">Packaging:</strong> Satu kantong kresek hitam. Simpel tapi berisi.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🍳</span>
+      <span><strong style="color:var(--cream)">Status:</strong> Sudah dibersihkan Nyokap, masuk kulkas. Next stop: goreng krispi!</span>
+    </div>
+  </div>
+
+  <p>Ini yang gw suka dari lingkungan bunker ini. Ga perlu ke supermarket, ga perlu pesan online — rezeki dateng sendiri dalam bentuk kresek hitam dari tangan Bagas. Villa Ciracas memang selalu penuh kejutan yang bikin senyum.</p>
+
+  <!-- SECTION 4 -->
+  <h2>4. <em>Filosofi Mancing</em> ala Bunker</h2>
+
+  <p>Kalau dipikir-pikir, mancing itu bukan cuma soal ikan. Bagas sama kawannya keluar, nikmatin pagi, lempar kail, ngobrol di pinggir kolam — dan pulang bawa cerita lebih berharga dari ikannya sendiri.</p>
+
+  <div class="info-box green">
+    <div class="info-box-label">☮️ Hikmah dari Sesi Mancing</div>
+    <div class="spek-item">
+      <span class="spek-icon">🌅</span>
+      <span>Mancing itu terapi. Diem di pinggir kolam sambil nunggu pelampung gerak — itu healing paling murah yang ada.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">😂</span>
+      <span>Gagal pun bisa jadi konten. Ikan nyangkut di pohon pisang? Itu bukan failure, itu <em>gold content</em>.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🤝</span>
+      <span>Momen bareng temen itu investasi yang ga ada ruginya. Ikannya bisa habis dimakan, ceritanya abadi.</span>
+    </div>
+  </div>
+
+  <!-- KESIMPULAN -->
+  <div class="kesimpulan-box">
+    <h3>📌 Penutup</h3>
+    <p>Hari ini bunker dapat setoran tak terduga dari Bagas cs: mujair nila segar hasil mancing Bambu Apus. Ditambah cerita epik soal ikan yang terbang dan nyangkut di pohon pisang — buktinya ada di video.</p>
+    <p>Nyokap udah beres nyiangin, kulkas udah ready, tinggal tunggu waktu yang tepat buat eksekusi goreng krispi. Rezeki emang ga harus mahal — kadang datengnya dalam bentuk kresek hitam dari tangan kawan yang mampir. 🙏</p>
+    <span class="sign-off">Tetap autodidak, tetap berkah! 🏴</span>
+  </div>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#MancingMania</span>
+    <span class="hashtag">#BambuApus</span>
+    <span class="hashtag">#CatatanSantai</span>
+    <span class="hashtag">#MujairNila</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#RezekinomplokBro</span>
+    <span class="hashtag">#DapurBunker</span>
+    <span class="hashtag">#GorengKrispi</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Lo juga suka mancing? Cerita di kolom komen bray! 🎣</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/blog/blog-anak-kelinci-jetpump.html">← Log Sebelumnya</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Setoran Mujair Nila dari Bambu Apus
+  <span class="updated-tag"><span class="live-dot"></span>13 Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<!-- KOMENTAR -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+</body>
+</html>
