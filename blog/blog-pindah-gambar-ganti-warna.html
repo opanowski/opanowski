@@ -22,7 +22,8 @@
   --surface:rgba(255,255,255,0.03);
   --font-display:'Playfair Display',serif;
   --font-body:'DM Sans',sans-serif;
-  --font-mono:'Space Mono',monospace
+  --font-mono:'Space Mono',monospace;
+  --text-muted:rgba(245,240,232,0.65)
 }
 body{background:var(--dark);color:var(--cream);font-family:var(--font-body);line-height:1.8}
 header{padding:2rem 2rem 1rem;border-bottom:1px solid var(--gold-border)}
@@ -69,15 +70,46 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--gold-border);fo
     <li><strong>Upload ke folder images/ di GitHub</strong></li>
     <li><strong>Ganti link di semua file HTML</strong> — dari <code>https://i.imgur.com/xxxx.jpg</code> jadi <code>images/xxxx.jpg</code>. Ratusan link, manual, satu per satu.</li>
   </ul>
+
+  <!-- EKSPRESI: LELAH -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_lelah.jpg"
+         alt="Om Opan lelah"
+         style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
+      "Rename 17 file satu per satu, bolak-balik cek huruf besar kecil... ini bukan coding, ini meditasi."
+    </p>
+  </div>
+
   <div class="quote">"Capek rename file, tapi pas gambar pertama muncul dari server sendiri — lega rasanya."</div>
 
   <h2>📦 Masalah #2: File HTML Kepotong di Tengan Jalan</h2>
   <p>Selama diskusi sama 3 AI (Claude, Gemini, ChatGPT), beberapa kali file <code>index.html</code> yang dikirim <strong>kepotong di bagian bawah</strong>. Begitu upload ke GitHub, sebagian konten berharga (filosofi, perjalanan, aset, arsip) lenyap gitu aja. Untung gue punya backup file lokal — gaya lama tapi nyelametin.</p>
   <p>Pelajaran penting: <strong>jangan pernah commit langsung tanpa cek panjang file.</strong> Kalau ragu, bandingin sama file lama yang utuh.</p>
 
+  <!-- EKSPRESI: TERKEJUT -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(91,141,238,0.05);border:1px solid rgba(91,141,238,0.18);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_terkejut.jpg"
+         alt="Om Opan terkejut"
+         style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(91,141,238,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
+      "Konten yang udah gue tulis berjam-jam — raib begitu aja karena file kepotong. Untung ada backup lokal. Lesson learned keras banget ini."
+    </p>
+  </div>
+
   <h2>🎨 Masalah #3: Warna Ungu yang Membandel (Paling Bikin Puyeng)</h2>
   <p>Di halaman depan, ada card "Latest Update". Semua warna normal — kecuali teks preview beberapa artikel berwarna <strong>ungu gelap</strong>. Gue ganti dari <code>#b57bee</code> ke <code>#d0a0ff</code>, pusing, karena ternyata itu <strong>bukan dari kode gue</strong> — itu dari browser.</p>
   <p>Browser punya default warna <strong>ungu gelap untuk link yang sudah dikunjungi</strong>. Dan teks preview di card itu sebenernya juga bagian dari link. Susah diakalin tanpa ngerusak struktur.</p>
+
+  <!-- EKSPRESI: BINGUNG -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_bingung.jpg"
+         alt="Om Opan bingung"
+         style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
+      "Udah ganti warnanya berkali-kali, tetep ungu. Ternyata browsernya yang iseng — bukan kode gue. Ini baru namanya musuh tak kasat mata."
+    </p>
+  </div>
 
   <h3>Akhirnya gue + Claude nemu cara:</h3>
   <ul>
@@ -86,6 +118,17 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--gold-border);fo
     <li>Warna border atas dibedakan (hijau, biru, putih) biar gak monoton.</li>
     <li>Warna ungu hilang total, semua teks jadi enak dibaca.</li>
   </ul>
+
+  <!-- EKSPRESI: SEMANGAT -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_semangat.jpg"
+         alt="Om Opan semangat"
+         style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(76,175,125,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
+      "Waktu ungu itu akhirnya ilang dan semua teks jadi seragam — rasanya kayak menang perang kecil yang udah seminggu bikin sakit kepala."
+    </p>
+  </div>
+
   <div class="quote">"Kayak servis CVT motor — lama dan telaten, tapi setelah kelar, rasanya..., jos."</div>
 
   <h2>🤖 Masalah #4: Kolaborasi 3 AI Rawan Ruwet</h2>
@@ -118,6 +161,16 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--gold-border);fo
     <li>Setiap perbaikan malah muncul masalah baru.</li>
   </ul>
   <p>Gue sadar: <em>"Kalau dipaksakan, website gue bisa kehilangan konten utama."</em></p>
+
+  <!-- EKSPRESI: MARAH -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(224,90,90,0.05);border:1px solid rgba(224,90,90,0.2);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_marah.jpg"
+         alt="Om Opan marah"
+         style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(224,90,90,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
+      "Fix satu, muncul dua masalah baru. Fix lagi, file kepotong lagi. Gue hampir lempar laptop tapi untung ingat harganya."
+    </p>
+  </div>
 
   <h3>🛑 Keputusan sulit: Batalkan Automasi, Kembali ke Statis</h3>
   <ul>
@@ -162,6 +215,16 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--gold-border);fo
   <h2>🎬 Penutup</h2>
   <p>Bunker Opanowski ini bukan cuma website. Ini adalah markas digital gue sebagai <strong>lifelong learner dari Ciracas</strong>. Dan markas ini sekarang <strong>lebih utuh, lebih mandiri, dan lebih gue</strong> daripada seminggu yang lalu.</p>
   <p>Jadi kalau lo pernah ngerasa website lo 'kaku', nyoba-nyoba sendiri, atau pusing sama kode — inget aja: ada Om Opan di Ciracas yang juga pusing, tapi nggak berhenti sampe beres.</p>
+
+  <!-- EKSPRESI: COOL -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_cool.jpg"
+         alt="Om Opan cool"
+         style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
+      "Dua hari perang, banyak yang gagal, tapi website tetap berdiri. Bukan programmer — tapi Bunker-nya makin solid. Itu cukup."
+    </p>
+  </div>
 
   <div class="quote">
     Daripada nyerah, mending opo opo an wae. Pokok e rampung.<br>
