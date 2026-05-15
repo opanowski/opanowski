@@ -8,242 +8,337 @@
 <meta property="og:title" content="Digital Legacy: Jurus Amankan Kenangan Si Bontot Biar Abadi di Dunia Maya">
 <meta property="og:description" content="Cara gw menjaga kenangan digital almarhum Bayu (Si Bontot) biar tetap hidup di dunia maya.">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/digital-legacy-bayu.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
 
-/* ===== BLOG POST STYLES ===== */
-header {
-  background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
-  border-bottom: 2px solid var(--accent);
-  padding: 28px 24px 22px;
-  position: sticky; top: 0; z-index: 100;
-}
-.header-top { display: flex; align-items: center; gap: 14px; }
-.header-icon { font-size: 26px; line-height: 1; }
-h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
-.header-sub { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 3px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
 
-/* HERO */
-.post-hero {
-  padding: 32px 24px 24px;
-  border-bottom: 1px solid var(--border);
-}
-.post-meta {
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-.badge-num {
-  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
-  color: var(--accent); background: var(--surface2);
-  border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px;
-}
-.badge-tag {
-  font-family: var(--font-mono); font-size: 0.62rem;
-  background: rgba(200,151,42,0.08); border: 1px solid rgba(200,151,42,0.2);
-  border-radius: 20px; padding: 2px 10px; color: var(--accent);
-}
-.post-date {
-  font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
-  margin-left: auto;
-}
-.post-title {
-  font-family: var(--font-display); font-size: 1.65rem; font-weight: 800;
-  color: var(--text); line-height: 1.3; margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-.post-lead {
-  font-size: 0.92rem; color: var(--text-muted); line-height: 1.8;
-  padding: 14px 18px; background: var(--surface);
-  border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
-}
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
 
-/* CONTENT */
-.post-body {
-  padding: 28px 24px 48px;
-  max-width: 720px;
-}
-.post-body h2 {
-  font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;
-  color: var(--text); margin: 32px 0 12px; line-height: 1.3;
-  display: flex; align-items: center; gap: 10px;
-}
-.post-body h2::before {
-  content: ''; display: inline-block; width: 3px; height: 1.1em;
-  background: var(--accent); border-radius: 2px; flex-shrink: 0;
-}
-.post-body p {
-  font-size: 0.88rem; color: var(--text-muted); line-height: 1.9;
-  margin-bottom: 14px;
-}
-.post-body strong { color: var(--text); }
+  /* HERO */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #0f1a14 0%, #0f1117 60%, #1a0f0a 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 40px);
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem; opacity: 0.06;
+    pointer-events: none; user-select: none;
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: var(--font-mono);
+  }
+  .tag-pill.blue { background: rgba(91,141,238,0.15); border-color: rgba(91,141,238,0.4); color: #5b8dee; }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--gold); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
-/* INFO BOX */
-.info-box {
-  margin: 20px 0; padding: 16px 18px;
-  border-radius: 10px; background: var(--surface);
-  border: 1px solid var(--border);
-}
-.info-box.gold  { border-color: rgba(200,151,42,0.3); background: rgba(200,151,42,0.05); }
-.info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
-.info-box.blue  { border-color: rgba(91,141,238,0.3); background: rgba(91,141,238,0.05); }
-.info-box.red   { border-color: rgba(224,90,90,0.3);  background: rgba(224,90,90,0.05); }
-.info-box-label {
-  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px;
-}
-.info-box.gold  .info-box-label { color: var(--accent); }
-.info-box.green .info-box-label { color: #4caf7d; }
-.info-box.blue  .info-box-label { color: #5b8dee; }
-.info-box.red   .info-box-label { color: #e05a5a; }
-.info-box div {
-  font-size: 0.83rem; color: var(--text-muted); line-height: 2.0;
-}
+  /* CONTAINER */
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
-/* INTERUPSI BOX */
-.interupsi-box {
-  margin: 24px 0; padding: 16px 18px;
-  border-radius: 10px; border: 1px dashed rgba(200,151,42,0.35);
-  background: rgba(200,151,42,0.03);
-}
-.interupsi-label {
-  font-family: var(--font-mono); font-size: 0.63rem; font-weight: 700;
-  color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px;
-  margin-bottom: 10px; opacity: 0.8;
-}
-.interupsi-box p {
-  font-size: 0.83rem; color: var(--text-muted); line-height: 1.85;
-  margin-bottom: 0;
-}
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+    margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--cream); margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
 
-/* FOTO SLOT */
-.foto-slot {
-  margin: 20px 0; border-radius: 10px; overflow: hidden;
-  border: 1px solid var(--border); background: var(--surface);
-}
-.foto-slot img {
-  width: 100%; display: block;
-  object-fit: cover;
-}
-.foto-caption {
-  font-family: var(--font-mono); font-size: 0.63rem;
-  color: var(--text-muted); padding: 10px 14px;
-  border-top: 1px solid var(--border); line-height: 1.6;
-}
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0;
+    font-size: 0.85rem; line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700;
+  }
+  .info-box.gold { border-color: rgba(200,151,42,0.3); background: rgba(200,151,42,0.05); }
+  .info-box.gold .info-box-label { color: var(--gold); }
+  .info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+  .info-box.green .info-box-label { color: #4caf7d; }
+  .info-box.blue { border-color: rgba(91,141,238,0.3); background: rgba(91,141,238,0.05); }
+  .info-box.blue .info-box-label { color: #5b8dee; }
+  .info-box div { font-size: 0.85rem; color: var(--text-muted); line-height: 2.0; }
 
-/* QUOTE */
-.post-quote {
-  margin: 24px 0; padding: 18px 20px;
-  border-left: 3px solid var(--accent);
-  font-family: var(--font-display); font-size: 1.05rem;
-  color: var(--accent); font-style: italic;
-  background: var(--surface); border-radius: 0 10px 10px 0;
-  line-height: 1.6;
-}
+  /* SPEK BOX */
+  .spek-box {
+    background: rgba(200,151,42,0.04); border: 1px solid rgba(200,151,42,0.2);
+    border-left: 3px solid var(--gold); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
 
-/* STEP LIST */
-.step-list { list-style: none; padding: 0; margin: 12px 0; }
-.step-list li {
-  font-size: 0.85rem; color: var(--text-muted); line-height: 1.9;
-  padding-left: 20px; position: relative; margin-bottom: 4px;
-}
-.step-list li::before {
-  content: '▸'; position: absolute; left: 0;
-  color: var(--accent); font-size: 0.7rem; top: 3px;
-}
+  /* INTERUPSI BOX */
+  .interupsi-box {
+    margin: 1.75rem 0; padding: 1.3rem 1.5rem;
+    border-radius: 10px; border: 1px dashed rgba(200,151,42,0.35);
+    background: rgba(200,151,42,0.03);
+  }
+  .interupsi-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 0.75rem; opacity: 0.9;
+  }
+  .interupsi-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0; }
 
-/* KESIMPULAN */
-.kesimpulan-box {
-  margin: 32px 0 0; padding: 20px 22px;
-  border-radius: 12px; border: 1px solid rgba(200,151,42,0.3);
-  background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
-}
-.kesimpulan-box h3 {
-  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
-  color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px;
-  margin-bottom: 12px;
-}
-.kesimpulan-box p {
-  font-size: 0.87rem; color: var(--text-muted); line-height: 1.85;
-  margin-bottom: 8px;
-}
-.kesimpulan-box .sign-off {
-  font-family: var(--font-display); font-size: 0.9rem;
-  color: var(--accent); font-style: italic; margin-top: 14px;
-}
+  /* FOTO */
+  .foto-block {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .foto-block img { width: 100%; display: block; object-fit: cover; }
+  .foto-caption {
+    background: var(--surface); padding: 0.7rem 1rem;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
+  }
 
-/* NAV FOOTER */
-.post-nav {
-  display: flex; gap: 12px; padding: 20px 24px;
-  border-top: 1px solid var(--border); flex-wrap: wrap;
-}
-.post-nav a {
-  font-family: var(--font-mono); font-size: 0.72rem;
-  color: var(--text-muted); text-decoration: none;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 8px; padding: 8px 14px;
-  transition: all 0.2s;
-}
-.post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(200,151,42,0.04); border: 1px solid rgba(200,151,42,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-style: italic; color: var(--cream); line-height: 1.6;
+  }
+  .quote-source {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--gold); margin-top: 0.6rem; letter-spacing: 1px;
+  }
 
+  /* KESIMPULAN */
+  .kesimpulan-box {
+    margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px;
+    border: 1px solid rgba(200,151,42,0.3);
+    background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+  }
+  .kesimpulan-box h3 {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem;
+  }
+  .kesimpulan-box p {
+    font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem;
+  }
+  .sign-off {
+    font-family: var(--font-display); font-size: 0.9rem;
+    color: var(--accent); font-style: italic; margin-top: 1rem; display: block;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 4px 12px; border-radius: 20px; transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CTA */
+  .cta-block {
+    margin-top: 2rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.4rem; text-align: center;
+  }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600; transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* POST NAV */
+  .post-nav {
+    display: flex; gap: 12px; padding: 20px 24px;
+    border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .post-nav a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--text-muted); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; transition: all 0.2s;
+  }
+  .post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px;
+  }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .social-links a {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
 
 <header>
-  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);margin-bottom:14px">← Kembali ke Log Harian</a>
-  <div class="header-top">
-    <span class="header-icon">📓</span>
-    <div>
-      <h1>Bunker Opanowski</h1>
-      <div class="header-sub">Catatan lapangan dari Villa Ciracas · Ciracas, Jakarta Timur</div>
-    </div>
-  </div>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
 </header>
 
 <!-- HERO -->
-<div class="post-hero">
-  <div class="post-meta">
-    <span class="badge-num">#007</span>
-    <span class="badge-tag">Web</span>
-    <span class="badge-tag">Tips &amp; Trik</span>
-    <span class="badge-tag">Personal</span>
-    <span class="post-date">📅 8 Mei 2026</span>
-  </div>
-  <div class="post-title">Digital Legacy: Jurus Amankan Kenangan Si Bontot Biar Abadi di Dunia Maya</div>
-  <div class="post-lead">
-    Pernah kepikiran gak sih, kalau kita kehilangan orang tersayang — yang tersisa selain doa itu apa? Yup, file digital. Foto pas dia lagi konyol, video ketawa bareng, sampe chat-chat gak jelas di WhatsApp. LOG #007 ini mungkin yang paling personal buat gw. Misi "007: Skyfall-nya Bunker Opanowski." Karena data bisa terhapus, harddisk bisa rusak, tapi kenangan harus tetap online.
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">🕊️</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill">🌐 Web</span>
+      <span class="tag-pill blue">💾 Backup</span>
+      <span class="tag-pill">💡 Tips & Trik</span>
+      <span class="tag-pill green">❤️ Personal</span>
+    </div>
+    <h1 class="hero-title">Digital Legacy: <em>Jurus Amankan Kenangan Si Bontot Biar Abadi di Dunia Maya</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> 8 Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>📓 LOG #007</span>
+    </div>
   </div>
 </div>
 
-<!-- BODY -->
-<div class="post-body">
+<!-- KONTEN -->
+<div class="container">
+<div class="artikel-body">
 
-  <p>Halo bray! Balik lagi di catatan gw di Bunker Opanowski.</p>
+  <p>Pernah kepikiran gak sih, kalau kita kehilangan orang tersayang — yang tersisa selain doa itu apa? Yup, <strong style="color:var(--cream)">file digital.</strong> Foto pas dia lagi konyol, video ketawa bareng, sampe chat-chat gak jelas di WhatsApp. LOG #007 ini mungkin yang paling personal buat gw. Misi "007: Skyfall-nya Bunker Opanowski." Karena data bisa terhapus, harddisk bisa rusak, tapi kenangan harus tetap online.</p>
 
-  <p>Hari ini, 8 Mei 2026, gw dapet bukti nyata pentingnya jaga akses digital. Gw berhasil pulihin akun Kaskus lawas <strong>'opanowski'</strong> berkat bantuan CS Kaskus yang sigap ganti email mati gw jadi email aktif. Ini bukan cuma soal akun lama, tapi soal sejarah digital yang gak boleh ilang bray!</p>
+  <p>Hari ini, 8 Mei 2026, gw dapet bukti nyata pentingnya jaga akses digital. Gw berhasil pulihin akun Kaskus lawas <strong style="color:var(--cream)">'opanowski'</strong> berkat bantuan CS Kaskus yang sigap ganti email mati gw jadi email aktif. Ini bukan cuma soal akun lama, tapi soal sejarah digital yang gak boleh ilang bray!</p>
 
   <p>Mumpung lagi nunggu jemputan, gw mau bongkar dapur dikit soal cara gw "memagari" semua kenangan Si Bontot biar aman sentosa. Cekidot!</p>
 
+  <div class="quote-box">
+    <div class="quote-text">"Data bisa terhapus, harddisk bisa rusak, tapi kenangan harus tetap online."</div>
+    <div class="quote-source">— Bunker Opanowski, 2026</div>
+  </div>
+
   <!-- STEP 1 -->
-  <h2>1. Kumpulin Semua "Serpihan" Kenangan</h2>
+  <h2>1. Kumpulin Semua <em>"Serpihan" Kenangan</em></h2>
 
-  <p>Jangan biarkan foto-foto doi mencar-mencar. Ada yang di HP emak, ada yang di laptop lama, ada yang di kartu memori yang udah berdebu. Tarik semua ke satu folder master. Kasih nama yang jelas, misal <strong>Bontot_Archive</strong>. Jangan cuma 'New Folder (1)', ntar lo bingung sendiri pas nyari!</p>
+  <p>Jangan biarkan foto-foto doi mencar-mencar. Ada yang di HP emak, ada yang di laptop lama, ada yang di kartu memori yang udah berdebu. Tarik semua ke satu folder master. Kasih nama yang jelas, misal <strong style="color:var(--cream)">Bontot_Archive</strong>. Jangan cuma 'New Folder (1)', ntar lo bingung sendiri pas nyari!</p>
 
-  <div class="foto-slot">
+  <!-- EKSPRESI: SEMANGAT -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);border-radius:10px;">
+    <img src="images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(76,175,125,0.35);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Ayo kumpulin semua! Dari HP emak sampe kartu SD berdebu — gak ada yang boleh ketinggalan! 💪"</p>
+  </div>
+
+  <div class="foto-block">
     <img src="images/foto-alm-1.jpg" alt="Si Bontot Bayu — ekspresi ceria saat ketawa lepas">
     <div class="foto-caption">📸 Ekspresi ceria Si Bontot pas lagi ketawa lepas. Ini kepingan puzzle yang bikin log ini akhirnya bisa rilis.</div>
   </div>
 
   <!-- STEP 2 -->
-  <h2>2. Backup Pake Rumus 3-2-1 (Biar Gak Nangis Darah!)</h2>
+  <h2>2. Backup Pake <em>Rumus 3-2-1</em> (Biar Gak Nangis Darah!)</h2>
 
   <p>Ini rumus wajib buat para tech-user kayak kita. Jangan cuma simpan di satu tempat:</p>
 
-  <div class="info-box gold">
-    <div class="info-box-label">📦 Rumus Backup 3-2-1</div>
-    <div><strong style="color:var(--accent)">3 Salinan</strong> — Bikin 3 copy data utama.</div>
-    <div><strong style="color:var(--accent)">2 Media Beda</strong> — Simpan di media fisik yang beda. Misal di Harddisk Eksternal satu, di Cloud (Google Photos/Drive) satu.</div>
-    <div><strong style="color:var(--accent)">1 Lokasi Terpisah</strong> — Taruh satu copy di luar rumah (alias di Cloud tadi). Jadi kalau (amit-amit) laptop lo error, kenangan Si Bontot tetep aman di "langit".</div>
+  <div class="spek-box">
+    <div class="spek-box-label">📦 Rumus Backup 3-2-1</div>
+    <div class="spek-item">
+      <span class="spek-icon">3️⃣</span>
+      <span><strong style="color:var(--cream)">3 Salinan</strong> — Bikin 3 copy data utama. Minimal, bukan opsional.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2️⃣</span>
+      <span><strong style="color:var(--cream)">2 Media Beda</strong> — Simpan di media fisik yang beda. Misal di Harddisk Eksternal satu, di Cloud (Google Photos/Drive) satu.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">1️⃣</span>
+      <span><strong style="color:var(--cream)">1 Lokasi Terpisah</strong> — Taruh satu copy di luar rumah (alias di Cloud tadi). Jadi kalau (amit-amit) laptop lo error, kenangan Si Bontot tetep aman di "langit".</span>
+    </div>
   </div>
 
   <div class="interupsi-box">
@@ -252,9 +347,15 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
   </div>
 
   <!-- STEP 3 -->
-  <h2>3. Akun Sosmed? Mode Kenangan On!</h2>
+  <h2>3. Akun Sosmed? <em>Mode Kenangan On!</em></h2>
 
-  <p>Sosmed almarhum itu gudang memori. Biar gak ilang atau disalahgunakan orang iseng, atur <strong>Legacy Contact</strong> di Facebook buat ubah akun jadi <strong>'Memorialized Account'</strong>. Jadi orang masih bisa liat foto-fotonya buat lepas kangen, tapi akunnya gak bakal bisa diacak-acak orang asing.</p>
+  <p>Sosmed almarhum itu gudang memori. Biar gak ilang atau disalahgunakan orang iseng, atur <strong style="color:var(--cream)">Legacy Contact</strong> di Facebook buat ubah akun jadi <strong style="color:var(--cream)">'Memorialized Account'</strong>. Jadi orang masih bisa liat foto-fotonya buat lepas kangen, tapi akunnya gak bakal bisa diacak-acak orang asing.</p>
+
+  <!-- EKSPRESI: BINGUNG -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+    <img src="images/ekspresi/ekspresi_bingung.jpg" alt="Om Opan bingung" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Legacy Contact? Kontak warisan? Fitur apaan ini? — Eh tunggu, ini penting banget ternyata. 🤔"</p>
+  </div>
 
   <div class="info-box blue">
     <div class="info-box-label">🔒 Cara Set Legacy Contact Facebook</div>
@@ -264,39 +365,66 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
     <div>4. Atau minta keluarga lapor ke Facebook buat mode Memorialized</div>
   </div>
 
-  <div class="foto-slot">
+  <div class="foto-block">
     <img src="images/foto-alm-2.jpg" alt="Almarhum Bayu bersama Yani">
     <div class="foto-caption">📸 Momen hangat almarhum Bayu bareng Yani, adik gw nomor 3. Kenangan yang gak ternilai harganya.</div>
   </div>
 
   <!-- STEP 4 -->
-  <h2>4. Bikin "Bunker" Khusus di GitHub</h2>
+  <h2>4. Bikin <em>"Bunker" Khusus</em> di GitHub</h2>
 
   <p>Karena gw lagi hobi mainan GitHub Pages, gw buatin satu halaman khusus buat Bayu. Isinya galeri foto pilihan sama cerita singkat. Kelebihannya?</p>
 
   <div class="info-box green">
     <div class="info-box-label">✅ Kenapa GitHub Pages?</div>
-    <div>✅ <strong>Gratis</strong> — nol biaya hosting tahunan</div>
-    <div>✅ <strong>Ringan &amp; cepat</strong> — static site, no database</div>
-    <div>✅ <strong>Awet</strong> — selama GitHub ada, halaman itu live</div>
-    <div>✅ <strong>Custom</strong> — bisa tampilin galeri, cerita, video embed</div>
-    <div>✅ <strong>Version control</strong> — gak ada yang bisa terhapus sembarangan</div>
+    <div>✅ <strong style="color:var(--cream)">Gratis</strong> — nol biaya hosting tahunan</div>
+    <div>✅ <strong style="color:var(--cream)">Ringan &amp; cepat</strong> — static site, no database</div>
+    <div>✅ <strong style="color:var(--cream)">Awet</strong> — selama GitHub ada, halaman itu live</div>
+    <div>✅ <strong style="color:var(--cream)">Custom</strong> — bisa tampilin galeri, cerita, video embed</div>
+    <div>✅ <strong style="color:var(--cream)">Version control</strong> — gak ada yang bisa terhapus sembarangan</div>
   </div>
 
   <p>Selama GitHub masih ada, kenangan itu bakal tetep live tanpa perlu bayar hosting mahal-mahal tiap tahun, bray!</p>
 
-  <div class="post-quote">
-    "Data bisa terhapus, harddisk bisa rusak, tapi kenangan harus tetap online." — Bunker Opanowski, 2026
-  </div>
-
   <!-- KESIMPULAN -->
   <div class="kesimpulan-box">
     <h3>📌 Kesimpulan</h3>
-    <p>Mengamankan data Si Bontot itu cara gw buat bilang: <strong>"Lo tetep ada, Yu."</strong> Kenangan emang di hati, tapi file digital itu bukti sejarah yang harus kita jaga dengan presisi.</p>
+
+    <!-- EKSPRESI: COOL -->
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+      <img src="images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+      <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Kenangan di hati, data di cloud, halaman di GitHub. Setup-nya beres. Lo tetep ada, Yu. 😎"</p>
+    </div>
+
+    <p>Mengamankan data Si Bontot itu cara gw buat bilang: <strong style="color:var(--cream)">"Lo tetep ada, Yu."</strong> Kenangan emang di hati, tapi file digital itu bukti sejarah yang harus kita jaga dengan presisi.</p>
     <p>Empat langkah tadi — kumpulin serpihan, backup 3-2-1, legacy contact sosmed, sama bunker GitHub — itu bukan overkill. Itu standar minimum buat generasi kita yang hidupnya udah separuh di dunia digital.</p>
-    <div class="sign-off">Tetap autodidak, tetap berkah! ☕</div>
+    <span class="sign-off">Tetap autodidak, tetap berkah! 🏴</span>
   </div>
 
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#DigitalLegacy</span>
+    <span class="hashtag">#Backup321</span>
+    <span class="hashtag">#GitHubPages</span>
+    <span class="hashtag">#LegacyContact</span>
+    <span class="hashtag">#SiBontot</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#KenaganAbadi</span>
+    <span class="hashtag">#TipsDigital</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Lo punya cara lain buat jaga kenangan digital? Share di komen ya! 🕊️</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
 </div>
 
 <!-- POST NAV -->
@@ -306,8 +434,8 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
   <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
 </div>
 
-<footer class="site-footer">
-  Bunker Opanowski — LOG #007
+<footer>
+  Bunker Opanowski — LOG #007 · Digital Legacy Si Bontot
   <span class="updated-tag"><span class="live-dot"></span>8 Mei 2026</span>
   <div class="social-links">
     <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
@@ -322,6 +450,14 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
   </div>
 </footer>
 
-<script src="donate-widget.js"></script>
+<!-- KOMENTAR -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+
+<script src="/opanowski/donate-widget.js"></script>
 </body>
 </html>
