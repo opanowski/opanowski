@@ -3,37 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabar Bro... | Bunker Opanowski</title>
+    <title>Sabar Bro... Log #087 | Bunker Opanowski</title>
     <link rel="stylesheet" href="shared.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --cream: #F5F0E8;
+            --dark: #1C1A14;
+            --gold: #C8972A;
+            --gold-light: rgba(200,151,42,0.12);
+            --gold-border: rgba(200,151,42,0.25);
+            --dim: #0E0D09;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--dark);
+            color: var(--cream);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ─── Animated background sparks ─── */
+        .bg-sparks {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .spark {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0;
+            animation: spark-float var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
+        }
+        @keyframes spark-float {
+            0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+            10%  { opacity: 0.8; }
+            90%  { opacity: 0.4; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* ─── Grid noise overlay ─── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(200,151,42,0.02) 40px, rgba(200,151,42,0.02) 41px),
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(200,151,42,0.02) 40px, rgba(200,151,42,0.02) 41px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ─── Main container ─── */
         .container-soon {
+            position: relative;
+            z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 80vh;
+            min-height: 100vh;
             text-align: center;
-            padding: 20px;
+            padding: 3rem 1.5rem;
+            gap: 0;
         }
-        .icon-work { font-size: 50px; margin-bottom: 20px; }
-        .btn-back {
+
+        /* ─── Top badge ─── */
+        .badge {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #333;
-            color: white;
+            background: var(--gold-light);
+            border: 1px solid var(--gold-border);
+            color: var(--gold);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 0.35rem 1.2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            animation: fade-down 0.6s ease both;
+        }
+
+        /* ─── Wrench icon + pulse ring ─── */
+        .icon-wrap {
+            position: relative;
+            margin-bottom: 2rem;
+            animation: fade-down 0.6s 0.1s ease both;
+        }
+        .icon-ring {
+            position: absolute;
+            inset: -12px;
+            border-radius: 50%;
+            border: 1px solid rgba(200,151,42,0.3);
+            animation: pulse-ring 2.4s ease-out infinite;
+        }
+        .icon-ring:nth-child(2) { inset: -24px; animation-delay: 0.8s; }
+        @keyframes pulse-ring {
+            0%   { opacity: 0.7; transform: scale(0.85); }
+            100% { opacity: 0; transform: scale(1.3); }
+        }
+        .icon-work {
+            font-size: 56px;
+            display: block;
+            animation: wrench-shake 3s ease-in-out infinite;
+        }
+        @keyframes wrench-shake {
+            0%, 100% { transform: rotate(-8deg); }
+            50%       { transform: rotate(8deg); }
+        }
+
+        /* ─── Title ─── */
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            animation: fade-down 0.6s 0.2s ease both;
+        }
+        h1 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* ─── Subtitle ─── */
+        .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.55;
+            line-height: 1.9;
+            max-width: 420px;
+            margin-bottom: 2.5rem;
+            animation: fade-down 0.6s 0.3s ease both;
+        }
+
+        /* ─── Expression: SEMANGAT ─── */
+        .ekspresi-semangat {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0 auto 1rem;
+            padding: 0.9rem 1.2rem;
+            background: rgba(76,175,125,0.05);
+            border: 1px solid rgba(76,175,125,0.2);
+            border-radius: 10px;
+            max-width: 480px;
+            width: 100%;
+            text-align: left;
+            animation: fade-down 0.6s 0.4s ease both;
+        }
+        .ekspresi-semangat img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            border: 2px solid rgba(76,175,125,0.3);
+        }
+        .ekspresi-semangat p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #a0b8ac;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        /* ─── Expression: BINGUNG ─── */
+        .ekspresi-bingung {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0 auto 2.5rem;
+            padding: 0.9rem 1.2rem;
+            background: rgba(91,141,238,0.05);
+            border: 1px solid rgba(91,141,238,0.18);
+            border-radius: 10px;
+            max-width: 480px;
+            width: 100%;
+            text-align: left;
+            animation: fade-down 0.6s 0.5s ease both;
+        }
+        .ekspresi-bingung img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            border: 2px solid rgba(91,141,238,0.3);
+        }
+        .ekspresi-bingung p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #9aaee8;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        /* ─── Progress bar ─── */
+        .progress-wrap {
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto 2.5rem;
+            animation: fade-down 0.6s 0.6s ease both;
+        }
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.4;
+            margin-bottom: 0.5rem;
+        }
+        .progress-track {
+            height: 3px;
+            background: rgba(200,151,42,0.12);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--gold), #f0c060);
+            border-radius: 4px;
+            animation: fill-bar 2.5s 1s ease forwards;
+        }
+        @keyframes fill-bar {
+            to { width: 38%; }
+        }
+
+        /* ─── Back button ─── */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(200,151,42,0.08);
+            border: 1px solid rgba(200,151,42,0.35);
+            color: var(--gold);
             text-decoration: none;
-            border-radius: 5px;
+            padding: 0.8rem 1.75rem;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            animation: fade-down 0.6s 0.7s ease both;
+        }
+        .btn-back:hover {
+            background: rgba(200,151,42,0.16);
+            transform: translateY(-2px);
+        }
+
+
+
+        /* ─── Shared fade animation ─── */
+        @keyframes fade-down {
+            from { opacity: 0; transform: translateY(-16px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <div class="container-soon">
-        <div class="icon-work">🛠️</div>
-        <h1>Lagi Dirakit, Om!</h1>
-        <p>Log #087 ini masih dalam tahap pengerjaan (drafting). <br> Ngopi dulu aja sambil nunggu update-nya.</p>
-        <a href="index.html" class="btn-back">Balik ke Depan</a>
+
+<!-- Floating sparks -->
+<div class="bg-sparks" id="sparks"></div>
+
+
+
+<div class="container-soon">
+
+    <div class="badge">📋 Log Harian · Mekanik</div>
+
+    <div class="icon-wrap">
+        <div class="icon-ring"></div>
+        <div class="icon-ring"></div>
+        <span class="icon-work">🛠️</span>
     </div>
+
+    <h1>Sabar, <em>Bro!</em></h1>
+
+    <p class="subtitle">
+        Masih dalam tahap pengerjaan (drafting).<br>
+        Ngopi dulu aja sambil nunggu update-nya.
+    </p>
+
+    <!-- EKSPRESI: SEMANGAT -->
+    <div class="ekspresi-semangat">
+        <img src="../images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" loading="lazy">
+        <p>"Udah dikonsep, tinggal ngetik dan foto-foto diedit — bentar lagi kelar kok. Serius!"</p>
+    </div>
+
+    <!-- EKSPRESI: BINGUNG -->
+    <div class="ekspresi-bingung">
+        <img src="../images/ekspresi/ekspresi_bingung.jpg" alt="Om Opan bingung" loading="lazy">
+        <p>"Atau ini... mulai dari mana ya enaknya? Dari foto dulu, atau nulis dulu? Bingung juga."</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-wrap">
+        <div class="progress-label">
+            <span>Progress</span>
+            <span id="pct">0%</span>
+        </div>
+        <div class="progress-track">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <a href="index.html" class="btn-back">← Balik ke Depan</a>
+
+</div>
+
 <script src="/opanowski/donate-widget.js"></script>
+
+<script>
+    // Generate floating sparks
+    const container = document.getElementById('sparks');
+    for (let i = 0; i < 28; i++) {
+        const s = document.createElement('div');
+        s.className = 'spark';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.setProperty('--dur', (3 + Math.random() * 5) + 's');
+        s.style.setProperty('--delay', (Math.random() * 6) + 's');
+        s.style.width = s.style.height = (2 + Math.random() * 3) + 'px';
+        s.style.opacity = (0.3 + Math.random() * 0.5);
+        container.appendChild(s);
+    }
+
+    // Animate progress % counter
+    const pct = document.getElementById('pct');
+    let current = 0;
+    const target = 38;
+    setTimeout(() => {
+        const interval = setInterval(() => {
+            if (current >= target) { clearInterval(interval); return; }
+            current++;
+            pct.textContent = current + '%';
+        }, 65);
+    }, 1000);
+</script>
+
 </body>
 </html>
