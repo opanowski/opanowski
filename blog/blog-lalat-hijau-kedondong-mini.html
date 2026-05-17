@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lalat Hijau Itu Lagi Ngurusin Bunga Gue — Bunker Opanowski</title>
+<meta name="description" content="Ternyata ada yang lebih tahu soal bunga kedondong gue daripada gue sendiri. Namanya lalat. Lalat hijau.">
+<meta property="og:title" content="Lalat Hijau Itu Lagi Ngurusin Bunga Gue — dan Gue Hampir Ngusirnya">
+<meta property="og:description" content="Ternyata ada yang lebih tahu soal bunga kedondong gue daripada gue sendiri. Namanya lalat. Lalat hijau.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-lalat-hijau-kedondong-mini.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪰</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a1a0f 0%, #0f1117 60%, #0a1500 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, var(--green) 0px, var(--green) 1px, transparent 1px, transparent 40px);
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem; opacity: 0.06;
+    pointer-events: none; user-select: none;
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: var(--font-mono);
+  }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .tag-pill.blue  { background: rgba(91,141,238,0.15); border-color: rgba(91,141,238,0.4); color: #5b8dee; }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* CONTAINER */
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+    margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--cream); margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  /* SPEK BOX */
+  .spek-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-left: 3px solid var(--green); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0;
+    font-size: 0.85rem; line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700;
+  }
+  .info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+  .info-box.green .info-box-label { color: #4caf7d; }
+
+  /* SOP CARD */
+  .sop-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.2rem 0;
+  }
+  .sop-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .sop-card-title {
+    font-size: 0.95rem; font-weight: 700; color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .sop-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-style: italic; color: var(--cream); line-height: 1.6;
+  }
+  .quote-source {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--green); margin-top: 0.6rem; letter-spacing: 1px;
+  }
+
+  /* FOTO */
+  .foto-block {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .foto-block img { width: 100%; display: block; }
+  .foto-caption {
+    background: var(--surface); padding: 0.7rem 1rem;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
+  }
+
+  /* YT THUMBNAIL */
+  .yt-wrap {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border); position: relative;
+    display: block; text-decoration: none;
+  }
+  .yt-wrap img { width: 100%; display: block; filter: brightness(0.8); }
+  .yt-play {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60px; height: 60px; background: #ff0000;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .yt-wrap:hover .yt-play { transform: translate(-50%,-50%) scale(1.1); box-shadow: 0 6px 28px rgba(255,0,0,0.4); }
+  .yt-play svg { margin-left: 4px; }
+  .yt-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px 16px 12px;
+    font-size: 0.8rem; color: #fff; font-family: var(--font-mono);
+  }
+
+  /* KESIMPULAN */
+  .kesimpulan-box {
+    margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px;
+    border: 1px solid rgba(200,151,42,0.3);
+    background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+  }
+  .kesimpulan-box h3 {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem;
+  }
+  .kesimpulan-box p {
+    font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem;
+  }
+  .sign-off {
+    font-family: var(--font-display); font-size: 0.9rem;
+    color: var(--accent); font-style: italic; margin-top: 1rem; display: block;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 4px 12px; border-radius: 20px; transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CTA */
+  .cta-block {
+    margin-top: 2rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.4rem; text-align: center;
+  }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600; transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* POST NAV */
+  .post-nav {
+    display: flex; gap: 12px; padding: 20px 24px;
+    border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .post-nav a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--text-muted); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; transition: all 0.2s;
+  }
+  .post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px;
+  }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .social-links a {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">🪰</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill">🌿 Kebun &amp; Alam</span>
+      <span class="tag-pill green">🪴 Tabulampot</span>
+      <span class="tag-pill blue">Fakta Alam</span>
+      <span class="tag-pill">☕ Teras Rumah</span>
+    </div>
+    <h1 class="hero-title">Lalat Hijau Itu Lagi Ngurusin Bunga Gue —<br><em>dan Gue Hampir Ngusirnya</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> 17 Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>🪰 Slice of Life</span>
+    </div>
+  </div>
+</div>
+
+<!-- KONTEN -->
+<div class="container">
+<div class="artikel-body">
+
+  <p>Gue bukan orang yang rajin ngurus tanaman.</p>
+
+  <p>Kalau mau jujur, kebanyakan tanaman yang pernah gue punya itu nasibnya tragis. Layu, kering, terus mati sambil kayak nanya, <em>"Lo kenapa beli gue kalau ujungnya gini?"</em></p>
+
+  <p>Tapi ada satu tanaman yang entah kenapa survive dari tangan maut gue — <strong style="color:var(--cream)">pohon kedondong mini.</strong> Gue tanam di tabulampot. Pot gede, tanah campur sekam, taruh di teras biar keliatan keren dikit. Dan ajaibnya, dia tumbuh. Bukan cuma tumbuh — dia berbunga.</p>
+
+  <p>Bunganya kecil-kecil. Putih kekuningan. Nongkrong bergerombol di ujung ranting kayak orang lagi kumpul kondangan di gang sempit. Aromanya halus, nggak nyengat, tapi cukup bikin hidung nyadar kalau ini bunga beneran, bukan plastik.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Kita yang terlambat nyadar. Bukan lalatnya."</div>
+    <div class="quote-source">— Om Opan, dari teras Villa Ciracas</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>1. Pagi Itu, Teras, <em>Kopi Item</em></h2>
+
+  <p>Gue lagi duduk di teras. Kopi item, rokok sebatang, angin sepoi-sepoi yang bikin mata ngantuk lagi. Suasana sempurna buat males-malesan.</p>
+
+  <p>Terus mata gue nangkep sesuatu di pohon kedondong. Ada yang hinggap di sana. Dari jauh gue kira kupu-kupu, karena warnanya mencolok — <strong style="color:var(--cream)">hijau kebiruan, mengkilap, kayak abis dioles cat motor custom.</strong> Gue deketin. Ternyata bukan kupu-kupu.</p>
+
+  <p>Lalat. Lalat hijau. Besar. Gendut. Dengan mata merah yang bulat kayak orang abis begadang tiga hari nonton bola.</p>
+
+  <!-- FOTO COVER -->
+  <div class="foto-block">
+    <img src="../images/cover_lalat.jpg" alt="Lalat hijau hinggap di bunga kedondong mini — Villa Ciracas" loading="lazy">
+    <div class="foto-caption">📸 Si lalat hijau gendut lagi kerja keras di bunga kedondong mini — teras Villa Ciracas, Mei 2026</div>
+  </div>
+
+  <!-- EKSPRESI: TERTAWA -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_tertawa.jpg" alt="Om Opan tertawa" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Refleks pertama gue? Mau ngusir. Tapi tangan gue berhenti di tengah jalan — karena sumpah, ini lalat keren banget secara visual. Gue malah ngambil HP dan foto dulu. 📸"</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>2. Pertanyaan yang Gak Penting, <em>Tapi Jadi Penting</em></h2>
+
+  <p>Gue orang yang kalau udah penasaran, susah berhenti. Terutama soal hal-hal kecil yang sebenernya nggak ngaruh ke hidup siapa-siapa tapi bikin gue pengen tahu.</p>
+
+  <p>Kenapa lalat ada di bunga? Bukannya lalat itu sukanya di tempat sampah? Di got? Di sisa ikan goreng yang lupa dibuang? Ini kok malah di bunga kedondong gue yang lagi berbunga indah, nongkrong santai kayak tamu undangan?</p>
+
+  <p>Gue cari-cari. Dan jawabannya bikin gue manggut-manggut sambil ngerasa bodoh sendiri.</p>
+
+  <!-- SECTION 3 -->
+  <h2>3. Rahasia Lalat Hijau yang <em>Gak Ada yang Cerita</em></h2>
+
+  <p>Ternyata, lalat hijau itu ada dua "mode hidup" yang beda banget tergantung umurnya.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">🔬 Dua Mode Hidup Lalat Hijau</div>
+    <div class="spek-item">
+      <span class="spek-icon">🐛</span>
+      <span><strong style="color:var(--cream)">Fase larva (belatung).</strong> Cari bangkai, sampah organik, hal-hal yang menjijikkan. Di sinilah reputasi buruk itu berasal. Dan gue paham, wajar.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🌸</span>
+      <span><strong style="color:var(--cream)">Fase dewasa.</strong> Makannya nektar dan pollen — bunga-bungaan. Dalam prosesnya, tanpa mereka sadar, mereka bantu proses penyerbukan. Persis kayak lebah. Persis kayak kupu-kupu.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🏆</span>
+      <span><strong style="color:var(--cream)">Bedanya?</strong> Nggak ada yang bikin merchandise dengan gambar lalat hijau di kaus oblong bertuliskan <em>"Save The Pollinators"</em>. Lalat hijau itu penyerbuk — tapi nggak dapat kredit apapun.</span>
+    </div>
+  </div>
+
+  <p>Bahkan ada bunga-bunga tertentu yang sengaja "menipu" lalat hijau dengan mengeluarkan aroma mirip bangkai — supaya si lalat mau hinggap dan membantu penyerbukan. Bunga itu licik. Tapi berhasil.</p>
+
+  <p>Nah, bunga kedondong gue sendiri sepertinya punya daya tarik yang cukup buat si lalat ini. Aromanya, warnanya, atau kombinasi keduanya — entahlah. Yang jelas si lalat <strong style="color:var(--cream)">betah banget</strong> di sana.</p>
+
+  <!-- EKSPRESI: SEMANGAT -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(76,175,125,0.35);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"WAIT. Lalat hijau itu penyerbuk?? Selama ini gue salah kaprah total. Pohon kedondong gue ternyata udah punya tim kerja sendiri tanpa gue minta! 🌿"</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2>4. Filosofi <em>Teras Rumah</em></h2>
+
+  <p>Gue duduk lama setelah nemu fakta itu. Kopi udah habis. Rokok tinggal puntung. Tapi otak gue masih muter soal si lalat ini.</p>
+
+  <p>Ada quote yang pernah gue denger — entah dari mana, mungkin dari caption Instagram orang yang sok bijak:</p>
+
+  <div class="sop-card">
+    <div class="sop-card-label">💬 Quote yang Ternyata Kurang Akurat</div>
+    <div class="sop-card-title">"Susah meyakinkan lalat bahwa bunga itu lebih indah dari sampah."</div>
+    <p>Maksudnya negatif — buat ngegambarin orang yang pikirannya kotor, yang nggak bisa lihat keindahan. Tapi setelah pagi itu, gue ngerasa quote ini kurang akurat.</p>
+  </div>
+
+  <p>Karena lalat hijau — yang selama ini kita cap sebagai simbol kekotoran — ternyata <strong style="color:var(--cream)">udah duluan tahu kalau bunga itu menarik.</strong> Udah duluan tahu kalau nektar dan pollen itu sumber makanan yang legit. Bahkan udah duluan kerja keras di bunga-bunga itu jauh sebelum kita kasih dia kredit apapun.</p>
+
+  <!-- EKSPRESI: COOL -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Kita yang terlambat nyadar. Bukan lalatnya. Kadang yang kita cap musuh ternyata lagi kerja buat kita diam-diam. 😎"</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2>5. Tentang Tabulampot <em>Kedondong Mini</em> Ini</h2>
+
+  <p>Buat yang belum tahu, tabulampot itu singkatan dari <strong style="color:var(--cream)">tanaman buah dalam pot.</strong> Jadi pohon yang harusnya tumbuh gede di tanah, dipaksa hidup dalam pot dengan teknik tertentu supaya tetap bisa berbuah.</p>
+
+  <p>Kedondong mini ini salah satunya. Gue beli bibitnya waktu lagi iseng jalan ke tukang tanaman di pinggir jalan. Harganya nggak mahal. Perawatannya — gue akui — seadanya. Siram kalau ingat, kasih pupuk kalau lagi mood.</p>
+
+  <p>Dan dia tetap tumbuh. Berbunga. Dan ternyata ngundang tamu kerja yang selama ini gue anggap musuh.</p>
+
+  <div class="info-box green">
+    <div class="info-box-label">🌿 Pelajaran dari Tabulampot</div>
+    <div class="spek-item">
+      <span class="spek-icon">1.</span>
+      <span><strong style="color:var(--cream)">Pohon ini tahu apa yang dia butuhkan.</strong> Dia nggak nunggu gue cariin lebah atau kupu-kupu.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2.</span>
+      <span><strong style="color:var(--cream)">Dia cukup berbunga.</strong> Harum dikit — dan si lalat hijau datang sendiri.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">3.</span>
+      <span><strong style="color:var(--cream)">Alam itu efisien banget</strong> kalau kita mau diam sebentar dan nggak ganggu.</span>
+    </div>
+  </div>
+
+  <!-- YT SHORTS -->
+  <a class="yt-wrap" href="https://youtube.com/shorts/CSTlAjTLaHg?si=1bf6LwwxCTfQwfQD" target="_blank" rel="noopener">
+    <img src="https://i.ytimg.com/vi/CSTlAjTLaHg/hqdefault.jpg" alt="Video: Lalat Hijau di Bunga Kedondong Mini — Bunker Opanowski">
+    <div class="yt-play">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    </div>
+    <div class="yt-label">▶ Tonton di YouTube Shorts — Lalat Hijau &amp; Kedondong Mini</div>
+  </a>
+
+  <!-- KESIMPULAN -->
+  <div class="kesimpulan-box">
+    <h3>📌 Penutup</h3>
+
+    <!-- EKSPRESI PENUTUP -->
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
+      <img src="../images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+      <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Gapapa salah judgment — asal mau revisi. 😎"</p>
+    </div>
+
+    <p>Gue nggak akan bilang gue sekarang jadi pecinta lalat. Nggak. Kalau ada lalat masuk dapur dan hinggap di ikan goreng, tetap gue usir.</p>
+    <p>Tapi setelah pagi itu, setelah foto itu, setelah fakta-fakta kecil yang gue temuin dari rasa penasaran yang awalnya sepele — gue jadi lebih pelan kalau mau usir lalat yang lagi hinggap di bunga.</p>
+    <p>Siapa tahu dia lagi kerja. Siapa tahu dia lagi ngurusin sesuatu yang penting buat pohon gue. Siapa tahu kita emang sering salah judge sesuatu cuma karena kita udah tahu reputasinya — tanpa mau lihat lebih dekat apa yang sebenernya lagi terjadi.</p>
+    <p>Pelajaran dari teras rumah, dari pohon kedondong dalam pot, dan dari seekor lalat hijau gendut yang warnanya keren banget itu.</p>
+    <span class="sign-off">Tetap penasaran, tetap berkah! 🏴</span>
+  </div>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#LalatHijau</span>
+    <span class="hashtag">#KedondongMini</span>
+    <span class="hashtag">#Tabulampot</span>
+    <span class="hashtag">#PenyerbukAlami</span>
+    <span class="hashtag">#KebunRumah</span>
+    <span class="hashtag">#TerasRumah</span>
+    <span class="hashtag">#FaktaAlam</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#SliceOfLife</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Punya tabulampot di rumah juga? Cerita dong pengalamannya! 🌿</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/blog/blog-mancing-bambu-apus.html">← Mancing Bambu Apus</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Lalat Hijau &amp; Kedondong Mini
+  <span class="updated-tag"><span class="live-dot"></span>17 Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<!-- KOMENTAR -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+</body>
+</html>

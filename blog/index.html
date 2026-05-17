@@ -176,10 +176,10 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
 </header>
 
 <div class="stats">
-  <div class="stat-card"><div class="stat-num">17</div><div class="stat-label">Total Entri</div></div>
+  <div class="stat-card"><div class="stat-num">18</div><div class="stat-label">Total Entri</div></div>
   <div class="stat-card"><div class="stat-num">2026</div><div class="stat-label">Tahun Aktif</div></div>
   <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">Topik</div></div>
-  <div class="stat-card"><div class="stat-num" id="stat-visible">17</div><div class="stat-label">Ditampilkan</div></div>
+  <div class="stat-card"><div class="stat-num" id="stat-visible">18</div><div class="stat-label">Ditampilkan</div></div>
 </div>
 
 <div class="filter-tabs">
@@ -198,8 +198,16 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
   <input class="search-input" type="text" id="searchInput" placeholder="🔍  Cari log & artikel..." oninput="doSearch()">
 </div>
 
+<!-- ══════════════════════════════════════════════
+     3 POST TERBARU — auto dari latest-posts.js
+     ══════════════════════════════════════════════ -->
+<div style="padding: 0 20px; margin-bottom: 8px;">
+  <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1rem;">⚡ Post Terbaru</div>
+  <div id="latest-posts-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;"></div>
+</div>
+
 <div class="section-header">
-  📅 Semua Entri <span class="count" id="visible-count">20 entri</span>
+  📅 Semua Entri <span class="count" id="visible-count">21 entri</span>
 </div>
 
 <div class="log-list" id="main-list">
@@ -208,6 +216,28 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
        TAMBAH ENTRI BARU DI SINI — COPY BLOK LOG CARD DI BAWAH
        Perhatikan: href link ke "../blog-namafile.html" (file blog tetap di root)
        ============================================================ -->
+
+  <!-- LOG #018 — Lalat Hijau & Kedondong Mini -->
+  <a class="log-card" id="entry-log018" href="blog-lalat-hijau-kedondong-mini.html" data-tags="farming,santai">
+    <div class="log-card-top">
+      <span class="log-num-badge">#018</span>
+      <span class="log-date"><span class="live-dot"></span>Sabtu, 17 Mei 2026</span>
+      <div class="log-tags">
+        <span class="tag tag-farming">🌿 Kebun &amp; Alam</span>
+        <span class="tag tag-santai">☕ Teras Rumah</span>
+      </div>
+    </div>
+    <div class="log-title">Lalat Hijau Itu Lagi Ngurusin Bunga Gue — dan Gue Hampir Ngusirnya</div>
+    <div class="log-desc">Ternyata ada yang lebih tahu soal bunga kedondong gue daripada gue sendiri. Namanya lalat. Lalat hijau. Penyerbuk tanpa kredit, dari teras Villa Ciracas. 🪰</div>
+    <div class="log-card-bottom">
+      <div class="log-sections">
+        <span class="section-pill">Tabulampot Kedondong</span>
+        <span class="section-pill">Lalat Hijau</span>
+        <span class="section-pill">Fakta Alam</span>
+      </div>
+      <span class="log-arrow">Baca →</span>
+    </div>
+  </a>
 
   <!-- LOG #017 — Panen Telur & Zero Waste Batang Pisang -->
   <a class="log-card" id="entry-log017" href="../blog-panen-telur-batang-pisang.html" data-tags="farming">
@@ -873,6 +903,7 @@ function applyFilter() {
   document.getElementById('no-result').style.display = count === 0 ? 'block' : 'none';
 }
 </script>
+<script src="/opanowski/latest-posts.js"></script>
 <script src="/opanowski/donate-widget.js"></script>
 </body>
 </html>

@@ -38,6 +38,24 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "018",
+    date: "17 Mei 2026",
+    title: "Lalat Hijau Itu Lagi Ngurusin Bunga Gue — dan Gue Hampir Ngusirnya",
+    subtitle: "Ternyata ada yang lebih tahu soal bunga kedondong gue daripada gue sendiri. Namanya lalat. Lalat hijau. Penyerbuk tanpa kredit, dari teras Villa Ciracas.",
+    tags: ["Kebun & Alam", "Teras Rumah", "Fakta Random"],
+    emoji: "🪰",
+    url: "blog/blog-lalat-hijau-kedondong-mini.html"
+  },
+  {
+    number: "017",
+    date: "3 Mei 2026",
+    title: "4 Bulan Mandiri Telur & Zero Waste Batang Pisang — Villa Ciracas",
+    subtitle: "4 bulan tidak beli telur berkat kandang aviary terbuka tanpa bau di tengah Jakarta Timur. Plus teknik zero waste batang pisang jadi mulsa organik.",
+    tags: ["Urban Farming", "Zero Waste", "Ciracas"],
+    emoji: "🥚",
+    url: "blog/blog-panen-telur-batang-pisang.html"
+  },
+  {
     number: "016",
     date: "13 Mei 2026",
     title: "Digitalisasi Si Latte: Produksi Video Otomatis dengan Python & FFmpeg",
@@ -45,24 +63,6 @@ const LATEST_POSTS = [
     tags: ["Anabul", "FFmpeg", "Python"],
     emoji: "🐰",
     url: "blog/blog-latte-tts-ffmpeg.html"
-  },
-  {
-    number: "015",
-    date: "13 Mei 2026",
-    title: "Filosofi 10Mbps: Alur Kerja Efisien Bunker Opanowski",
-    subtitle: "Eznet 10Mbps seharga Rp172.000/bulan ternyata lebih dari cukup untuk eksis global via GitHub. Kuncinya bukan angka bandwidth — tapi seberapa cerdas kita kelola prioritas.",
-    tags: ["Eznet", "Filosofi Digital", "Ciracas"],
-    emoji: "📡",
-    url: "blog/blog-eznet-10mbps-bunker-opanowski.html"
-  },
-  {
-    number: "014",
-    date: "13 Mei 2026",
-    title: "Setoran Mujair Nila dari Bambu Apus",
-    subtitle: "Bagas dan kawannya mampir bawa oleh-oleh mancing: sekantong mujair nila segar, plus video kocak ikan terbang nyangkut di pohon pisang.",
-    tags: ["Mancing", "Catatan Santai", "Bambu Apus"],
-    emoji: "🎣",
-    url: "blog/blog-mancing-bambu-apus.html"
   }
 ];
 
