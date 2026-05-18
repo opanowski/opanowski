@@ -44,7 +44,7 @@ const LATEST_POSTS = [
     subtitle: "Tiga cara konversi audio M4A ke MP3 di Mac tanpa biaya sepeser pun: Terminal built-in, FFmpeg batch, sampai Audacity. MacBook 2015 gw masih sanggup handle semuanya.",
     tags: ["Audio", "Mac", "FFmpeg"],
     emoji: "🎙️",
-    url: "blog/blog-konversi-m4a-mp3.html"
+    url: "/opanowski/blog/blog-konversi-m4a-mp3.html"
   },
   {
     number: "019",
@@ -53,7 +53,7 @@ const LATEST_POSTS = [
     subtitle: "Siapa bilang bikin website harus ngerti coding dulu? Autodidak dari Ciracas bikin website pribadi yang proper dalam 3 hari — modal tiga AI sekaligus dan secangkir kopi.",
     tags: ["AI", "Web", "Autodidak"],
     emoji: "🌐",
-    url: "blog/blog-website-ai-3hari.html"
+    url: "/opanowski/blog/blog-website-ai-3hari.html"
   },
   {
     number: "018",
@@ -62,7 +62,7 @@ const LATEST_POSTS = [
     subtitle: "Ternyata ada yang lebih tahu soal bunga kedondong gue daripada gue sendiri. Namanya lalat. Lalat hijau. Penyerbuk tanpa kredit, dari teras Villa Ciracas.",
     tags: ["Kebun & Alam", "Teras Rumah", "Fakta Random"],
     emoji: "🪰",
-    url: "blog/blog-lalat-hijau-kedondong-mini.html"
+    url: "/opanowski/blog/blog-lalat-hijau-kedondong-mini.html"
   }
 ];
 
