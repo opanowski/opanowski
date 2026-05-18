@@ -38,6 +38,24 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "020",
+    date: "18 Mei 2026",
+    title: "Konversi M4A ke MP3 di Mac — Gratis, Cepat, Tanpa Drama",
+    subtitle: "Tiga cara konversi audio M4A ke MP3 di Mac tanpa biaya sepeser pun: Terminal built-in, FFmpeg batch, sampai Audacity. MacBook 2015 gw masih sanggup handle semuanya.",
+    tags: ["Audio", "Mac", "FFmpeg"],
+    emoji: "🎙️",
+    url: "blog/blog-konversi-m4a-mp3.html"
+  },
+  {
+    number: "019",
+    date: "17 Mei 2026",
+    title: "Website Pribadi Ala Opanowski — 3 Hari, 3 AI, Tanpa Coding",
+    subtitle: "Siapa bilang bikin website harus ngerti coding dulu? Autodidak dari Ciracas bikin website pribadi yang proper dalam 3 hari — modal tiga AI sekaligus dan secangkir kopi.",
+    tags: ["AI", "Web", "Autodidak"],
+    emoji: "🌐",
+    url: "blog/blog-website-ai-3hari.html"
+  },
+  {
     number: "018",
     date: "17 Mei 2026",
     title: "Lalat Hijau Itu Lagi Ngurusin Bunga Gue — dan Gue Hampir Ngusirnya",
@@ -45,24 +63,6 @@ const LATEST_POSTS = [
     tags: ["Kebun & Alam", "Teras Rumah", "Fakta Random"],
     emoji: "🪰",
     url: "blog/blog-lalat-hijau-kedondong-mini.html"
-  },
-  {
-    number: "017",
-    date: "3 Mei 2026",
-    title: "4 Bulan Mandiri Telur & Zero Waste Batang Pisang — Villa Ciracas",
-    subtitle: "4 bulan tidak beli telur berkat kandang aviary terbuka tanpa bau di tengah Jakarta Timur. Plus teknik zero waste batang pisang jadi mulsa organik.",
-    tags: ["Urban Farming", "Zero Waste", "Ciracas"],
-    emoji: "🥚",
-    url: "blog/blog-panen-telur-batang-pisang.html"
-  },
-  {
-    number: "016",
-    date: "13 Mei 2026",
-    title: "Digitalisasi Si Latte: Produksi Video Otomatis dengan Python & FFmpeg",
-    subtitle: "MacBook 2015, Edge-TTS Ardi Neural, dan FFmpeg bersatu bikin konten video si Latte punya suara sendiri. Dari Bunker Ciracas ke YouTube Shorts — sekedip mata.",
-    tags: ["Anabul", "FFmpeg", "Python"],
-    emoji: "🐰",
-    url: "blog/blog-latte-tts-ffmpeg.html"
   }
 ];
 
