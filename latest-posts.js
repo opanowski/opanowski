@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "010",
+    date: "19 Mei 2026",
+    title: "Tebu Hitam Manis Tabulampot: Bukti Lahan Sempit Bukan Halangan",
+    subtitle: "8 bulan, 2 meter, modal Rp70rb. Tebu hitam Villa Ciracas tumbuh di pot — manis, eksotis, anti-FOMO. Dipupuk kohe kelinci, disiram ikhlas.",
+    tags: ["Urban Farming", "Lifestyle", "Villa Ciracas"],
+    emoji: "🎋",
+    url: "/opanowski/blog/blog-tebu-hitam-tabulampot.html"
+  },
+  {
     number: "020",
     date: "18 Mei 2026",
     title: "Konversi M4A ke MP3 di Mac — Gratis, Cepat, Tanpa Drama",
