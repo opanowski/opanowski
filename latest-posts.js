@@ -64,15 +64,7 @@ const LATEST_POSTS = [
     emoji: "🌐",
     url: "/opanowski/blog/blog-website-ai-3hari.html"
   },
-  {
-    number: "018",
-    date: "17 Mei 2026",
-    title: "Lalat Hijau Itu Lagi Ngurusin Bunga Gue — dan Gue Hampir Ngusirnya",
-    subtitle: "Ternyata ada yang lebih tahu soal bunga kedondong gue daripada gue sendiri. Namanya lalat. Lalat hijau. Penyerbuk tanpa kredit, dari teras Villa Ciracas.",
-    tags: ["Kebun & Alam", "Teras Rumah", "Fakta Random"],
-    emoji: "🪰",
-    url: "/opanowski/blog/blog-lalat-hijau-kedondong-mini.html"
-  }
+  
 ];
 
 // ─── Render ke div#latest-posts-grid ───────────────────────────
