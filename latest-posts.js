@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "021",
+    date: "17 Mei 2026",
+    title: "Pare Hutan: Buah Paling Menipu, Pahit di Luar Manis di Dalam",
+    subtitle: "Selama 25 tahun kita salah fase panen. Pare hutan yang oranye itu MANIS kayak permen — bukan pahit. Biji merah menyala, rasa legit, foto asli dari kebun Ciracas.",
+    tags: ["Tanaman Langka", "Edukasi Kebun", "Villa Ciracas"],
+    emoji: "🍈",
+    url: "/opanowski/blog/blog-pare-hutan-manis-biji-merah.html"
+  },
+  {
     number: "010",
     date: "19 Mei 2026",
     title: "Tebu Hitam Manis Tabulampot: Bukti Lahan Sempit Bukan Halangan",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Audio", "Mac", "FFmpeg"],
     emoji: "🎙️",
     url: "/opanowski/blog/blog-konversi-m4a-mp3.html"
-  },
-  {
-    number: "019",
-    date: "17 Mei 2026",
-    title: "Website Pribadi Ala Opanowski — 3 Hari, 3 AI, Tanpa Coding",
-    subtitle: "Siapa bilang bikin website harus ngerti coding dulu? Autodidak dari Ciracas bikin website pribadi yang proper dalam 3 hari — modal tiga AI sekaligus dan secangkir kopi.",
-    tags: ["AI", "Web", "Autodidak"],
-    emoji: "🌐",
-    url: "/opanowski/blog/blog-website-ai-3hari.html"
   },
   
 ];
