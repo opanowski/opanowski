@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "022",
+    date: "21 Mei 2026",
+    title: "Pengangguran tapi Super Sibuk: Mengubah MacBook Jadul Jadi Mesin Kreatif Organik",
+    subtitle: "Evaluasi 3 minggu balik lagi ngulik konten: dari yang tadinya cuma buka 7 tab, sekarang 3 windows × belasan tab aktif. Autentisitas > kamera 4K, retention rate tembus 300%.",
+    tags: ["MacBook Jadul", "Konten", "Villa Ciracas"],
+    emoji: "📊",
+    url: "/opanowski/blog/blog-pengangguran-super-sibuk.html"
+  },
+  {
     number: "021",
     date: "17 Mei 2026",
     title: "Pare Hutan: Buah Paling Menipu, Pahit di Luar Manis di Dalam",
@@ -55,16 +64,6 @@ const LATEST_POSTS = [
     emoji: "🎋",
     url: "/opanowski/blog/blog-tebu-hitam-tabulampot.html"
   },
-  {
-    number: "020",
-    date: "18 Mei 2026",
-    title: "Konversi M4A ke MP3 di Mac — Gratis, Cepat, Tanpa Drama",
-    subtitle: "Tiga cara konversi audio M4A ke MP3 di Mac tanpa biaya sepeser pun: Terminal built-in, FFmpeg batch, sampai Audacity. MacBook 2015 gw masih sanggup handle semuanya.",
-    tags: ["Audio", "Mac", "FFmpeg"],
-    emoji: "🎙️",
-    url: "/opanowski/blog/blog-konversi-m4a-mp3.html"
-  },
-  
 ];
 
 // ─── Render ke div#latest-posts-grid ───────────────────────────
