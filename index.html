@@ -6,6 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bunker Opanowski — Villa Ciracas</title>
 <meta name="description" content="Bunker Opanowski — catatan hidup autodidak dari Ciracas, Jakarta Timur. Motor, urban farming, gadget, bengkel rumahan, dan filosofi berkah. Belajar sampai menutup mata.">
+<!-- Open Graph / WhatsApp / Sosmed Preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/">
+<meta property="og:title" content="Bunker Opanowski — Villa Ciracas">
+<meta property="og:description" content="Autodidak · Lifelong Learner · DIY Master · Anti Hutang · Anti FOMO. Catatan hidup dari Villa Ciracas, Jakarta Timur.">
+<meta property="og:image" content="https://opanowski.github.io/opanowski/images/nJFlqNX.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bunker Opanowski — Villa Ciracas">
+<meta name="twitter:description" content="Autodidak · DIY Master · Anti Hutang · Anti FOMO. Catatan hidup dari Villa Ciracas.">
+<meta name="twitter:image" content="https://opanowski.github.io/opanowski/images/nJFlqNX.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -431,7 +441,7 @@ section{padding:6rem 2.5rem}
     <p style="color:#b8bdc9;font-size:0.85rem;line-height:1.9;max-width:600px;margin-bottom:3rem">3 catatan terbaru dari Log Harian — langsung dari bengkel digital Villa Ciracas.</p>
 
     <div id="latest-posts-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.25rem">
-      Diisi otomatis oleh latest-posts.js -->
+      <!-- Diisi otomatis oleh latest-posts.js -->
     </div>
     
     <div style="margin-top:2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
@@ -442,8 +452,8 @@ section{padding:6rem 2.5rem}
       <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
         <a href="https://opanowski.github.io/opanowski/blog/index.html" style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(200,151,42,0.08);border:1px solid rgba(200,151,42,0.35);color:var(--gold);text-decoration:none;padding:0.9rem 1.75rem;border-radius:10px;font-size:0.82rem;font-weight:600;white-space:nowrap">📓 Log Harian →</a>
         <a href="projects/index.html" style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(76,175,125,0.06);border:1px solid rgba(76,175,125,0.3);color:#4caf7d;text-decoration:none;padding:0.9rem 1.75rem;border-radius:10px;font-size:0.82rem;font-weight:600;white-space:nowrap;cursor:pointer;user-select:none"><span>🔧</span> Projects →</a>
+      </div>
     </div>
-
   </div>
 </section>
 
@@ -477,9 +487,18 @@ function closeMenu(){
   document.getElementById('hamburger').classList.remove('active');
 }
 </script>
-  </script>
 <script src="latest-posts.js?v=2"></script>
-</body>
 <script src="/opanowski/donate-widget.js"></script>
-</body> 
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:999;width:44px;height:44px;border-radius:50%;background:rgba(200,151,42,0.15);border:1px solid rgba(200,151,42,0.4);color:var(--gold);font-size:1.2rem;cursor:pointer;backdrop-filter:blur(8px);transition:all 0.2s" title="Kembali ke atas">↑</button>
+<script>
+const btn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+  btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  btn.style.alignItems = 'center';
+  btn.style.justifyContent = 'center';
+});
+</script>
+</body>
 </html>
