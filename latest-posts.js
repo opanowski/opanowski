@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "023",
+    date: "23 Mei 2026",
+    title: "Siasat Urban Farming ala Bunker Opanowski: Angkat Konblok, Bio-Canopy Pare Liar",
+    subtitle: "Angkat konblok, tanam langsung ke bumi, pare hutan jadi bio-canopy. Kebun multifungsi: sekalian bengkel, cucian motor, jemuran — semua bisa satu area asal manajemennya bener.",
+    tags: ["Urban Farming", "Low Cost", "Villa Ciracas"],
+    emoji: "🌿",
+    url: "/opanowski/blog/blog-siasat-urban-farming.html"
+  },
+  {
     number: "022",
     date: "21 Mei 2026",
     title: "Pengangguran tapi Super Sibuk: Mengubah MacBook Jadul Jadi Mesin Kreatif Organik",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Tanaman Langka", "Edukasi Kebun", "Villa Ciracas"],
     emoji: "🍈",
     url: "/opanowski/blog/blog-pare-hutan-manis-biji-merah.html"
-  },
-  {
-    number: "010",
-    date: "19 Mei 2026",
-    title: "Tebu Hitam Manis Tabulampot: Bukti Lahan Sempit Bukan Halangan",
-    subtitle: "8 bulan, 2 meter, modal Rp70rb. Tebu hitam Villa Ciracas tumbuh di pot — manis, eksotis, anti-FOMO. Dipupuk kohe kelinci, disiram ikhlas.",
-    tags: ["Urban Farming", "Lifestyle", "Villa Ciracas"],
-    emoji: "🎋",
-    url: "/opanowski/blog/blog-tebu-hitam-tabulampot.html"
   },
 ];
 
