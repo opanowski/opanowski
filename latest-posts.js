@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "024",
+    date: "26 Mei 2026",
+    title: "Esensi Swasembada Kreatif: Menikmati Proses Otodidak Tanpa Harus Terbawa Arus",
+    subtitle: "Ramai kursus AI instan di sosmed, tapi Om Opan tetep di jalur berdikari. Otodidak bukan soal pelit ilmu — ini soal ritme, kebebasan, dan momen nonton bareng Nyokap yang tak ternilai.",
+    tags: ["Filosofi", "Otodidak", "Villa Ciracas"],
+    emoji: "✍️",
+    url: "/opanowski/blog/blog-swasembada-kreatif-otodidak.html"
+  },
+  {
     number: "023",
     date: "23 Mei 2026",
     title: "Siasat Urban Farming ala Bunker Opanowski: Angkat Konblok, Bio-Canopy Pare Liar",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["MacBook Jadul", "Konten", "Villa Ciracas"],
     emoji: "📊",
     url: "/opanowski/blog/blog-pengangguran-super-sibuk.html"
-  },
-  {
-    number: "021",
-    date: "17 Mei 2026",
-    title: "Pare Hutan: Buah Paling Menipu, Pahit di Luar Manis di Dalam",
-    subtitle: "Selama 25 tahun kita salah fase panen. Pare hutan yang oranye itu MANIS kayak permen — bukan pahit. Biji merah menyala, rasa legit, foto asli dari kebun Ciracas.",
-    tags: ["Tanaman Langka", "Edukasi Kebun", "Villa Ciracas"],
-    emoji: "🍈",
-    url: "/opanowski/blog/blog-pare-hutan-manis-biji-merah.html"
   },
 ];
 
