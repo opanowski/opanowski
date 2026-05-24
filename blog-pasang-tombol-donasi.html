@@ -52,6 +52,17 @@
     align-items: flex-end;
     overflow: hidden;
   }
+  .hero-photo {
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    pointer-events: none;
+  }
   .hero-bg-pattern {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -388,6 +399,7 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg-pattern"></div>
+  <img src="images/opan_002.jpg" alt="Om Opan" class="hero-photo">
   <div class="hero-emoji-bg">☕</div>
   <div class="hero-overlay">
     <div class="hero-tags">
@@ -536,6 +548,12 @@
   </div>
 
   <h2>Filosofi di Balik <em>Tombol Kecil Ini</em></h2>
+
+  <!-- FOTO OM OPAN FULL -->
+  <div style="margin: 0 -1.5rem 2rem; overflow: hidden; border-radius: 12px; max-height: 420px;">
+    <img src="images/opan_002.jpg" alt="Om Opan — Villa Ciracas"
+      style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.88) contrast(1.05);">
+  </div>
 
   <p>Gw autodidak. Semua yang ada di Bunker ini — dari desain, kode, konten, sampai kandang aviary — dikerjain sendiri. MacBook 2015 yang udah jadi partner setia, koneksi internet yang kadang moodnya nggak jelas, dan kopi gula aren yang selalu ada.</p>
 
