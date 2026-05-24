@@ -240,6 +240,17 @@
     text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s;
   }
   .social-links a:hover { color: var(--accent); }
+  .hero-photo {
+  position: absolute;
+  top: 0; right: 0;
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+  pointer-events: none;
+}
 </style>
 </head>
 <body>
@@ -251,6 +262,7 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg-pattern"></div>
+  <img src="../images/opan_014.jpg" alt="Om Opan" class="hero-photo">
   <div class="hero-emoji-bg">🌿</div>
   <div class="hero-overlay">
     <div class="hero-tags">
@@ -315,7 +327,10 @@
     <img src="../images/ekspresi/ekspresi_kagum.jpg" alt="Om Opan kagum" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(91,141,238,0.3);">
     <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Air lindi dari kotoran kelinci+ayam? Ngangsu batang pisang aja jadi item! 🔥"</p>
   </div>
-
+<div class="foto-block">
+  <img src="../images/opan_015.jpg" alt="Kebun Bunker Opanowski — angkat konblok, akar langsung ke bumi">
+  <div class="foto-caption">📍 Titik konblok yang diangkat — akar anggur dan pare langsung menembus bumi</div>
+</div>
   <div class="terminal-box">
     <div class="terminal-header">
       <div class="terminal-dot" style="background:#ff5f57"></div>
