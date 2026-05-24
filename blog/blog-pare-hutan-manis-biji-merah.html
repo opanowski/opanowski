@@ -52,6 +52,17 @@
     align-items: flex-end;
     overflow: hidden;
   }
+  .hero-photo {
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    pointer-events: none;
+  }
   .hero-bg-pattern {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     opacity: 0.04;
@@ -342,6 +353,7 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg-pattern"></div>
+  <img src="../images/pare_4.jpg" alt="Om Opan" class="hero-photo">
   <div class="hero-emoji-bg">🍈</div>
   <div class="hero-overlay">
     <div class="hero-tags">
