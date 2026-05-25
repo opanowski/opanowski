@@ -48,7 +48,7 @@ const LATEST_POSTS = [
   },
   {
     number: "024",
-    date: "26 Mei 2026",
+    date: "24 Mei 2026",
     title: "Esensi Swasembada Kreatif: Menikmati Proses Otodidak Tanpa Harus Terbawa Arus",
     subtitle: "Ramai kursus AI instan di sosmed, tapi Om Opan tetep di jalur berdikari. Otodidak bukan soal pelit ilmu — ini soal ritme, kebebasan, dan momen nonton bareng Nyokap yang tak ternilai.",
     tags: ["Filosofi", "Otodidak", "Villa Ciracas"],
