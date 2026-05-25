@@ -124,6 +124,10 @@ section{padding:6rem 2.5rem}
   .gallery-grid{grid-template-columns:1fr}
   .hero-stats{gap:1.5rem}
 }
+/* VIDEO: sembunyiin di HP portrait, muncul otomatis di landscape/tablet/Mac */
+@media(max-width:768px) and (orientation:portrait){
+  .hero-portrait{display:none}
+}
 </style>
 </head>
 <body>
