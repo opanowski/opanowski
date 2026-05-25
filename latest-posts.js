@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "025",
+    date: "25 Mei 2026",
+    title: "Senam Otak Usia Setengah Abad: Dari Ciracas Tembus Kutub Utara!",
+    subtitle: "Di usia setengah abad, Om Opan malah makin semangat. Gadget jadul kena wajib militer, dan ternyata robot Meta dari Luleå, Swedia, tiap hari mampir ngecek web Ciracas. Gokil!",
+    tags: ["Senam Otak", "Tech", "Villa Ciracas"],
+    emoji: "🧠",
+    url: "/opanowski/blog/blog-senam-otak-setengah-abad.html"
+  },
+  {
     number: "024",
     date: "26 Mei 2026",
     title: "Esensi Swasembada Kreatif: Menikmati Proses Otodidak Tanpa Harus Terbawa Arus",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Urban Farming", "Low Cost", "Villa Ciracas"],
     emoji: "🌿",
     url: "/opanowski/blog/blog-siasat-urban-farming.html"
-  },
-  {
-    number: "022",
-    date: "21 Mei 2026",
-    title: "Pengangguran tapi Super Sibuk: Mengubah MacBook Jadul Jadi Mesin Kreatif Organik",
-    subtitle: "Evaluasi 3 minggu balik lagi ngulik konten: dari yang tadinya cuma buka 7 tab, sekarang 3 windows × belasan tab aktif. Autentisitas > kamera 4K, retention rate tembus 300%.",
-    tags: ["MacBook Jadul", "Konten", "Villa Ciracas"],
-    emoji: "📊",
-    url: "/opanowski/blog/blog-pengangguran-super-sibuk.html"
   },
 ];
 
