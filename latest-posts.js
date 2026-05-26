@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "026",
+    date: "26 Mei 2026",
+    title: "Labu Botol: Eksperimen Buah Kampung di Lahan 150m²",
+    subtitle: "Banyak yang salah kira ini zucchini. Padahal ini Labu Botol — buah kampung yang gw eksperimenin sendiri di lahan sempit Villa Ciracas. Hasilnya? Diluar ekspektasi.",
+    tags: ["Kebun", "Urban Farming", "Villa Ciracas"],
+    emoji: "🫙",
+    url: "/opanowski/blog/blog-labu-botol.html"
+  },
+  {
     number: "025",
     date: "25 Mei 2026",
     title: "Senam Otak Usia Setengah Abad: Dari Ciracas Tembus Kutub Utara!",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Filosofi", "Otodidak", "Villa Ciracas"],
     emoji: "✍️",
     url: "/opanowski/blog/blog-swasembada-kreatif-otodidak.html"
-  },
-  {
-    number: "023",
-    date: "23 Mei 2026",
-    title: "Siasat Urban Farming ala Bunker Opanowski: Angkat Konblok, Bio-Canopy Pare Liar",
-    subtitle: "Angkat konblok, tanam langsung ke bumi, pare hutan jadi bio-canopy. Kebun multifungsi: sekalian bengkel, cucian motor, jemuran — semua bisa satu area asal manajemennya bener.",
-    tags: ["Urban Farming", "Low Cost", "Villa Ciracas"],
-    emoji: "🌿",
-    url: "/opanowski/blog/blog-siasat-urban-farming.html"
   },
 ];
 
