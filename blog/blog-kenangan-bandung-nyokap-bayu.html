@@ -47,27 +47,30 @@
 
   .hero {
     position: relative;
-    background: linear-gradient(135deg, #1a0f0f 0%, #0f1117 60%, #1a1000 100%);
-    min-height: 380px;
+    background: #0f1117;
+    min-height: 480px;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
   }
+  .hero-photo-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+    filter: brightness(0.4) saturate(0.7);
+  }
   .hero-bg-pattern {
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    opacity: 0.04;
+    opacity: 0.04; z-index: 1;
     background-image: repeating-linear-gradient(45deg, var(--gold) 0px, var(--gold) 1px, transparent 1px, transparent 40px);
   }
   .hero-emoji-bg {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12rem; opacity: 0.06;
-    pointer-events: none; user-select: none;
+    display: none;
   }
   .hero-overlay {
     position: relative; z-index: 2; width: 100%;
     padding: 2.5rem 2rem;
-    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+    background: linear-gradient(to top, rgba(15,17,23,0.97) 0%, rgba(15,17,23,0.55) 60%, rgba(15,17,23,0.1) 100%);
   }
   .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
   .tag-pill {
@@ -306,6 +309,8 @@
 
 <!-- HERO -->
 <div class="hero">
+  <!-- Hero photo background -->
+  <img class="hero-photo-bg" src="../images/ubay_002.jpg" alt="Bayu — kenangan Bandung">
   <div class="hero-bg-pattern"></div>
   <div class="hero-emoji-bg">🍜</div>
   <div class="hero-overlay">
@@ -349,6 +354,12 @@
   <div class="foto-block">
     <img src="../images/nyokap_ramen.jpg" alt="Nyokap sedang menikmati ramen di Bandung bersama Alm. Bayu" loading="lazy">
     <div class="foto-caption">📸 Nyokap nikmatin ramen di Bandung — momen bersama almarhum adik bontot, Bayu (Bay Dante) · GIMP processed · MacBook Pro 2015 · Bunker Opanowski Archive</div>
+  </div>
+
+  <!-- FOTO UBAY 001 -->
+  <div class="foto-block">
+    <img src="../images/ubay_001.jpg" alt="Bayu — kenangan Bandung" loading="lazy">
+    <div class="foto-caption">📸 Bayu (Bay Dante) — momen keluarga yang tersimpan di folder lama · Bunker Opanowski Archive</div>
   </div>
 
   <!-- SECTION 1 -->
@@ -453,6 +464,12 @@
   <div class="quote-box">
     <div class="quote-text">"Sehat terus buat Nyokap, dan doa terbaik buat Bayu di sana."</div>
     <div class="quote-source">— Digital Log, Bunker Opanowski · 10 Mei 2026</div>
+  </div>
+
+  <!-- FOTO UBAY 002 -->
+  <div class="foto-block">
+    <img src="../images/ubay_002.jpg" alt="Bayu — momen keluarga" loading="lazy">
+    <div class="foto-caption">📸 Bayu (Bay Dante) — kenangan yang selalu ada · Bunker Opanowski Archive</div>
   </div>
 
   <p>Foto ini adalah pengingat bahwa setiap momen kebersamaan itu berharga. Jangan tunggu momen "yang tepat" untuk duduk bareng keluarga, makan bersama, atau sekedar ada di ruangan yang sama. Karena kita tidak pernah tahu kapan itu menjadi yang terakhir.</p>
