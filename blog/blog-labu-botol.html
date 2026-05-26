@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Labu Botol: Buah Kampung yang Tumbuh di Lahan 150m² Villa Ciracas — Bunker Opanowski</title>
+<meta name="description" content="Banyak yang salah kira ini zucchini. Padahal ini Labu Botol — buah kampung yang gw eksperimenin sendiri di lahan sempit Villa Ciracas. Hasilnya? Diluar ekspektasi.">
+<meta property="og:title" content="Labu Botol: Buah Kampung yang Tumbuh di Lahan 150m² Villa Ciracas">
+<meta property="og:description" content="Nggak banyak yang nanem ini di lahan kecil. Tapi ternyata bisa, dan buahnya bagus. Ini cerita eksperimen Labu Botol di Bunker Opanowski.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-labu-botol.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a1a0a 0%, #0f1117 60%, #0d1a05 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(60deg, var(--green) 0px, var(--green) 1px, transparent 1px, transparent 40px);
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem; opacity: 0.06;
+    pointer-events: none; user-select: none;
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: var(--font-mono);
+  }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .tag-pill.blue { background: rgba(91,141,238,0.15); border-color: rgba(91,141,238,0.4); color: #5b8dee; }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--green); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+    margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--cream); margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--accent); font-style: italic; }
+
+  /* SOP CARD */
+  .sop-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.2rem 0;
+  }
+  .sop-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .sop-card-title {
+    font-size: 0.95rem; font-weight: 700; color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+  .sop-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0; }
+
+  /* SPEK BOX */
+  .spek-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-left: 3px solid var(--green); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: rgba(224,90,90,0.05); border: 1px solid rgba(224,90,90,0.3);
+    border-left: 3px solid #e05a5a; border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.75rem 0;
+  }
+  .warning-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    color: #e05a5a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.75rem;
+  }
+  .warning-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0;
+    font-size: 0.85rem; line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700;
+  }
+  .info-box.green { border-color: rgba(76,175,125,0.3); background: rgba(76,175,125,0.05); }
+  .info-box.green .info-box-label { color: #4caf7d; }
+  .info-box.blue { border-color: rgba(91,141,238,0.3); background: rgba(91,141,238,0.05); }
+  .info-box.blue .info-box-label { color: #5b8dee; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-style: italic; color: var(--cream); line-height: 1.6;
+  }
+  .quote-source {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--green); margin-top: 0.6rem; letter-spacing: 1px;
+  }
+
+  /* FOTO */
+  .foto-block {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .foto-block img { width: 100%; display: block; }
+  .foto-caption {
+    background: var(--surface); padding: 0.7rem 1rem;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
+  }
+
+  /* FOTO PLACEHOLDER */
+  .foto-placeholder {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px dashed rgba(200,151,42,0.3);
+    background: rgba(200,151,42,0.03);
+  }
+  .foto-placeholder-inner {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 3rem 2rem; gap: 0.75rem;
+  }
+  .foto-placeholder-emoji { font-size: 2.5rem; opacity: 0.4; }
+  .foto-placeholder-text {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase;
+    text-align: center; line-height: 1.8;
+  }
+  .foto-caption {
+    background: var(--surface); padding: 0.7rem 1rem;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); text-align: center; letter-spacing: 0.5px;
+  }
+
+  /* YT PLACEHOLDER */
+  .yt-placeholder {
+    margin: 2rem 0; border-radius: 12px; overflow: hidden;
+    border: 1px dashed rgba(224, 90, 90, 0.3);
+    background: rgba(224, 90, 90, 0.03);
+  }
+  .yt-placeholder-inner {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 3rem 2rem; gap: 0.75rem;
+  }
+  .yt-icon { font-size: 2.5rem; opacity: 0.4; }
+  .yt-placeholder-text {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase;
+    text-align: center; line-height: 1.8;
+  }
+
+  /* KESIMPULAN */
+  .kesimpulan-box {
+    margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px;
+    border: 1px solid rgba(200,151,42,0.3);
+    background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+  }
+  .kesimpulan-box h3 {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem;
+  }
+  .kesimpulan-box p {
+    font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem;
+  }
+  .sign-off {
+    font-family: var(--font-display); font-size: 0.9rem;
+    color: var(--accent); font-style: italic; margin-top: 1rem; display: block;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 4px 12px; border-radius: 20px; transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* CTA */
+  .cta-block {
+    margin-top: 2rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.4rem; text-align: center;
+  }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600; transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* POST NAV */
+  .post-nav {
+    display: flex; gap: 12px; padding: 20px 24px;
+    border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .post-nav a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--text-muted); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; transition: all 0.2s;
+  }
+  .post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px;
+  }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .social-links a {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--accent); }
+
+  /* COMPARE GRID */
+  .compare-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin: 1.75rem 0;
+  }
+  @media (max-width: 560px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.4rem;
+  }
+  .compare-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.9rem;
+  }
+  .compare-card-label.gold { color: var(--gold); }
+  .compare-card-label.green { color: var(--green); }
+  .compare-item {
+    display: flex; gap: 8px; font-size: 0.83rem; line-height: 1.6;
+    margin-bottom: 0.5rem; color: var(--text-muted);
+  }
+  .compare-item:last-child { margin-bottom: 0; }
+  .compare-item .plus { color: var(--green); flex-shrink: 0; }
+  .compare-item .minus { color: #e05a5a; flex-shrink: 0; }
+
+  /* EKSPRESI */
+  .ekspresi-card {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.2rem; padding: 0.9rem 1.2rem;
+    background: rgba(200,151,42,0.05); border: 1px solid rgba(200,151,42,0.15);
+    border-radius: 10px;
+  }
+  .ekspresi-card img {
+    width: 72px; height: 72px; object-fit: cover;
+    border-radius: 8px; flex-shrink: 0;
+    border: 2px solid rgba(200,151,42,0.3);
+  }
+  .ekspresi-card p {
+    margin: 0 !important; font-size: 0.85rem !important;
+    color: var(--text-muted) !important; font-style: italic;
+    line-height: 1.7 !important; opacity: 1 !important;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<!-- HERO -->
+<div class="hero" style="min-height:420px;">
+  <div class="hero-bg-pattern"></div>
+  <img src="../images/labu_botol.jpg" alt="Labu Botol Villa Ciracas" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.45;z-index:1;">
+  <div class="hero-overlay" style="z-index:2;">
+    <div class="hero-tags">
+      <span class="tag-pill green">🌿 Kebun</span>
+      <span class="tag-pill">🫙 Labu Botol</span>
+      <span class="tag-pill blue">Urban Farming</span>
+      <span class="tag-pill">🏡 Villa Ciracas</span>
+    </div>
+    <h1 class="hero-title">Labu Botol:<br><em>Eksperimen Buah Kampung di Lahan 150m²</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>🌱 Kebun Bunker</span>
+    </div>
+  </div>
+</div>
+
+<!-- KONTEN -->
+<div class="container">
+<div class="artikel-body">
+
+  <p>Lo tau buah ini? Kalau jawaban lo "zucchini" — lo salah, dan lo bukan yang pertama. Gw udah sering dapet reaksi yang sama tiap kali orang ngeliat Labu Botol di kebun Villa Ciracas: pada melongo, terus nanya, <em>"Itu apaan?"</em></p>
+
+  <p>Nama kerennya <strong style="color:var(--cream)">Bottle Gourd</strong>, atau dalam bahasa kampung: Labu Botol, Labur Air, kadang juga disebut Labu Kuwit tergantung daerahnya. Bentuknya memang mirip zucchini — panjang, hijau, licin — tapi beda spesies, beda karakter, dan beda ceritanya.</p>
+
+  <p>Ini adalah eksperimen gw. Dan hasilnya? Diluar ekspektasi.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Di Villa Ciracas, kalau ada lahan — apapun dicoba dulu. Nggak ada ruginya eksperimen."</div>
+    <div class="quote-source">— Om Opan, Bunker Opanowski</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>1. Kenapa Labu Botol? <em>Bukan Zucchini, Bukan Labu Siam</em></h2>
+
+  <p>Jujur, awalnya gw milih ini bukan karena tahu banyak soal Labu Botol. Gw pilih karena satu alasan sederhana: <em>penasaran.</em></p>
+
+  <p>Gw udah coba beberapa tanaman di lahan 150m² ini — mulai dari kangkung, bayam, sampai tomat cherry. Tapi ada satu kategori yang belum gw sentuh: buah-buahan yang bentuknya "aneh" tapi punya nilai gizi tinggi. Labu Botol masuk kategori itu.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">📋 Labu Botol — Fakta Dasar</div>
+    <div class="spek-item">
+      <span class="spek-icon">🌿</span>
+      <span><strong style="color:var(--cream)">Nama Ilmiah:</strong> Lagenaria siceraria — keluarga Cucurbitaceae, sama keluarga sama timun dan labu siam.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">📏</span>
+      <span><strong style="color:var(--cream)">Bentuk:</strong> Panjang silindris, mirip botol atau tongkat. Bisa sampai 30–60 cm kalau dibiarkan.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🎨</span>
+      <span><strong style="color:var(--cream)">Warna:</strong> Hijau muda saat muda — bertekstur halus, sedikit berbulu.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🌡️</span>
+      <span><strong style="color:var(--cream)">Adaptasi:</strong> Cocok iklim tropis — Jakarta pas banget buat tanaman ini.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">💧</span>
+      <span><strong style="color:var(--cream)">Kebutuhan air:</strong> Sedang — tidak butuh irigasi intensif, tapi suka lembab konsisten.</span>
+    </div>
+  </div>
+
+  <p>Yang bikin gw tertarik: ini tanaman yang sebenernya udah ada lama di kuliner Indonesia — dimasak sayur bening, disantan, atau dimakan mentah sebagai lalapan di beberapa daerah. Tapi jarang banget ada yang nanemnya sendiri, apalagi di lahan kota.</p>
+
+  <!-- FOTO LABU BOTOL -->
+  <div class="foto-block">
+    <img src="../images/labu_botol.jpg" alt="Labu Botol Villa Ciracas">
+    <div class="foto-caption">📸 Labu Botol di kebun Villa Ciracas — bentuknya yang panjang licin sering dikira zucchini</div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>2. Setup Tanam: <em>Lahan Sempit, Strategi Vertikal</em></h2>
+
+  <p>Tantangan utama nanem Labu Botol di lahan 150m²: tanaman ini <em>merambat</em>. Kalau dibiarkan horizontal, dia bisa nge-cover area yang luas banget — dan lahan gw nggak punya luxury itu.</p>
+
+  <p>Solusinya: <strong style="color:var(--cream)">vertikal.</strong> Gw bikin rambatan dari bambu dan kawat — bentuknya mirip pergola sederhana. Tanaman naik ke atas, buahnya menggantung. Hasilnya lebih rapi, lebih efisien, dan — bonus — jadi estetik juga di sudut kebun.</p>
+
+  <div class="compare-grid">
+    <div class="compare-card">
+      <div class="compare-card-label gold">📊 Metode Horizontal</div>
+      <div class="compare-item"><span class="plus">+</span><span>Lebih mudah setup awal</span></div>
+      <div class="compare-item"><span class="plus">+</span><span>Tanaman lebih bebas berkembang</span></div>
+      <div class="compare-item"><span class="minus">−</span><span>Makan lahan banyak</span></div>
+      <div class="compare-item"><span class="minus">−</span><span>Buah sering busuk kena tanah</span></div>
+      <div class="compare-item"><span class="minus">−</span><span>Susah monitoring buah</span></div>
+    </div>
+    <div class="compare-card">
+      <div class="compare-card-label green">📊 Metode Vertikal (Bunker)</div>
+      <div class="compare-item"><span class="plus">+</span><span>Hemat lahan — cocok 150m²</span></div>
+      <div class="compare-item"><span class="plus">+</span><span>Buah menggantung, bebas busuk</span></div>
+      <div class="compare-item"><span class="plus">+</span><span>Mudah panen dan monitoring</span></div>
+      <div class="compare-item"><span class="plus">+</span><span>Sirkulasi udara lebih baik</span></div>
+      <div class="compare-item"><span class="minus">−</span><span>Perlu setup rambatan dulu</span></div>
+    </div>
+  </div>
+
+  <div class="sop-card">
+    <div class="sop-card-label">🌱 Proses Tanam — Overview</div>
+    <div class="sop-card-title">Dari Benih ke Buah Pertama</div>
+    <p>Benih ditanam langsung ke media tanam (campuran tanah + kompos + sekam). Perkecambahan sekitar 5–7 hari. Setelah 2 minggu mulai muncul sulur — fase ini butuh pengarahan ke rambatan. Buah pertama muncul sekitar 45–60 hari setelah tanam.</p>
+  </div>
+
+  <!-- FOTO LABU BOTOL -->
+  <div class="foto-block">
+    <img src="../images/labu_botol.jpg" alt="Labu Botol merambat vertikal di kebun Ciracas">
+    <div class="foto-caption">📸 Setup rambatan vertikal — Labu Botol naik ke atas, buah menggantung bebas</div>
+  </div>
+
+  <!-- EKSPRESI: SEMANGAT -->
+  <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);border-radius:10px;">
+    <img src="../images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(76,175,125,0.3);">
+    <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Pas sulur pertama nyampe ke rambatan bambu dan mulai naik sendiri — gw berdiri di pojok kebun sambil mikir, ini momen yang harusnya direkam. Tanaman ini tau arahnya. Tinggal kita bantu jalannya. 🌿"</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <h2>3. Proses Tumbuh: <em>Fase Demi Fase</em></h2>
+
+  <p>Yang paling seru dari Labu Botol itu ritme tumbuhnya. Dia nggak lambat, tapi juga nggak terburu-buru. Ada fase-fase yang jelas dan bisa di-observasi — ini yang bikin berkebun jadi menarik buat gw.</p>
+
+  <div class="info-box blue">
+    <div class="info-box-label">📅 Fase Pertumbuhan Labu Botol</div>
+    <div class="spek-item">
+      <span class="spek-icon">1.</span>
+      <span><strong style="color:var(--cream)">Minggu 1–2 — Kecambah.</strong> Benih pecah, kotiledon muncul. Fase paling rentan — jaga dari hujan deras dan hama kecil.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">2.</span>
+      <span><strong style="color:var(--cream)">Minggu 3–4 — Vegetatif.</strong> Daun true pertama, sulur mulai muncul. Mulai arahkan ke rambatan.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">3.</span>
+      <span><strong style="color:var(--cream)">Minggu 5–6 — Bunga.</strong> Bunga putih muncul sore–malam hari. Fase ini butuh polinator — atau bantuan manual kalau lebah jarang.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">4.</span>
+      <span><strong style="color:var(--cream)">Minggu 7–9 — Pembentukan Buah.</strong> Setelah berhasil diserbuki, buah mulai terbentuk dan membesar cepat.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">5.</span>
+      <span><strong style="color:var(--cream)">Minggu 10+ — Panen.</strong> Buah siap panen waktu ukuran sudah optimal dan kulit masih hijau mengkilap.</span>
+    </div>
+  </div>
+
+  <p>Ada satu hal yang gw pelajari di fase bunga: <strong style="color:var(--cream)">bunga betina dan bunga jantan tumbuh di tempat berbeda.</strong> Kalau polinator alami kurang, perlu polinasi manual — ambil serbuk dari bunga jantan, tempel ke kepala putik bunga betina. Mekanikal banget, tapi efektif.</p>
+
+  <!-- EKSPRESI 1 — SURPRISED -->
+  <div class="ekspresi-card">
+    <img src="../images/ekspresi/ekspresi_terkejut.jpg" alt="Om Opan terkejut">
+    <p>"Pertama kali ngeliat bunga Labu Botol mekar malem-malem — gw nggak nyangka sebagus itu. Putih bersih, gede, kaya bunga di film-film dokumenter alam. Ternyata ada yang indah juga di kebun Ciracas ini. 🌸"</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2>4. Hasil Panen: <em>Diluar Ekspektasi</em></h2>
+
+  <p>Jujur, ekspektasi awal gw rendah. Ini eksperimen pertama dengan tanaman ini, lahan sempit, dan gw belum punya pengalaman khusus soal Cucurbitaceae yang merambat.</p>
+
+  <p>Tapi ternyata Labu Botol itu <em>tangguh</em>. Adaptasinya ke kondisi kebun Ciracas lebih cepat dari yang gw prediksi. Buah pertama muncul sesuai jadwal, ukurannya oke, dan nggak ada masalah besar di sepanjang proses.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">✅ Hasil Eksperimen — Summary</div>
+    <div class="spek-item">
+      <span class="spek-icon">📏</span>
+      <span><strong style="color:var(--cream)">Ukuran buah:</strong> Sekitar 30–35 cm panjang — ukuran ideal untuk dikonsumsi.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🌿</span>
+      <span><strong style="color:var(--cream)">Tekstur kulit:</strong> Halus, hijau mengkilap — tanda buah masih muda dan segar.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">⏱️</span>
+      <span><strong style="color:var(--cream)">Waktu panen pertama:</strong> Sesuai estimasi — sekitar 8–9 minggu dari tanam.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🍽️</span>
+      <span><strong style="color:var(--cream)">Penggunaan:</strong> Bisa sayur bening, tumis, atau dikukus — rasanya netral, mudah dikombinasikan.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🔄</span>
+      <span><strong style="color:var(--cream)">Produktivitas:</strong> Satu tanaman bisa menghasilkan beberapa buah dalam satu musim tanam.</span>
+    </div>
+  </div>
+
+  <!-- FOTO LABU BOTOL -->
+  <div class="foto-block">
+    <img src="../images/labu_botol.jpg" alt="Hasil panen Labu Botol Villa Ciracas">
+    <div class="foto-caption">📸 Hasil panen Labu Botol — 30–35 cm, kulit hijau mengkilap, segar dari kebun Ciracas</div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <h2>5. Labu Botol vs Zucchini: <em>Beda Jauh, Bro</em></h2>
+
+  <p>Karena pertanyaan ini paling sering dateng, gw mau jelasin sekali buat semua: <strong style="color:var(--cream)">Labu Botol dan Zucchini itu beda spesies, beda karakter, beda penggunaan.</strong></p>
+
+  <div class="compare-grid">
+    <div class="compare-card">
+      <div class="compare-card-label gold">🥒 Zucchini</div>
+      <div class="compare-item"><span class="spek-icon">🌍</span><span>Asal Eropa/Amerika — bukan tanaman lokal tropis</span></div>
+      <div class="compare-item"><span class="spek-icon">💰</span><span>Harga mahal di Indonesia — sering diimpor</span></div>
+      <div class="compare-item"><span class="spek-icon">🌡️</span><span>Kurang optimal di iklim Jakarta yang panas</span></div>
+      <div class="compare-item"><span class="spek-icon">🍴</span><span>Sering dikonsumsi mentah, untuk salad</span></div>
+    </div>
+    <div class="compare-card">
+      <div class="compare-card-label green">🫙 Labu Botol</div>
+      <div class="compare-item"><span class="spek-icon">🌴</span><span>Tanaman tropis — sangat cocok iklim Jakarta</span></div>
+      <div class="compare-item"><span class="spek-icon">💵</span><span>Benih murah, perawatan minimal</span></div>
+      <div class="compare-item"><span class="spek-icon">🔥</span><span>Adaptasi tinggi — tahan panas, tahan variasi cuaca</span></div>
+      <div class="compare-item"><span class="spek-icon">🍲</span><span>Tradisional sebagai sayur — bening, tumis, gulai</span></div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <div class="warning-label">⚠️ Catatan Penting</div>
+    <p>Labu Botol yang <em>terlalu tua atau pahit</em> mengandung cucurbitacin — senyawa yang bisa bikin mual atau muntah kalau dikonsumsi banyak. Selalu pilih buah yang masih muda (kulit hijau mengkilap) dan cicipin dulu sebelum masak penuh. Kalau rasanya sangat pahit, jangan dikonsumsi.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2>6. Video: <em>Lihat Langsung Prosesnya</em></h2>
+
+  <!-- YT SHORTS THUMBNAIL -->
+  <a href="https://youtube.com/shorts/xqX5ObodGcA" target="_blank" rel="noopener" style="display:block;margin:2rem 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);position:relative;text-decoration:none;">
+    <img src="https://i.ytimg.com/vi/xqX5ObodGcA/hqdefault.jpg" alt="Video Labu Botol Villa Ciracas — YouTube Shorts" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+      <div style="width:56px;height:56px;background:#ff0000;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.5);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);padding:0.8rem 1rem;">
+      <div style="font-family:var(--font-mono);font-size:0.62rem;color:#fff;letter-spacing:1px;text-transform:uppercase;">▶ Tonton di YouTube Shorts</div>
+    </div>
+  </a>
+
+  <p>Video proses tanam, tumbuh, sampai panen Labu Botol akan diupload di YouTube Shorts. Subscribe channel Bunker Opanowski biar ga ketinggalan update!</p>
+
+  <!-- EKSPRESI 2 — COOL -->
+
+  <!-- KESIMPULAN -->
+  <div class="kesimpulan-box">
+    <h3>📌 Penutup</h3>
+
+    <!-- EKSPRESI: COOL -->
+    <div class="ekspresi-card">
+      <img src="../images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool">
+      <p>"Banyak yang salah kira ini zucchini — padahal ini buah kampung yang udah ada lama di Indonesia. Kadang yang langka itu bukan karena susah ditanem, tapi karena nggak ada yang mau nyoba. 😎"</p>
+    </div>
+
+    <p>Eksperimen Labu Botol ini ngajarin satu hal: <strong style="color:var(--cream)">nggak perlu tanaman impor buat bisa berkebun dengan hasil yang bagus.</strong> Ada banyak tanaman lokal yang adaptasinya lebih tinggi, biayanya lebih murah, dan manfaatnya sama besarnya — tinggal berani coba dulu.</p>
+    <p>Di Villa Ciracas, lahan 150m² bukan hambatan. Itu justru tantangan yang bikin setiap eksperimen lebih bermakna.</p>
+    <p>Kalau lo juga pengen nanem Labu Botol, mulai dari benih — beli di toko pertanian lokal, atau bahkan dari pasar tradisional. Harganya murah, hasilnya memuaskan.</p>
+    <span class="sign-off">Tetap autodidak, tetap berkah! 🏴</span>
+  </div>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#LabuBotol</span>
+    <span class="hashtag">#LabotleGourd</span>
+    <span class="hashtag">#KebunRumahan</span>
+    <span class="hashtag">#UrbanFarming</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#JakartaTimur</span>
+    <span class="hashtag">#HidupSantaiEksperimenTerus</span>
+    <span class="hashtag">#TanamanLokal</span>
+    <span class="hashtag">#Eksperimen</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Pernah nanem Labu Botol juga? Share pengalaman lo di kolom komen! 🌿</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/blog/blog-tablet-mac-workflow.html">← Multi-Device Workflow</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Labu Botol Villa Ciracas
+  <span class="updated-tag"><span class="live-dot"></span>Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<!-- KOMENTAR -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+</body>
+</html>
