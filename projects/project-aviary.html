@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project TinyPC Debian — Lenovo Xiaoxin Pad Jadi Desktop | Bunker Opanowski</title>
-<meta name="description" content="Lenovo Xiaoxin Pad 2024 (8/128) diubah jadi desktop Debian dengan tampilan mirip Windows 10. Dilengkapi WPS Office, keyboard+mouse wireless. Workstation drafting konten & backup.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<title>Project Aviary — Kandang Mandiri Telur | Bunker Opanowski</title>
+<meta name="description" content="4 bulan mandiri telur, zero waste, zero bau. Dokumentasi kandang aviary organik di Villa Ciracas — sistem alam, hasil nyata.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐔</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -13,13 +13,14 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  --void: #080b10;
-  --surface: #0d1018;
+  --void: #080b08;
+  --surface: #0e140e;
   --panel: rgba(255,255,255,0.025);
   --panel-border: rgba(255,255,255,0.06);
-  --tech: #5b8dee;
-  --tech-dim: rgba(91,141,238,0.12);
-  --tech-border: rgba(91,141,238,0.22);
+  --moss: #3d6b45;
+  --bio: #5cb86a;
+  --bio-dim: rgba(92,184,106,0.12);
+  --bio-border: rgba(92,184,106,0.22);
   --amber: #d4873a;
   --amber-dim: rgba(212,135,58,0.12);
   --amber-border: rgba(212,135,58,0.25);
@@ -29,7 +30,7 @@
   --font-display: 'Bebas Neue', sans-serif;
   --font-serif: 'Crimson Pro', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --glow-tech: 0 0 40px rgba(91,141,238,0.15);
+  --glow-bio: 0 0 40px rgba(92,184,106,0.15);
   --glow-amber: 0 0 40px rgba(212,135,58,0.15);
 }
 
@@ -47,21 +48,21 @@ nav{
   position:fixed;top:0;width:100%;z-index:200;
   padding:1rem 2rem;
   display:flex;justify-content:space-between;align-items:center;
-  background:rgba(8,11,16,0.85);
+  background:rgba(8,11,8,0.85);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--panel-border);
 }
 .nav-logo{
   font-family:var(--font-display);
   font-size:1.1rem;letter-spacing:4px;
-  color:var(--tech);text-decoration:none;
+  color:var(--bio);text-decoration:none;
 }
 .nav-back{
   font-family:var(--font-mono);font-size:0.65rem;
   letter-spacing:2px;color:var(--muted);
   text-decoration:none;transition:color .3s;
 }
-.nav-back:hover{color:var(--tech)}
+.nav-back:hover{color:var(--bio)}
 
 /* ===== HERO CINEMATIC ===== */
 .hero{
@@ -74,15 +75,15 @@ nav{
 .hero-grid-overlay{
   position:absolute;inset:0;
   background-image:
-    linear-gradient(rgba(91,141,238,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(91,141,238,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(92,184,106,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92,184,106,0.04) 1px, transparent 1px);
   background-size:60px 60px;
   mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
 }
 
 .hero-vignette{
   position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 50% 40%, transparent 0%, rgba(8,11,16,0.7) 100%);
+  background:radial-gradient(ellipse 70% 60% at 50% 40%, transparent 0%, rgba(8,11,8,0.7) 100%);
 }
 
 .hero-content{
@@ -95,7 +96,7 @@ nav{
 .hero-eyebrow{
   font-family:var(--font-mono);
   font-size:0.6rem;letter-spacing:5px;
-  color:var(--tech);opacity:0.8;
+  color:var(--bio);opacity:0.8;
   margin-bottom:1.5rem;
   animation:fadeUp .8s ease both;
 }
@@ -111,7 +112,7 @@ nav{
 }
 .hero-title .accent{
   color:transparent;
-  -webkit-text-stroke:1px var(--tech);
+  -webkit-text-stroke:1px var(--bio);
   display:block;
   font-size:clamp(2.5rem,8vw,7rem);
 }
@@ -130,26 +131,26 @@ nav{
 .stat-strip{
   display:flex;justify-content:center;gap:0;
   flex-wrap:wrap;
-  border:1px solid var(--tech-border);
+  border:1px solid var(--bio-border);
   border-radius:2px;
   overflow:hidden;
   animation:fadeUp .8s .45s ease both;
-  background:rgba(8,11,16,0.6);
+  background:rgba(8,11,8,0.6);
   backdrop-filter:blur(10px);
 }
 .stat-unit{
   padding:1.2rem 2rem;
-  border-right:1px solid var(--tech-border);
+  border-right:1px solid var(--bio-border);
   text-align:center;
   flex:1;min-width:100px;
   transition:background .3s;
 }
 .stat-unit:last-child{border-right:none}
-.stat-unit:hover{background:var(--tech-dim)}
+.stat-unit:hover{background:var(--bio-dim)}
 .stat-num{
   font-family:var(--font-display);
   font-size:2.5rem;letter-spacing:2px;
-  color:var(--tech);
+  color:var(--bio);
   display:block;line-height:1;
 }
 .stat-label{
@@ -172,7 +173,7 @@ nav{
 }
 .scroll-line{
   width:1px;height:40px;
-  background:linear-gradient(var(--tech), transparent);
+  background:linear-gradient(var(--bio), transparent);
   animation:scrollDrop 2s infinite;
 }
 
@@ -193,11 +194,11 @@ nav{
 .section-marker:first-child{margin-top:0}
 .marker-line{
   flex:1;height:1px;
-  background:linear-gradient(to right, var(--tech-border), transparent);
+  background:linear-gradient(to right, var(--bio-border), transparent);
 }
 .marker-num{
   font-family:var(--font-mono);font-size:0.55rem;
-  letter-spacing:3px;color:var(--tech);opacity:0.6;
+  letter-spacing:3px;color:var(--bio);opacity:0.6;
 }
 
 .section-title{
@@ -210,7 +211,7 @@ nav{
 }
 .section-title span{
   color:transparent;
-  -webkit-text-stroke:1px var(--tech);
+  -webkit-text-stroke:1px var(--bio);
 }
 
 /* PROSE */
@@ -222,7 +223,7 @@ nav{
   font-weight:300;
 }
 .prose strong{color:var(--cream);font-weight:600}
-.prose em{color:var(--tech);font-style:italic}
+.prose em{color:var(--bio);font-style:italic}
 
 /* EXPRESSION CARD */
 .ekspresi-card{
@@ -236,8 +237,8 @@ nav{
   transition:border-color .3s, box-shadow .3s;
 }
 .ekspresi-card:hover{
-  border-left-color:var(--tech);
-  box-shadow:var(--glow-tech);
+  border-left-color:var(--bio);
+  box-shadow:var(--glow-bio);
 }
 .ekspresi-img{
   width:64px;height:64px;
@@ -265,23 +266,23 @@ nav{
 /* DATA PANEL */
 .data-panel{
   background:var(--panel);
-  border:1px solid var(--tech-border);
+  border:1px solid var(--bio-border);
   border-radius:4px;
   overflow:hidden;
   margin:2rem 0;
 }
 .data-panel-header{
   padding:.6rem 1.2rem;
-  background:var(--tech-dim);
-  border-bottom:1px solid var(--tech-border);
+  background:var(--bio-dim);
+  border-bottom:1px solid var(--bio-border);
   font-family:var(--font-mono);
   font-size:0.55rem;letter-spacing:3px;
-  color:var(--tech);text-transform:uppercase;
+  color:var(--bio);text-transform:uppercase;
   display:flex;align-items:center;gap:.5rem;
 }
 .data-panel-header::before{
   content:'';width:6px;height:6px;
-  background:var(--tech);border-radius:50%;
+  background:var(--bio);border-radius:50%;
   animation:pulse 2s infinite;
 }
 .data-panel-body{padding:1.4rem 1.6rem}
@@ -300,22 +301,22 @@ nav{
   color:var(--cream);font-weight:600;
   font-family:var(--font-serif);font-size:.95rem;
 }
-.data-val.blue{color:var(--tech)}
+.data-val.green{color:var(--bio)}
 
 /* QUOTE BLOCK */
 .big-quote{
   position:relative;
   padding:2.5rem 2rem 2.5rem 3rem;
   margin:3rem 0;
-  border-left:2px solid var(--tech);
-  background:var(--tech-dim);
+  border-left:2px solid var(--bio);
+  background:var(--bio-dim);
 }
 .big-quote::before{
   content:'"';
   position:absolute;top:-0.5rem;left:1rem;
   font-family:Georgia,serif;
   font-size:6rem;line-height:1;
-  color:var(--tech);opacity:0.15;
+  color:var(--bio);opacity:0.15;
 }
 .big-quote p{
   font-size:1.2rem;font-style:italic;
@@ -325,10 +326,31 @@ nav{
 }
 .big-quote .quote-source{
   font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:2px;color:var(--tech);
+  letter-spacing:2px;color:var(--bio);
   margin-top:.75rem;opacity:0.7;
   font-style:normal;font-weight:400;
 }
+
+/* PROGRESS BARS */
+.progress-block{margin:2rem 0}
+.progress-item{margin-bottom:1.2rem}
+.progress-header{
+  display:flex;justify-content:space-between;
+  font-family:var(--font-mono);font-size:.65rem;
+  letter-spacing:1px;color:var(--dim);
+  margin-bottom:.4rem;
+}
+.progress-track{
+  height:2px;background:var(--panel-border);
+  border-radius:1px;overflow:hidden;
+}
+.progress-fill{
+  height:100%;background:var(--bio);
+  border-radius:1px;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 1.5s cubic-bezier(.16,1,.3,1);
+}
+.progress-fill.amber{background:var(--amber)}
 
 /* GRID CARDS */
 .card-grid{
@@ -351,7 +373,7 @@ nav{
 }
 .grid-card-title{
   font-family:var(--font-mono);font-size:.65rem;
-  letter-spacing:2px;color:var(--tech);
+  letter-spacing:2px;color:var(--bio);
   text-transform:uppercase;margin-bottom:.5rem;
 }
 .grid-card-body{
@@ -363,7 +385,7 @@ nav{
 .timeline{margin:2.5rem 0;position:relative;padding-left:2rem}
 .timeline::before{
   content:'';position:absolute;left:0;top:0;bottom:0;
-  width:1px;background:linear-gradient(var(--tech), transparent);
+  width:1px;background:linear-gradient(var(--bio), transparent);
 }
 .tl-item{
   position:relative;margin-bottom:2rem;
@@ -372,11 +394,11 @@ nav{
 .tl-item::before{
   content:'';position:absolute;left:-2rem;top:.4rem;
   width:7px;height:7px;border-radius:50%;
-  background:var(--tech);box-shadow:0 0 12px var(--tech);
+  background:var(--bio);box-shadow:0 0 12px var(--bio);
 }
 .tl-date{
   font-family:var(--font-mono);font-size:.6rem;
-  letter-spacing:2px;color:var(--tech);
+  letter-spacing:2px;color:var(--bio);
   opacity:.7;margin-bottom:.3rem;
 }
 .tl-title{
@@ -393,13 +415,13 @@ nav{
   margin-top:5rem;padding:3rem 2rem;
   background:var(--panel);
   border:1px solid var(--panel-border);
-  border-top:1px solid var(--tech-border);
+  border-top:1px solid var(--bio-border);
   text-align:center;
   position:relative;
   overflow:hidden;
 }
 .closing::before{
-  content:'💻';
+  content:'🐔';
   position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
   font-size:10rem;opacity:.03;
   pointer-events:none;
@@ -426,8 +448,8 @@ nav{
   font-family:var(--font-mono);font-size:.6rem;
   letter-spacing:1px;
   padding:.3rem .8rem;
-  border:1px solid var(--tech-border);
-  color:var(--tech);border-radius:2px;
+  border:1px solid var(--bio-border);
+  color:var(--bio);border-radius:2px;
   opacity:.6;transition:opacity .2s;
 }
 .htag:hover{opacity:1}
@@ -440,14 +462,14 @@ nav{
 .back-btn{
   font-family:var(--font-mono);font-size:.65rem;
   letter-spacing:2px;padding:.6rem 1.4rem;
-  border:1px solid var(--tech-border);
-  color:var(--tech);text-decoration:none;
+  border:1px solid var(--bio-border);
+  color:var(--bio);text-decoration:none;
   border-radius:2px;transition:all .3s;
   text-transform:uppercase;
 }
 .back-btn:hover{
-  background:var(--tech-dim);
-  box-shadow:var(--glow-tech);
+  background:var(--bio-dim);
+  box-shadow:var(--glow-bio);
 }
 .back-btn.amber{
   border-color:var(--amber-border);
@@ -483,6 +505,9 @@ footer{
   80%{transform:scaleY(1);transform-origin:bottom;opacity:1}
   100%{transform:scaleY(0);transform-origin:bottom;opacity:0}
 }
+@keyframes scanline{
+  0%{top:-10%}100%{top:110%}
+}
 
 /* REVEAL ON SCROLL */
 .reveal{
@@ -490,14 +515,16 @@ footer{
   transition:opacity .8s ease, transform .8s ease;
 }
 .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* hero after removed for perf */
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html">BUNKER OPANOWSKI</a>
-  <a class="nav-back" href="projects/index.html">← PROJECTS</a>
+  <a class="nav-logo" href="../index.html">BUNKER OPANOWSKI</a>
+  <a class="nav-back" href="index.html">← PROJECTS</a>
 </nav>
 
 <!-- ===== HERO ===== -->
@@ -506,29 +533,29 @@ footer{
   <div class="hero-vignette"></div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow">PROJECT #003 — VILLA CIRACAS · JAKARTA TIMUR</div>
+    <div class="hero-eyebrow">PROJECT #001 — VILLA CIRACAS · JAKARTA TIMUR</div>
     <h1 class="hero-title">
-      TINYPC
-      <span class="accent">Debian Desktop</span>
+      AVIARY
+      <span class="accent">Mandiri Telur</span>
     </h1>
-    <p class="hero-subtitle">Tablet biasa, potensi luar biasa — Xiaoxin Pad disulap jadi workstation Linux</p>
+    <p class="hero-subtitle">Sistem alas tanah organik — bukan kandang biasa, ini ekosistem mini</p>
 
     <div class="stat-strip">
       <div class="stat-unit">
-        <span class="stat-num">8GB</span>
-        <span class="stat-label">RAM</span>
+        <span class="stat-num">4</span>
+        <span class="stat-label">Bulan Mandiri</span>
       </div>
       <div class="stat-unit">
-        <span class="stat-num">128</span>
-        <span class="stat-label">GB Storage</span>
+        <span class="stat-num">1–2</span>
+        <span class="stat-label">Butir / Hari</span>
       </div>
       <div class="stat-unit">
-        <span class="stat-num">Debian</span>
-        <span class="stat-label">OS</span>
+        <span class="stat-num">15cm</span>
+        <span class="stat-label">Alas Organik</span>
       </div>
       <div class="stat-unit">
-        <span class="stat-num">WPS</span>
-        <span class="stat-label">Office Suite</span>
+        <span class="stat-num">0</span>
+        <span class="stat-label">Bau Amonia</span>
       </div>
     </div>
   </div>
@@ -548,141 +575,174 @@ footer{
     <div class="marker-line"></div>
   </div>
 
-  <h2 class="section-title reveal">Dari Tablet<br>Sampai <span>Workstation</span></h2>
+  <h2 class="section-title reveal">Dari DOC<br>Sampai <span>Bertelur</span></h2>
 
   <div class="prose reveal">
-    <p>Lenovo Xiaoxin Pad 2024 — biasa dipake buat nonton YouTube atau baca ebook. Tapi di tangan yang benar, dia bisa jadi lebih dari itu. Dengan spesifikasi 8GB RAM dan 128GB storage, tablet ini punya potensi yang sayang banget kalau cuma dipake buat hiburan.</p>
-    <p>Maka dimulailah eksperimen: mengubah Xiaoxin Pad menjadi <strong>desktop Debian</strong> dengan tampilan yang mirip Windows 10 — familiar, nyaman, dan fungsional.</p>
+    <p>Cerita ini dimulai dari DOC — <strong>Day Old Chick</strong> — yang gw rawat dari ukuran sekepalan tangan. Bukan beli yang udah siap telur. Bukan shortcut. Proses panjang, penuh belajar, dan jujur: penuh drama juga.</p>
+    <p>Tapi prinsipnya simpel: <strong>kasih sistem yang benar, makhluk hidup akan berkembang dengan sendirinya.</strong> Alam udah tau caranya — kita cuma perlu nyediain ruang yang tepat.</p>
   </div>
 
   <!-- EKSPRESI 01 -->
   <div class="ekspresi-card reveal">
-    <img class="ekspresi-img" src="images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" onerror="this.style.display='none'">
-    <p class="ekspresi-quote">Tablet nganggur itu dosa. Kalau speknya 8GB, dia layak jadi workstation — bukan cuma remote Netflix.</p>
+    <img class="ekspresi-img" src="../images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" onerror="this.style.display='none'">
+    <p class="ekspresi-quote">Dari DOC sekepalan tangan sampai bertelur sendiri — ini bukan cuma soal ayam. Ini soal sabar nunggu proses dan percaya sama sistem yang udah kita bangun.</p>
   </div>
 
   <!-- SPEC PANEL -->
   <div class="data-panel reveal">
-    <div class="data-panel-header">Spesifikasi TinyPC — Build v1.0</div>
+    <div class="data-panel-header">Spesifikasi Kandang — Build v1.0</div>
     <div class="data-panel-body">
       <div class="data-row">
-        <span class="data-key">DEVICE</span>
-        <span class="data-val">Lenovo Xiaoxin Pad 2024</span>
+        <span class="data-key">LOKASI</span>
+        <span class="data-val">Villa Ciracas, Jakarta Timur</span>
       </div>
       <div class="data-row">
-        <span class="data-key">RAM</span>
-        <span class="data-val blue">8GB</span>
+        <span class="data-key">DIMENSI</span>
+        <span class="data-val">2m × 1.5m × 2m (H)</span>
       </div>
       <div class="data-row">
-        <span class="data-key">STORAGE</span>
-        <span class="data-val">128GB</span>
+        <span class="data-key">SISTEM ALAS</span>
+        <span class="data-val green">Deep Litter Organik 15cm</span>
       </div>
       <div class="data-row">
-        <span class="data-key">OS</span>
-        <span class="data-val blue">Debian Linux (TinyPC mode)</span>
+        <span class="data-key">POPULASI</span>
+        <span class="data-val">2× Broiler Betina + 2× Puyuh Jantan</span>
       </div>
       <div class="data-row">
-        <span class="data-key">DESKTOP UI</span>
-        <span class="data-val">Mirip Windows 10</span>
+        <span class="data-key">STATUS BAU</span>
+        <span class="data-val green">NIHIL — Zero Amonia</span>
       </div>
       <div class="data-row">
-        <span class="data-key">OFFICE SUITE</span>
-        <span class="data-val blue">WPS Office PC Version</span>
-      </div>
-      <div class="data-row">
-        <span class="data-key">AKSESORIS</span>
-        <span class="data-val">Keyboard + Mouse Wireless + Stylus</span>
+        <span class="data-key">PRODUKSI</span>
+        <span class="data-val green">1–2 butir / hari (sustained)</span>
       </div>
     </div>
   </div>
 
   <!-- SECTION 02 -->
   <div class="section-marker reveal">
-    <div class="marker-num">02 — KENAPA DEBIAN</div>
+    <div class="marker-num">02 — TEKNOLOGI ALAM</div>
     <div class="marker-line"></div>
   </div>
 
-  <h2 class="section-title reveal">Ringan, Stabil,<br><span>Familiar</span></h2>
+  <h2 class="section-title reveal">Rahasia <span>Zero Bau</span><br>di Tengah Kota</h2>
 
   <div class="prose reveal">
-    <p>Debian dikenal sebagai distro Linux yang ringan dan stabil. Cocok banget buat hardware tablet yang — meskipun speknya lumayan — tetep butuh efisiensi. Dengan TinyPC mode, tampilannya dibuat semirip mungkin dengan Windows 10, jadi nggak perlu belajar ulang navigasi.</p>
-    <p>WPS Office PC version dipasang buat keperluan drafting konten. Buka dokumen, edit spreadsheet, bikin presentasi — semua berjalan mulus di layar tablet yang sudah disulap jadi desktop.</p>
+    <p>Pertanyaan paling sering gw dapet dari tetangga: <em>"Pelihara ayam di Jakarta, ga bau?"</em></p>
+    <p>Jawabannya: <strong>nggak</strong> — kalau sistemnya bener. Dan ini bukan sihir, ini biologi dasar.</p>
+    <p>Kunci utamanya adalah <strong>alas tanah 15cm yang dicampur daun kering</strong>. Setiap hari ayam ngais-ngais, kotorannya tercampur merata ke tanah. Mikroorganisme di dalam tanah langsung kerja: mengurai, menetralisir, mengubah kotoran jadi kompos. Nggak ada waktu buat amonia terbentuk. Kandang tetap kering, tanah tetap aktif, sistem jalan sendiri.</p>
+    <p>Ini namanya sistem <strong>deep litter</strong> — udah dipake peternak tradisional selama ratusan tahun, tapi sekarang banyak yang ninggalin karena kejar praktis. Padahal ini yang paling sustainable.</p>
+  </div>
+
+  <!-- PROGRESS VISUAL -->
+  <div class="progress-block reveal" id="progress-block">
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Kandang Kering</span>
+        <span>97%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" data-width="97"></div></div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Aktivitas Ngais Ayam</span>
+        <span>100%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" data-width="100"></div></div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Kadar Amonia (semakin rendah = makin baik)</span>
+        <span>3%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill amber" data-width="3"></div></div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Konsistensi Produksi Telur</span>
+        <span>89%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" data-width="89"></div></div>
+    </div>
   </div>
 
   <div class="big-quote reveal">
-    <p>Jangan terpaku dengan fungsi bawaan sebuah gadget. Xiaoxin Pad bukan cuma buat nonton YouTube. Dia bisa jadi desktop, dia bisa jadi workstation. Tugas kita cuma menemukan potensinya.</p>
+    <p>Alam sudah punya caranya sendiri. Tugas kita bukan mengganti alam — tugas kita adalah memberi ruang yang cukup supaya alam bisa bekerja.</p>
     <div class="quote-source">— FILOSOFI OM OPAN, BUNKER CIRACAS</div>
   </div>
 
   <!-- SECTION 03 -->
   <div class="section-marker reveal">
-    <div class="marker-num">03 — FUNGSI UTAMA</div>
+    <div class="marker-num">03 — KETAHANAN PANGAN</div>
     <div class="marker-line"></div>
   </div>
 
-  <h2 class="section-title reveal">Tiga Peran,<br><span>Satu Device</span></h2>
+  <h2 class="section-title reveal">4 Bulan<br><span>Tidak Beli Telur</span></h2>
 
   <div class="prose reveal">
-    <p>TinyPC ini bukan cuma gadget iseng. Dia punya peran strategis yang jelas di dalam ekosistem digital Bunker Opanowski.</p>
+    <p>Angka itu sederhana tapi impaknya nyata banget. Setiap pagi: minimal 1–2 butir telur segar nunggu dipanen. Nggak ada "harga naik." Nggak ada "stok abis di warung." Nggak ada drama logistik.</p>
+    <p>Ini yang gw maksud dengan <strong>ketahanan pangan rumahan</strong>. Bukan skala besar. Bukan bisnis. Tapi kemampuan rumah tangga untuk nyediain sumber protein sendiri, dari halaman sendiri, dengan sistem yang bisa dirawat sendiri.</p>
+    <p>Dan kalau lo pikir ini butuh lahan luas atau modal gede — gw buktinya bahwa itu mitos. <strong>2m × 1.5m</strong> sudah cukup untuk memulai.</p>
   </div>
 
   <!-- EKSPRESI 02 -->
   <div class="ekspresi-card reveal">
-    <img class="ekspresi-img" src="images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" onerror="this.style.display='none'">
-    <p class="ekspresi-quote">MacBook lagi kepanasan? TinyPC standby. Ekosistem digital yang baik itu soal redundansi yang elegan — bukan soal punya banyak gadget.</p>
+    <img class="ekspresi-img" src="../images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" onerror="this.style.display='none'">
+    <p class="ekspresi-quote">4 bulan nggak beli telur. Kalkulasinya sederhana — tapi rasanya? Itu namanya merdeka dari supply chain.</p>
   </div>
 
+  <!-- HOW IT WORKS GRID -->
   <div class="card-grid reveal">
     <div class="grid-card">
-      <span class="grid-card-icon">📝</span>
-      <div class="grid-card-title">Drafting Konten</div>
-      <p class="grid-card-body">Nulis draft blog, edit script video, nyusun ide konten — semua bisa di WPS Office tanpa perlu buka MacBook.</p>
+      <span class="grid-card-icon">🌱</span>
+      <div class="grid-card-title">Alas Tanah Hidup</div>
+      <p class="grid-card-body">15cm tanah gembur + daun kering. Mikroba aktif 24 jam mengurai kotoran sebelum amonia sempat terbentuk.</p>
     </div>
     <div class="grid-card">
-      <span class="grid-card-icon">💾</span>
-      <div class="grid-card-title">Backup Workstation</div>
-      <p class="grid-card-body">Cadangan aktif kalau MacBook Pro 2015 lagi dipake berat atau butuh istirahat. Seamless, tanpa drama.</p>
+      <span class="grid-card-icon">🐔</span>
+      <div class="grid-card-title">Perilaku Alami</div>
+      <p class="grid-card-body">Ayam mengais secara naluri — otomatis mencampur kotoran ke tanah. Sistem kerja tanpa intervensi manusia harian.</p>
     </div>
     <div class="grid-card">
-      <span class="grid-card-icon">🎒</span>
-      <div class="grid-card-title">Portable Desktop</div>
-      <p class="grid-card-body">Bisa dibawa ke mana-mana, tetep punya layout desktop yang familiar. Kerja dari mana saja, output tetap sama.</p>
+      <span class="grid-card-icon">♻️</span>
+      <div class="grid-card-title">Zero Waste</div>
+      <p class="grid-card-body">Kotoran jadi kompos, kompos menyuburkan tanah, tanah menghasilkan cacing, cacing jadi pakan tambahan.</p>
+    </div>
+    <div class="grid-card">
+      <span class="grid-card-icon">🥚</span>
+      <div class="grid-card-title">Output Konsisten</div>
+      <p class="grid-card-body">Ayam yang stres tidak bertelur. Sistem ini meminimalisir stres: kandang bersih, kering, udara segar, perilaku alami terpenuhi.</p>
     </div>
   </div>
 
   <!-- SECTION 04 -->
   <div class="section-marker reveal">
-    <div class="marker-num">04 — INTEGRASI EKOSISTEM</div>
+    <div class="marker-num">04 — TIMELINE PROYEK</div>
     <div class="marker-line"></div>
   </div>
 
-  <h2 class="section-title reveal">Satu Jaringan,<br><span>Dua Device</span></h2>
-
-  <div class="prose reveal">
-    <p><strong>Kolaborasi dengan MacBook Pro 2015:</strong> Ketika MacBook lagi kepanasan atau lagi dipake buat rendering, TinyPC siap ambil alih tugas-tugas ringan kayak nulis, riset, atau drafting konten.</p>
-    <p><strong>Sinkronisasi file via LocalSend:</strong> Transfer file antar device jadi gampang. Nggak perlu kabel, nggak perlu cloud. Cukup konek WiFi yang sama — file langsung nyebrang.</p>
-  </div>
+  <h2 class="section-title reveal">Perjalanan<br><span>Bulan ke Bulan</span></h2>
 
   <div class="timeline reveal">
     <div class="tl-item">
-      <div class="tl-date">FASE 01</div>
-      <div class="tl-title">INSTALASI DEBIAN</div>
-      <p class="tl-body">TinyPC mode diinstall di Xiaoxin Pad. Desktop environment dikonfigurasi mirip Windows 10 biar transisi terasa natural. WPS Office dipasang sebagai suite utama.</p>
+      <div class="tl-date">BULAN 01</div>
+      <div class="tl-title">DOC MASUK KANDANG</div>
+      <p class="tl-body">DOC mulai diperkenalkan ke kandang aviary. Alas tanah disiapkan, daun kering ditambahkan. Masa adaptasi: ayam belajar mengais, sistem mulai berjalan.</p>
     </div>
     <div class="tl-item">
-      <div class="tl-date">FASE 02</div>
-      <div class="tl-title">AKSESORIS TERHUBUNG</div>
-      <p class="tl-body">Keyboard wireless + mouse wireless + stylus dikonekkan. Tablet berubah bentuk: bukan lagi tablet — ini desktop dalam format compact.</p>
+      <div class="tl-date">BULAN 02</div>
+      <div class="tl-title">SISTEM TERBUKTI STABIL</div>
+      <p class="tl-body">Nol bau setelah 2 bulan. Tanah tetap kering. Aktivitas mengais aktif. Konfirmasi pertama bahwa sistem deep litter bekerja sesuai teori.</p>
     </div>
     <div class="tl-item">
-      <div class="tl-date">FASE 03</div>
-      <div class="tl-title">INTEGRASI LOCALSEND</div>
-      <p class="tl-body">LocalSend dikonfigurasi di kedua device. Transfer file antar MacBook dan TinyPC sekarang semulus copy-paste — tanpa kabel, tanpa cloud, tanpa drama.</p>
+      <div class="tl-date">BULAN 03</div>
+      <div class="tl-title">TELUR PERTAMA</div>
+      <p class="tl-body">Produksi dimulai. Butir pertama dipanen. Konsistensi dibangun perlahan — 1 butir, kemudian 2. Dapur mulai tidak perlu beli telur.</p>
     </div>
     <div class="tl-item">
-      <div class="tl-date">FASE 04</div>
-      <div class="tl-title">WORKSTATION AKTIF</div>
-      <p class="tl-body">TinyPC masuk rotasi kerja harian. Drafting konten, riset, backup taskflow — semua jalan. Ekosistem dua device bekerja sebagai satu unit yang kohesif.</p>
+      <div class="tl-date">BULAN 04</div>
+      <div class="tl-title">MANDIRI PENUH</div>
+      <p class="tl-body">Produksi stabil 1–2 butir/hari. 4 bulan penuh tanpa beli telur dari luar. Sistem self-sustaining: tanah tetap sehat, ayam tetap produktif.</p>
     </div>
   </div>
 
@@ -695,38 +755,38 @@ footer{
   <h2 class="section-title reveal">Apa<br><span>Selanjutnya?</span></h2>
 
   <div class="prose reveal">
-    <p>Project TinyPC ini belum selesai — ini baru <em>versi 1.0</em>. Roadmap ke depan masih panjang.</p>
-    <p><strong>Optimasi performa</strong> — eksplorasi distro atau konfigurasi yang lebih ringan lagi, supaya Debian di Xiaoxin Pad bisa jalan makin mulus.</p>
-    <p><strong>Dokumentasi instalasi</strong> — step-by-step guide buat orang yang mau nyoba hal serupa di tablet mereka sendiri. Open source harus bisa direplikasi.</p>
-    <p><strong>Ekspansi use case</strong> — uji TinyPC buat task yang lebih berat: editing ringan, coding, atau jadi server lokal. Sampai mana batasnya, kita cari tahu.</p>
+    <p>Project Aviary ini belum selesai — ini cuma <em>versi 1.0</em>. Roadmap ke depan:</p>
+    <p><strong>Populasi bertambah</strong> — rencana nambah 2–4 ekor lagi untuk uji skalabilitas sistem. Apakah deep litter masih efektif dengan densitas lebih tinggi?</p>
+    <p><strong>Dokumentasi lebih detail</strong> — setiap fase akan didokumentasikan: pakan, kondisi tanah, frekuensi telur, cuaca. Data nyata, bukan asumsi.</p>
+    <p><strong>Ekspansi puyuh</strong> — puyuh jantan yang sekarang ada akan diuji berpasangan dengan betina. Telur puyuh sebagai protein tambahan.</p>
   </div>
 
   <!-- EKSPRESI 03 -->
   <div class="ekspresi-card reveal">
-    <img class="ekspresi-img" src="images/ekspresi/ekspresi_tertawa.jpg" alt="Om Opan tertawa" onerror="this.style.display='none'">
-    <p class="ekspresi-quote">Gratis, open source, dan memuaskan. Tiga kata yang selalu bikin om semangat ngulik gadget yang orang lain anggap udah mentok fungsinya.</p>
+    <img class="ekspresi-img" src="../images/ekspresi/ekspresi_bingung.jpg" alt="Om Opan mikir" onerror="this.style.display='none'">
+    <p class="ekspresi-quote">Kalau lo mau mulai juga — jangan tunggu sempurna. Mulai dengan 1–2 ayam dulu. Pelajari perilakunya. Sistem yang baik itu dibangun dari pengamatan, bukan dari teori doang.</p>
   </div>
 
   <!-- CLOSING -->
   <div class="closing reveal">
-    <div class="closing-title">TEMUKAN POTENSINYA.<br>OPTIMALKAN.</div>
-    <p class="closing-sub">Gadget biasa di tangan yang penasaran bisa jadi sesuatu yang luar biasa.</p>
+    <div class="closing-title">MULAI KECIL.<br>SISTEM DULU.</div>
+    <p class="closing-sub">Ketahanan pangan bukan soal lahan luas — tapi soal sistem yang tepat di lahan yang ada.</p>
 
     <div class="hashtag-strip">
       <span class="htag">#BunkerOpanowski</span>
-      <span class="htag">#ProjectTinyPC</span>
-      <span class="htag">#DebianLinux</span>
-      <span class="htag">#XiaoxinPad</span>
-      <span class="htag">#TabletJadiDesktop</span>
-      <span class="htag">#WPSOffice</span>
-      <span class="htag">#OpenSource</span>
+      <span class="htag">#ProjectAviary</span>
+      <span class="htag">#KandangOrganik</span>
+      <span class="htag">#DeepLitter</span>
+      <span class="htag">#MandiریTelur</span>
+      <span class="htag">#KetahananPangan</span>
       <span class="htag">#VillaCiracas</span>
-      <span class="htag">#EkosistemDigital</span>
+      <span class="htag">#ZeroWaste</span>
+      <span class="htag">#UrbanFarming</span>
     </div>
 
     <div class="back-row">
-      <a class="back-btn" href="projects/index.html">← Semua Projects</a>
-      <a class="back-btn amber" href="index.html">🏠 Portal Utama</a>
+      <a class="back-btn" href="index.html">← Semua Projects</a>
+      <a class="back-btn amber" href="../index.html">🏠 Portal Utama</a>
     </div>
   </div>
 
@@ -734,7 +794,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  BUNKER OPANOWSKI — PROJECT TINYPC DEBIAN · VILLA CIRACAS · JAKARTA TIMUR
+  BUNKER OPANOWSKI — PROJECT AVIARY · VILLA CIRACAS · JAKARTA TIMUR
 </footer>
 
 <script src="/opanowski/donate-widget.js"></script>
@@ -742,24 +802,28 @@ footer{
 
 <!-- ===== SCRIPTS ===== -->
 <script>
-// SCROLL REVEAL
+// SCROLL REVEAL — single observer, CSS does the work
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(!e.isIntersecting) return;
     e.target.classList.add('visible');
+    // Progress bars — triggered once, then observer disconnected per element
+    e.target.querySelectorAll('.progress-fill').forEach(bar => {
+      bar.style.transform = `scaleX(${bar.dataset.width / 100})`;
+    });
     observer.unobserve(e.target);
   });
 }, {threshold: 0.12, rootMargin:'0px 0px -30px 0px'});
 
 document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 
-// NAV scroll tint
+// NAV — throttled with rAF
 let ticking = false;
 window.addEventListener('scroll', () => {
   if(ticking) return;
   requestAnimationFrame(() => {
     document.querySelector('nav').style.background =
-      window.scrollY > 50 ? 'rgba(8,11,16,0.97)' : 'rgba(8,11,16,0.85)';
+      window.scrollY > 50 ? 'rgba(8,11,8,0.97)' : 'rgba(8,11,8,0.85)';
     ticking = false;
   });
   ticking = true;
