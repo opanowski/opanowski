@@ -322,6 +322,58 @@
   .lightbox-close:hover { color: var(--accent); }
   /* ─── END GALERI 1:1 ─── */
 
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: 340px;
+    display: flex; align-items: flex-end;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('../images/kandang_ayam001.jpg');
+    background-size: cover; background-position: center;
+    filter: brightness(0.45);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(15,17,23,0.92) 0%, rgba(15,17,23,0.3) 60%, transparent 100%);
+  }
+  .hero-emoji-bg {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9rem; opacity: 0.07; pointer-events: none;
+    user-select: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 2.5rem 1.5rem 2rem;
+    max-width: 720px; width: 100%;
+    margin: 0 auto;
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    display: inline-block; padding: 4px 12px; border-radius: 20px;
+    font-family: 'Space Mono', monospace; font-size: 0.6rem;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    background: rgba(245,166,35,0.15); color: var(--accent);
+    border: 1px solid rgba(245,166,35,0.3);
+  }
+  .tag-pill.green {
+    background: rgba(76,175,125,0.15); color: var(--green);
+    border-color: rgba(76,175,125,0.3);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    font-weight: 700; line-height: 1.2;
+    color: var(--cream); margin-bottom: 0.8rem;
+  }
+  .hero-title em { color: var(--accent); font-style: italic; }
+  .hero-meta {
+    font-family: 'Space Mono', monospace; font-size: 0.65rem;
+    color: var(--text-muted); display: flex; align-items: center; gap: 8px;
+  }
+
   /* ─── ARTICLE 2 SEPARATOR ─── */
   .article-separator {
     margin: 56px 0 0;
@@ -382,6 +434,28 @@
   </div>
 </header>
 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-emoji-bg">🐔</div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tags">
+      <span class="tag-pill">🌱 Urban Farming</span>
+      <span class="tag-pill green">♻️ Zero Waste</span>
+      <span class="tag-pill">🧭 Ketahanan Pangan</span>
+    </div>
+    <h2 class="hero-title">
+      4 Bulan Mandiri Telur &<br>
+      Zero Waste <em>Batang Pisang</em>
+    </h2>
+    <div class="hero-meta">
+      <span class="live-dot"></span>
+      3 Mei 2026 &nbsp;·&nbsp; Villa Ciracas, Jakarta Timur
+    </div>
+  </div>
+</section>
+
 <div class="page">
 
   <!-- ═══════════════════════════════════════
@@ -419,55 +493,45 @@
       <div class="s-label">📸 Dokumentasi Kandang</div>
 
       <div class="gallery-1x1" id="gallery-ayam">
-        <!-- Slot 1: ganti src dengan foto asli lo -->
+        <!-- Slot 1: kandang_ayam001 -->
         <div class="g-item" onclick="openLightbox(this)">
-          <div class="g-placeholder">
-            <div class="g-placeholder-icon">🐔</div>
-            <div class="g-placeholder-label">Foto kandang aviary<br>depan</div>
-          </div>
+          <img src="../images/kandang_ayam001.jpg" alt="Kandang aviary Villa Ciracas">
           <div class="g-overlay">
             <div class="g-overlay-icon">🔍</div>
             <div class="g-overlay-caption">Kandang Aviary<br>Villa Ciracas</div>
           </div>
         </div>
 
-        <!-- Slot 2 -->
+        <!-- Slot 2: kandang_ayam002 -->
         <div class="g-item" onclick="openLightbox(this)">
-          <div class="g-placeholder">
-            <div class="g-placeholder-icon">🥚</div>
-            <div class="g-placeholder-label">Hasil panen telur<br>hari ini</div>
-          </div>
+          <img src="../images/kandang_ayam002.jpg" alt="Suasana dalam kandang aviary">
           <div class="g-overlay">
             <div class="g-overlay-icon">🔍</div>
-            <div class="g-overlay-caption">Panen Harian<br>1–2 Butir</div>
+            <div class="g-overlay-caption">Dalam Kandang<br>Aviary</div>
           </div>
         </div>
 
-        <!-- Slot 3: VIDEO (YouTube Shorts / TikTok embed bisa ganti ini) -->
-        <div class="g-item">
+        <!-- Slot 3: kandang_ayam003 -->
+        <div class="g-item" onclick="openLightbox(this)">
+          <img src="../images/kandang_ayam003.jpg" alt="Alas organik kandang aviary">
+          <div class="g-overlay">
+            <div class="g-overlay-icon">🔍</div>
+            <div class="g-overlay-caption">Alas Organik<br>Kandang</div>
+          </div>
+        </div>
+
+        <!-- Slot 4: VIDEO ayam -->
+        <div class="g-item" style="cursor:default;">
           <span class="g-video-badge">▶ video</span>
-          <div class="g-placeholder">
-            <div class="g-placeholder-icon">📹</div>
-            <div class="g-placeholder-label">Video panen telur<br>rasio 1:1</div>
-          </div>
-        </div>
-
-        <!-- Slot 4 -->
-        <div class="g-item" onclick="openLightbox(this)">
-          <div class="g-placeholder">
-            <div class="g-placeholder-icon">🌿</div>
-            <div class="g-placeholder-label">Alas tanah organik<br>kandang</div>
-          </div>
-          <div class="g-overlay">
-            <div class="g-overlay-icon">🔍</div>
-            <div class="g-overlay-caption">Sistem Dekomposisi<br>Organik</div>
-          </div>
+          <iframe
+            src="https://www.youtube.com/embed/oc69NnMYUEI"
+            title="Video ayam kandang aviary Villa Ciracas"
+            style="position:absolute;inset:0;width:100%;height:100%;border:none;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
-
-      <!-- CARA PAKAI GALERI: ganti <div class="g-placeholder"> dengan
-           <img src="foto-lo.jpg" alt="deskripsi foto">
-           di dalam .g-item yang sama -->
 
       <p>
         Banyak yang tanya: <strong>gimana bisa pelihara ayam di kota tanpa bau?</strong>
@@ -477,7 +541,7 @@
 
       <!-- EKSPRESI: BINGUNG -->
       <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
-        <img src="../images/ekspresi/ekspresi_bingung.jpg" alt="Om Opan bingung" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+        <img src="images/ekspresi/ekspresi_bingung.jpg" alt="Om Opan bingung" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
         <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
           "Pertanyaan ini Om Opan juga dapet terus dari tetangga. Awalnya bingung jawabnya dari mana — tapi ya sudah, mending didokumentasiin sekalian biar semua bisa baca sendiri."
         </p>
@@ -516,7 +580,7 @@
 
       <!-- EKSPRESI: SEMANGAT -->
       <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);border-radius:10px;">
-        <img src="../images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(76,175,125,0.3);">
+        <img src="images/ekspresi/ekspresi_semangat.jpg" alt="Om Opan semangat" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(76,175,125,0.3);">
         <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
           "4 bulan itu bukan waktu yang pendek. Tapi kalau sistemnya bener, hasilnya juga bener. Ini buktinya — dan masih jalan terus!"
         </p>
@@ -574,10 +638,7 @@
 
       <div class="gallery-1x1" id="gallery-pisang">
         <div class="g-item" onclick="openLightbox(this)">
-          <div class="g-placeholder">
-            <div class="g-placeholder-icon">🌳</div>
-            <div class="g-placeholder-label">Pohon pisang<br>sebelum ditebang</div>
-          </div>
+          <img src="../images/batang_pisang001.jpg" alt="Batang pisang sebelum dicacah">
           <div class="g-overlay">
             <div class="g-overlay-icon">🔍</div>
             <div class="g-overlay-caption">Pohon Pisang<br>Villa Ciracas</div>
@@ -585,10 +646,7 @@
         </div>
 
         <div class="g-item" onclick="openLightbox(this)">
-          <div class="g-placeholder">
-            <div class="g-placeholder-icon">🔪</div>
-            <div class="g-placeholder-label">Proses pencacahan<br>batang pisang</div>
-          </div>
+          <img src="../images/batang_pisang002.jpg" alt="Proses pencacahan batang pisang">
           <div class="g-overlay">
             <div class="g-overlay-icon">🔍</div>
             <div class="g-overlay-caption">Cacahan Batang<br>Pisang</div>
@@ -606,11 +664,12 @@
           </div>
         </div>
 
-        <div class="g-item">
-          <span class="g-video-badge">▶ video</span>
-          <div class="g-placeholder">
-            <div class="g-placeholder-icon">📹</div>
-            <div class="g-placeholder-label">Video proses<br>zero waste</div>
+        <!-- Slot 4: telur_kulkas — hasil panen dari kandang, disimpan di kulkas -->
+        <div class="g-item" onclick="openLightbox(this)">
+          <img src="../images/telur_kulkas.jpg" alt="Hasil panen telur di kulkas">
+          <div class="g-overlay">
+            <div class="g-overlay-icon">🔍</div>
+            <div class="g-overlay-caption">Panen Telur<br>di Kulkas</div>
           </div>
         </div>
       </div>
@@ -623,7 +682,7 @@
 
       <!-- EKSPRESI: KAGUM -->
       <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(91,141,238,0.05);border:1px solid rgba(91,141,238,0.18);border-radius:10px;">
-        <img src="../images/ekspresi/ekspresi_kagum.jpg" alt="Om Opan kagum" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(91,141,238,0.3);">
+        <img src="images/ekspresi/ekspresi_kagum.jpg" alt="Om Opan kagum" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(91,141,238,0.3);">
         <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
           "Serius deh — tiap kali Om Opan lihat batang pisang yang harusnya dibuang itu jadi mulsa beneran, masih kagum sendiri. Alam emang guru yang paling jujur."
         </p>
@@ -664,7 +723,7 @@
 
       <!-- EKSPRESI: SENANG -->
       <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
-        <img src="../images/ekspresi/ekspresi_senang.jpg" alt="Om Opan senang" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+        <img src="images/ekspresi/ekspresi_senang.jpg" alt="Om Opan senang" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
         <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
           "Momen kayak gini yang bikin betah berkebun — selesai kerja, kebun rapi, ibu senang, tanaman senang, Om Opan juga senang. Semua dapat bagiannya."
         </p>
@@ -677,7 +736,7 @@
 
       <!-- EKSPRESI: COOL -->
       <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
-        <img src="../images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
+        <img src="images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
         <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">
           "Udah, gitu aja. Satu pohon pisang, habis, beres, rapi. Besok pohon berikutnya. Begini terus sampai kebun makin subur sendiri."
         </p>
@@ -744,11 +803,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-// ── CARA PAKAI GALERI ──
-// Untuk menambah foto asli, ganti div.g-placeholder dengan:
-//   <img src="path/ke/foto.jpg" alt="Deskripsi foto">
-// Rasio 1:1 otomatis terjaga oleh CSS ::before padding-top:100%
-// Foto bisa portrait/landscape — akan di-crop tengah secara otomatis
 </script>
 
 <!-- KOMENTAR -->
