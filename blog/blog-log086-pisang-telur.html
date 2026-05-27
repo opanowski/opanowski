@@ -37,7 +37,10 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
 .nav-title{font-size:0.78rem;opacity:0.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* HERO */
-.hero{padding:7rem 2rem 4rem;max-width:760px;margin:0 auto}
+.hero{position:relative;min-height:420px;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(135deg,#0a1a0a 0%,#0f1117 60%,#0d1a05 100%)}
+.hero-bg-pattern{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.04;background-image:repeating-linear-gradient(60deg,#4caf7d 0px,#4caf7d 1px,transparent 1px,transparent 40px)}
+.hero-overlay{position:relative;z-index:2;width:100%;padding:5rem 2rem 2.5rem;background:linear-gradient(to top,rgba(28,26,20,0.98) 0%,rgba(28,26,20,0.4) 80%,transparent 100%)}
+.hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.35;z-index:1}
 .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem;margin-bottom:1.75rem}
 .badge{display:inline-block;padding:3px 11px;border-radius:20px;font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:var(--font-mono)}
 .badge-log{background:rgba(200,151,42,0.15);border:1px solid rgba(200,151,42,0.35);color:var(--gold)}
@@ -91,7 +94,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
 
 /* RESPONSIVE */
 @media(max-width:600px){
-  .hero{padding:6rem 1.25rem 3rem}
+  .hero{min-height:320px}
   .article-wrap{padding:0 1.25rem 4rem}
   .video-wrap{max-width:100%}
   .stat-chip .num{font-size:1.4rem}
@@ -107,6 +110,9 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
 </nav>
 
 <div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <img class="hero-img" src="../images/kandang_ayam003.jpg" alt="Kandang Aviary Villa Ciracas">
+  <div class="hero-overlay">
   <div class="meta-row">
     <span class="badge badge-log">#086</span>
     <span class="badge badge-farming">🌱 Urban Farming</span>
@@ -115,6 +121,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
   </div>
   <h1 class="hero-title">4 Bulan Mandiri Telur<br>& Zero Waste <em>Batang Pisang</em></h1>
   <p class="hero-lead">Sudah empat bulan tidak sepeser pun uang keluar untuk beli telur. Hari ini pohon pisang ditebang — bukan disia-siakan, tapi diubah menjadi "kulkas alami" untuk tanaman. Inilah cerita ekosistem Villa Ciracas yang terus berputar.</p>
+  </div>
 </div>
 
 <div class="article-wrap">
@@ -148,6 +155,12 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
   <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);border-radius:10px;">
     <img src="../images/ekspresi/ekspresi_senang.jpg" alt="Om Opan senang" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(76,175,125,0.3);">
     <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Empat bulan nol pengeluaran beli telur. Setiap pagi buka kandang dan nemu telur — ini bukan keberuntungan, ini sistem yang bekerja."</p>
+  </div>
+
+  <!-- FOTO: Kandang Aviary -->
+  <div style="margin:1.5rem 0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <img src="../images/kandang_ayam003.jpg" alt="Kandang Aviary Terbuka — Villa Ciracas" style="width:100%;height:auto;display:block;">
+    <div style="padding:0.75rem 1rem;background:rgba(0,0,0,0.3);font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);opacity:0.8;">📷 Kandang aviary terbuka Villa Ciracas — 4 bulan mandiri telur</div>
   </div>
 
   <hr class="divider">
@@ -187,6 +200,12 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
   <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(91,141,238,0.05);border:1px solid rgba(91,141,238,0.18);border-radius:10px;">
     <img src="../images/ekspresi/ekspresi_kagum.jpg" alt="Om Opan kagum" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(91,141,238,0.3);">
     <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Batang pisang yang orang buang, jadi 'kulkas alami' yang jaga kelembaban tanah berminggu-minggu. Alam sudah tau caranya — kita yang sering lupa."</p>
+  </div>
+
+  <!-- FOTO: Batang Pisang -->
+  <div style="margin:1.5rem 0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <img src="../images/batang_pisang002.jpg" alt="Batang Pisang dicacah jadi mulsa organik — Villa Ciracas" style="width:100%;height:auto;display:block;">
+    <div style="padding:0.75rem 1rem;background:rgba(0,0,0,0.3);font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);opacity:0.8;">📷 Batang pisang dicacah — "kulkas alami" untuk tanaman pot Villa Ciracas</div>
   </div>
 
   <hr class="divider">
@@ -253,6 +272,12 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
   <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);border-radius:10px;">
     <img src="../images/ekspresi/ekspresi_cool.jpg" alt="Om Opan cool" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(200,151,42,0.3);">
     <p style="margin:0;font-size:0.85rem;color:var(--text-muted);font-style:italic;line-height:1.7;">"Sistemnya jalan, siklusnya berputar, halamannya produktif. Udah — ini namanya beres."</p>
+  </div>
+
+  <!-- FOTO: Telur di Kulkas -->
+  <div style="margin:1.5rem 0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+    <img src="../images/telur_kulkas.jpg" alt="Hasil panen telur mandiri — Villa Ciracas" style="width:100%;height:auto;display:block;">
+    <div style="padding:0.75rem 1rem;background:rgba(0,0,0,0.3);font-family:var(--font-mono);font-size:0.68rem;color:var(--gold);opacity:0.8;">📷 Hasil panen telur harian — 4 bulan mandiri protein dari halaman sendiri</div>
   </div>
 
   <div class="closing">

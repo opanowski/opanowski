@@ -48,7 +48,21 @@
 html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--cream);font-family:var(--font-body);overflow-x:hidden;line-height:1.75}
 
-/* ===== NAV ===== */
+/* ===== HERO ===== */
+.hero{position:relative;min-height:420px;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(135deg,#0a0f1a 0%,#0f1117 60%,#0a0d1a 100%)}
+.hero-bg-pattern{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.04;background-image:repeating-linear-gradient(60deg,var(--blue) 0px,var(--blue) 1px,transparent 1px,transparent 40px)}
+.hero-emoji-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:12rem;opacity:0.05;pointer-events:none;user-select:none}
+.hero-overlay{position:relative;z-index:2;width:100%;padding:2.5rem 2rem;background:linear-gradient(to top,rgba(15,17,23,0.98) 0%,rgba(15,17,23,0.4) 80%,transparent 100%)}
+.hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.35;z-index:1}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
+.tag-pill{background:rgba(200,151,42,0.15);border:1px solid rgba(200,151,42,0.4);color:var(--gold);font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;font-family:var(--font-mono)}
+.tag-pill.green{background:rgba(76,175,125,0.15);border-color:rgba(76,175,125,0.4);color:#4caf7d}
+.tag-pill.blue{background:rgba(91,141,238,0.15);border-color:rgba(91,141,238,0.4);color:#5b8dee}
+.hero-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);color:var(--cream);line-height:1.2;margin-bottom:0.75rem}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-meta{font-family:var(--font-mono);font-size:0.68rem;color:var(--dimmer-text);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.live-dot{display:inline-block;width:6px;height:6px;background:#4caf7d;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 nav{position:sticky;top:0;width:100%;z-index:100;padding:0.85rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(28,26,20,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--gold-border)}
 .nav-logo{font-family:var(--font-display);font-size:1rem;color:var(--gold);letter-spacing:2px;text-decoration:none}
 .nav-back{display:flex;align-items:center;gap:6px;color:var(--dim-text);text-decoration:none;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s}
@@ -180,34 +194,33 @@ footer{padding:3rem 2.5rem;border-top:1px solid var(--gold-border);text-align:ce
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="https://opanowski.github.io/opanowski/" class="nav-logo">Bunker Opanowski</a>
-  <a href="https://opanowski.github.io/opanowski/blog/index.html" class="nav-back">
-    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    Log Harian
-  </a>
-</nav>
-
-<!-- ARTICLE HERO -->
-<header class="article-hero">
-  <div class="article-tags">
-    <span class="tag-pill tag-gold">Artikel · Mei 2026</span>
-    <span class="tag-pill tag-green">Urban Farming</span>
-    <span class="tag-pill tag-blue">Digital</span>
-    <span class="tag-pill tag-gold">Filosofi</span>
-  </div>
-  <h1 class="article-title">Evolusi Digital &amp; Swasembada:<br><em>Dari Ciracas ke Lingkar Arktik</em></h1>
-  <p class="article-sub">
-    Ketika MacBook Pro 2015, kandang aviary terbuka, dan koneksi internet bergabung — hasilnya bisa menyentuh Luleå, Swedia. Cerita tentang konsistensi yang pelan-pelan berbuah.
-  </p>
-  <div class="article-meta">
-    <span class="meta-item">✍ Om Opan</span>
-    <span class="meta-item">📍 Ciracas, Jakarta Timur</span>
-    <span class="meta-item">☕ Ditulis sambil Top Kopi Gula Aren</span>
-    <span class="meta-item">📅 Mei 2026</span>
-  </div>
+<!-- HEADER NAV -->
+<header style="background:linear-gradient(135deg,#1a1d27 0%,#0f1117 100%);border-bottom:2px solid var(--gold);padding:22px 24px 18px;position:sticky;top:0;z-index:100;">
+  <a style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.7rem;color:var(--dimmer-text);text-decoration:none;" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
 </header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-emoji-bg">🌍</div>
+  <img class="hero-img" src="../images/opan_006.jpg" alt="Om Opan — Bunker Opanowski">
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill">Artikel · Mei 2026</span>
+      <span class="tag-pill green">🌱 Urban Farming</span>
+      <span class="tag-pill blue">🌐 Digital</span>
+      <span class="tag-pill">🧭 Filosofi</span>
+    </div>
+    <h1 class="hero-title">Evolusi Digital &amp; Swasembada:<br><em>Dari Ciracas ke Lingkar Arktik</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>☕ Top Kopi Gula Aren</span>
+    </div>
+  </div>
+</div>
 
 <!-- ARTICLE BODY -->
 <main class="article-body">
