@@ -38,7 +38,33 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
 .nav-sep{opacity:0.25;font-size:0.7rem}
 .nav-title{font-size:0.78rem;opacity:0.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-.hero{padding:7rem 2rem 4rem;max-width:760px;margin:0 auto}
+.hero-banner{
+  width:100%;
+  background-image: url(../images/opan_017.jpg);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  padding:7rem 2rem 4rem;
+  position:relative;
+}
+.hero-banner::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:60%;
+  background:linear-gradient(to bottom, transparent, var(--dark));
+  pointer-events:none;
+}
+.hero{max-width:760px;margin:0 auto;position:relative;z-index:1;}
+.hero-banner{
+  width:100%;
+  background-image: url(../images/opan_017.jpg);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  padding:7rem 2rem 4rem;
+}
+.hero{max-width:760px;margin:0 auto;}
 .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem;margin-bottom:1.75rem}
 .badge{display:inline-block;padding:3px 11px;border-radius:20px;font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:var(--font-mono)}
 .badge-web{background:rgba(224,90,90,0.12);border:1px solid rgba(224,90,90,0.3);color:var(--red)}
@@ -110,12 +136,14 @@ nav{position:fixed;top:0;width:100%;z-index:100;padding:0.85rem 2rem;display:fle
   <span class="nav-title">Evolusi Digital & Swasembada Ciracas</span>
 </nav>
 
-<div class="hero" style="background-image: url(../images/opan_017.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<div class="hero-banner">
+  <div class="hero">
   <div class="meta-row">
     <span class="badge badge-web">🌐 Web</span>
     <span class="badge badge-filosofi">🧭 Filosofi</span>
     <span class="badge badge-farming">🌱 Koneksi Organik</span>
     <span class="meta-date">Sabtu, 3 Mei 2026 · Villa Ciracas</span>
+  </div>
   </div>
   <h1 class="hero-title">Evolusi Digital &<br><em>Swasembada Ciracas</em></h1>
   <p class="hero-lead">51 file revisi di folder Downloads. 3 AI yang diorkestrasikan. 29 pengunjung dari 4 benua. Dan sebatang pohon pisang yang ditebang di siang hari yang sama. Ini bukan laporan harian — ini catatan teknis yang emosional.</p>
