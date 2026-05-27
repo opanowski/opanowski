@@ -40,27 +40,23 @@ body {
 
 /* HERO */
 .hero {
-  padding: 120px 0 80px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  width: 100%;
   position: relative;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(15,17,23,0.55) 0%, rgba(15,17,23,0.85) 100%);
-  pointer-events: none;
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
 }
 .hero-inner {
   max-width: 760px;
   margin: 0 auto;
-  padding: 0 24px;
-  position: relative;
-  z-index: 1;
 }
 .hero-meta {
   display: flex; align-items: center; gap: 10px;
@@ -315,23 +311,26 @@ body {
   <a class="back-link" href="index.html">← Log Harian</a>
 </header>
 
-<div class="hero" style="background-image: url(../images/bunker_opanowski_tablet_workflow2.jpg);">
-  <div class="hero-inner">
-    <div class="hero-meta">
-      <span class="hero-badge badge-num">#015</span>
-      <span class="hero-badge badge-cat">💡 Tips & Trik · 🧭 Filosofi</span>
-      <span class="badge-date">📅 Rabu, 13 Mei 2026</span>
-    </div>
-    <span class="hero-emoji">📡</span>
-    <h1 class="hero-title">Filosofi 10Mbps: <em>Alur Kerja Efisien</em> Bunker Opanowski</h1>
-    <p class="hero-subtitle">Investasi WiFi Eznet Rp172.000/bulan ternyata lebih dari cukup untuk menjalankan ekosistem digital Bunker Opanowski. Kuncinya bukan angka bandwidth — tapi seberapa cerdas kita mengelola prioritas.</p>
-    <div class="hero-tags">
-      <span class="tag-pill">Eznet</span>
-      <span class="tag-pill">10Mbps</span>
-      <span class="tag-pill">Ciracas</span>
-      <span class="tag-pill">GitHub Pages</span>
-      <span class="tag-pill">Mac Jadul</span>
-      <span class="tag-pill">Debian Linux</span>
+<div class="hero">
+  <img src="../images/bunker_opanowski_tablet_workflow2.jpg" alt="Bunker Opanowski Setup" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.45;z-index:1;">
+  <div class="hero-overlay">
+    <div class="hero-inner">
+      <div class="hero-meta">
+        <span class="hero-badge badge-num">#015</span>
+        <span class="hero-badge badge-cat">💡 Tips & Trik · 🧭 Filosofi</span>
+        <span class="badge-date">📅 Rabu, 13 Mei 2026</span>
+      </div>
+      <span class="hero-emoji">📡</span>
+      <h1 class="hero-title">Filosofi 10Mbps: <em>Alur Kerja Efisien</em> Bunker Opanowski</h1>
+      <p class="hero-subtitle">Investasi WiFi Eznet Rp172.000/bulan ternyata lebih dari cukup untuk menjalankan ekosistem digital Bunker Opanowski. Kuncinya bukan angka bandwidth — tapi seberapa cerdas kita mengelola prioritas.</p>
+      <div class="hero-tags">
+        <span class="tag-pill">Eznet</span>
+        <span class="tag-pill">10Mbps</span>
+        <span class="tag-pill">Ciracas</span>
+        <span class="tag-pill">GitHub Pages</span>
+        <span class="tag-pill">Mac Jadul</span>
+        <span class="tag-pill">Debian Linux</span>
+      </div>
     </div>
   </div>
 </div>
