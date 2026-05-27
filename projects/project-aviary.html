@@ -25,8 +25,8 @@
   --amber-dim: rgba(212,135,58,0.12);
   --amber-border: rgba(212,135,58,0.25);
   --cream: #e8e2d4;
-  --muted: rgba(232,226,212,0.45);
-  --dim: rgba(232,226,212,0.25);
+  --muted: #b8b0a0;
+  --dim: #857d70;
   --font-display: 'Bebas Neue', sans-serif;
   --font-serif: 'Crimson Pro', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -70,6 +70,10 @@ nav{
   min-height:100vh;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;
+  background-image:url('../images/kandang_ayam002.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 .hero-grid-overlay{
@@ -96,7 +100,7 @@ nav{
 .hero-eyebrow{
   font-family:var(--font-mono);
   font-size:0.6rem;letter-spacing:5px;
-  color:var(--bio);opacity:0.8;
+  color:#ffffff;opacity:0.85;
   margin-bottom:1.5rem;
   animation:fadeUp .8s ease both;
 }
@@ -109,6 +113,7 @@ nav{
   color:var(--cream);
   animation:fadeUp .8s .15s ease both;
   position:relative;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.85);
 }
 .hero-title .accent{
   color:transparent;
@@ -121,10 +126,11 @@ nav{
   font-family:var(--font-serif);
   font-size:clamp(1rem,2vw,1.3rem);
   font-style:italic;
-  color:var(--muted);
+  color:#d4cfc6;
   margin:1.5rem 0 2.5rem;
   animation:fadeUp .8s .3s ease both;
   font-weight:300;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 }
 
 /* STAT STRIP */
@@ -156,7 +162,7 @@ nav{
 .stat-label{
   font-family:var(--font-mono);
   font-size:0.5rem;letter-spacing:2px;
-  color:var(--dim);
+  color:#9a9488;
   text-transform:uppercase;
   margin-top:4px;
   display:block;
@@ -168,8 +174,9 @@ nav{
   z-index:10;
   display:flex;flex-direction:column;align-items:center;gap:8px;
   font-family:var(--font-mono);font-size:0.55rem;
-  letter-spacing:3px;color:var(--dim);
+  letter-spacing:3px;color:#9a9488;
   animation:fadeUp .8s .7s ease both;
+  text-shadow:0 1px 6px rgba(0,0,0,0.9);
 }
 .scroll-line{
   width:1px;height:40px;
@@ -295,7 +302,7 @@ nav{
 .data-row:last-child{border-bottom:none}
 .data-key{
   font-family:var(--font-mono);font-size:.7rem;
-  letter-spacing:1px;color:var(--dim);
+  letter-spacing:1px;color:#9a9488;
 }
 .data-val{
   color:var(--cream);font-weight:600;
@@ -327,7 +334,7 @@ nav{
 .big-quote .quote-source{
   font-family:var(--font-mono);font-size:.6rem;
   letter-spacing:2px;color:var(--bio);
-  margin-top:.75rem;opacity:0.7;
+  margin-top:.75rem;opacity:1;
   font-style:normal;font-weight:400;
 }
 
@@ -337,7 +344,7 @@ nav{
 .progress-header{
   display:flex;justify-content:space-between;
   font-family:var(--font-mono);font-size:.65rem;
-  letter-spacing:1px;color:var(--dim);
+  letter-spacing:1px;color:#9a9488;
   margin-bottom:.4rem;
 }
 .progress-track{
@@ -517,6 +524,50 @@ footer{
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* hero after removed for perf */
+
+/* ===== PHOTO BLOCK ===== */
+.photo-block{
+  margin:2.5rem 0;
+  border-radius:4px;
+  overflow:hidden;
+  border:1px solid var(--panel-border);
+  position:relative;
+}
+.photo-block img{
+  width:100%;
+  display:block;
+  object-fit:cover;
+  max-height:480px;
+  filter:sepia(0.1) contrast(1.05);
+  transition:transform .5s ease;
+}
+.photo-block:hover img{transform:scale(1.01)}
+.photo-caption{
+  padding:.7rem 1rem;
+  background:var(--panel);
+  font-family:var(--font-mono);
+  font-size:.6rem;letter-spacing:2px;
+  color:var(--dim);
+  text-transform:uppercase;
+  border-top:1px solid var(--panel-border);
+}
+.photo-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--panel-border);
+  border:1px solid var(--panel-border);
+  border-radius:4px;
+  overflow:hidden;
+  margin:2.5rem 0;
+}
+.photo-row img{
+  width:100%;display:block;
+  object-fit:cover;height:260px;
+  filter:sepia(0.1) contrast(1.05);
+  transition:transform .5s ease;
+}
+.photo-row img:hover{transform:scale(1.02)}
 </style>
 </head>
 <body>
@@ -580,6 +631,13 @@ footer{
   <div class="prose reveal">
     <p>Cerita ini dimulai dari DOC — <strong>Day Old Chick</strong> — yang gw rawat dari ukuran sekepalan tangan. Bukan beli yang udah siap telur. Bukan shortcut. Proses panjang, penuh belajar, dan jujur: penuh drama juga.</p>
     <p>Tapi prinsipnya simpel: <strong>kasih sistem yang benar, makhluk hidup akan berkembang dengan sendirinya.</strong> Alam udah tau caranya — kita cuma perlu nyediain ruang yang tepat.</p>
+  </div>
+
+  <!-- FOTO: DOC -->
+  <!-- NOTE: doc.jpg belum di-push ke GitHub, push dulu sebelum live -->
+  <div class="photo-block reveal">
+    <img src="../images/doc.jpg" alt="DOC — Day Old Chick awal masuk kandang" onerror="this.style.display='none'">
+    <div class="photo-caption">📷 DOC — Day Old Chick · Hari pertama masuk kandang aviary</div>
   </div>
 
   <!-- EKSPRESI 01 -->
@@ -666,6 +724,12 @@ footer{
     </div>
   </div>
 
+  <!-- FOTO: KANDANG (2-col) -->
+  <div class="photo-row reveal">
+    <img src="../images/kandang_ayam001.jpg" alt="Kandang aviary tampak dalam — sistem alas tanah organik" onerror="this.style.display='none'">
+    <img src="../images/kandang_ayam003.jpg" alt="Kandang aviary — aktivitas ayam mengais alas tanah" onerror="this.style.display='none'">
+  </div>
+
   <div class="big-quote reveal">
     <p>Alam sudah punya caranya sendiri. Tugas kita bukan mengganti alam — tugas kita adalah memberi ruang yang cukup supaya alam bisa bekerja.</p>
     <div class="quote-source">— FILOSOFI OM OPAN, BUNKER CIRACAS</div>
@@ -683,6 +747,12 @@ footer{
     <p>Angka itu sederhana tapi impaknya nyata banget. Setiap pagi: minimal 1–2 butir telur segar nunggu dipanen. Nggak ada "harga naik." Nggak ada "stok abis di warung." Nggak ada drama logistik.</p>
     <p>Ini yang gw maksud dengan <strong>ketahanan pangan rumahan</strong>. Bukan skala besar. Bukan bisnis. Tapi kemampuan rumah tangga untuk nyediain sumber protein sendiri, dari halaman sendiri, dengan sistem yang bisa dirawat sendiri.</p>
     <p>Dan kalau lo pikir ini butuh lahan luas atau modal gede — gw buktinya bahwa itu mitos. <strong>2m × 1.5m</strong> sudah cukup untuk memulai.</p>
+  </div>
+
+  <!-- FOTO: TELUR KULKAS -->
+  <div class="photo-block reveal">
+    <img src="../images/telur_kulkas.jpg" alt="Hasil panen telur — stok mandiri di kulkas Villa Ciracas" onerror="this.style.display='none'">
+    <div class="photo-caption">📷 Hasil panen — telur segar langsung masuk kulkas · Villa Ciracas</div>
   </div>
 
   <!-- EKSPRESI 02 -->
