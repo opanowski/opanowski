@@ -50,7 +50,7 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--gold-border);fo
   <a class="back-link" href="index.html">← Kembali ke Log Harian</a>
 </header>
 
-<div class="hero">
+<div class="hero" style="background-image: url(../images/opan_006.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
   <div class="tag">🔧 Dibalik Layar · 2 Hari Perang Kode</div>
   <h1>2 Hari Berperang dengan Kode & Warna</h1>
   <div class="sub">Pindah gambar dari Imgur ke GitHub, melawan file kepotong, berburu warna ungu yang membandel, dan uji coba otomatisasi yang gagal — semua tanpa bakat programmer, cuma modal kopi gula aren</div>
@@ -61,6 +61,11 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--gold-border);fo
   <p>Kadang yang kelihatannya sepele di luar — ternyata paling pusing kalau lo nggak ngerti teknis. Ini catatan perjuangan gue selama <strong>2 hari penuh</strong> merombak website Bunker Opanowski. Mulai dari pindahin semua gambar ke server sendiri, memperbaiki file HTML yang kepotong, sampai berantem sama warna ungu default browser yang gak mau hilang.</p>
 
   <h2>📸 Masalah #1: Gambar Numpang di Imgur, Bukan di Rumah Sendiri</h2>
+  <!-- INSERTED IMAGE -->
+  <div style="margin:1.75rem 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+    <img src="../images/opan_005.jpg" alt="📸 Om Opan — Villa Ciracas" style="width:100%;display:block;object-fit:cover;max-height:420px;">
+    <div style="background:var(--surface);padding:0.6rem 1rem;font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:0.5px;">📸 Om Opan — Villa Ciracas</div>
+  </div>
   <p>Gue awalnya simpan gambar di Imgur. Gampang, tinggal tempel link. Tapi risiko gede: kalo suatu hari Imgur hapus atau down, website gue bakal kehilangan muka — literally. Gambar gak muncul, malu dong. Jadi gue putusin: pindahin semua gambar ke <strong>folder images/ di GitHub</strong>. Milik sendiri, aman, dan nggak tergantung pihak luar.</p>
 
   <h3>🤯 Bukan cuma pindah — ini medannya:</h3>
@@ -98,6 +103,11 @@ footer{padding:2rem;text-align:center;border-top:1px solid var(--gold-border);fo
   </div>
 
   <h2>🎨 Masalah #3: Warna Ungu yang Membandel (Paling Bikin Puyeng)</h2>
+  <!-- INSERTED IMAGE -->
+  <div style="margin:1.75rem 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+    <img src="../images/opan_009.jpg" alt="📸 Om Opan — Villa Ciracas" style="width:100%;display:block;object-fit:cover;max-height:420px;">
+    <div style="background:var(--surface);padding:0.6rem 1rem;font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:0.5px;">📸 Om Opan — Villa Ciracas</div>
+  </div>
   <p>Di halaman depan, ada card "Latest Update". Semua warna normal — kecuali teks preview beberapa artikel berwarna <strong>ungu gelap</strong>. Gue ganti dari <code>#b57bee</code> ke <code>#d0a0ff</code>, pusing, karena ternyata itu <strong>bukan dari kode gue</strong> — itu dari browser.</p>
   <p>Browser punya default warna <strong>ungu gelap untuk link yang sudah dikunjungi</strong>. Dan teks preview di card itu sebenernya juga bagian dari link. Susah diakalin tanpa ngerusak struktur.</p>
 
