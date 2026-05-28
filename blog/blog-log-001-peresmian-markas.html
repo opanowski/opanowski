@@ -335,34 +335,32 @@
 </head>
 <body>
 
-<header>
-  <a class="back-link" href="../blog/">← Kembali ke Log Harian</a>
-  <div class="log-meta">
-    <span class="log-badge">Log Harian</span>
-    <span class="log-num">#001 — Bunker Opanowski</span>
-  </div>
-  <h1>Peresmian Markas Digital</h1>
-  <div class="header-sub">Dari tangan berlumur oli ke keyboard — satu langkah besar</div>
-</header>
-
-<div class="date-strip">
-  <span class="dot"></span>
-  <span>Kamis, 1 Mei 2026</span>
-  <span>·</span>
-  <span>Ciracas, Jakarta Timur</span>
-  <span>·</span>
-  <span>WIB (UTC+7)</span>
-</div>
-
-<div class="content-wrap">
-
-  <!-- FOTO PEMBUKA -->
-  <div style="margin-bottom:32px;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-    <img src="../images/opan_013.jpg" alt="Om Opan — Peresmian Markas Digital" style="width:100%;display:block;max-height:420px;object-fit:cover;">
-    <div style="padding:10px 16px;background:var(--surface);font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--text-muted);">
-      📍 Villa Ciracas, Jakarta Timur · 1 Mei 2026 — Hari pertama markas digital resmi beroperasi.
+<header style="position:relative;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;padding:0;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.08);">
+  <!-- BG foto -->
+  <img src="../images/opan_013.jpg" alt="Om Opan — Peresmian Markas Digital" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% center;display:block;z-index:0;">
+  <!-- Gradient gelap dari bawah -->
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,17,23,1) 0%,rgba(15,17,23,0.55) 50%,rgba(15,17,23,0.15) 100%);z-index:1;"></div>
+  <!-- Konten overlay -->
+  <div style="position:relative;z-index:2;padding:1.5rem 2rem 1.75rem;">
+    <a class="back-link" href="../blog/" style="display:inline-block;margin-bottom:1.25rem;">← Kembali ke Log Harian</a>
+    <div class="log-meta">
+      <span class="log-badge">Log Harian</span>
+      <span class="log-num">#001 — Bunker Opanowski</span>
+    </div>
+    <h1>Peresmian Markas Digital</h1>
+    <div class="header-sub">Dari tangan berlumur oli ke keyboard — satu langkah besar</div>
+    <div class="date-strip" style="position:static;margin-top:0.85rem;padding:0;background:none;border:none;">
+      <span class="dot"></span>
+      <span>Kamis, 1 Mei 2026</span>
+      <span>·</span>
+      <span>Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>WIB (UTC+7)</span>
     </div>
   </div>
+</header>
+
+<div class="content-wrap">
 
   <!-- SECTION 1: YOUTUBE -->
   <div class="section-block">
@@ -424,6 +422,11 @@
     </div>
   </div>
 
+  <!-- FOTO SECTION 01 -->
+  <div style="margin:20px 0 24px;border-radius:10px;overflow:hidden;border:1px solid var(--border);">
+    <img src="../images/opan_002.jpg" alt="Om Opan — Ekosistem YouTube" style="width:100%;display:block;max-height:340px;object-fit:cover;">
+  </div>
+
   <!-- EKSPRESI: KAGUM -->
   <div style="display:flex;align-items:center;gap:1rem;margin:1.2rem 0;padding:0.9rem 1.2rem;background:rgba(91,141,238,0.05);border:1px solid rgba(91,141,238,0.18);border-radius:10px;">
     <img src="../images/ekspresi/ekspresi_kagum.jpg" alt="Om Opan kagum" style="width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:2px solid rgba(91,141,238,0.3);">
@@ -458,6 +461,11 @@
         </p>
       </div>
     </div>
+  </div>
+
+  <!-- FOTO SECTION 02 -->
+  <div style="margin:20px 0 24px;border-radius:10px;overflow:hidden;border:1px solid var(--border);">
+    <img src="../images/opan_004.jpg" alt="Om Opan — Peluncuran Video Perdana" style="width:100%;display:block;max-height:340px;object-fit:cover;">
   </div>
 
   <!-- EKSPRESI: SEMANGAT -->
@@ -512,6 +520,11 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <!-- FOTO SECTION 03 -->
+  <div style="margin:20px 0 24px;border-radius:10px;overflow:hidden;border:1px solid var(--border);">
+    <img src="../images/opan_003.jpg" alt="Om Opan — Strategi Perangkat" style="width:100%;display:block;max-height:340px;object-fit:cover;">
   </div>
 
   <!-- EKSPRESI: COOL -->
