@@ -33,6 +33,8 @@
 
   document.addEventListener('click', function(e){
     if(!isOpen) return;
+    var omopan = document.getElementById('omopan-window');
+    if(omopan && omopan.contains(e.target)) return;
     if(!document.getElementById('donate-fab').contains(e.target)){
       isOpen = false;
       document.getElementById('donate-panel').classList.remove('open');
