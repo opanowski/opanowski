@@ -684,6 +684,7 @@
 </div>
 <script src="/opanowski/donate-widget.js"></script>
 
+
 <!-- OMOPAN-CHAT-INJECTED -->
 <style>
   #omopan-fab{position:fixed;bottom:24px;left:24px;width:56px;height:56px;border-radius:50%;background:#1a7f5a;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.22);z-index:9999;transition:transform 0.2s;font-size:24px;}
@@ -701,10 +702,10 @@
   .omopan-bot{background:#fff;color:#222;border-bottom-left-radius:4px;align-self:flex-start;box-shadow:0 1px 3px rgba(0,0,0,0.07);}
   .omopan-user{background:#1a7f5a;color:#fff;border-bottom-right-radius:4px;align-self:flex-end;}
   .omopan-typing{color:#888;font-style:italic;}
-  #omopan-footer{padding:10px;background:#fff;border-top:0.5px solid #e0e0e0;display:flex;gap:8px;flex-shrink:0;position:sticky;bottom:0;}
-  #omopan-input{flex:1;border:0.5px solid #d0d0d0;border-radius:20px;padding:8px 14px;font-size:13px;outline:none;font-family:sans-serif;}
-  #omopan-send{background:#1a7f5a;border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  #omopan-send svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  #omopan-footer{padding:10px;background:#fff;border-top:0.5px solid #e0e0e0;display:flex;align-items:center;gap:8px;flex-shrink:0;position:sticky;bottom:0;box-sizing:border-box;width:100%;}
+  #omopan-input{flex:1;min-width:0;border:0.5px solid #d0d0d0;border-radius:20px;padding:10px 14px;font-size:13px;outline:none;font-family:sans-serif;box-sizing:border-box;-webkit-appearance:none;display:block;}
+  #omopan-send{background:#1a7f5a;border:none;border-radius:50%;width:44px;height:44px;min-width:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+  #omopan-send svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;}
   @media(max-width:400px){#omopan-window{left:8px;right:8px;}}
   @media(max-height:500px){#omopan-window{height:260px;bottom:80px;}}
 </style>
