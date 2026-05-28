@@ -1,6 +1,7 @@
 (function(){
   var s = document.createElement('style');
-  s.textContent = '#donate-fab{position:fixed;bottom:24px;right:20px;z-index:99999;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:sans-serif}'
+  s.textContent = '#donate-fab{position:fixed;bottom:24px;right:20px;z-index:99999;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:sans-serif;pointer-events:none}'
+  + '#donate-fab>*{pointer-events:auto}'
   + '#donate-panel{display:flex;flex-direction:column;gap:7px;opacity:0;transform:translateY(10px);pointer-events:none;transition:all 0.25s ease}'
   + '#donate-panel.open{opacity:1;transform:translateY(0);pointer-events:auto}'
   + '.dbtn{display:flex;align-items:center;gap:9px;background:#1C1A14;border:1.5px solid #C8972A;border-radius:10px;padding:9px 14px;text-decoration:none;color:#F5F0E8;font-size:12px;font-weight:600;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,0.7);transition:background 0.2s,color 0.2s}'
