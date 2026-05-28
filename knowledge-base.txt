@@ -1,0 +1,161 @@
+=== TENTANG OM OPAN ===
+Nama: Om Opan, pemilik dan pengelola Bunker Opanowski di Villa Ciracas, Ciracas, Jakarta Timur.
+Pekerja informal yang telah mandiri lebih dari 20 tahun.
+Anti hutang seumur hidup, anti riba, selalu mencari keberkahan dalam setiap langkah.
+Tinggal di Villa Ciracas bersama nyokap tercinta berusia 76 tahun.
+Autodidak di berbagai bidang: otomotif, teknologi, pertanian, peternakan, hingga bangunan.
+Prinsip hidup: efisien, fungsional, berkah.
+Filosofi gadget: "Gunakan sampai benar-benar mati."
+Pernah melunasi hutang 150 juta almarhum adik (Alm. Bayu) tanpa berhutang sepeser pun.
+Minuman harian: Top Kopi Gula Aren.
+Strategi kerja: menggunakan 3 AI sekaligus — Claude, Gemini, ChatGPT.
+Website: https://opanowski.github.io/opanowski/
+
+=== FILOSOFI HIDUP OM OPAN ===
+"Tekanan hidup berbanding lurus dengan gaya hidup. Makin besar gaya hidup, makin besar tekanannya."
+"Keinginan dikalahkan kebutuhan. Makin banyak riset, makin males upgrade."
+"Anti hutang & riba seumur hidup. Mencari keberkahan — bukan sekadar kekayaan."
+"Yang penting hati tenang & happy. Lihat ke bawah, jangan sering lihat ke atas."
+"Sedekah terbaik adalah dari hasil keringat sendiri. Panen dibagi — bukan untuk dijual."
+"Dibalik setiap kesulitan, pasti ada kemudahan. Ikhlas adalah kunci dari setiap ujian." (QS. Al-Insyirah: 5-6)
+"Cari berkah hidup aja — biar tenang dan damai." — Om Opan, 2026
+"Belajar sampai menutup mata."
+Anti FOMO, pro berkah, pro DIY, pro zero-waste.
+
+=== VILLA CIRACAS ===
+Luas: 150m² di tengah kota Jakarta Timur.
+Penghuni: Om Opan + Nyokap (76 tahun, masih aktif memasak setiap hari).
+Masakan andalan nyokap: bumbu kacang siomay diulek manual, seblak kerupuk, siomay, sambal chili oil, pisang goreng tepung, ngeliwet, bakar-bakaran, shabu-shabu.
+Penghargaan: Terpilih se-RT untuk lomba rumah sehat se-Kecamatan Ciracas.
+Konblok hexagonal di halaman.
+WiFi 24 jam gratis, karaoke, gitar akustik, organ, Mac & tablet siap.
+
+=== ASET PROPERTI OM OPAN ===
+1. Rumah Ciracas — 150m², tempat tinggal utama.
+2. Kontrakan 3 pintu — renovasi 80%, passive income Rp3 juta/bulan.
+3. 2 rumah di Bandung.
+4. Kebun 1400m² + sawah 700m² di Bandung.
+
+=== SETUP & GADGET ===
+Laptop utama: MacBook Pro 15" Mid 2015 — RAM 16GB / SSD 512GB / Dual GPU.
+Tablet: Lenovo Xiaoxin Pad 2024 (8GB/128GB) — diubah jadi TinyPC Debian.
+HP: Oppo Reno 4 — daily driver.
+HDD External: 512GB + 1TB + 2TB.
+Speaker: GMC 899Q + Kiip DTS 16.
+Headphone: Vivan Liberty H200.
+Mikrofon: LGT 240 + Soundcard F998.
+Powerbank: Vivan 20.000mAh.
+Gitar: akustik string & nylon.
+Motor: Beat Karbu 2009 + Vario 110 FI + Vario 125 ESP.
+AI tools: Claude + Gemini + ChatGPT (triple AI combo).
+Minuman: Top Kopi Gula Aren — bahan bakar utama.
+
+=== KENDARAAN & OTOMOTIF ===
+1. Beat Karbu 2009 — motor pertama, dirawat sendiri, full DIY.
+2. Vario 110 FI — motor injeksi, servis mandiri.
+3. Vario 125 ESP — motor terbaru.
+Om Opan servis 3 motor sendiri: CVT, rem, shock, karbu, injeksi, elektronik.
+Peralatan bengkel: kompresor Izumi 24L, las 450W, 97 item tools & sparepart terdaftar.
+Filosofi motor: dirawat sendiri, hemat biaya, ilmu terus bertambah.
+
+=== PROJECT #001 — AVIARY KANDANG MANDIRI TELUR ===
+Status: Ongoing (mulai Januari 2026).
+Lokasi: Villa Ciracas, Jakarta Timur.
+Dimensi kandang: 2m × 1.5m × 2m (tinggi).
+Populasi: 2 ayam broiler betina + 2 puyuh jantan.
+Sistem: Deep Litter Organik — alas tanah 15cm dicampur daun kering.
+Hasil: 1-2 butir telur per hari, sudah 4 bulan tidak beli telur.
+Zero amonia, zero bau — karena mikroorganisme di tanah mengurai kotoran otomatis.
+Kotoran ayam langsung jadi kompos. Zero waste.
+Prinsip: "Bukan kandang biasa, ini ekosistem mini."
+Ayam berasal dari DOC (Day Old Chick) — dirawat dari kecil, bukan beli yang sudah siap telur.
+Rencana: tambah 2-4 ekor lagi, ekspansi puyuh betina untuk telur puyuh.
+
+=== PROJECT #002 — MULSA ORGANIK BATANG PISANG ===
+Status: Done (Mei 2026).
+Konsep: Batang pisang yang ditebang dimanfaatkan 100%, zero waste.
+Daun pisang: ke dapur nyokap (bungkus nasi, alas kukus, pembungkus tempe).
+Batang pisang: dicacah jadi mulsa organik, ditabur ke atas pot tanaman.
+Kenapa disebut "Kulkas Alami": batang pisang mengandung 90% air, menguap perlahan = efek pendinginan akar.
+Manfaat mulsa batang pisang:
+- Mendinginkan akar di cuaca panas Jakarta Timur.
+- Menjaga kelembaban tanah, kurangi frekuensi penyiraman.
+- Pupuk lambat rilis saat lapuk.
+- Habitat mikroorganisme baik.
+Durasi manfaat: 2-3 minggu.
+Biaya: 0 rupiah.
+Siklus zero waste: pohon tumbuh → dipanen → daun ke dapur → batang jadi mulsa → tanah subur → pohon baru tumbuh.
+
+=== PROJECT #003 — TINYPC DEBIAN (LENOVO XIAOXIN PAD) ===
+Status: Ongoing (2025 - sekarang).
+Device: Lenovo Xiaoxin Pad 2024, RAM 8GB, Storage 128GB.
+OS: Debian Linux dengan tampilan mirip Windows 10 (TinyPC mode).
+Office: WPS Office PC Version.
+Aksesoris: keyboard wireless + mouse wireless + stylus.
+Fungsi utama:
+1. Drafting konten (nulis blog, edit script, susun ide).
+2. Backup workstation kalau MacBook lagi berat.
+3. Portable desktop — bisa dibawa ke mana saja.
+Sinkronisasi dengan MacBook via LocalSend (transfer file tanpa kabel, tanpa cloud).
+Filosofi: "Tablet nganggur itu dosa. Kalau speknya 8GB, dia layak jadi workstation."
+
+=== URBAN FARMING & KEBUN ===
+Kebun aktif di Villa Ciracas (150m²).
+Tanaman yang dibudidayakan:
+- Anggur Heliodor, Tamaki, Moondrop — umur 2 bulan sudah 2 meter tingginya.
+- Jambu air citra, delima, kedondong mini.
+- Sayuran: bayam, kangkung, cabai, tomat, seledri organik.
+- Apotek hidup.
+Asal mula berkebun: sekitar 2002-2003, iseng buang sisa bawang merah ke kolam kompos bekas — eh tumbuh subur. Dari situ mulai serius tanam-menanam.
+Januari 2011: minta bibit ke nyokap di Bandung — bayam, kangkung, selada, sawi, cabai, tomat. Beberapa bulan kemudian panen besar.
+Prinsip: hasil kebun lebih sering dibagikan ke tetangga & sodara daripada dijual.
+Kelinci: 1 ekor, air lindi + kotoran kelinci jadi pupuk alami.
+
+=== LOG HARIAN & ARTIKEL BLOG ===
+
+Blog #087 — CoreTax Drama (5 Mei 2026):
+Niat taat pajak via portal CoreTax berujung drama teknis. Validasi foto berhasil, pulsa kepotong, semua centang hijau — tapi pas klik Simpan? "Operasi Gagal". Menggunakan Iriun Webcam sebagai solusi biometrik.
+
+Blog #086 — Batang Pisang & Panen Telur (3 Mei 2026):
+Pohon pisang ditebang: daun ke dapur ibu, batang dicacah jadi mulsa organik. Panen telur harian dari aviary tetap lancar. Video Shorts di-crosspost ke belasan grup Urban Farming besar di Facebook.
+
+Blog — Evolusi Digital & Swasembada (3 Mei 2026):
+Jangkauan profil meledak +9.622% dengan 1.750 tayangan. 99.8% penonton adalah non-pengikut. Reel 'Siapa Sangka' tembus 700 views. Ada pengunjung dari Luleå, Swedia — 10.000km+ dari Ciracas.
+
+Blog — Website Pribadi 3 Hari 3 AI:
+Bikin website opanowski.github.io hanya dalam 3 hari menggunakan 3 AI sekaligus (Claude, Gemini, ChatGPT). Tanpa coding dari nol, 100% autodidak.
+
+Blog — Konversi M4A ke MP3 di Mac Jadul:
+MacBook Pro Mid 2015 konversi file .m4a 41.9MB ke .mp3. Solusi yang berhasil: VLC → File → Convert/Stream → pilih profil Audio - MP3. Hasil: 28.9MB, berfungsi sempurna.
+
+Blog — LocalSend Transfer Data (2 Mei 2026):
+LocalSend kirim 80MB video kebun dalam sekejap antar device tanpa kabel. TikTok resmi seragam jadi @opanowski. Facebook Pro nunjukin kenaikan tayangan 5.524%.
+
+Blog — Tombol Donasi Bunker (7 Mei 2026):
+Pasang donate widget (Trakteer & Saweria) di website. Drama z-index fix di terminal Mac. Filosofi: karya digital juga butuh pupuk (dukungan).
+
+Blog — Seledri Organik (4 Mei 2026):
+Subuh di Villa Ciracas, secangkir Top Kopi Gula Aren, dan seledri organik yang tumbuh diam-diam di pot. "Menanam itu obat paling murah buat kepala yang pusing."
+
+=== KONTEN & MEDIA SOSIAL ===
+YouTube: youtube.com/@TyoAjjah — Bunker Opanowski Channel.
+TikTok: @opanowski.
+Instagram: @opanowski.
+Threads: @opanowski.
+Twitter/X: @AjjahTyo93183.
+Spotify Podcast: "Om OPAN Podcast" — cerita sehari-hari Bunker Opanowski.
+Video viral: "Sniper Bunglon" — tembus 14.900 menit tayang (setara 248 jam).
+
+=== PERJALANAN HIDUP ===
+Awal 1990-an: Kuliah sambil kerja sejak semester 3. Bokap divonis kanker getah bening 2 tahun sebelum lulus.
+1999: Bokap berpulang saat Om Opan berusia 23 tahun. Semua tanggung jawab keluarga berpindah ke satu pundak.
+2000-an: Jadi wali nikah adik, antarjemput 3-4 anak sekolah tiap hari, mengurus keluarga besar.
+Amanah Alm. Bayu (adik bungsu): melunasi hutang 150 juta tanpa hutang sepeser pun, dari keringat sendiri.
+Hingga kini: merawat nyokap 76 tahun, menjaga semua aset properti, terus belajar autodidak.
+
+=== BENGKEL & TOOLS ===
+Kompresor: Izumi 24L.
+Las: 450W.
+Total inventaris: 97 item (tools, sparepart, cairan, elektronik).
+Servis mandiri: CVT, rem, shock absorber, karburator, injeksi, kelistrikan motor.
+Filosofi bengkel: "Servis sendiri = hemat + ilmu bertambah."
