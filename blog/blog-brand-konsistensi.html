@@ -558,12 +558,13 @@ function closeMenu(){
 
 
 
+
 <!-- OMOPAN-CHAT-INJECTED -->
 <style>
   #omopan-fab{position:fixed;bottom:24px;left:24px;width:56px;height:56px;border-radius:50%;background:#1a7f5a;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.22);z-index:9999;transition:transform 0.2s;font-size:24px;}
   #omopan-fab:hover{transform:scale(1.08);}
   #omopan-notif{position:absolute;top:-4px;right:-4px;background:#e24b4a;color:#fff;font-size:10px;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:sans-serif;}
-  #omopan-window{position:fixed;bottom:92px;left:12px;right:12px;width:auto;max-width:360px;height:420px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);display:flex;flex-direction:column;overflow:hidden;z-index:9998;font-family:sans-serif;transition:opacity 0.2s,transform 0.2s;}
+  #omopan-window{position:fixed;bottom:92px;left:12px;right:12px;width:auto;max-width:360px;height:420px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);display:flex;flex-direction:column;overflow:hidden;z-index:10000;font-family:sans-serif;transition:opacity 0.2s,transform 0.2s;}
   #omopan-window.omopan-hidden{opacity:0;pointer-events:none;transform:translateY(12px);}
   #omopan-header{background:#1a7f5a;padding:12px 14px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
   .omopan-avatar{width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#1a7f5a;flex-shrink:0;}
@@ -575,7 +576,7 @@ function closeMenu(){
   .omopan-bot{background:#fff;color:#222;border-bottom-left-radius:4px;align-self:flex-start;box-shadow:0 1px 3px rgba(0,0,0,0.07);}
   .omopan-user{background:#1a7f5a;color:#fff;border-bottom-right-radius:4px;align-self:flex-end;}
   .omopan-typing{color:#888;font-style:italic;}
-  #omopan-footer{padding:10px;background:#fff;border-top:0.5px solid #e0e0e0;display:flex;align-items:center;gap:8px;flex-shrink:0;position:sticky;bottom:0;box-sizing:border-box;width:100%;}
+  #omopan-footer{padding:10px;background:#fff;border-top:0.5px solid #e0e0e0;display:flex;align-items:center;gap:8px;flex-shrink:0;position:relative;bottom:0;box-sizing:border-box;width:100%;z-index:10000;}
   #omopan-input{flex:1;min-width:0;border:0.5px solid #d0d0d0;border-radius:20px;padding:10px 14px;font-size:13px;outline:none;font-family:sans-serif;box-sizing:border-box;-webkit-appearance:none;display:block;}
   #omopan-send{background:#1a7f5a;border:none;border-radius:50%;width:44px;height:44px;min-width:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
   #omopan-send svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;}
