@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dari Nol Sampai "Tanya Om Opan" Bisa Ngobrol Sendiri — Bunker Opanowski</title>
-<meta name="description" content="Perjalanan 2 hari bikin AI chatbot gratis di web statis GitHub Pages. Dari bug 5 jam sampai berhasil deploy Cloudflare Workers AI dengan Llama 3.1 — total biaya: Rp 0.">
+<meta name="description" content="Perjalanan 2 hari bikin AI chatbot gratis di web statis GitHub Pages. Dari bug 5 jam sampai berhasil deploy Cloudflare Workers AI dengan Llama 3.3 70B — total biaya: Rp 0.">
 <meta property="og:title" content="Dari Nol Sampai 'Tanya Om Opan' Bisa Ngobrol Sendiri">
-<meta property="og:description" content="Perjalanan 2 hari bikin AI chatbot gratis di static site. Cloudflare Workers, Llama 3.1, dan bug sialan yang nyangkut 5 jam.">
+<meta property="og:description" content="Perjalanan 2 hari bikin AI chatbot gratis di static site. Cloudflare Workers, Llama 3.3 70B, dan bug sialan yang nyangkut 5 jam.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-tanya-om-opan.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
@@ -357,11 +357,11 @@
       <span class="tag-pill blue">🤖 AI Chatbot</span>
       <span class="tag-pill green">☁️ Cloudflare Workers</span>
       <span class="tag-pill">🆓 Rp 0 Total</span>
-      <span class="tag-pill blue">🦙 Llama 3.1</span>
+      <span class="tag-pill blue">🦙 Llama 3.3 70B</span>
     </div>
     <h1 class="hero-title">Dari Nol Sampai <em>"Tanya Om Opan"</em> Bisa Ngobrol Sendiri</h1>
     <div class="hero-meta">
-      <span><span class="live-dot"></span> 29 Mei 2026</span>
+      <span><span class="live-dot"></span> 30 Mei 2026</span>
       <span>·</span>
       <span>Om Opan — Villa Ciracas, Jakarta Timur</span>
       <span>·</span>
@@ -373,7 +373,7 @@
 <div class="container">
 <div class="artikel-body">
 
-  <p>Subuh, 29 Mei 2026. Top Kopi Gula Aren masih mengepul. Di layar MacBook Pro Mid 2015 yang udah 10 tahun setia menemani, sebuah kotak chat kecil muncul di pojok kiri bawah blog ini. Teks pertama menyapa: <strong style="color:var(--cream)">"Halo bro! Gw Om Opan 👋"</strong></p>
+  <p>Subuh, 30 Mei 2026. Top Kopi Gula Aren masih mengepul. Di layar MacBook Pro Mid 2015 yang udah 10 tahun setia menemani, sebuah kotak chat kecil muncul di pojok kiri bawah blog ini. Teks pertama menyapa: <strong style="color:var(--cream)">"Halo bro! Gw Om Opan 👋"</strong></p>
 
   <p>Gw ketik: "pisang sebagai kulkas maksudnya gimana??" — dan dia jawab dengan benar. Lengkap, natural, gaya Om Opan beneran.</p>
 
@@ -571,7 +571,7 @@
 
   <div class="info-box green">
     <div class="info-box-label">🦙 Cloudflare Workers AI Free Tier</div>
-    <strong>10.000 request/hari</strong>. Tanpa kartu kredit. Tanpa API key eksternal. Zero cost beneran. Model: <strong>@cf/meta/llama-3.1-8b-instruct</strong> — cukup pinter buat chatbot santai gaya Om Opan.
+    <strong>10.000 request/hari</strong>. Tanpa kartu kredit. Tanpa API key eksternal. Zero cost beneran. Model: <strong>@cf/meta/llama-3.3-70b-instruct-fp8-fast</strong> — cukup pinter buat chatbot santai gaya Om Opan.
   </div>
 
   <div class="terminal-box">
@@ -586,7 +586,7 @@
       <span class="err">- semua kode panggilan Gemini API</span><br>
       <span class="err">- GEMINI_API_KEY environment variable</span><br><br>
       <span class="ok">// DITAMBAH:</span><br>
-      <span class="ok">+ env.AI.run("@cf/meta/llama-3.1-8b-instruct", {</span><br>
+      <span class="ok">+ env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {</span><br>
       <span class="ok">+   messages: [systemPrompt, ...userHistory]</span><br>
       <span class="ok">+ })</span><br><br>
       <span class="out">// TIDAK BERUBAH:</span><br>
@@ -616,7 +616,7 @@
     <span class="arch-node">☁️ Cloudflare Worker</span>
     <span class="arch-note">(proxy — knowledge base + persona Om Opan tersimpan di sini)</span>
     <span class="arch-arrow">↓ panggil Cloudflare AI</span>
-    <span class="arch-node">🦙 Llama 3.1 8B Instruct</span>
+    <span class="arch-node">🦙 Llama 3.3 70B 8B Instruct</span>
     <span class="arch-note">(jawab berdasarkan knowledge base)</span>
     <span class="arch-arrow">↓ jawaban balik ke widget</span>
     <span class="arch-node">💬 Ditampilkan ke pengunjung</span>
@@ -644,7 +644,7 @@
       <div class="tech-emoji">🦙</div>
       <div>
         <div class="tech-name">Cloudflare AI</div>
-        <div class="tech-desc">Llama 3.1 — gratis, 10k req/hari</div>
+        <div class="tech-desc">Llama 3.3 70B — gratis, 10k req/hari</div>
       </div>
     </div>
     <div class="tech-item">
@@ -705,7 +705,7 @@
     <span class="hashtag">#TanyaOmOpan</span>
     <span class="hashtag">#AIChatbot</span>
     <span class="hashtag">#CloudflareWorkers</span>
-    <span class="hashtag">#Llama31</span>
+    <span class="hashtag">#Llama33-70B</span>
     <span class="hashtag">#StaticSite</span>
     <span class="hashtag">#GitHubPages</span>
     <span class="hashtag">#GratisTotal</span>
@@ -734,7 +734,7 @@
 
 <footer>
   Bunker Opanowski — Dari Nol Sampai "Tanya Om Opan" Bisa Ngobrol Sendiri
-  <span class="updated-tag"><span class="live-dot"></span>29 Mei 2026</span>
+  <span class="updated-tag"><span class="live-dot"></span>30 Mei 2026</span>
   <div class="social-links">
     <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
