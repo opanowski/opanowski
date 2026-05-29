@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "027",
+    date: "29 Mei 2026",
+    title: "Dari Nol Sampai \"Tanya Om Opan\" Bisa Ngobrol Sendiri",
+    subtitle: "Perjalanan 2 hari bikin AI chatbot gratis di web statis GitHub Pages. Dari bug 5 jam sampai berhasil deploy Cloudflare Workers AI dengan Llama 3.1 — total biaya: Rp 0.",
+    tags: ["AI Chatbot", "Cloudflare Workers", "Tech"],
+    emoji: "🤖",
+    url: "/opanowski/blog/blog-tanya-om-opan.html"
+  },
+  {
     number: "026",
     date: "26 Mei 2026",
     title: "Labu Botol: Eksperimen Buah Kampung di Lahan 150m²",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Senam Otak", "Tech", "Villa Ciracas"],
     emoji: "🧠",
     url: "/opanowski/blog/blog-senam-otak-setengah-abad.html"
-  },
-  {
-    number: "024",
-    date: "24 Mei 2026",
-    title: "Esensi Swasembada Kreatif: Menikmati Proses Otodidak Tanpa Harus Terbawa Arus",
-    subtitle: "Ramai kursus AI instan di sosmed, tapi Om Opan tetep di jalur berdikari. Otodidak bukan soal pelit ilmu — ini soal ritme, kebebasan, dan momen nonton bareng Nyokap yang tak ternilai.",
-    tags: ["Filosofi", "Otodidak", "Villa Ciracas"],
-    emoji: "✍️",
-    url: "/opanowski/blog/blog-swasembada-kreatif-otodidak.html"
   },
 ];
 
