@@ -256,6 +256,36 @@ body::before{
   .ekspresi-strip{gap:0.75rem}
   .ekspresi-img{width:48px;height:48px}
 }
+
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0px rgba(200,151,42,0)}50%{box-shadow:0 0 14px rgba(200,151,42,0.35),0 0 28px rgba(200,151,42,0.15)}}
+@keyframes glowPulseGreen{0%,100%{box-shadow:0 0 0px rgba(76,175,125,0)}50%{box-shadow:0 0 14px rgba(76,175,125,0.35),0 0 28px rgba(76,175,125,0.12)}}
+@keyframes pillSlide{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+.day-col.active{animation:glowPulse 2.8s ease-in-out infinite}
+.day-col.alt{animation:glowPulseGreen 2.8s ease-in-out infinite}
+.week-grid .pill{opacity:0}
+.week-grid .pill.visible{opacity:1}
+.week-grid .pill.animating{animation:pillSlide 0.35s ease both}
+.countdown-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem;animation:fadeUp 0.7s 0.28s ease both}
+.countdown-box{background:var(--gold-light);border:1px solid var(--gold-border);border-radius:12px;padding:0.9rem 1.6rem;text-align:center;min-width:180px}
+.countdown-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);opacity:0.7;margin-bottom:0.3rem}
+.countdown-day{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--cream);margin-bottom:0.15rem}
+.countdown-timer{font-size:1.6rem;font-weight:500;letter-spacing:3px;color:var(--gold);font-variant-numeric:tabular-nums}
+.countdown-sub{font-size:0.65rem;opacity:0.35;margin-top:0.2rem;letter-spacing:1px}
+.mini-cal{background:rgba(255,255,255,0.03);border:0.5px solid var(--gold-border);border-radius:14px;padding:1rem 1.2rem;margin-bottom:2.5rem;animation:fadeUp 0.7s 0.3s ease both}
+.mini-cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem}
+.mini-cal-title{font-family:var(--font-display);font-size:0.85rem;color:var(--gold)}
+.mini-cal-nav{display:flex;gap:0.5rem}
+.mini-cal-nav button{background:transparent;border:0.5px solid var(--gold-border);color:var(--gold);border-radius:6px;padding:2px 8px;font-size:0.7rem;cursor:pointer;transition:background 0.2s}
+.mini-cal-nav button:hover{background:var(--gold-light)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal-day-label{font-size:0.6rem;letter-spacing:1px;text-transform:uppercase;opacity:0.35;padding:3px 0}
+.cal-day{font-size:0.72rem;padding:5px 2px;border-radius:6px;position:relative}
+.cal-day.today{background:rgba(200,151,42,0.2);color:var(--gold);font-weight:700;border:1px solid var(--gold-border)}
+.cal-day.post-day{background:rgba(200,151,42,0.08);color:var(--gold);font-weight:500}
+.cal-day.post-day::after{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--gold);margin:2px auto 0}
+.cal-day.alt-day{background:rgba(76,175,125,0.08);color:#4caf7d}
+.cal-day.alt-day::after{background:#4caf7d}
+.cal-day.empty{opacity:0}
 </style>
 </head>
 <body>
@@ -290,6 +320,28 @@ body::before{
       <span class="ekspresi-label">Cool</span>
       <span class="ekspresi-tooltip">Pas konten jadi 😎</span>
     </div>
+  </div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-wrap">
+    <div class="countdown-box">
+      <div class="countdown-label">Posting berikutnya</div>
+      <div class="countdown-day" id="cd-day">&#8212;</div>
+      <div class="countdown-timer" id="cd-timer">--:--:--</div>
+      <div class="countdown-sub" id="cd-sub">menghitung...</div>
+    </div>
+  </div>
+
+  <!-- MINI CALENDAR -->
+  <div class="mini-cal">
+    <div class="mini-cal-header">
+      <div class="mini-cal-title" id="cal-title">&#8212; 2026</div>
+      <div class="mini-cal-nav">
+        <button onclick="changeMonth(-1)">&#8249;</button>
+        <button onclick="changeMonth(1)">&#8250;</button>
+      </div>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
   </div>
 
   <!-- LEGEND -->
@@ -380,5 +432,92 @@ body::before{
   <div class="footer">Bunker Opanowski · Villa Ciracas · Istiqomah · Qona'ah · Tawakkal · Berkah</div>
 
 </div>
+<script>
+window.addEventListener('load', function() {
+  document.querySelectorAll('.week-grid .pill').forEach(function(pill, i) {
+    setTimeout(function() {
+      pill.classList.add('animating', 'visible');
+      setTimeout(function() { pill.classList.remove('animating'); }, 400);
+    }, 600 + i * 90);
+  });
+  document.querySelectorAll('.legend .pill').forEach(function(p) {
+    p.style.opacity = '1';
+  });
+});
+
+var POST_DAYS = [2, 4, 6];
+var DAY_NAMES = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+
+function getNextPost() {
+  var now = new Date();
+  for (var offset = 0; offset < 8; offset++) {
+    var d = new Date(now);
+    d.setDate(now.getDate() + offset);
+    d.setHours(9, 0, 0, 0);
+    if (POST_DAYS.indexOf(d.getDay()) >= 0 && d > now) return d;
+  }
+}
+
+function updateCountdown() {
+  var next = getNextPost();
+  if (!next) return;
+  var diff = next - new Date();
+  var h = Math.floor(diff / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-day').textContent = DAY_NAMES[next.getDay()];
+  document.getElementById('cd-timer').textContent =
+    String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  var days = Math.floor(diff / 86400000);
+  document.getElementById('cd-sub').textContent = days === 0 ? 'hari ini!' : days + ' hari lagi';
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+var MONTHS_ID = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+var calDate = new Date();
+
+function changeMonth(dir) {
+  calDate.setMonth(calDate.getMonth() + dir);
+  renderCal();
+}
+
+function renderCal() {
+  var today = new Date();
+  var yr = calDate.getFullYear();
+  var mo = calDate.getMonth();
+  document.getElementById('cal-title').textContent = MONTHS_ID[mo] + ' ' + yr;
+  var grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+  ['Sen','Sel','Rab','Kam','Jum','Sab','Min'].forEach(function(d) {
+    var el = document.createElement('div');
+    el.className = 'cal-day-label';
+    el.textContent = d;
+    grid.appendChild(el);
+  });
+  var firstDay = new Date(yr, mo, 1).getDay();
+  var startOffset = (firstDay === 0) ? 6 : firstDay - 1;
+  var daysInMonth = new Date(yr, mo + 1, 0).getDate();
+  for (var i = 0; i < startOffset; i++) {
+    var el = document.createElement('div');
+    el.className = 'cal-day empty';
+    el.textContent = '';
+    grid.appendChild(el);
+  }
+  for (var day = 1; day <= daysInMonth; day++) {
+    var el = document.createElement('div');
+    var dow = new Date(yr, mo, day).getDay();
+    var isToday = day === today.getDate() && mo === today.getMonth() && yr === today.getFullYear();
+    var cls = 'cal-day';
+    if (isToday) cls += ' today';
+    else if (dow === 2 || dow === 4) cls += ' post-day';
+    else if (dow === 6) cls += ' post-day alt-day';
+    el.className = cls;
+    el.textContent = day;
+    grid.appendChild(el);
+  }
+}
+renderCal();
+</script>
 </body>
 </html>
