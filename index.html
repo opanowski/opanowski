@@ -160,9 +160,30 @@ section{padding:6rem 2.5rem}
 }
 .theme-toggle{background:none;border:1px solid rgba(200,151,42,0.35);border-radius:20px;padding:0.3rem 0.75rem;cursor:pointer;font-size:0.85rem;color:var(--gold);transition:all 0.2s;margin-right:0.5rem}
 .theme-toggle:hover{background:rgba(200,151,42,0.1)}
-body.light{--dark:#F5F0E8;--cream:#1C1A14;--gold:#8B6914;--gold-border:rgba(139,105,20,0.35);--gold-light:rgba(139,105,20,0.1)}
+body.light{--dark:#F5F0E8;--dim:#EAE5DA;--cream:#1C1A14;--gold:#8B6914;--gold-border:rgba(139,105,20,0.35);--gold-light:rgba(139,105,20,0.1);--text-muted:#4a4535}
 body.light nav{background:rgba(245,240,232,0.95)}
 body.light .hero-overlay{background:linear-gradient(105deg,rgba(245,240,232,0.92) 0%,rgba(245,240,232,0.55) 55%,rgba(245,240,232,0.2) 100%)}
+body.light .section-title{color:#1C1A14}
+body.light .section-label{color:#8B6914}
+body.light .about-text p{color:#2a2510;opacity:1}
+body.light .nyokap-text p{color:#2a2510;opacity:1}
+body.light .v-card{background:rgba(255,255,255,0.6);border-color:rgba(139,105,20,0.2)}
+body.light .v-card p{color:#3a3520}
+body.light .aset-card{background:rgba(255,255,255,0.6)}
+body.light .aset-card p{color:#3a3520}
+body.light .s-item{background:rgba(0,0,0,0.04);border-color:rgba(0,0,0,0.1)}
+body.light .s-item span{color:#2a2510;opacity:1}
+body.light .f-card p{color:#1C1A14;opacity:1}
+body.light .f-card{background:rgba(139,105,20,0.06)}body.light footer{background:#F0EBE0 !important}body.light footer *{color:#1C1A14 !important;opacity:1 !important}body.light .post-title,body.light .post-card h3,body.light .post-card a{color:#1C1A14 !important}body.light .post-card{background:#fff}body.light .update-card,body.light [class*="card"] h3{color:#1C1A14 !important}
+body.light .mobile-menu{background:rgba(245,240,232,0.98)}
+body.light .mobile-menu a{color:#1C1A14}
+body.light .hamburger span{background:#1C1A14}
+body.light .nav-links a{color:#1C1A14}
+body.light .hero-sub{color:#2a2510;opacity:1}
+body.light .stat-label{color:#2a2510;opacity:1}
+body.light .hero-title{color:#1C1A14}
+body.light h3{color:#1C1A14}
+body.light p{color:#2a2510}
 .hero-btn-blog:hover,.hero-btn-projects:hover{
   opacity:0.82;transform:translateY(-1px);
 }
@@ -464,30 +485,48 @@ body.light .hero-overlay{background:linear-gradient(105deg,rgba(245,240,232,0.92
 
   <div style="display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-top:1.75rem">
     <a title="Tonton di YouTube" href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,0,0,0.08);border:1px solid rgba(255,0,0,0.25);color:#ff4444;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">▶ YouTube</a>
-    <a title="Follow di TikTok" href="https://www.tiktok.com/@opanowski" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#f0f0f0;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">♪ TikTok</a>
+    <a title="Follow di TikTok" href="https://www.tiktok.com/@opanowski" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#d0d0d0;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">♪ TikTok</a>
     <a title="Follow di Instagram" href="https://www.instagram.com/opanowski/" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,100,200,0.08);border:1px solid rgba(200,100,200,0.25);color:#e879f9;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">◉ Instagram</a>
     <a title="Follow di Threads" href="https://www.threads.com/@opanowski" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#d0d0d0;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">@ Threads</a>
-    <a title="Follow di X/Twitter" href="https://x.com/AjjahTyo93183" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#e0e0e0;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">𝕏 Twitter</a>
+    <a title="Follow di X/Twitter" href="https://x.com/AjjahTyo93183" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#d0d0d0;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">𝕏 Twitter</a>
     <a title="Podcast di Spotify" href="https://open.spotify.com/show/0IjFXGMOWSwEfNLuZPrqxx" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(30,215,96,0.08);border:1px solid rgba(30,215,96,0.25);color:#1ed760;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">● Spotify</a>
     <a title="Follow di Facebook" href="https://www.facebook.com/opanowski.ajjah/" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(77,148,255,0.08);border:1px solid rgba(77,148,255,0.25);color:#4d94ff;text-decoration:none;padding:0.45rem 1rem;border-radius:20px;font-size:0.74rem">▶ Facebook</a>
   </div>
 </footer>
 
 <script>
+function fixInlineColors(isLight){
+  var dark="#3a3520",muted="#4a4535";
+  document.querySelectorAll("[style]").forEach(function(el){
+    var s=el.getAttribute("style");
+    if(isLight){
+      el.setAttribute("data-style-dark",s);
+      var ns=s.replace(/color:#c0c6d4/g,"color:"+dark)
+              .replace(/color:#b0b6c4/g,"color:"+muted)
+              .replace(/color:#b8bdc9/g,"color:"+muted)
+              .replace(/color:var\(--cream\)/g,"color:#1C1A14")
+              .replace(/background:#111/g,"background:#e8e4da").replace(/color:#d0d0d0/g,"color:#3a3520").replace(/color:#f0f0f0/g,"color:#3a3520").replace(/color:#e0e0e0/g,"color:#3a3520").replace(/rgba\(255,255,255,0\.05\)/g,"rgba(0,0,0,0.06)").replace(/rgba\(255,255,255,0\.15\)/g,"rgba(0,0,0,0.15)");
+      el.setAttribute("style",ns);
+    } else {
+      var orig=el.getAttribute("data-style-dark");
+      if(orig) el.setAttribute("style",orig);
+    }
+  });
+}
 function toggleTheme(){
   var body=document.body;
   var btn=document.getElementById("themeToggle");
   if(body.classList.contains("light")){
-    body.classList.remove("light");
+    body.classList.remove("light");fixInlineColors(false);
     btn.textContent="🌙";
     localStorage.setItem("theme","dark");
   } else {
-    body.classList.add("light");
+    body.classList.add("light");fixInlineColors(true);
     btn.textContent="☀️";
     localStorage.setItem("theme","light");
   }
 }
-(function(){if(localStorage.getItem("theme")==="light"){document.body.classList.add("light");var b=document.getElementById("themeToggle");if(b)b.textContent="☀️";}})()
+(function(){if(localStorage.getItem("theme")==="light"){document.body.classList.add("light");fixInlineColors(true);var b=document.getElementById("themeToggle");if(b)b.textContent="☀️";}})()
 function toggleMenu(){
   const menu = document.getElementById('mobileMenu');
   const hamburger = document.getElementById('hamburger');

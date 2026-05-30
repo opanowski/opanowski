@@ -123,10 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
         '</span>' +
         '<span style="font-size:1.3rem">' + post.emoji + '</span>' +
       '</div>' +
-      '<h3 style="font-family:\'Playfair Display\',serif;font-size:1.08rem;color:#F5F0E8;line-height:1.4;margin-bottom:0.75rem;font-weight:700">' +
+      '<h3 style="font-family:\'Playfair Display\',serif;font-size:1.08rem;color:var(--cream,#F5F0E8);line-height:1.4;margin-bottom:0.75rem;font-weight:700">' +
         post.title +
       '</h3>' +
-      '<p style="font-size:0.82rem;color:#b0b5c8;line-height:1.85;margin-bottom:1rem">' +
+      '<p style="font-size:0.82rem;color:var(--text-muted,#b0b5c8);line-height:1.85;margin-bottom:1rem">' +
         post.subtitle +
       '</p>' +
       '<div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.1rem">' + tagsHTML + '</div>' +
