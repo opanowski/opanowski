@@ -152,6 +152,11 @@ section{padding:6rem 2.5rem}
   background:rgba(76,175,125,0.12);border:1px solid rgba(76,175,125,0.4);
   color:#4caf7d;font-weight:600;
 }
+.theme-toggle{background:none;border:1px solid rgba(200,151,42,0.35);border-radius:20px;padding:0.3rem 0.75rem;cursor:pointer;font-size:0.85rem;color:var(--gold);transition:all 0.2s;margin-right:0.5rem}
+.theme-toggle:hover{background:rgba(200,151,42,0.1)}
+body.light{--dark:#F5F0E8;--cream:#1C1A14;--gold:#8B6914;--gold-border:rgba(139,105,20,0.35);--gold-light:rgba(139,105,20,0.1)}
+body.light nav{background:rgba(245,240,232,0.95)}
+body.light .hero-overlay{background:linear-gradient(105deg,rgba(245,240,232,0.92) 0%,rgba(245,240,232,0.55) 55%,rgba(245,240,232,0.2) 100%)}
 .hero-btn-blog:hover,.hero-btn-projects:hover{
   opacity:0.82;transform:translateY(-1px);
 }
@@ -174,6 +179,7 @@ section{padding:6rem 2.5rem}
     <li><a href="jadwal-konten-bunker-opanowski.html">📅 Jadwal</a></li>
     <li><a href="gudang.html" style="color:var(--gold);opacity:1;border:1px solid rgba(200,151,42,0.35);padding:0.3rem 0.9rem;border-radius:20px;">🔧 Gudang</a></li>
   </ul>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
   <button class="hamburger" onclick="toggleMenu()" id="hamburger"><span></span><span></span><span></span></button>
 </nav>
 
@@ -462,6 +468,20 @@ section{padding:6rem 2.5rem}
 </footer>
 
 <script>
+function toggleTheme(){
+  var body=document.body;
+  var btn=document.getElementById("themeToggle");
+  if(body.classList.contains("light")){
+    body.classList.remove("light");
+    btn.textContent="🌙";
+    localStorage.setItem("theme","dark");
+  } else {
+    body.classList.add("light");
+    btn.textContent="☀️";
+    localStorage.setItem("theme","light");
+  }
+}
+(function(){if(localStorage.getItem("theme")==="light"){document.body.classList.add("light");var b=document.getElementById("themeToggle");if(b)b.textContent="☀️";}})()
 function toggleMenu(){
   const menu = document.getElementById('mobileMenu');
   const hamburger = document.getElementById('hamburger');
@@ -493,7 +513,7 @@ function closeMenu(){
     entries.forEach(function(entry){
       if(entry.isIntersecting){ animateCountUp(entry.target); observer.unobserve(entry.target); }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
   document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.stat-num[data-target]').forEach(function(el){ observer.observe(el); });
   });
