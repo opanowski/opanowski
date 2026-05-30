@@ -158,25 +158,6 @@ body::before{
   transition:opacity 0.2s;
 }
 .pill:hover{opacity:0.8}
-a.pill{text-decoration:none;cursor:pointer}
-a.pill:hover{opacity:1;filter:brightness(1.2)}
-a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
-
-/* BACK BUTTON */
-.back-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:0.5rem;
-  color:var(--gold);
-  text-decoration:none;
-  font-size:0.72rem;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  opacity:0.55;
-  transition:opacity 0.2s ease;
-  margin-bottom:2rem;
-}
-.back-btn:hover{opacity:1}
 .pill-blog{background:rgba(55,138,221,0.15);color:#85b7eb;border:0.5px solid rgba(55,138,221,0.2)}
 .pill-yt{background:rgba(255,60,60,0.12);color:#ff7777;border:0.5px solid rgba(255,60,60,0.2)}
 .pill-ig{background:rgba(212,83,126,0.12);color:#ed93b1;border:0.5px solid rgba(212,83,126,0.2)}
@@ -185,7 +166,6 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
 .pill-xw{background:rgba(200,151,42,0.12);color:#C8972A;border:0.5px solid rgba(200,151,42,0.2)}
 .pill-thr{background:rgba(127,119,221,0.12);color:#afa9ec;border:0.5px solid rgba(127,119,221,0.2)}
 .pill-opt{opacity:0.4;border-style:dashed}
-.pill-fb{background:rgba(24,119,242,0.12);color:#4d94ff;border:0.5px solid rgba(24,119,242,0.25)}
 
 /* LEGEND */
 .legend{
@@ -281,9 +261,6 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
 <body>
 <div class="page">
 
-  <!-- BACK BUTTON -->
-  <a href="index.html" class="back-btn">← Kembali ke Bunker</a>
-
   <!-- HEADER -->
   <div class="header">
     <div class="header-badge">📋 Content Schedule 2026</div>
@@ -294,22 +271,22 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
   <!-- EKSPRESI OM OPAN -->
   <div class="ekspresi-strip">
     <div class="ekspresi-card">
-      <img class="ekspresi-img" src="images/ekspresi/ekspresi_semangat.jpg" onerror="this.style.background='rgba(200,151,42,0.2)';this.src=''" alt="semangat">
+      <img class="ekspresi-img" src="../images/ekspresi/ekspresi_semangat.jpg" onerror="this.style.background='rgba(200,151,42,0.2)';this.src=''" alt="semangat">
       <span class="ekspresi-label">Semangat</span>
       <span class="ekspresi-tooltip">Pas jadwal on-track 🔥</span>
     </div>
     <div class="ekspresi-card">
-      <img class="ekspresi-img" src="images/ekspresi/ekspresi_kagum.jpg" onerror="this.style.background='rgba(55,138,221,0.2)';this.src=''" alt="kagum">
+      <img class="ekspresi-img" src="../images/ekspresi/ekspresi_kagum.jpg" onerror="this.style.background='rgba(55,138,221,0.2)';this.src=''" alt="kagum">
       <span class="ekspresi-label">Kagum</span>
       <span class="ekspresi-tooltip">Pas konten viral 😲</span>
     </div>
     <div class="ekspresi-card">
-      <img class="ekspresi-img" src="images/ekspresi/ekspresi_tertawa.jpg" onerror="this.style.background='rgba(99,179,113,0.2)';this.src=''" alt="tertawa">
+      <img class="ekspresi-img" src="../images/ekspresi/ekspresi_tertawa.jpg" onerror="this.style.background='rgba(99,179,113,0.2)';this.src=''" alt="tertawa">
       <span class="ekspresi-label">Santai</span>
       <span class="ekspresi-tooltip">Pas hari libur 😄</span>
     </div>
     <div class="ekspresi-card">
-      <img class="ekspresi-img" src="images/ekspresi/ekspresi_cool.jpg" onerror="this.style.background='rgba(127,119,221,0.2)';this.src=''" alt="cool">
+      <img class="ekspresi-img" src="../images/ekspresi/ekspresi_cool.jpg" onerror="this.style.background='rgba(127,119,221,0.2)';this.src=''" alt="cool">
       <span class="ekspresi-label">Cool</span>
       <span class="ekspresi-tooltip">Pas konten jadi 😎</span>
     </div>
@@ -324,7 +301,6 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
     <span class="pill pill-wa">WA Business</span>
     <span class="pill pill-xw">Twitter/X</span>
     <span class="pill pill-thr">Threads</span>
-    <span class="pill pill-fb">Facebook</span>
   </div>
 
   <!-- WEEK GRID -->
@@ -338,10 +314,9 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
     <div class="day-col active">
       <div class="day-head">Sel ★</div>
       <div class="day-body">
-        <a href="https://opanowski.github.io/opanowski/blog/index.html" target="_blank" class="pill pill-blog">Blog post</a>
-        <a href="https://www.instagram.com/opanowski/" target="_blank" class="pill pill-ig">IG Reels/Story</a>
-        <a href="https://www.threads.com/@opanowski" target="_blank" class="pill pill-thr">Threads</a>
-        <a href="https://www.facebook.com/opanowski.ajjah" target="_blank" class="pill pill-fb">Facebook</a>
+        <span class="pill pill-blog">Blog post</span>
+        <span class="pill pill-ig">IG Reels/Story</span>
+        <span class="pill pill-thr">Threads</span>
       </div>
     </div>
 
@@ -353,9 +328,9 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
     <div class="day-col active">
       <div class="day-head">Kam ★</div>
       <div class="day-body">
-        <a href="https://www.youtube.com/@bunkeropanowski/shorts" target="_blank" class="pill pill-yt">YT Shorts</a>
-        <a href="https://www.tiktok.com/@opanowski" target="_blank" class="pill pill-tt">TikTok</a>
-        <a href="https://x.com/AjjahTyo93183" target="_blank" class="pill pill-xw">Twitter/X</a>
+        <span class="pill pill-yt">YT Shorts</span>
+        <span class="pill pill-tt">TikTok</span>
+        <span class="pill pill-xw">Twitter/X</span>
       </div>
     </div>
 
@@ -367,10 +342,10 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
     <div class="day-col alt">
       <div class="day-head">Sab ◆</div>
       <div class="day-body">
-        <a href="https://www.youtube.com/@bunkeropanowski/shorts" target="_blank" class="pill pill-yt">YT Shorts</a>
-        <a href="https://www.instagram.com/opanowski/" target="_blank" class="pill pill-ig">IG post</a>
+        <span class="pill pill-yt">YT Shorts</span>
         <span class="pill pill-wa">WA Broadcast</span>
-        <a href="https://www.youtube.com/@bunkeropanowski" target="_blank" class="pill pill-yt pill-opt">YT video (opsional)</a>
+        <span class="pill pill-ig">IG post</span>
+        <span class="pill pill-yt pill-opt">YT video (opsional)</span>
       </div>
     </div>
 
@@ -386,7 +361,7 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
     <div class="notes-title">📌 Catatan Jadwal</div>
     <div class="note-item">
       <span class="note-day">Selasa</span>
-      <span class="note-desc">Blog post baru + langsung cross-post ke IG Reels/Story, Threads, dan Facebook. Konten tulisan / proyek / cerita harian.</span>
+      <span class="note-desc">Blog post baru + langsung cross-post ke IG Reels/Story dan Threads. Konten tulisan / proyek / cerita harian.</span>
     </div>
     <div class="note-item">
       <span class="note-day">Kamis</span>
@@ -405,7 +380,5 @@ a.pill::after{content:'↗';font-size:7px;margin-left:3px;opacity:0.6}
   <div class="footer">Bunker Opanowski · Villa Ciracas · Istiqomah · Qona'ah · Tawakkal · Berkah</div>
 
 </div>
-</body>
-<script src="/opanowski/donate-widget.js"></script>
 </body>
 </html>
