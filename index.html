@@ -14,6 +14,10 @@
 <meta name="twitter:title" content="Bunker Opanowski — Autodidak, Urban Farming & DIY Jakarta">
 <meta name="twitter:description" content="Catatan hidup autodidak dari Ciracas, Jakarta Timur. Urban farming, peternakan mini, bengkel rumahan, gadget, dan filosofi berkah. Belajar sampai menutup mata.">
 <meta name="twitter:image" content="https://opanowski.github.io/opanowski/images/nJFlqNX.jpg">
+<link rel="manifest" href="/opanowski/manifest.json">
+<meta name="theme-color" content="#C8972A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bunker Opanowski">
 <meta name="description" content="Bunker Opanowski — catatan hidup autodidak dari Ciracas, Jakarta Timur. Motor, urban farming, gadget, bengkel rumahan, dan filosofi berkah. Belajar sampai menutup mata.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -571,5 +575,6 @@ function closeMenu(){
   function omopanAddBubble(text,role){const msgs=document.getElementById("omopan-messages");const div=document.createElement("div");div.className="omopan-bubble "+(role==="user"?"omopan-user":"omopan-bot");if(role==="typing"){div.classList.add("omopan-typing");div.id="omopan-typing";}div.textContent=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;div.scrollIntoView({block:"nearest",behavior:"smooth"});return div;}
   async function omopanSend(){const input=document.getElementById("omopan-input");const msg=input.value.trim();if(!msg)return;omopanAddBubble(msg,"user");omopanHistory.push({role:"user",content:msg});input.value="";input.blur();omopanAddBubble("Om Opan lagi mikir...","typing");try{const res=await fetch(OMOPAN_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:omopanHistory})});const data=await res.json();const reply=data.reply||"Waduh, error nih gw. Coba lagi ya bro 😅";const t=document.getElementById("omopan-typing");if(t)t.remove();omopanAddBubble(reply,"bot");omopanHistory.push({role:"assistant",content:reply});}catch(e){const t=document.getElementById("omopan-typing");if(t)t.remove();omopanAddBubble("Koneksi error nih bro, coba lagi bentar 😅","bot");}}
 </script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/opanowski/sw.js").then(function(r){console.log("SW registered",r);}).catch(function(e){console.log("SW failed",e);});});}</script>
 </body>
 </html>

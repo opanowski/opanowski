@@ -1,0 +1,21 @@
+{
+  "name": "Bunker Opanowski",
+  "short_name": "Bunker",
+  "description": "Catatan santai Om Opan — urban farming, mancing, kuliner, Villa Ciracas.",
+  "start_url": "/opanowski/",
+  "display": "standalone",
+  "background_color": "#1C1A14",
+  "theme_color": "#C8972A",
+  "icons": [
+    {
+      "src": "/opanowski/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/opanowski/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
