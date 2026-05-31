@@ -28,6 +28,7 @@
     --font-mono: 'Space Mono', monospace;
   }
 
+  #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--accent); z-index: 9999; transition: width 0.15s ease; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
 
@@ -716,6 +717,15 @@
   function omopanToggle(){const w=document.getElementById("omopan-window");const n=document.getElementById("omopan-notif");w.classList.toggle("omopan-hidden");if(n)n.style.display="none";}
   function omopanAddBubble(text,role){const msgs=document.getElementById("omopan-messages");const div=document.createElement("div");div.className="omopan-bubble "+(role==="user"?"omopan-user":"omopan-bot");if(role==="typing"){div.classList.add("omopan-typing");div.id="omopan-typing";}div.textContent=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;div.scrollIntoView({block:"nearest",behavior:"smooth"});return div;}
   async function omopanSend(){const input=document.getElementById("omopan-input");const msg=input.value.trim();if(!msg)return;omopanAddBubble(msg,"user");omopanHistory.push({role:"user",content:msg});input.value="";input.blur();omopanAddBubble("Om Opan lagi mikir...","typing");try{const res=await fetch(OMOPAN_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:omopanHistory})});const data=await res.json();const reply=data.reply||"Waduh, error nih gw. Coba lagi ya bro 😅";const t=document.getElementById("omopan-typing");if(t)t.remove();omopanAddBubble(reply,"bot");omopanHistory.push({role:"assistant",content:reply});}catch(e){const t=document.getElementById("omopan-typing");if(t)t.remove();omopanAddBubble("Koneksi error nih bro, coba lagi bentar 😅","bot");}}
+</script>
+<div id="progress-bar"></div>
+<script>
+window.addEventListener("scroll", function() {
+  var el = document.getElementById("progress-bar");
+  var scrollTop = document.documentElement.scrollTop;
+  var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  el.style.width = (scrollTop / scrollHeight * 100) + "%";
+});
 </script>
 </body>
 </html>
