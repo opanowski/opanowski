@@ -976,36 +976,6 @@ h1 { font-size: 1.45rem; font-weight: 800; color: var(--accent); letter-spacing:
       <span class="log-arrow">Baca →</span>
     </div>
   </a>
-<!-- ============================================================
-     CATATAN SANTAI — Rutinitas harian, obrolan ringan, dll.
-     ============================================================ -->
-<div class="section-header" id="section-santai">
-  ☕ Catatan Santai <span class="count">1 entri</span>
-</div>
-
-<div class="log-list" id="santai-list">
-
-  <!-- CATATAN SANTAI #001 — Kenangan Bandung -->
-  <a class="log-card" id="entry-kenangan-bandung" href="blog-kenangan-bandung-nyokap-bayu.html" data-tags="santai">
-    <div class="log-card-top">
-      <span class="log-num-badge">☕ Santai</span>
-      <span class="log-date"><span class="live-dot"></span>Minggu, 10 Mei 2026</span>
-      <div class="log-tags">
-        <span class="tag tag-filosofi">❤️ Keluarga</span>
-        <span class="tag tag-filosofi">🕊️ In Memoriam</span>
-      </div>
-    </div>
-    <div class="log-title">Jejak Memori di Bandung: Tentang Ramen, Nyokap, dan Kepergian sang Bontot</div>
-    <div class="log-desc">Membuka folder lama, ketemu foto Nyokap nikmatin ramen di Bandung bareng almarhum adik bontot, Bayu. Foto diproses ulang pakai GIMP di Mac jadul — sebagai bentuk penghormatan untuk memori indah kami. Al-Fatihah. 🍜❤️</div>
-    <div class="log-card-bottom">
-      <div class="log-sections">
-        <span class="section-pill">Kenangan Bandung</span>
-        <span class="section-pill">Alm. Bayu</span>
-        <span class="section-pill">GIMP Processed</span>
-      </div>
-      <span class="log-arrow">Baca →</span>
-    </div>
-  </a>
 
 </div>
 
@@ -1057,9 +1027,6 @@ function applyFilter() {
   });
 
   // Sembunyikan section Catatan Santai kalau filter bukan ALL atau santai
-  const showSantai = currentTag === 'ALL' || currentTag === 'santai';
-  document.getElementById('section-santai').style.display = showSantai ? '' : 'none';
-  document.getElementById('santai-list').style.display = showSantai ? '' : 'none';
 
   document.getElementById('visible-count').textContent = count + ' entri';
   document.getElementById('stat-visible').textContent = count;
