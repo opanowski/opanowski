@@ -2,5 +2,3 @@ name = "bunker-omopan"
 main = "worker.js"
 compatibility_date = "2026-05-29"
 
-[ai]
-binding = "AI"

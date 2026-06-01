@@ -1,6 +1,6 @@
 // ============================================================
 // BUNKER OPANOWSKI — Cloudflare Worker
-// Pakai Cloudflare Workers AI (gratis, no API key eksternal)
+// Pakai Groq API (Llama 3.3 70B) — gratis, cepet, no CC
 // Persona: Om Opan | Deploy ke: Cloudflare Workers (workers.dev)
 // ============================================================
 
@@ -43,7 +43,18 @@ Motor: Beat karbu 2009, Vario 110 FI 2014, Vario 125 FI 2018. Semua Honda, dipak
 [konversi M4A ke MP3] Pakai tools bawaan Mac, gratis, tanpa install software tambahan.
 [donasi] Ada floating button donasi di website. Buka pintu buat yang mau support, sisanya tetap gratis.
 [AI Meta ngacak] AI Meta pernah timpa 3 file inti sekaligus (index.html, latest-posts.js). Diselamatkan pakai Claude + git.
-[chatbot Om Opan] Chatbot AI di static site GitHub Pages, backend pakai Cloudflare Workers AI. Gratis total.
+[chatbot Om Opan] Chatbot AI di static site GitHub Pages, backend pakai Cloudflare Workers + Groq API. Gratis total.
+[pengangguran super sibuk] Tiga minggu aktif bikin konten, Mac jadul 2015 jadi mesin kerja 3 windows sekaligus. Kelola 8 platform sekaligus pakai sistem batching. Data analytics buktiin: konten autentik receh justru lebih engaging dari setup mahal.
+[senam otak setengah abad] Di usia 50an, ngulik kode dan konten justru jadi senam otak. Filosofi: semua dikerjain murni buat fun, tanpa target monet atau validasi. Semua gadget lama di Bunker kebagian tugas — HP lawas dipakai buat cek optimasi mobile.
+[siasat urban farming] Halaman penuh konblok disiasati dengan angkat beberapa konblok, tanam langsung ke tanah. Pare hutan jadi bio-canopy sementara buat anggur. Area kebun merangkap bengkel motor, ada saluran air khusus biar pH tanah tetap aman.
+[log-001 peresmian markas] YouTube channel resmi dibentuk dengan 4 pilar konten: urban farming, otomotif, log harian, swasembada. Video pertama diluncurkan ke TikTok dan Facebook serentak. Setup kerja: MacBook buat GitHub + YouTube Studio, Xiaoxin Pad Debian buat mobile platform.
+[log-006 analisis dapur] Google Analytics: keyword "Opanowski" udah nongol di halaman 1 Google. Rata-rata waktu baca pengunjung tembus 4 menit. Trafik dari luar negeri: Singapura, AS, Swedia. Facebook Reels jadi referral paling efektif ke website.
+[log086 pisang telur] Deep dive sistem aviary dan zero waste batang pisang. Kandang: alas tanah 15cm + daun kering + cakar ayam ngais = kompos alami, zero amonia. Batang pisang dicacah jadi mulsa pot, daun ke dapur nyokap. Siklus kebun-dapur tanpa sampah.
+[lalat hijau kedondong mini] Pohon kedondong mini tabulampot berbunga, didatangi lalat hijau metalik. Ternyata lalat hijau punya dua mode: larva di bangkai/sampah, dewasa jadi polinator bunga. Beberapa bunga bahkan nipu lalat dengan aroma mirip bangkai buat penyerbukan.
+[panen telur batang pisang] Versi ringkas dari log086 — sistem aviary 4 bulan mandiri telur, zero bau. Zero waste: daun pisang ke dapur nyokap, batang jadi mulsa kulkas alami pot tanaman.
+[evolusi digital] Migrasi dari Netlify + WordPress ke GitHub Pages: zero cost, full control, stable. Website diakses dari Singapura, AS, Swedia. Efisiensi bukan dari spek hardware tapi kedalaman penguasaan tool.
+[evolusi swasembada] Proses rebuild website jujur: 51 file revisi index.html sebelum final. AI (Claude, Gemini, ChatGPT) dipakai masing-masing beda peran, tapi keputusan akhir tetap di tangan manusia.
+[pindah gambar ganti warna] Migrasi 17 gambar dari Imgur ke folder images/ GitHub. Bug warna ungu di card ternyata dari browser default visited link color. Solusi: background card hitam pekat seragam + override CSS.
 
 --- PROJECTS ---
 [project-aviary] Kandang ayam sistem deep litter organik. DOC dirawat dari kecil sampai bertelur sendiri. Kunci: alas tanah + daun kering + cakar ayam ngais = kompos alami.
@@ -126,26 +137,41 @@ export default {
 
       const messages = [
         { role: "system", content: SYSTEM_PROMPT },
-        // slice(-4) biar total token tetap aman
         ...userMessages.slice(-4).map((msg) => ({
           role: msg.role === "assistant" ? "assistant" : "user",
           content: msg.content,
         })),
       ];
 
-      const aiResponse = await env.AI.run(
-        "@cf/meta/llama-3.3-70b-instruct-fp8-fast", // ✅ Upgrade dari 8B ke 70B, tetap gratis
-        {
-          messages,
-          max_tokens: 200,      // Singkat dan padat
-          temperature: 0.5,     // Balance antara kreatif dan akurat
+     const models = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"];
+      let groqData = null;
+
+      for (const model of models) {
+        try {
+          const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${env.GROQ_API_KEY}`,
+            },
+            body: JSON.stringify({
+              model,
+              messages,
+              max_tokens: 200,
+              temperature: 0.5,
+            }),
+          });
+          const res = await groqRes.json();
+          if (groqRes.status === 429 || res?.error) continue;
+          groqData = res;
+          break;
+        } catch (e) {
+          continue;
         }
-      );
+      }
 
-      const replyText =
-        aiResponse?.response ||
+      const replyText = groqData?.choices?.[0]?.message?.content ||
         "Waduh, lagi error nih gw. Coba lagi bentar ya bro 😅";
-
       return new Response(
         JSON.stringify({ reply: replyText }),
         {
