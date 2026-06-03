@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "028",
+    date: "3 Jun 2026",
+    title: "Anggur Bali Masuk Fase Veraison — Deg-degan Nunggu yang Siap",
+    subtitle: "Sebagian udah ungu tua, sebagian masih hijau. Nggak bisa dipaksa, nggak bisa diakali. Fase veraison ini titik balik sebelum panen — tinggal sabar & amatin.",
+    tags: ["Urban Farming", "Kebun", "Villa Ciracas"],
+    emoji: "🍇",
+    url: "/opanowski/blog/blog-anggur-bali-veraison.html"
+  },
+  {
     number: "027",
     date: "29 Mei 2026",
     title: "Dari Nol Sampai \"Tanya Om Opan\" Bisa Ngobrol Sendiri",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Kebun", "Urban Farming", "Villa Ciracas"],
     emoji: "🫙",
     url: "/opanowski/blog/blog-labu-botol.html"
-  },
-  {
-    number: "025",
-    date: "25 Mei 2026",
-    title: "Senam Otak Usia Setengah Abad: Dari Ciracas Tembus Kutub Utara!",
-    subtitle: "Di usia setengah abad, Om Opan malah makin semangat. Gadget jadul kena wajib militer, dan ternyata robot Meta dari Luleå, Swedia, tiap hari mampir ngecek web Ciracas. Gokil!",
-    tags: ["Senam Otak", "Tech", "Villa Ciracas"],
-    emoji: "🧠",
-    url: "/opanowski/blog/blog-senam-otak-setengah-abad.html"
   },
 ];
 
