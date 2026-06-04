@@ -1,4 +1,4 @@
-const CACHE = 'bunker-v1';
+const CACHE = 'bunker-v2';
 const ASSETS = [
   '/opanowski/',
   '/opanowski/index.html',
