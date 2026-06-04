@@ -572,6 +572,7 @@ function closeMenu(){
   });
 })();
 window.addEventListener("pageshow",function(e){if(e.persisted){window.location.reload();}});
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible"&&performance.navigation&&performance.navigation.type===2){window.location.reload();}});
 </script>
 <script src="latest-posts.js"></script>
 <script src="donate-widget.js"></script>
