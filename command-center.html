@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Center — Bunker Opanowski</title>
+<meta name="description" content="Status real-time Bunker Opanowski — hardware, farming, aviary, dan content ops Villa Ciracas.">
+<meta property="og:title" content="Command Center — Bunker Opanowski">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/command-center.html">
+<meta property="og:image" content="https://opanowski.github.io/opanowski/images/nJFlqNX.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F5F0E8;
+  --dark:#1C1A14;
+  --gold:#C8972A;
+  --gold-light:rgba(200,151,42,0.15);
+  --gold-border:rgba(200,151,42,0.25);
+  --dim:#0E0D09;
+  --green:#4ade80;
+  --green-dim:rgba(74,222,128,0.1);
+  --red:#f87171;
+  --font-display:'Playfair Display',serif;
+  --font-body:'DM Sans',sans-serif;
+  --font-mono:'Space Mono',monospace
+}
+html{scroll-behavior:smooth}
+body{background:var(--dim);color:var(--cream);font-family:var(--font-body);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(14,13,9,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold-border)}
+.nav-logo{font-family:var(--font-display);font-size:1.1rem;color:var(--gold);letter-spacing:2px;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{color:var(--cream);text-decoration:none;font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;opacity:0.55;transition:all 0.2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-back{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold) !important;opacity:1 !important;font-family:var(--font-mono);font-size:0.72rem !important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--cream);transition:all 0.3s}
+
+/* HEADER */
+.cc-header{padding:7rem 2.5rem 2rem;max-width:1100px;margin:0 auto}
+.cc-badge{display:inline-flex;align-items:center;gap:0.6rem;background:var(--green-dim);border:1px solid rgba(74,222,128,0.3);color:var(--green);font-family:var(--font-mono);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;padding:0.35rem 1rem;border-radius:4px;margin-bottom:1.5rem}
+.blink{animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.cc-title{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.1;margin-bottom:0.5rem}
+.cc-title em{color:var(--gold);font-style:italic}
+.cc-sub{font-family:var(--font-mono);font-size:0.72rem;color:#6b7280;letter-spacing:1px;margin-bottom:0.5rem}
+.cc-updated{font-family:var(--font-mono);font-size:0.65rem;color:#4b5563;letter-spacing:1px}
+.cc-updated span{color:var(--gold)}
+
+/* GRID LAYOUT */
+.cc-grid{max-width:1100px;margin:0 auto;padding:0 2.5rem 6rem;display:grid;grid-template-columns:repeat(12,1fr);gap:1.25rem}
+
+/* CARDS */
+.cc-card{background:rgba(255,255,255,0.02);border:1px solid rgba(200,151,42,0.12);border-radius:12px;padding:1.6rem;position:relative;overflow:hidden;transition:border-color 0.3s}
+.cc-card:hover{border-color:rgba(200,151,42,0.3)}
+.cc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0.4}
+.card-label{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:0.7;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
+.card-label::after{content:'';flex:1;height:1px;background:rgba(200,151,42,0.15)}
+.card-title{font-family:var(--font-display);font-size:1.3rem;margin-bottom:0.4rem;color:var(--cream)}
+
+/* SPANS */
+.span-8{grid-column:span 8}
+.span-4{grid-column:span 4}
+.span-6{grid-column:span 6}
+.span-12{grid-column:span 12}
+
+/* STATUS BADGE */
+.status-ok{display:inline-flex;align-items:center;gap:0.4rem;background:var(--green-dim);border:1px solid rgba(74,222,128,0.25);color:var(--green);font-family:var(--font-mono);font-size:0.6rem;letter-spacing:1px;padding:0.2rem 0.6rem;border-radius:3px}
+.status-warn{display:inline-flex;align-items:center;gap:0.4rem;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.25);color:#fbbf24;font-family:var(--font-mono);font-size:0.6rem;letter-spacing:1px;padding:0.2rem 0.6rem;border-radius:3px}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+
+/* HARDWARE CARD */
+.hw-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.25rem}
+.hw-item{background:rgba(0,0,0,0.2);border:1px solid rgba(200,151,42,0.08);border-radius:8px;padding:1rem}
+.hw-key{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:0.3rem}
+.hw-val{font-family:var(--font-mono);font-size:0.9rem;color:var(--cream)}
+.hw-val.gold{color:var(--gold)}
+.hw-val.green{color:var(--green)}
+
+/* RPM GAUGE */
+.rpm-section{margin-top:1.25rem}
+.rpm-label{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin-bottom:0.5rem;display:flex;justify-content:space-between}
+.rpm-bar-wrap{background:rgba(0,0,0,0.3);border-radius:4px;height:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.05)}
+.rpm-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green),#86efac);transition:width 1.5s ease;width:0}
+.rpm-note{font-family:var(--font-mono);font-size:0.6rem;color:#4b5563;margin-top:0.4rem}
+
+/* UPTIME */
+.uptime-big{font-family:var(--font-display);font-size:3.5rem;color:var(--gold);line-height:1;margin:0.75rem 0 0.25rem}
+.uptime-sub{font-family:var(--font-mono);font-size:0.65rem;color:#6b7280;letter-spacing:1px}
+
+/* INTERNET */
+.speed-display{text-align:center;padding:1.5rem 0 1rem}
+.speed-big{font-family:var(--font-mono);font-size:3rem;color:var(--green);line-height:1}
+.speed-unit{font-family:var(--font-mono);font-size:0.75rem;color:#6b7280;letter-spacing:2px;text-transform:uppercase;margin-top:0.25rem}
+.speed-note{font-family:var(--font-mono);font-size:0.6rem;color:#4b5563;text-align:center;margin-top:0.5rem}
+
+/* FARMING */
+.farm-item{margin-bottom:1.25rem}
+.farm-item:last-child{margin-bottom:0}
+.farm-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0.4rem}
+.farm-name{font-family:var(--font-mono);font-size:0.78rem;color:var(--cream)}
+.farm-fase{font-family:var(--font-mono);font-size:0.6rem;color:#6b7280;margin-bottom:0.25rem}
+.farm-pct{font-family:var(--font-mono);font-size:0.7rem;color:var(--gold)}
+.farm-bar-wrap{background:rgba(0,0,0,0.3);border-radius:4px;height:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.05)}
+.farm-bar{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gold),#e5c068);transition:width 1.5s ease;width:0}
+.farm-tag{display:inline-block;font-family:var(--font-mono);font-size:0.55rem;letter-spacing:1px;text-transform:uppercase;background:rgba(200,151,42,0.08);border:1px solid rgba(200,151,42,0.2);color:#9ca3af;padding:0.15rem 0.5rem;border-radius:3px;margin-top:0.4rem}
+
+/* AVIARY */
+.av-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1.25rem}
+.av-item{background:rgba(0,0,0,0.2);border:1px solid rgba(200,151,42,0.08);border-radius:8px;padding:1rem;text-align:center}
+.av-icon{font-size:1.6rem;margin-bottom:0.4rem}
+.av-count{font-family:var(--font-mono);font-size:1.5rem;color:var(--gold);line-height:1}
+.av-label{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:1px;text-transform:uppercase;color:#6b7280;margin-top:0.2rem}
+.av-sistem{margin-top:1rem;padding:0.75rem;background:rgba(0,0,0,0.2);border-radius:6px;border:1px solid rgba(200,151,42,0.08)}
+.av-sistem-key{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:2px;color:#6b7280;text-transform:uppercase}
+.av-sistem-val{font-family:var(--font-mono);font-size:0.75rem;color:var(--green);margin-top:0.2rem}
+
+/* CONTENT OPS */
+.sched-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1.25rem}
+.sched-item{background:rgba(0,0,0,0.2);border:1px solid rgba(200,151,42,0.08);border-radius:8px;padding:0.9rem}
+.sched-day{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.sched-platform{font-family:var(--font-mono);font-size:0.6rem;color:#9ca3af;line-height:1.8}
+.content-stats{display:flex;gap:1rem;margin-top:1rem}
+.c-stat{flex:1;background:rgba(0,0,0,0.2);border:1px solid rgba(200,151,42,0.08);border-radius:8px;padding:0.9rem;text-align:center}
+.c-num{font-family:var(--font-display);font-size:2rem;color:var(--gold);line-height:1}
+.c-lbl{font-family:var(--font-mono);font-size:0.55rem;letter-spacing:1px;text-transform:uppercase;color:#6b7280;margin-top:0.2rem}
+
+/* FOOTER NOTE */
+.cc-footer{max-width:1100px;margin:0 auto;padding:0 2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(200,151,42,0.1);padding-top:2rem}
+.cc-footer-text{font-family:var(--font-mono);font-size:0.6rem;color:#4b5563;letter-spacing:1px}
+.cc-footer-text a{color:var(--gold);text-decoration:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .cc-header{padding:6rem 1.25rem 1.5rem}
+  .cc-grid{padding:0 1.25rem 4rem;gap:0.9rem}
+  .span-8,.span-4,.span-6{grid-column:span 12}
+  .hw-grid{grid-template-columns:1fr 1fr}
+  .sched-grid{grid-template-columns:1fr}
+  .av-grid{grid-template-columns:repeat(2,1fr)}
+  .content-stats{flex-wrap:wrap}
+  .c-stat{flex:1 1 40%}
+  .cc-footer{flex-direction:column;gap:0.75rem;text-align:center}
+}
+@media(max-width:480px){
+  .hw-grid{grid-template-columns:1fr}
+  .uptime-big{font-size:2.8rem}
+  .speed-big{font-size:2.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/opanowski/index.html" class="nav-logo">Bunker Opanowski</a>
+  <ul class="nav-links">
+    <li><a href="/opanowski/index.html#about">Tentang</a></li>
+    <li><a href="/opanowski/index.html#villa">Villa</a></li>
+    <li><a href="/opanowski/blog/index.html">📝 Blog</a></li>
+    <li><a href="/opanowski/index.html#update">📋 Update</a></li>
+    <li><a href="/opanowski/index.html" class="nav-back">← Kembali</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="cc-header">
+  <div class="cc-badge"><span class="dot"></span> SYSTEM ONLINE <span class="blink">_</span></div>
+  <h1 class="cc-title">Bunker <em>Command Center</em></h1>
+  <p class="cc-sub">// STATUS REAL-TIME — VILLA CIRACAS · JAKARTA TIMUR</p>
+  <p class="cc-updated" id="updated-text">LAST UPDATE: <span>—</span></p>
+</div>
+
+<div class="cc-grid" id="cc-grid">
+
+  <!-- MACBOOK STATUS — span 8 -->
+  <div class="cc-card span-8" id="card-mac">
+    <div class="card-label">Hardware // Si Jadul</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.75rem">
+      <div>
+        <div class="card-title" id="mac-model">MacBook Pro 15" Mid 2015</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.4rem">
+          <span class="status-ok"><span class="dot"></span> OPERATIONAL</span>
+          <span class="status-warn">⚠ Thermal Paste: Belum</span>
+          <span class="status-warn">⚠ Battery: Belum Ganti</span>
+        </div>
+      </div>
+    </div>
+    <div class="hw-grid" id="hw-grid">
+      <div class="hw-item"><div class="hw-key">RAM</div><div class="hw-val gold" id="mac-ram">—</div></div>
+      <div class="hw-item"><div class="hw-key">Storage</div><div class="hw-val gold" id="mac-ssd">—</div></div>
+      <div class="hw-item"><div class="hw-key">OS</div><div class="hw-val" id="mac-os">—</div></div>
+      <div class="hw-item"><div class="hw-key">Cooling</div><div class="hw-val green" id="mac-cooling">—</div></div>
+    </div>
+    <div class="rpm-section">
+      <div class="rpm-label"><span>RPM IDLE — TERJAGA DI:</span><span id="rpm-val" style="color:var(--green)">—</span></div>
+      <div class="rpm-bar-wrap"><div class="rpm-bar" id="rpm-bar"></div></div>
+      <div class="rpm-note" id="rpm-note">// workaround tanpa servis — laptop stand + kipas mini = stabil</div>
+    </div>
+  </div>
+
+  <!-- UPTIME — span 4 -->
+  <div class="cc-card span-4">
+    <div class="card-label">Uptime Harian</div>
+    <div class="uptime-big" id="uptime-val">—</div>
+    <div class="uptime-sub">JAM / HARI TIPIKAL</div>
+    <div style="margin-top:1rem;padding:0.75rem;background:rgba(0,0,0,0.2);border-radius:6px;border:1px solid rgba(200,151,42,0.08)">
+      <div style="font-family:var(--font-mono);font-size:0.58rem;color:#6b7280;letter-spacing:2px;text-transform:uppercase">Usia Mesin</div>
+      <div style="font-family:var(--font-mono);font-size:1.1rem;color:var(--gold);margin-top:0.2rem" id="mac-age">—</div>
+    </div>
+    <div style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.6rem;color:#4b5563;line-height:1.7">// nyala dari jam 04.00 pagi<br>// diselingi aktivitas lain<br>// mati sendiri kalau udah hari</div>
+  </div>
+
+  <!-- INTERNET — span 4 -->
+  <div class="cc-card span-4">
+    <div class="card-label">Koneksi Bunker</div>
+    <div class="speed-display">
+      <div class="speed-big" id="speed-val">—</div>
+      <div class="speed-unit">Mbps — WiFi</div>
+    </div>
+    <div style="text-align:center">
+      <span class="status-ok"><span class="dot"></span> CONNECTED</span>
+    </div>
+    <div class="speed-note" style="margin-top:0.75rem">// bukan yang paling kenceng<br>// tapi cukup buat semua kerjaan</div>
+  </div>
+
+  <!-- FARMING — span 8 -->
+  <div class="cc-card span-8" id="card-farm">
+    <div class="card-label">Farming Intel // Kebun Anggur</div>
+    <div style="font-family:var(--font-mono);font-size:0.6rem;color:#6b7280;margin-bottom:1.25rem">// tujuan utama: peneduh aviary — buah itu bonus, syukur-syukur kalau jadi 🙏</div>
+    <div id="farm-list"></div>
+    <div style="margin-top:1.25rem;padding:0.75rem;background:rgba(0,0,0,0.2);border-radius:6px;border:1px solid rgba(200,151,42,0.08);display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-family:var(--font-mono);font-size:0.58rem;color:#6b7280;letter-spacing:2px;text-transform:uppercase">Pupuk Organik</div><div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--green);margin-top:0.2rem" id="pupuk-val">—</div></div>
+      <div><div style="font-family:var(--font-mono);font-size:0.58rem;color:#6b7280;letter-spacing:2px;text-transform:uppercase;text-align:right">Lahan Aktif</div><div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--gold);margin-top:0.2rem;text-align:right" id="lahan-val">—</div></div>
+    </div>
+  </div>
+
+  <!-- AVIARY — span 6 -->
+  <div class="cc-card span-6" id="card-aviary">
+    <div class="card-label">Aviary & Terrain</div>
+    <div class="av-grid" id="av-grid">
+      <div class="av-item"><div class="av-icon">🐔</div><div class="av-count" id="av-ayam">—</div><div class="av-label">Ayam Betina</div></div>
+      <div class="av-item"><div class="av-icon">🐦</div><div class="av-count" id="av-puyuh">—</div><div class="av-label">Puyuh Jantan</div></div>
+      <div class="av-item"><div class="av-icon">🐰</div><div class="av-count">1</div><div class="av-label" id="av-kelinci-nama">Latte</div></div>
+      <div class="av-item"><div class="av-icon">📐</div><div class="av-count">40<span style="font-size:0.9rem">m²</span></div><div class="av-label">Lahan Aktif</div></div>
+    </div>
+    <div class="av-sistem">
+      <div class="av-sistem-key">Sistem Kandang</div>
+      <div class="av-sistem-val" id="av-sistem">—</div>
+    </div>
+  </div>
+
+  <!-- CONTENT OPS — span 6 -->
+  <div class="cc-card span-6" id="card-content">
+    <div class="card-label">Content Ops</div>
+    <div class="content-stats">
+      <div class="c-stat"><div class="c-num" id="c-post">—</div><div class="c-lbl">Post Bulan Ini</div></div>
+      <div class="c-stat"><div class="c-num" id="c-platform">—</div><div class="c-lbl">Platform Aktif</div></div>
+    </div>
+    <div class="sched-grid" id="sched-grid"></div>
+    <div style="margin-top:1rem;padding:0.75rem;background:rgba(0,0,0,0.2);border-radius:6px;border:1px solid rgba(74,222,128,0.1)">
+      <div style="font-family:var(--font-mono);font-size:0.58rem;color:#6b7280;letter-spacing:2px;text-transform:uppercase">AI Assistant</div>
+      <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--green);margin-top:0.2rem" id="chatbot-val">—</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="cc-footer">
+  <div class="cc-footer-text">BUNKER OPANOWSKI · VILLA CIRACAS · JAKARTA TIMUR</div>
+  <div class="cc-footer-text">Data di-update manual setiap Selasa · <a href="/opanowski/index.html">← Kembali ke Main</a></div>
+</div>
+
+<script>
+async function loadData() {
+  try {
+    const res = await fetch('/opanowski/status-data.json');
+    const d = await res.json();
+    render(d);
+  } catch(e) {
+    console.error('Gagal load status-data.json:', e);
+  }
+}
+
+function render(d) {
+  // Updated
+  document.getElementById('updated-text').innerHTML =
+    `LAST UPDATE: <span>${d.last_updated}</span>`;
+
+  // MacBook
+  const m = d.hardware.macbook;
+  document.getElementById('mac-ram').textContent = m.ram_gb + 'GB RAM';
+  document.getElementById('mac-ssd').textContent = m.ssd_gb + 'GB SSD';
+  document.getElementById('mac-os').textContent = m.os;
+  document.getElementById('mac-cooling').textContent = m.cooling_method;
+  document.getElementById('rpm-val').textContent = m.rpm_idle.toLocaleString() + ' RPM';
+  document.getElementById('mac-age').textContent = m.age_years + ' Tahun — Still Kicking 💪';
+  document.getElementById('uptime-val').textContent = m.uptime_hours_typical;
+
+  // RPM bar — 2100 dari max ~4000 = ~52%
+  setTimeout(() => {
+    const pct = Math.min((m.rpm_idle / 4000) * 100, 100);
+    document.getElementById('rpm-bar').style.width = pct + '%';
+  }, 300);
+
+  // Internet
+  document.getElementById('speed-val').textContent = d.hardware.internet.speed_mbps;
+
+  // Farming
+  const farmList = document.getElementById('farm-list');
+  farmList.innerHTML = '';
+  d.farming.anggur.forEach((a, i) => {
+    const div = document.createElement('div');
+    div.className = 'farm-item';
+    div.innerHTML = `
+      <div class="farm-header">
+        <div>
+          <div class="farm-name">🍇 ${a.varietas}</div>
+          <div class="farm-fase">${a.fase}</div>
+        </div>
+        <div class="farm-pct">${a.progress_persen}%</div>
+      </div>
+      <div class="farm-bar-wrap">
+        <div class="farm-bar" id="fbar-${i}" style="width:0"></div>
+      </div>
+      <span class="farm-tag">🎯 ${a.tujuan}</span>
+      <span class="farm-tag" style="color:${a.berbuah ? '#4ade80' : '#6b7280'}">${a.berbuah ? '✅ Berbuah' : '⏳ Belum Berbuah'}</span>
+    `;
+    farmList.appendChild(div);
+    setTimeout(() => {
+      document.getElementById('fbar-' + i).style.width = a.progress_persen + '%';
+    }, 400 + i * 150);
+  });
+
+  document.getElementById('pupuk-val').textContent = d.farming.pupuk;
+  document.getElementById('lahan-val').textContent = d.farming.lahan_aktif_m2 + 'm² Aktif';
+
+  // Aviary
+  const av = d.aviary;
+  document.getElementById('av-ayam').textContent = av.ayam_betina;
+  document.getElementById('av-puyuh').textContent = av.puyuh_jantan;
+  document.getElementById('av-kelinci-nama').textContent = av.kelinci_nama;
+  document.getElementById('av-sistem').textContent = av.sistem_kandang + ' — kotoran terurai sendiri';
+
+  // Content Ops
+  const c = d.content_ops;
+  document.getElementById('c-post').textContent = c.post_bulan_ini;
+  document.getElementById('c-platform').textContent = c.platform_aktif;
+  document.getElementById('chatbot-val').textContent = c.chatbot;
+
+  const schedGrid = document.getElementById('sched-grid');
+  schedGrid.innerHTML = '';
+  c.jadwal.forEach(j => {
+    const div = document.createElement('div');
+    div.className = 'sched-item';
+    div.innerHTML = `
+      <div class="sched-day">${j.hari}</div>
+      <div class="sched-platform">${j.platform.join('<br>')}</div>
+    `;
+    schedGrid.appendChild(div);
+  });
+}
+
+// Hamburger
+function toggleMenu() {
+  document.getElementById('mobileMenu') && document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+loadData();
+</script>
+
+</body>
+</html>

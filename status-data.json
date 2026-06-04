@@ -1,0 +1,68 @@
+{
+  "last_updated": "2026-06-04",
+  "hardware": {
+    "macbook": {
+      "model": "MacBook Pro 15\" Mid 2015",
+      "ram_gb": 16,
+      "ssd_gb": 512,
+      "os": "macOS Monterey",
+      "age_years": 11,
+      "thermal_paste_replaced": false,
+      "battery_replaced": false,
+      "cooling_method": "Laptop Stand + Kipas Mini Portable",
+      "rpm_idle": 2100,
+      "uptime_hours_typical": 16,
+      "status": "OPERATIONAL"
+    },
+    "internet": {
+      "speed_mbps": 10,
+      "type": "WiFi",
+      "status": "CONNECTED"
+    }
+  },
+  "farming": {
+    "anggur": [
+      {
+        "varietas": "Heliodor",
+        "fase": "Perpanjangan Batang Tersier",
+        "progress_persen": 35,
+        "tujuan": "Peneduh Aviary",
+        "berbuah": false
+      },
+      {
+        "varietas": "Tamaki",
+        "fase": "Perpanjangan Batang Tersier",
+        "progress_persen": 30,
+        "tujuan": "Peneduh Aviary",
+        "berbuah": false
+      },
+      {
+        "varietas": "Moondrop",
+        "fase": "Perpanjangan Batang Sekunder",
+        "progress_persen": 20,
+        "tujuan": "Peneduh Aviary",
+        "berbuah": false
+      }
+    ],
+    "lahan_aktif_m2": 40,
+    "pupuk": "Air Lindi + Kotoran Kelinci"
+  },
+  "aviary": {
+    "ayam_betina": 2,
+    "puyuh_jantan": 2,
+    "kelinci": 1,
+    "kelinci_nama": "Latte",
+    "sistem_kandang": "Deep Litter",
+    "status": "AKTIF"
+  },
+  "content_ops": {
+    "jadwal": [
+      { "hari": "Selasa", "platform": ["Blog", "IG", "Threads"] },
+      { "hari": "Kamis", "platform": ["YouTube Shorts", "TikTok", "X"] },
+      { "hari": "Sabtu", "platform": ["YouTube Shorts", "WA Business", "IG"] }
+    ],
+    "post_bulan_ini": 8,
+    "platform_aktif": 7,
+    "chatbot": "Tanya Om Opan (Llama 3.3 70B)"
+  }
+}
