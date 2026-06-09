@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngoding Rasa Sauna: Jakarta 35 Derajat dan Semangat yang Gak Kendor — Bunker Opanowski</title>
+<meta name="description" content="Termometer 35 derajat, kipas cuma mindahin udara panas, dan Mac jadul berasa heater. Tapi pejuang konten Ciracas pantang mundur. Ini cerita bertahan ngoding di tengah Jakarta yang lagi menyala.">
+<meta property="og:title" content="Ngoding Rasa Sauna: Jakarta 35 Derajat dan Semangat yang Gak Kendor">
+<meta property="og:description" content="Kipas angin muter kenceng tapi anginnya tetep panas. Kopi susu gula aren ngefeknya cuma bentar. Ini cerita Om Opan survive ngoding di Jakarta yang lagi simulasi neraka bocor.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-panas-jakarta.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --accent: #f5a623;
+    --text: #e8eaf0;
+    --text-muted: #8b8fa8;
+    --green: #4caf7d;
+    --border: #2e3248;
+    --gold: #C8972A;
+    --cream: #F5F0E8;
+    --red: #e05a5a;
+    --orange: #f07833;
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+  header {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+    border-bottom: 2px solid var(--orange);
+    padding: 22px 24px 18px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--orange); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #1a0a00 0%, #0f1117 55%, #1a0500 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.05;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--orange) 0px, var(--orange) 1px,
+      transparent 1px, transparent 35px
+    );
+  }
+  /* Heat shimmer effect */
+  .hero-heatwave {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 60% 30%, rgba(240,120,51,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 70%, rgba(224,90,90,0.08) 0%, transparent 50%);
+    animation: heatpulse 4s ease-in-out infinite;
+  }
+  @keyframes heatpulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .hero-photo {
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%);
+    pointer-events: none;
+  }
+  .hero-emoji-bg {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13rem; opacity: 0.05;
+    pointer-events: none; user-select: none;
+    animation: emojipulse 3s ease-in-out infinite;
+  }
+  @keyframes emojipulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -52%) scale(1.04); }
+  }
+  .hero-overlay {
+    position: relative; z-index: 2; width: 100%;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%);
+  }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .tag-pill {
+    background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4);
+    color: var(--gold); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    font-family: var(--font-mono);
+  }
+  .tag-pill.red { background: rgba(224,90,90,0.15); border-color: rgba(224,90,90,0.4); color: var(--red); }
+  .tag-pill.orange { background: rgba(240,120,51,0.15); border-color: rgba(240,120,51,0.4); color: var(--orange); }
+  .tag-pill.green { background: rgba(76,175,125,0.15); border-color: rgba(76,175,125,0.4); color: var(--green); }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem;
+  }
+  .hero-title em { color: var(--orange); font-style: italic; }
+  .hero-meta {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .live-dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--orange); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* THERMOMETER WIDGET — hero visual unik */
+  .thermo-widget {
+    position: absolute; right: 2rem; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    z-index: 3; opacity: 0.85;
+  }
+  @media (max-width: 560px) { .thermo-widget { display: none; } }
+  .thermo-label {
+    font-family: var(--font-mono); font-size: 0.55rem;
+    color: var(--orange); letter-spacing: 2px; text-transform: uppercase;
+  }
+  .thermo-number {
+    font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700;
+    color: var(--red); line-height: 1;
+    text-shadow: 0 0 20px rgba(224,90,90,0.5);
+    animation: tempflicker 2.5s ease-in-out infinite;
+  }
+  @keyframes tempflicker {
+    0%, 100% { text-shadow: 0 0 20px rgba(224,90,90,0.5); }
+    50% { text-shadow: 0 0 35px rgba(224,90,90,0.9), 0 0 60px rgba(240,120,51,0.3); }
+  }
+  .thermo-unit {
+    font-family: var(--font-mono); font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  .thermo-bar {
+    width: 8px; height: 80px;
+    background: rgba(255,255,255,0.08); border-radius: 4px;
+    overflow: hidden; position: relative;
+  }
+  .thermo-fill {
+    position: absolute; bottom: 0; width: 100%;
+    background: linear-gradient(to top, var(--red), var(--orange));
+    border-radius: 4px;
+    height: 90%;
+    animation: thermoanim 3s ease-in-out infinite;
+  }
+  @keyframes thermoanim {
+    0%, 100% { height: 88%; }
+    50% { height: 93%; }
+  }
+
+  /* LAYOUT */
+  .container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .artikel-body p {
+    font-size: 0.95rem; line-height: 1.9; color: var(--text);
+    margin-bottom: 1.5rem; opacity: 0.88;
+  }
+  .artikel-body h2 {
+    font-family: var(--font-display); font-size: 1.4rem;
+    color: var(--cream); margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+  }
+  .artikel-body h2 em { color: var(--orange); font-style: italic; }
+
+  /* STATUS BOX — suhu & kondisi bunker */
+  .status-box {
+    background: rgba(240,120,51,0.06); border: 1px solid rgba(240,120,51,0.2);
+    border-left: 3px solid var(--orange); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.75rem 0;
+  }
+  .status-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 0.9rem;
+  }
+  .status-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.65rem; font-size: 0.87rem; line-height: 1.6; color: var(--text-muted);
+  }
+  .status-item:last-child { margin-bottom: 0; }
+  .status-icon { flex-shrink: 0; }
+  .status-val { color: var(--cream); font-weight: 600; }
+
+  /* SPEK BOX */
+  .spek-box {
+    background: rgba(76,175,125,0.05); border: 1px solid rgba(76,175,125,0.2);
+    border-left: 3px solid var(--green); border-radius: 10px;
+    padding: 1.4rem 1.6rem; margin: 1.75rem 0;
+  }
+  .spek-box-label {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem; font-weight: 700;
+  }
+  .spek-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 0.75rem; font-size: 0.88rem; line-height: 1.6;
+  }
+  .spek-item:last-child { margin-bottom: 0; }
+  .spek-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: rgba(224,90,90,0.05); border: 1px solid rgba(224,90,90,0.3);
+    border-left: 3px solid var(--red); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.75rem 0;
+  }
+  .warning-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    color: var(--red); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.75rem;
+  }
+  .warning-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    background: rgba(240,120,51,0.04); border: 1px solid rgba(240,120,51,0.2);
+    border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0; text-align: center;
+  }
+  .quote-text {
+    font-family: var(--font-display); font-size: 1.1rem;
+    font-style: italic; color: var(--cream); line-height: 1.6;
+  }
+  .quote-source {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    color: var(--orange); margin-top: 0.6rem; letter-spacing: 1px;
+  }
+
+  /* SURVIVAL KIT CARDS */
+  .survive-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin: 1.75rem 0;
+  }
+  @media (max-width: 560px) { .survive-grid { grid-template-columns: 1fr; } }
+  .survive-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.4rem;
+  }
+  .survive-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.9rem;
+    color: var(--gold);
+  }
+  .survive-card-label.red { color: var(--red); }
+  .survive-item {
+    display: flex; gap: 8px; font-size: 0.83rem; line-height: 1.6;
+    margin-bottom: 0.5rem; color: var(--text-muted);
+  }
+  .survive-item:last-child { margin-bottom: 0; }
+  .survive-item .plus { color: var(--green); flex-shrink: 0; }
+  .survive-item .minus { color: var(--red); flex-shrink: 0; }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.75rem 0;
+    font-size: 0.85rem; line-height: 1.7;
+  }
+  .info-box-label {
+    font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; font-weight: 700;
+  }
+
+  /* SOP CARD */
+  .sop-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 10px;
+    padding: 1.3rem 1.5rem; margin: 1.2rem 0;
+  }
+  .sop-card-label {
+    font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .sop-card-title {
+    font-size: 0.95rem; font-weight: 700; color: var(--cream); margin-bottom: 0.5rem;
+  }
+  .sop-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0; }
+
+  /* EKSPRESI CARD */
+  .ekspresi-card {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 1.2rem 0; padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+  }
+  .ekspresi-card img {
+    width: 72px; height: 72px; object-fit: cover;
+    border-radius: 8px; flex-shrink: 0;
+    border: 2px solid rgba(200,151,42,0.3);
+  }
+  .ekspresi-card p {
+    margin: 0 !important; font-size: 0.85rem !important;
+    color: var(--text-muted) !important; font-style: italic;
+    line-height: 1.7 !important; opacity: 1 !important;
+  }
+  .ekspresi-card.marah img { border-color: rgba(224,90,90,0.4); }
+  .ekspresi-card.semangat img { border-color: rgba(76,175,125,0.4); }
+
+  /* KESIMPULAN */
+  .kesimpulan-box {
+    margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px;
+    border: 1px solid rgba(200,151,42,0.3);
+    background: linear-gradient(135deg, rgba(200,151,42,0.05), rgba(200,151,42,0.02));
+  }
+  .kesimpulan-box h3 {
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem;
+  }
+  .kesimpulan-box p {
+    font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem;
+  }
+  .sign-off {
+    font-family: var(--font-display); font-size: 0.9rem;
+    color: var(--accent); font-style: italic; margin-top: 1rem; display: block;
+  }
+
+  /* HASHTAG */
+  .hashtag-block {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .hashtag {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 4px 12px; border-radius: 20px; transition: all 0.2s;
+  }
+  .hashtag:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* CTA */
+  .cta-block {
+    margin-top: 2rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.4rem; text-align: center;
+  }
+  .cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+  .cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(200,151,42,0.1); border: 1px solid rgba(200,151,42,0.3);
+    color: var(--gold); text-decoration: none;
+    padding: 0.6rem 1.2rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 600; transition: all 0.2s;
+  }
+  .cta-btn:hover { background: rgba(200,151,42,0.2); }
+
+  /* POST NAV */
+  .post-nav {
+    display: flex; gap: 12px; padding: 20px 24px;
+    border-top: 1px solid var(--border); flex-wrap: wrap;
+  }
+  .post-nav a {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--text-muted); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 14px; transition: all 0.2s;
+  }
+  .post-nav a:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px; text-align: center;
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--text-muted); border-top: 1px solid var(--border);
+  }
+  .updated-tag {
+    display: inline-block; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--orange); margin-left: 6px;
+  }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+  .social-links a {
+    font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--orange); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Kembali ke Log Harian</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <img src="../images/opan_020.webp" alt="Om Opan" class="hero-photo">
+  <div class="hero-heatwave"></div>
+  <div class="hero-emoji-bg">🔥</div>
+
+  <!-- Widget termometer pojok -->
+  <div class="thermo-widget">
+    <div class="thermo-label">Bunker Temp</div>
+    <div class="thermo-number">35</div>
+    <div class="thermo-unit">°C</div>
+    <div class="thermo-bar"><div class="thermo-fill"></div></div>
+    <div class="thermo-label">Jakarta</div>
+  </div>
+
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill red">🔥 Panas Ekstrem</span>
+      <span class="tag-pill orange">💻 Ngoding</span>
+      <span class="tag-pill">🏡 Villa Ciracas</span>
+      <span class="tag-pill green">☕ Kopi Gula Aren</span>
+    </div>
+    <h1 class="hero-title">Ngoding Rasa Sauna:<br><em>Jakarta 35° dan Semangat yang Gak Kendor</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> Mei 2026</span>
+      <span>·</span>
+      <span>Om Opan — Ciracas, Jakarta Timur</span>
+      <span>·</span>
+      <span>🌡️ Lifestyle Bunker</span>
+    </div>
+  </div>
+</div>
+
+<!-- KONTEN -->
+<div class="container">
+<div class="artikel-body">
+
+  <p>Halo bray, balik lagi di Bunker Opanowski! Hari ini gak ngomongin kebun, gak ngomongin motor, gak ngomongin kode yang error. Hari ini gw mau cerita soal musuh tak kasat mata yang lebih nyata dari segala bug: <strong style="color:var(--cream)">Jakarta yang lagi mode "simulasi neraka bocor".</strong></p>
+
+  <p>Termometer di pojokan ruangan nunjukkin angka <strong style="color:var(--red)">35 derajat Celsius</strong>. Bukan di luar, bukan di jalan aspal yang bisa goreng telur — tapi di dalam Bunker. Di dalam ruangan kerja gw sendiri. Ini sih bukan panas biasa lagi.</p>
+
+  <div class="quote-box">
+    <div class="quote-text">"Panas boleh membara, tapi ide harus tetep ngalir."</div>
+    <div class="quote-source">— Om Opan, Bunker Opanowski — sambil lap keringat</div>
+  </div>
+
+
+  <!-- VIDEO: YouTube Shorts embed -->
+  <div style="margin:2rem 0;">
+    <div style="font-family:var(--font-mono);font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:0.75rem;">▶️ Tonton Versi Short-nya</div>
+    <div style="position:relative;width:100%;max-width:315px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+      <iframe
+        src="https://www.youtube.com/embed/Sv_V_37U30c"
+        title="Ngoding Rasa Sauna — Bunker Opanowski"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="display:block;width:100%;aspect-ratio:9/16;">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>1. Kondisi TKP: <em>Laporan dari Dalam Bunker</em></h2>
+
+  <p>Biar lo bisa ngebayangin situasinya, gw breakdown dulu kondisi Bunker Opanowski hari ini. Ini bukan lebay, ini laporan faktual:</p>
+
+  <div class="status-box">
+    <div class="status-label">🌡️ Status Bunker — Real-Time Report</div>
+    <div class="status-item">
+      <span class="status-icon">🌡️</span>
+      <span>Suhu ruangan: <span class="status-val">35°C</span> — dan ini belum jam puncak siang.</span>
+    </div>
+    <div class="status-item">
+      <span class="status-icon">💻</span>
+      <span>MacBook Pro Mid 2015: <span class="status-val">mode knalpot aktif</span> — fan udah ngebut dari tadi pagi.</span>
+    </div>
+    <div class="status-item">
+      <span class="status-icon">🌀</span>
+      <span>Kipas angin Sekai: <span class="status-val">muter kenceng, anginnya tetep panas</span> — cuma mindahin udara panas ke muka.</span>
+    </div>
+    <div class="status-item">
+      <span class="status-icon">☕</span>
+      <span>Amunisi: <span class="status-val">es kopi susu gula aren</span> — efektif 5 menit, setelah itu balik keringetan.</span>
+    </div>
+    <div class="status-item">
+      <span class="status-icon">👤</span>
+      <span>Status operator: <span class="status-val">gerah tapi masih bertahan</span> — semangat belum habis.</span>
+    </div>
+  </div>
+
+  <!-- EKSPRESI 1 — MARAH (frustrasi sama panas) -->
+  <div class="ekspresi-card marah" style="background:rgba(224,90,90,0.05);border:1px solid rgba(224,90,90,0.2);">
+    <img src="../images/ekspresi/ekspresi_marah.webp" alt="Om Opan marah">
+    <p>"Kipas angin udah setting turbo, tapi yang dihembusin anginnya itu-itu juga — panas. Berasa ditiup kompor mawar. Ini bukan kipas pendingin, ini kipas pemindah masalah. 😤"</p>
+  </div>
+
+
+  <!-- FOTO: Kipas stress di tengah panas Jakarta -->
+  <div class="foto-block">
+    <img src="../images/kipas_stress.webp" alt="Kipas angin Bunker Opanowski — muter tapi anginnya tetep panas" style="width:100%;border-radius:10px;display:block;">
+    <div class="foto-caption" style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);text-align:center;margin-top:0.6rem;letter-spacing:0.5px;">Kipas Sekai di Bunker — muter full speed, hasilnya tetep angin panas. Sama aja kayak dipanggil maju tapi gak boleh ngapa-ngapain. 🌀</div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>2. Musuh Utama: <em>Bukan Bug, Tapi Suhu</em></h2>
+
+  <p>Biasanya yang bikin gw susah fokus itu error di terminal, atau koneksi putus pas lagi ngupload. Tapi hari ini? Musuh nomor satu adalah suhu yang ngegebet konsentrasi dari luar.</p>
+
+  <p>Mac jadul kesayangan udah kayak partner yang ikut berkorban bareng. Kalo udah kerja keras dikit, suhunya langsung naik, fan langsung ngauuung. Itu dua sumber panas di meja sekaligus: Jakarta dari luar, Mac dari bawah telapak tangan.</p>
+
+  <div class="survive-grid">
+    <div class="survive-card">
+      <div class="survive-card-label">😤 Yang Bikin Mati Gaya</div>
+      <div class="survive-item"><span class="minus">−</span><span>Kipas cuma redistribusi udara panas</span></div>
+      <div class="survive-item"><span class="minus">−</span><span>Mac ikut-ikutan panas dari bawah</span></div>
+      <div class="survive-item"><span class="minus">−</span><span>Kopi adem ngefeknya max 5 menit</span></div>
+      <div class="survive-item"><span class="minus">−</span><span>Fokus gampang buyar kalo gerah</span></div>
+      <div class="survive-item"><span class="minus">−</span><span>Bandung dalam memori makin sering muncul</span></div>
+    </div>
+    <div class="survive-card">
+      <div class="survive-card-label">✅ Yang Masih Bisa Diandalin</div>
+      <div class="survive-item"><span class="plus">+</span><span>Gula aren di kopi bikin mood naik</span></div>
+      <div class="survive-item"><span class="plus">+</span><span>Mac tua masih jalan, belum shutdown</span></div>
+      <div class="survive-item"><span class="plus">+</span><span>Semangat pejuang konten Ciracas</span></div>
+      <div class="survive-item"><span class="plus">+</span><span>Sesi kerja bisa dibagi: pagi & malam</span></div>
+      <div class="survive-item"><span class="plus">+</span><span>Konten tetap jalan walau peluh bercucuran</span></div>
+    </div>
+  </div>
+
+
+  <!-- FOTO: Om Opan ngoding di tengah panas -->
+  <div class="foto-block">
+    <img src="../images/opan_021.webp" alt="Om Opan ngoding di Bunker saat Jakarta 35 derajat" style="width:100%;border-radius:10px;display:block;">
+    <div class="foto-caption" style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);text-align:center;margin-top:0.6rem;letter-spacing:0.5px;">Ini bukan sesi sauna — ini sesi kerja. Bunker Opanowski, 35°C, semangat full. 💻🔥</div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <h2>3. Es Kopi Susu Gula Aren: <em>Solusi Sementara yang Nyata</em></h2>
+
+  <p>Kalau ada satu hal yang konsisten jadi penyelamat di hari-hari gerah, itu es kopi susu gula aren. Bukan karena ajaib — tapi karena efeknya <em>nyata walau sementara</em>.</p>
+
+  <p>Pas masuk tenggorokan, rasanya kayak AC mini yang langsung aktif dari dalam. Manis arennya dapet, pahit kopinya balance, dinginnya langsung terasa. Berasa hidup lagi sebentar.</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">☕ Mengapa Es Kopi Susu Gula Aren?</div>
+    <div class="spek-item">
+      <span class="spek-icon">🍬</span>
+      <span><strong style="color:var(--cream)">Gula aren:</strong> Glikemik lebih rendah dari gula putih — energinya naik pelan, gak bikin crash.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">⚡</span>
+      <span><strong style="color:var(--cream)">Kafein + dingin:</strong> Kombinasi yang langsung aktifin fokus dalam hitungan menit.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🥛</span>
+      <span><strong style="color:var(--cream)">Susu:</strong> Netralin pahit kopi, bikin perut nggak kosong pas kerja.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">⏱️</span>
+      <span><strong style="color:var(--cream)">Efektivitas:</strong> 5–10 menit rasa sejuk di tenggorokan — cukup buat reset dan balik fokus.</span>
+    </div>
+  </div>
+
+  <p>Tapi jujur, efeknya nggak lama. Habis satu gelas, ya balik lagi ke realita: keringet ngucur, Mac ngebul, Jakarta tetap 35 derajat. Butuh gelas kedua? <em>Hampir selalu iya.</em></p>
+
+  <!-- EKSPRESI 2 — TERTAWA (absurditas situasi) -->
+  <div class="ekspresi-card" style="background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);">
+    <img src="../images/ekspresi/ekspresi_tertawa.webp" alt="Om Opan tertawa">
+    <p>"Gw ngerasain banget ironinya: lagi ngerjain konten soal produktivitas, tapi keringetan sendiri kayak baru abis HIIT. Mac udah ngebut fannya, kipas udah turbo — dan hasilnya tetep sauna. Ya udah, ketawa aja deh. 😂"</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2>4. Bandung dalam Memori: <em>Nostalgia yang Muncul Sendiri</em></h2>
+
+  <p>Di hari-hari kayak gini, Bandung suka muncul tiba-tiba di kepala. Bukan karena gw pengen pindah — tapi karena kontrasnya gila. Di sana, hawa sore bisa bikin kerja tanpa kipas. Di sini? Malam pun masih terasa hangat.</p>
+
+  <div class="sop-card">
+    <div class="sop-card-label">🌄 Komparasi Sederhana</div>
+    <div class="sop-card-title">Bandung vs Jakarta untuk Kerja Santai</div>
+    <p>Bandung: suhu rata-rata 20–25°C, angin sore natural, bisa fokus di kafe luar ruangan. Jakarta: 30–35°C harian, angin panas, AC adalah kebutuhan primer bukan mewah. Tapi yang satu ini yang gw pilih — dan Bunker Opanowski ada di sini, bukan di sana.</p>
+  </div>
+
+  <p>Toh, setiap kota punya trade-off-nya sendiri. Jakarta kasih akses, koneksi, dan energi yang beda. Gw pilih ini. Konsekuensinya ya... keringetan sambil ngoding. Deal-nya udah jelas dari awal.</p>
+
+  <!-- SECTION 5 -->
+  <h2>5. Strategi Survive: <em>Ngoding di Kota Paling Gerah</em></h2>
+
+  <p>Setelah berkali-kali ngelewatin hari-hari kayak gini, gw udah nemu beberapa trik yang lumayan ngebantu:</p>
+
+  <div class="spek-box">
+    <div class="spek-box-label">🛡️ Survival Guide — Ngoding di Jakarta Panas</div>
+    <div class="spek-item">
+      <span class="spek-icon">🌅</span>
+      <span><strong style="color:var(--cream)">Pagi adalah emas.</strong> Jam 6–9 pagi suhu masih toleran. Ini waktu paling produktif — manfaatin buat kerja berat.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🌙</span>
+      <span><strong style="color:var(--cream)">Malam sebagai backup.</strong> Setelah jam 8 malam, suhu turun. Sesi kedua bisa produktif tanpa drama panas.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">💧</span>
+      <span><strong style="color:var(--cream)">Hidrasi agresif.</strong> Air putih + minuman dingin. Dehidrasi ringan bikin fokus drop drastis.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">💻</span>
+      <span><strong style="color:var(--cream)">Jaga suhu Mac.</strong> Tutup tab yang gak perlu, istirahatkan mesin tiap 2 jam. Mac panas = noise fan = distraksi tambahan.</span>
+    </div>
+    <div class="spek-item">
+      <span class="spek-icon">🧢</span>
+      <span><strong style="color:var(--cream)">Pakaian minimal.</strong> Ini rumah sendiri — dress code bebas, prioritas kenyamanan termal.</span>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <div class="warning-label">⚠️ Yang Harus Dihindari</div>
+    <p>Jangan maksa kerja intensif pas jam 12–3 siang di kondisi ini — itu peak heat hour Jakarta. Produktivitas drop, risiko heat fatigue naik. Lebih baik istirahat, makan, tidur siang singkat. Comeback jam 4 sore lebih efektif daripada maksa di jam panas.</p>
+  </div>
+
+  <!-- KESIMPULAN -->
+  <div class="kesimpulan-box">
+    <h3>📌 Penutup</h3>
+
+    <!-- EKSPRESI 3 — SEMANGAT (penutup) -->
+    <div class="ekspresi-card semangat" style="background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);">
+      <img src="../images/ekspresi/ekspresi_semangat.webp" alt="Om Opan semangat">
+      <p>"Panas 35 derajat, Mac ngebul, kipas jadi hairdryer raksasa — tapi konten tetap jalan. Itu definisi pejuang konten Ciracas. Gerah boleh, menyerah jangan. 💪"</p>
+    </div>
+
+    <p>Jakarta lagi menyala hari ini. Tapi Bunker Opanowski tetap beroperasi — walau operatornya peluh-peluhan dan kipas cuma mindahin panas dari satu sudut ke sudut lain.</p>
+    <p>Kalau lo juga lagi survive di kota yang sama, lo tau rasanya. Dan kalau lo di Bandung atau kota lain yang hawanya adem — <em>nikmatin dulu, bray.</em></p>
+    <p>Gimana kondisi tempat lo? Sama-sama rasa sauna atau malah ujan adem? Drop di komentar — gw penasaran.</p>
+    <span class="sign-off">Tetap autodidak, tetap berkah! 🏴</span>
+  </div>
+
+  <!-- HASHTAG -->
+  <div class="hashtag-block">
+    <span class="hashtag">#BunkerOpanowski</span>
+    <span class="hashtag">#JakartaPanas</span>
+    <span class="hashtag">#NgodingGerah</span>
+    <span class="hashtag">#PejuangKonten</span>
+    <span class="hashtag">#VillaCiracas</span>
+    <span class="hashtag">#JakartaTimur</span>
+    <span class="hashtag">#KopiGulaarenFix</span>
+    <span class="hashtag">#MacJadul</span>
+    <span class="hashtag">#HidupSantaiEksperimenTerus</span>
+    <span class="hashtag">#UrbanLife</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Lo juga lagi survive di tengah panas Jakarta? Atau di kota lain yang sama gerahnya? Cerita dong bray! 🔥</p>
+    <div class="cta-links">
+      <a class="cta-btn" href="https://youtube.com/shorts/Sv_V_37U30c?si=KKzS_gpjWwoeCp0A" target="_blank" rel="noopener">▶️ YouTube Shorts</a>
+      <a class="cta-btn" href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="cta-btn" href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📓 Log Lainnya</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="https://opanowski.github.io/opanowski/blog/blog-timun-suri.html">← Timun Suri</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Jakarta 35 Derajat
+  <span class="updated-tag"><span class="live-dot"></span>Mei 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+  </div>
+</footer>
+
+<!-- KOMENTAR -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+</body>
+</html>
