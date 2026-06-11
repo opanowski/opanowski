@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "029",
+    date: "11 Jun 2026",
+    title: "Ngoding Rasa Sauna: Jakarta 35° dan Semangat yang Gak Kendor",
+    subtitle: "Termometer 35 derajat di dalam Bunker, kipas cuma mindahin udara panas, Mac jadul berasa heater. Tapi pejuang konten Ciracas pantang mundur — ini cerita survive ngoding di Jakarta yang lagi menyala.",
+    tags: ["Lifestyle", "Jakarta", "Villa Ciracas"],
+    emoji: "🔥",
+    url: "/opanowski/blog/blog-panas-jakarta.html"
+  },
+  {
     number: "028",
     date: "3 Jun 2026",
     title: "Anggur Bali Masuk Fase Veraison — Deg-degan Nunggu yang Siap",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["AI Chatbot", "Cloudflare Workers", "Tech"],
     emoji: "🤖",
     url: "/opanowski/blog/blog-tanya-om-opan.html"
-  },
-  {
-    number: "026",
-    date: "26 Mei 2026",
-    title: "Labu Botol: Eksperimen Buah Kampung di Lahan 150m²",
-    subtitle: "Banyak yang salah kira ini zucchini. Padahal ini Labu Botol — buah kampung yang gw eksperimenin sendiri di lahan sempit Villa Ciracas. Hasilnya? Diluar ekspektasi.",
-    tags: ["Kebun", "Urban Farming", "Villa Ciracas"],
-    emoji: "🫙",
-    url: "/opanowski/blog/blog-labu-botol.html"
   },
 ];
 
