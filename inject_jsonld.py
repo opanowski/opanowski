@@ -36,12 +36,12 @@ def parse_date(raw):
     if len(parts) == 3:
         day, mon, year = parts
         mon_num = BULAN.get(mon, "01")
-        return f"{year}-{mon_num}-{int(day):02d}"
+        return f"{year}-{mon_num}-{int(day):02d}T00:00:00+07:00"
     elif len(parts) == 2:
         # e.g. "Mei 2026" — pakai tanggal 01
         mon, year = parts
         mon_num = BULAN.get(mon, "01")
-        return f"{year}-{mon_num}-01"
+        return f"{year}-{mon_num}-01T00:00:00+07:00"
     return "2026-05-01"
 
 # Map: filename → {date_iso, title}
