@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "030",
+    date: "12 Jun 2026",
+    title: "Sulap Xiaoxin Pad Jadi Tiny PC Tanpa Ribet!",
+    subtitle: "Debian Linux jalan di atas Android tanpa root, tanpa dual-boot, tanpa risiko bootloop. Xiaoxin Pad 2024 disulap jadi Tiny PC kerja beneran — modal cuma Termux & keyboard wireless.",
+    tags: ["Tiny PC", "Linux", "Produktivitas"],
+    emoji: "💻",
+    url: "/opanowski/blog/blog-xiaoxin-tiny-pc.html"
+  },
+  {
     number: "029",
     date: "11 Jun 2026",
     title: "Ngoding Rasa Sauna: Jakarta 35° dan Semangat yang Gak Kendor",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Urban Farming", "Kebun", "Villa Ciracas"],
     emoji: "🍇",
     url: "/opanowski/blog/blog-anggur-bali-veraison.html"
-  },
-  {
-    number: "027",
-    date: "29 Mei 2026",
-    title: "Dari Nol Sampai \"Tanya Om Opan\" Bisa Ngobrol Sendiri",
-    subtitle: "Perjalanan 2 hari bikin AI chatbot gratis di web statis GitHub Pages. Dari bug 5 jam sampai berhasil deploy Cloudflare Workers AI dengan Llama 3.1 — total biaya: Rp 0.",
-    tags: ["AI Chatbot", "Cloudflare Workers", "Tech"],
-    emoji: "🤖",
-    url: "/opanowski/blog/blog-tanya-om-opan.html"
   },
 ];
 
