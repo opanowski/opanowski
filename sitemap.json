@@ -1,8 +1,8 @@
 {
   "base_url": "https://opanowski.github.io/opanowski",
   "blog": [
-    "blog/blog-anggur-bali-veraison.html",
     "blog/blog-anak-kelinci-jetpump.html",
+    "blog/blog-anggur-bali-veraison.html",
     "blog/blog-brand-konsistensi.html",
     "blog/blog-coretax-registrasi-drama.html",
     "blog/blog-digital-legacy-bayu.html",
@@ -23,6 +23,7 @@
     "blog/blog-log086-pisang-telur.html",
     "blog/blog-mancing-bambu-apus.html",
     "blog/blog-meta-ai-bunker-opanowski.html",
+    "blog/blog-panas-jakarta.html",
     "blog/blog-panen-telur-batang-pisang.html",
     "blog/blog-pare-hutan-manis-biji-merah.html",
     "blog/blog-pasang-tombol-donasi.html",
@@ -35,7 +36,8 @@
     "blog/blog-tablet-mac-workflow.html",
     "blog/blog-tanya-om-opan.html",
     "blog/blog-tebu-hitam-tabulampot.html",
-    "blog/blog-website-ai-3hari.html"
+    "blog/blog-website-ai-3hari.html",
+    "blog/blog-xiaoxin-tiny-pc.html"
   ],
   "projects": [
     "projects/project-aviary.html",
