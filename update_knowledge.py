@@ -6,6 +6,9 @@ Jalanin setelah git push blog baru:
   python3 update_knowledge.py
 
 Requirements: pip3 install requests beautifulsoup4
+
+PATCH NOTE: versi ini escape karakter backtick (`) dan ${...} di konten
+yang di-scrape, biar gak ngerusak template literal JS di worker.js.
 """
 
 import json
@@ -55,8 +58,8 @@ def extract_content(url):
         elif soup.find("title"):
             title = soup.find("title").get_text(strip=True)
 
-        # Hapus elemen yang tidak relevan
-        for tag in soup(["script", "style", "nav", "footer", "header"]):
+        # Hapus elemen yang tidak relevan (termasuk script biar kode JS gak ketarik)
+        for tag in soup(["script", "style", "nav", "footer", "header", "noscript"]):
             tag.decompose()
 
         # Ambil semua paragraf & heading artikel
@@ -71,6 +74,18 @@ def extract_content(url):
 
     except Exception as e:
         return "", f"(gagal fetch: {e})"
+
+def sanitize_for_template_literal(text):
+    """
+    Escape karakter yang bisa merusak template literal JS (`...`):
+    - backslash harus diescape dulu sebelum yang lain
+    - backtick (`) -> \\`
+    - ${ -> \\${  (biar gak ke-interpolasi sebagai JS expression)
+    """
+    text = text.replace("\\", "\\\\")
+    text = text.replace("`", "\\`")
+    text = text.replace("${", "\\${")
+    return text
 
 def build_knowledge_base(sitemap):
     """Build string knowledge base dari semua halaman."""
@@ -99,7 +114,8 @@ def build_knowledge_base(sitemap):
         lines.append(entry)
         print(f"  ✅ {slug}")
 
-    return "\n".join(lines)
+    raw_kb = "\n".join(lines)
+    return sanitize_for_template_literal(raw_kb)
 
 def update_worker_js(new_kb):
     """Replace KNOWLEDGE_BASE di worker.js dengan konten baru."""
@@ -114,9 +130,13 @@ def update_worker_js(new_kb):
 
     # Cari dan replace bagian KNOWLEDGE_BASE (antara backtick pertama dan terakhir di const KNOWLEDGE_BASE)
     pattern = r'(const KNOWLEDGE_BASE = `)(.*?)(`\s*;)'
-    replacement = rf'\g<1>\n{new_kb}\n\g<3>'
 
-    new_content, count = re.subn(pattern, replacement, content, flags=re.DOTALL)
+    # Pakai function replacement (bukan string) biar backslash di new_kb
+    # gak ditafsirkan ulang sama mesin regex (\g<1> dkk).
+    def _replace(m):
+        return f"{m.group(1)}\n{new_kb}\n{m.group(3)}"
+
+    new_content, count = re.subn(pattern, _replace, content, flags=re.DOTALL)
 
     if count == 0:
         print("❌ Tidak bisa menemukan KNOWLEDGE_BASE di worker.js")
@@ -155,7 +175,7 @@ def main():
     total = len(sitemap.get("blog", [])) + len(sitemap.get("projects", []))
     print(f"   Ditemukan: {len(sitemap.get('blog', []))} blog + {len(sitemap.get('projects', []))} project ({total} halaman)\n")
 
-    # 2. Build knowledge base baru dari semua halaman
+    # 2. Build knowledge base baru dari semua halaman (sudah disanitize)
     new_kb = build_knowledge_base(sitemap)
 
     # 3. Update worker.js
