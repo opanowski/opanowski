@@ -366,6 +366,14 @@ Setiap blog boleh punya komponen visual unik yang tema-spesifik (misal: thermome
 - [ ] Foto di-`git add` terpisah kalau ada
 
 ---
+## Untuk SOP blog baru — tinggal kamu tambahkan di TEMPLATE-BLOG.md:
+
+- Tambah entry baru di POST_DATA di inject_jsonld.py (nomor, tanggal, judul, filename)
+- Jalankan python3 inject_jsonld.py setelah file HTML baru dibuat
+- Tambah <meta property="og:image"> di <head> (isi URL hero image)
+- JSON-LD sudah otomatis via script, tapi untuk blog baru perlu tambah entry baru di POST_DATA di inject_jsonld.py sebelum dijalankan
+
+---
 
 *Bunker Opanowski — TEMPLATE-BLOG.md v1.1 | Villa Ciracas, Juni 2026*
 *Direvisi berdasarkan audit blog-panas-jakarta.html — 10 gap diperbaiki*
