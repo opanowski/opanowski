@@ -5,3 +5,11 @@ update_html_to_webp.py
 images/icon-192.webp
 images/icon-512.webp
 images/backup_original/
+
+# One-off fix/patch scripts (gak perlu di-track)
+fix_omopan_focus.py
+fix_post028_tags.py
+fix_sitemap.py
+patch_worker_kb_filter.py
+patch_worker_logging.py
+fix_repo_cleanup.py
