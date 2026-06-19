@@ -1,0 +1,59 @@
+name: Update Om Opan Knowledge Base
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'blog/**'
+      - 'projects/**'
+      - 'sitemap.json'
+jobs:
+  update-kb:
+    name: Rebuild & Deploy Knowledge Base
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Set up Node.js (for Wrangler)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Wrangler
+        run: npm install -g wrangler
+
+      - name: Wait for GitHub Pages to deploy
+        run: |
+          echo "⏳ Nunggu GitHub Pages selesai deploy dulu (2 menit)..."
+          sleep 120
+
+      - name: Run update_knowledge.py
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: python3 update_knowledge.py
+
+      - name: Commit & push worker.js kalau ada perubahan
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet worker.js; then
+            echo "✅ worker.js gak berubah, skip commit."
+          else
+            git add worker.js
+            git commit -m "chore: auto-update KB di worker.js [skip ci]"
+            git push
+            echo "✅ worker.js berhasil di-commit & push balik ke repo."
+          fi
