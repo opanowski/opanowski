@@ -8,6 +8,7 @@ on:
       - 'blog/**'
       - 'projects/**'
       - 'sitemap.json'
+      - 'worker.js'
 jobs:
   update-kb:
     name: Rebuild & Deploy Knowledge Base
