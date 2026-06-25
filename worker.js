@@ -81,9 +81,28 @@ function parseKnowledgeBase(raw) {
 
 const KB_ENTRIES = parseKnowledgeBase(KNOWLEDGE_BASE);
 
+// Kata generic/gaul yang gak nyandang info topik, tapi sering nempel/numpang di
+// konten post manapun (termasuk "blog"/"project" yang literally ada di SETIAP
+// tag slug, jadi useless buat scoring). Tanpa filter ini, query kayak
+// "yakin lo bro?" bisa kebetulan nyangkut di post yang gak nyambung sama
+// sekali, cuma karena 1 kata generic numpang match di situ.
+const STOPWORDS = new Set([
+  "blog", "project", "yang", "dan", "atau", "ini", "itu", "ada", "juga",
+  "sama", "buat", "dari", "ke", "di", "ya", "nya", "aja", "deh", "sih",
+  "dong", "kan", "nih", "kok", "kah", "lah", "bro", "bray", "gw", "gue",
+  "lo", "lu", "kamu", "kalian", "kita", "emang", "memang", "kayak",
+  "kalo", "kalau", "gitu", "gini", "udah", "sudah", "belum", "udh",
+  "baru", "lagi", "mau", "udah", "doang", "segitu", "gimana", "caranya",
+  "yakin", "serius", "beneran", "bener", "benar", "yakinkah", "masa",
+  "masak", "kok", "apakah", "apaan", "tolong", "bisa", "boleh", "bantu",
+]);
+
 function getRelevantKnowledge(query) {
   const q = (query || "").toLowerCase();
-  const words = q.split(/\s+/).filter((w) => w.length > 2);
+  const words = q
+    .split(/\s+/)
+    .map((w) => w.replace(/[^\w-]/g, "")) // buang tanda baca kayak "?" "!"
+    .filter((w) => w.length > 2 && !STOPWORDS.has(w));
 
   if (words.length === 0) {
     return KB_ENTRIES.slice(0, 5).map((e) => e.text).join("\n");
