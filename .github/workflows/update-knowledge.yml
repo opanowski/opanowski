@@ -55,6 +55,7 @@ jobs:
           else
             git add worker.js
             git commit -m "chore: auto-update KB di worker.js [skip ci]"
+            git pull --rebase origin main
             git push
             echo "✅ worker.js berhasil di-commit & push balik ke repo."
           fi
