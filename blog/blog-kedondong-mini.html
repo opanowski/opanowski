@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kedondong Mini: Si Asam Manis yang Gak Pernah Kenal Libur Berbuah — Bunker Opanowski</title>
+<meta name="description" content="Kedondong mini tabulampot di teras Villa Ciracas gak pernah berhenti berbuah. Cerita perawatan anti-ribet dari sudut pandang pekebun autodidak.">
+<meta property="og:title" content="Kedondong Mini: Si Asam Manis yang Gak Pernah Kenal Libur Berbuah">
+<meta property="og:description" content="Tabulampot kedondong mini di teras Villa Ciracas yang gak kenal musim buat berbuah — perawatan anti-ribet ala Bunker Opanowski.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-kedondong-mini.html">
+<meta property="og:image" content="https://opanowski.github.io/opanowski/images/kedondong_mini.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍏</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+:root {
+  --bg:         #0f1117;
+  --surface:    #1a1d27;
+  --surface2:   #22263a;
+  --accent:     #4caf7d;
+  --gold:       #C8972A;
+  --cream:      #F5F0E8;
+  --text:       #e8eaf0;
+  --text-muted: #8b8fa8;
+  --green:      #4caf7d;
+  --border:     #2e3248;
+  --blue:       #5b8dee;
+  --red:        #e05a5a;
+  --orange:     #f07833;
+  --font-display: 'Playfair Display', serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+  border-bottom: 2px solid var(--green);
+  padding: 22px 24px 18px;
+  position: sticky; top: 0; z-index: 100;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.7rem;
+  color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+}
+.back-link:hover { color: var(--green); }
+
+/* PROGRESS BAR */
+#progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--accent); z-index: 9999; transition: width 0.15s ease; }
+
+/* HERO */
+.hero { position: relative; background: linear-gradient(160deg, #14201a 0%, #0f1117 60%); min-height: 380px; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-photo { position: absolute; top: 0; right: 0; width: 55%; height: 100%; object-fit: cover; object-position: center top; mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%); -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%); pointer-events: none; }
+.hero-bg-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05; background-image: repeating-linear-gradient(45deg, #4caf7d 0px, #4caf7d 1px, transparent 1px, transparent 35px); }
+.hero-emoji-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13rem; opacity: 0.05; pointer-events: none; user-select: none; }
+.hero-overlay { position: relative; z-index: 2; width: 100%; padding: 2.5rem 2rem; background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%); }
+.hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+.tag-pill { background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4); color: var(--gold); font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; font-family: var(--font-mono); }
+.tag-pill.green  { background: rgba(76,175,125,0.15);  border-color: rgba(76,175,125,0.4);  color: var(--green); }
+.tag-pill.blue   { background: rgba(91,141,238,0.15);  border-color: rgba(91,141,238,0.4);  color: var(--blue); }
+.hero-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem; }
+.hero-title em { color: var(--green); font-style: italic; }
+.hero-meta { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.live-dot { display: inline-block; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* LAYOUT */
+.container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+.artikel-body p { font-size: 0.95rem; line-height: 1.9; color: var(--text); margin-bottom: 1.5rem; opacity: 0.88; }
+.artikel-body h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--cream); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.artikel-body h2 em { color: var(--green); font-style: italic; }
+
+/* INLINE CONTENT IMAGE */
+.content-img-wrap { margin: 1.8rem 0; }
+.content-img-wrap img { width: 100%; border-radius: 12px; display: block; border: 1px solid var(--border); }
+.content-img-caption { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-align: center; margin-top: 0.6rem; letter-spacing: 0.5px; }
+
+/* YT SHORTS THUMBNAIL */
+.yt-thumb-wrap { position: relative; display: block; margin: 1.8rem 0; border-radius: 12px; overflow: hidden; text-decoration: none; border: 1px solid var(--border); }
+.yt-thumb-wrap img { width: 100%; display: block; aspect-ratio: 9/16; max-height: 480px; object-fit: cover; margin: 0 auto; }
+.yt-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 64px; height: 64px; background: rgba(224,90,90,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(0,0,0,0.45); transition: transform 0.2s ease; }
+.yt-thumb-wrap:hover .yt-play-btn { transform: translate(-50%,-50%) scale(1.1); }
+.yt-play-btn svg { width: 24px; height: 24px; fill: #fff; margin-left: 2px; }
+.yt-thumb-label { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-family: var(--font-mono); font-size: 0.65rem; color: var(--cream); letter-spacing: 1px; text-transform: uppercase; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); padding: 24px 0 8px; }
+
+/* EKSPRESI CARD */
+.ekspresi-card { display: flex; align-items: center; gap: 1rem; margin: 1.2rem 0; padding: 0.9rem 1.2rem; border-radius: 10px; }
+.ekspresi-card img { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; flex-shrink: 0; border: 2px solid rgba(200,151,42,0.3); }
+.ekspresi-card p { margin: 0 !important; font-size: 0.85rem !important; color: var(--text-muted) !important; font-style: italic; line-height: 1.7 !important; opacity: 1 !important; }
+.ekspresi-card.marah    img { border-color: rgba(224,90,90,0.4); }
+.ekspresi-card.semangat img { border-color: rgba(76,175,125,0.4); }
+.ekspresi-card.biru     img { border-color: rgba(91,141,238,0.4); }
+
+/* KESIMPULAN */
+.kesimpulan-box { margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px; border: 1px solid rgba(76,175,125,0.3); background: linear-gradient(135deg, rgba(76,175,125,0.05), rgba(76,175,125,0.02)); }
+.kesimpulan-box h3 { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem; }
+.kesimpulan-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem; }
+.sign-off { font-family: var(--font-display); font-size: 0.9rem; color: var(--green); font-style: italic; margin-top: 1rem; display: block; }
+
+/* HASHTAG */
+.hashtag-block { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; }
+.hashtag { background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem; padding: 4px 12px; border-radius: 20px; }
+
+/* POST-NAV & FOOTER */
+.post-nav { max-width: 720px; margin: 0 auto; padding: 0 1.5rem 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-family: var(--font-mono); font-size: 0.7rem; }
+.post-nav a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.post-nav a:hover { color: var(--green); }
+footer { max-width: 720px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+.updated-tag { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; }
+.social-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 0.8rem; }
+.social-links a { display: inline-flex; align-items: center; gap: 4px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.social-links a:hover { color: var(--green); }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header>
+  <a href="https://opanowski.github.io/opanowski/blog/index.html" class="back-link">← Log Harian</a>
+</header>
+
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <img src="../images/kedondong_mini.jpg" alt="Kedondong mini tabulampot di teras Villa Ciracas" class="hero-photo">
+  <div class="hero-emoji-bg">🍏</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill green">Kebun &amp; Alam</span>
+      <span class="tag-pill">Tabulampot</span>
+      <span class="tag-pill blue">Slice of Life</span>
+    </div>
+    <h1 class="hero-title">Kedondong Mini: Si Asam Manis yang Gak Pernah Kenal <em>Kata "Libur" Berbuah</em></h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span> Om Opan</span>
+      <span>•</span>
+      <span>Villa Ciracas, Jakarta Timur</span>
+      <span>•</span>
+      <span>25 Juni 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="artikel-body">
+
+    <p>Beberapa waktu lalu, gue sempat cerita soal lalat hijau gendut nan mengkilap yang rajin banget ngebantu penyerbukan bunga di teras rumah gue. Nah, kali ini gue mau bahas tentang sang "tuan rumah" tempat si lalat itu bekerja keras: pohon kedondong mini gue.</p>
+
+    <p>Jujur aja, reputasi gue dalam urusan merawat tanaman itu agak... tragis. Kalau tanaman-tanaman gue terdahulu bisa ngomong, mereka mungkin bakal kompak teriak, "Ngapain lo adopsi gue kalau ujung-ujungnya cuma disiram seminggu sekali?!"</p>
+
+    <p>Tapi, pohon kedondong mini dalam pot (tabulampot) yang satu ini beda cerita. Dia tangguh. Dia survive dari "tangan dingin" gue yang kadang suka lupa jadwal nyiram. Dan yang paling ajaib, dia gak pernah kenal kata "libur" buat berbuah.</p>
+
+    <p>Kalau lo lagi nyari tanaman buah yang gak bikin frustrasi buat ditaruh di halaman rumah, ini alasan kenapa si asam manis genjah ini layak jadi pilihan utama.</p>
+
+    <h2>1. Defenisi <em>"Genjah"</em> yang Sesungguhnya</h2>
+
+    <p>Dalam dunia tanam-menanam, ada istilah "genjah", artinya tanaman yang cepat berbuah. Tapi kedondong mini ini menurut gue udah lewat dari sekadar genjah. Dia udah masuk level "workaholic".</p>
+
+    <p>Gue perhatiin polanya di teras Villa Ciracas ini. Belum sempat buah yang lama membesar dan siap dipanen, eh di tangkai sebelah atasnya udah muncul gerombolan bunga putih kekuningan yang baru. Begitu terus, siklusnya muter gak ada habisnya.</p>
+
+    <p>Beda banget sama pohon mangga atau rambutan yang pakai acara nunggu musim setahun sekali. Kedondong mini gak butuh kalender. Mau musim hujan, mau musim kemarau, yang penting asupan matahari terpenuhi, dia bakal terus pamer bakal buah baru.</p>
+
+    <!-- EKSPRESI: KAGUM -->
+    <div class="ekspresi-card biru" style="background:rgba(91,141,238,0.05);border:1px solid rgba(91,141,238,0.2);">
+      <img src="../images/ekspresi/ekspresi_kagum.webp" alt="Om Opan kagum">
+      <p>"Tanaman lain libur kalau lagi gak musim, kedondong mini ini kayaknya gak punya kalender."</p>
+    </div>
+
+    <h2>2. Pahlawan <em>Lahan Sempit</em></h2>
+
+    <p>Nanam pohon buah di Jakarta — khususnya di daerah padat kayak Ciracas — itu punya tantangan tersendiri: LAHAN. Mau nanam pohon kedondong raksasa yang tingginya menyamai atap rumah? Ya jelas gak mungkin, bisa-bisa diprotes tetangga karena daunnya ngotorin genteng mereka.</p>
+
+    <p>Di sinilah indahnya konsep Tabulampot (Tanaman Buah Dalam Pot).</p>
+
+    <p>Kedondong mini ini gue taruh di pot ukuran sedang. Tingginya gak sampai sedada gue, tapi produktivitasnya gak kalah sama pohon yang ditanam di tanah luas. Buat kaum urban yang halaman rumahnya cuma tersisa space satu meter atau cuma punya area teras, tanaman ini beneran jadi solusi biar tetap bisa ngerasain sensasi "petik buah sendiri".</p>
+
+    <h2>3. Perawatan <em>"Anti-Ribet"</em> (Sesuai Standar Gue)</h2>
+
+    <p>Gue bukan tipe pekebun yang punya jadwal ketat pakai alarm buat ngasih pupuk kimia bermerek mahal tiap minggu. Prinsip berkebun gue simpel: kalau tanaman itu mau hidup bareng gue, dia harus punya daya juang tinggi.</p>
+
+    <p>Dan kedondong mini lolos seleksi alam di rumah gue dengan nilai cumlaude. Modal utamanya cuma tiga hal:</p>
+
+    <p><strong style="color:var(--cream)">1. Matahari Penuh</strong> — Taruh di tempat yang paling panas di teras. Tanaman ini suka banget berjemur.<br>
+    <strong style="color:var(--cream)">2. Penyiraman Konsisten</strong> — Disiram kalau tanahnya udah kelihatan kering (biasanya sore hari sambil santai ngopi).<br>
+    <strong style="color:var(--cream)">3. Pupuk Organik Seadanya</strong> — Sesekali kalau lagi mood, gue kasih pupuk organik tipis-tipis buat ngejaga nutrisi tanah di dalam pot.</p>
+
+    <p>Sisanya? Biarkan alam yang bekerja. Termasuk membiarkan tim penyerbuk alami — seperti kawan lama gue, si lalat hijau — buat ngurusin perkawinan bunganya diam-diam.</p>
+
+    <!-- EKSPRESI: SEMANGAT -->
+    <div class="ekspresi-card semangat" style="background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);">
+      <img src="../images/ekspresi/ekspresi_semangat.webp" alt="Om Opan semangat">
+      <p>"Tiga modal doang: matahari, air, sama pupuk seadanya. Tanaman males urus, ya ini jawabannya."</p>
+    </div>
+
+    <h2>4. Dari Teras <em>Langsung ke Cobek</em></h2>
+
+    <p>Punya pohon buah yang rajin berbuah itu bonusnya instan. Pas siang-siang Jakarta lagi panas-panasnya, terus mata melipir ke teras melihat ada buah kedondong mini yang sudah cukup tua, rasanya tangan ini gatal mau ngambil ulekan.</p>
+
+    <p>Tinggal petik beberapa butir, kupas kulit tipisnya, lalu bikin sambal garam-cabai rawit atau sambal kacang yang pedas menggigit. Rasa buahnya yang asam segar dengan sedikit sensasi manis itu beneran kombinasi mematikan buat ngusir kantuk di jam-jam rawan.</p>
+
+    <p>Gak perlu repot-repot nunggu tukang rujak lewat depan gang. Sumber kesegarannya ada persis tiga langkah dari kursi teras tempat gue biasa duduk.</p>
+
+    <div class="content-img-wrap">
+      <img src="../images/kedondong_thumbnail.jpg" alt="Buah kedondong mini siap panen dari tabulampot Villa Ciracas">
+      <div class="content-img-caption">Panen dadakan dari pot kecil di teras — gak nunggu musim 🍏</div>
+    </div>
+
+    <a href="https://youtube.com/shorts/rcHclxknRaY" target="_blank" rel="noopener" class="yt-thumb-wrap">
+      <img src="https://i.ytimg.com/vi/rcHclxknRaY/hqdefault.jpg" alt="YouTube Shorts: Kedondong Mini Tabulampot">
+      <div class="yt-play-btn">
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <div class="yt-thumb-label">▶ Tonton di YouTube Shorts</div>
+    </a>
+
+    <div class="kesimpulan-box">
+      <h3>📌 Catatan Akhir dari Teras Rumah</h3>
+      <p>Kadang kita sering berpikir kalau berkebun itu harus nunggu punya tanah luas, modal besar, atau keahlian setingkat profesor pertanian. Padahal, dari satu pot kecil kedondong mini di sudut teras rumah, kita udah bisa belajar banyak hal tentang konsistensi alam.</p>
+      <p>Dia gak butuh banyak tuntutan, dia cuma butuh ruang kecil buat tumbuh, dan sebagai gantinya, dia ngasih buah yang gak pernah berhenti. Sebuah investasi kebahagiaan kecil yang sangat menguntungkan buat jiwa-jiwa yang butuh hiburan gratis di rumah.</p>
+      <p>Jadi, di halaman rumah lo udah ada yang melihara si asam manis genjah ini belum? Atau jangan-jangan lo masih ragu buat mulai nanam tanaman pertama lo?</p>
+      <p>Gak usah banyak mikir, coba aja dulu satu pot. Kalau gue yang bertangan maut aja bisa berhasil bikin dia berbuah terus, lo pasti juga bisa!</p>
+      <span class="sign-off">Tetap autodidak, tetap berkah! 🏴</span>
+    </div>
+
+    <!-- EKSPRESI: COOL -->
+    <div class="ekspresi-card" style="background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);">
+      <img src="../images/ekspresi/ekspresi_cool.webp" alt="Om Opan cool">
+      <p>"Modal satu pot, hasil gak pernah libur. Investasi paling santai yang pernah gue bikin."</p>
+    </div>
+
+    <div class="hashtag-block">
+      <span class="hashtag">#BunkerOpanowski</span>
+      <span class="hashtag">#KedondongMini</span>
+      <span class="hashtag">#Tabulampot</span>
+      <span class="hashtag">#UrbanFarming</span>
+      <span class="hashtag">#KebunRumah</span>
+      <span class="hashtag">#VillaCiracas</span>
+      <span class="hashtag">#SliceOfLife</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="blog-xiaoxin-tiny-pc.html">← Sulap Xiaoxin Pad Jadi Tiny PC Tanpa Ribet!</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Catatan kebun dari Villa Ciracas
+  <span class="updated-tag"><span class="live-dot"></span>Juni 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/opanowski.ajjah/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+    <a href="https://www.tiktok.com/@opanowski" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg> TikTok
+    </a>
+    <a href="https://www.threads.com/@opanowski" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/></svg> Threads
+    </a>
+    <a href="https://x.com/AjjahTyo93183" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg> X
+    </a>
+    <a href="https://open.spotify.com/show/0IjFXGMOWSwEfNLuZPrqxx" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/></svg> Spotify
+    </a>
+  </div>
+</footer>
+
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+
+<script>
+window.addEventListener('scroll', function () {
+  var bar = document.getElementById('progress-bar');
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+  bar.style.width = pct + '%';
+});
+</script>
+
+</body>
+</html>

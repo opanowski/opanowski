@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "031",
+    date: "25 Jun 2026",
+    title: "Kedondong Mini: Si Asam Manis yang Gak Pernah Kenal Libur Berbuah",
+    subtitle: "Kedondong mini tabulampot di teras Villa Ciracas gak pernah berhenti berbuah. Cerita perawatan anti-ribet dari sudut pandang pekebun autodidak.",
+    tags: ["Tabulampot", "Kebun", "Villa Ciracas"],
+    emoji: "🍏",
+    url: "/opanowski/blog/blog-kedondong-mini.html"
+  },
+  {
     number: "030",
     date: "12 Jun 2026",
     title: "Sulap Xiaoxin Pad Jadi Tiny PC Tanpa Ribet!",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Lifestyle", "Jakarta", "Villa Ciracas"],
     emoji: "🔥",
     url: "/opanowski/blog/blog-panas-jakarta.html"
-  },
-  {
-    number: "028",
-    date: "3 Jun 2026",
-    title: "Anggur Bali Masuk Fase Veraison — Deg-degan Nunggu yang Siap",
-    subtitle: "Sebagian udah ungu tua, sebagian masih hijau. Nggak bisa dipaksa, nggak bisa diakali. Fase veraison ini titik balik sebelum panen — tinggal sabar & amatin.",
-    tags: ["Urban Farming", "Kebun", "Villa Ciracas"],
-    emoji: "🍇",
-    url: "/opanowski/blog/blog-anggur-bali-veraison.html"
   },
 ];
 
