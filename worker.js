@@ -67,8 +67,15 @@ function parseKnowledgeBase(raw) {
     .split("\n")
     .filter((l) => l.trim().startsWith("["))
     .map((line) => {
-      const match = line.match(/^\[([^\]]+)\]/);
-      return { slug: match ? match[1] : "", text: line };
+      // Beberapa baris punya 2 tag bracket berdempetan, contoh:
+      // "[INI POST PALING BARU] [blog-xiaoxin-tiny-pc] ...". Regex lama cuma
+      // nangkep tag PERTAMA ("INI POST PALING BARU") jadi slug — salah, bikin
+      // entry ini ke-mislabel dan suka nyelip gak relevan di hasil match.
+      // Sekarang ambil SEMUA tag bracket di depan baris, slug asli = tag TERAKHIR.
+      const leadingTags = line.match(/^(\s*\[[^\]]+\])+/)?.[0] || "";
+      const tagMatches = [...leadingTags.matchAll(/\[([^\]]+)\]/g)].map((m) => m[1]);
+      const slug = tagMatches[tagMatches.length - 1] || "";
+      return { slug, text: line };
     });
 }
 
@@ -94,7 +101,11 @@ function getRelevantKnowledge(query) {
     .slice(0, 5);
 
   if (matched.length === 0) {
-    return "Daftar topik yang ada: " + KB_ENTRIES.map((e) => e.slug).join(", ");
+    // Dulu di sini dump semua slug topik ke model — efeknya malah bikin model
+    // "ngarang" pakai topik random pas user nge-challenge jawaban ("yakin lo?").
+    // Sekarang kosongin aja, biar system prompt fallback ke MODE 2 (jawab jujur
+    // pakai pengetahuan umum, bukan maksa nyambung-nyambungin ke topik blog).
+    return "(tidak ada entri knowledge base yang relevan untuk pertanyaan ini)";
   }
 
   return matched.map((e) => e.text).join("\n");
@@ -140,6 +151,7 @@ YANG TIDAK BOLEH:
 - Jangan jawab topik berbahaya, SARA, politik panas, atau konten negatif
 - Jangan pura-pura jadi AI formal — kamu Om Opan, bukan chatbot kaku
 - Jangan PERNAH sebut tag internal apapun secara verbatim ke user, contoh: [INI POST PALING BARU]. Tag itu cuma penanda internal buat kamu, bukan judul atau bagian dari konten blog
+- Kalau user nge-challenge jawaban kamu sebelumnya (misal "yakin lo?", "serius?", "kok bisa?"), JANGAN ganti topik atau ngarang info baru yang gak ada di knowledge base. Tetap konsisten sama jawaban sebelumnya — kalau emang gak yakin, ngaku aja: "Iya bro, segitu yang gw tau, kalau ada yang lebih detail gw kurang ngerti juga 😄"
 
 ATURAN FORMAT:
 - Jawab Bahasa Indonesia santai (campur Inggris dikit boleh)
@@ -186,9 +198,16 @@ export default {
         });
       }
 
-      const lastUserMsg = userMessages[userMessages.length - 1]?.content || "";
+      // Ambil 2 pesan user terakhir, biar challenge phrase ("yakin lo?", "serius?",
+      // "kok bisa?") tetap kebawa konteks topik aslinya, bukan ke-reset jadi query baru.
+      const recentUserMsgs = userMessages
+        .filter((m) => m.role !== "assistant")
+        .slice(-2)
+        .map((m) => m.content)
+        .join(" ");
+      const queryForKB = recentUserMsgs || userMessages[userMessages.length - 1]?.content || "";
       const messages = [
-        { role: "system", content: getSystemPrompt(lastUserMsg) },
+        { role: "system", content: getSystemPrompt(queryForKB) },
         ...userMessages.slice(-4).map((msg) => ({
           role: msg.role === "assistant" ? "assistant" : "user",
           content: msg.content,
