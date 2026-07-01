@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenikir: Lalapan 'Sultan' dari Pekarangan Sendiri — Bunker Opanowski</title>
+<meta name="description" content="Kenikir bukan gulma — ini lalapan organik gratis dari pekarangan sendiri. Tips menanam di botol bekas, lahan sempit, tanpa pestisida.">
+<meta property="og:title" content="Kenikir: Lalapan 'Sultan' dari Pekarangan Sendiri">
+<meta property="og:description" content="Kenikir bukan gulma — ini lalapan organik gratis dari pekarangan sendiri. Tips menanam di botol bekas, lahan sempit, tanpa pestisida.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://opanowski.github.io/opanowski/blog/blog-kenikir.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+:root {
+  --bg:         #0f1117;
+  --surface:    #1a1d27;
+  --surface2:   #22263a;
+  --accent:     #4caf7d;
+  --gold:       #C8972A;
+  --cream:      #F5F0E8;
+  --text:       #e8eaf0;
+  --text-muted: #8b8fa8;
+  --green:      #4caf7d;
+  --border:     #2e3248;
+  --blue:       #5b8dee;
+  --red:        #e05a5a;
+  --orange:     #f07833;
+  --font-display: 'Playfair Display', serif;
+  --font-mono:    'Space Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; line-height: 1.8; }
+
+/* PROGRESS BAR */
+#progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--accent); z-index: 9999; transition: width 0.15s ease; }
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #1a1d27 0%, #0f1117 100%);
+  border-bottom: 2px solid var(--accent);
+  padding: 22px 24px 18px;
+  position: sticky; top: 0; z-index: 100;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.7rem;
+  color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+}
+.back-link:hover { color: var(--accent); }
+
+/* HERO */
+.hero { position: relative; background: linear-gradient(135deg, #16241c 0%, #0f1117 100%); min-height: 380px; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-bg-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05; background-image: repeating-linear-gradient(45deg, #4caf7d 0px, #4caf7d 1px, transparent 1px, transparent 35px); }
+.hero-emoji-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13rem; opacity: 0.05; pointer-events: none; user-select: none; }
+.hero-photo { position: absolute; top: 0; right: 0; width: 55%; height: 100%; object-fit: cover; object-position: center top; mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%); -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7) 0%, transparent 100%); pointer-events: none; }
+.hero-overlay { position: relative; z-index: 2; width: 100%; padding: 2.5rem 2rem; background: linear-gradient(to top, rgba(15,17,23,0.98) 0%, rgba(15,17,23,0.4) 80%, transparent 100%); }
+.hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+.tag-pill { background: rgba(200,151,42,0.15); border: 1px solid rgba(200,151,42,0.4); color: var(--gold); font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; font-family: var(--font-mono); }
+.tag-pill.green  { background: rgba(76,175,125,0.15);  border-color: rgba(76,175,125,0.4);  color: var(--green); }
+.tag-pill.blue   { background: rgba(91,141,238,0.15);  border-color: rgba(91,141,238,0.4);  color: var(--blue); }
+.tag-pill.red    { background: rgba(224,90,90,0.15);   border-color: rgba(224,90,90,0.4);   color: var(--red); }
+.tag-pill.orange { background: rgba(240,120,51,0.15);  border-color: rgba(240,120,51,0.4);  color: var(--orange); }
+.hero-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--cream); line-height: 1.2; margin-bottom: 0.75rem; }
+.hero-title em { color: var(--accent); font-style: italic; }
+.hero-meta { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.live-dot { display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* LAYOUT */
+.container { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+.artikel-body p { font-size: 0.95rem; line-height: 1.9; color: var(--text); margin-bottom: 1.5rem; opacity: 0.88; }
+.artikel-body h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--cream); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.artikel-body h2 em { color: var(--accent); font-style: italic; }
+.artikel-body ul { margin: 0 0 1.5rem 1.2rem; padding: 0; }
+.artikel-body li { font-size: 0.95rem; line-height: 1.9; color: var(--text); opacity: 0.88; margin-bottom: 0.7rem; }
+
+/* INLINE CONTENT IMAGE */
+.content-img-wrap { margin: 1.8rem 0; }
+.content-img-wrap img { width: 100%; border-radius: 12px; display: block; border: 1px solid var(--border); }
+.content-img-caption { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-align: center; margin-top: 0.6rem; letter-spacing: 0.5px; }
+
+/* YT SHORTS THUMBNAIL */
+.yt-thumb-wrap { position: relative; display: block; margin: 1.8rem 0; border-radius: 12px; overflow: hidden; text-decoration: none; border: 1px solid var(--border); }
+.yt-thumb-wrap img { width: 100%; display: block; aspect-ratio: 9/16; max-height: 480px; object-fit: cover; margin: 0 auto; }
+.yt-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 64px; height: 64px; background: rgba(224,90,90,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(0,0,0,0.45); transition: transform 0.2s ease; }
+.yt-thumb-wrap:hover .yt-play-btn { transform: translate(-50%,-50%) scale(1.1); }
+.yt-play-btn svg { width: 24px; height: 24px; fill: #fff; margin-left: 2px; }
+.yt-thumb-label { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-family: var(--font-mono); font-size: 0.65rem; color: var(--cream); letter-spacing: 1px; text-transform: uppercase; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); padding: 24px 0 8px; }
+
+/* EKSPRESI CARD */
+.ekspresi-card { display: flex; align-items: center; gap: 1rem; margin: 1.2rem 0; padding: 0.9rem 1.2rem; border-radius: 10px; }
+.ekspresi-card img { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; flex-shrink: 0; border: 2px solid rgba(200,151,42,0.3); }
+.ekspresi-card p { margin: 0 !important; font-size: 0.85rem !important; color: var(--text-muted) !important; font-style: italic; line-height: 1.7 !important; opacity: 1 !important; }
+.ekspresi-card.marah    img { border-color: rgba(224,90,90,0.4); }
+.ekspresi-card.semangat img { border-color: rgba(76,175,125,0.4); }
+.ekspresi-card.biru     img { border-color: rgba(91,141,238,0.4); }
+
+/* KESIMPULAN */
+.kesimpulan-box { margin: 2.5rem 0 0; padding: 1.5rem 1.8rem; border-radius: 12px; border: 1px solid rgba(76,175,125,0.3); background: linear-gradient(135deg, rgba(76,175,125,0.05), rgba(76,175,125,0.02)); }
+.kesimpulan-box h3 { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.9rem; }
+.kesimpulan-box p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 0.6rem; }
+.sign-off { font-family: var(--font-display); font-size: 0.9rem; color: var(--accent); font-style: italic; margin-top: 1rem; display: block; }
+
+/* HASHTAG */
+.hashtag-block { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; }
+.hashtag { background: var(--surface); border: 1px solid var(--border); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem; padding: 4px 12px; border-radius: 20px; }
+
+/* CTA */
+.cta-block { margin-top: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; text-align: center; }
+.cta-block p { font-size: 0.85rem !important; opacity: 0.6 !important; margin-bottom: 1rem !important; }
+.cta-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.cta-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(76,175,125,0.1); border: 1px solid rgba(76,175,125,0.3); color: var(--green); text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.75rem; font-weight: 600; }
+
+/* POST NAV */
+.post-nav { display: flex; gap: 12px; padding: 20px 24px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.post-nav a { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; transition: all 0.2s; }
+.post-nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* FOOTER */
+footer { padding: 24px; text-align: center; font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+.updated-tag { display: inline-block; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 0.6rem; color: var(--accent); margin-left: 6px; }
+.social-links { display: flex; gap: 16px; justify-content: center; margin-top: 10px; flex-wrap: wrap; }
+.social-links a { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+.social-links a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header>
+  <a class="back-link" href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+</header>
+
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <img src="../images/kenikir_hero.jpg" alt="Om Opan panen kenikir di pekarangan Villa Ciracas" class="hero-photo">
+  <div class="hero-emoji-bg">🌿</div>
+  <div class="hero-overlay">
+    <div class="hero-tags">
+      <span class="tag-pill green">🌱 Urban Farming</span>
+      <span class="tag-pill green">Tabulampot</span>
+      <span class="tag-pill">Villa Ciracas</span>
+    </div>
+    <h1 class="hero-title">Kenikir: Lalapan <em>'Sultan'</em> dari Pekarangan Sendiri</h1>
+    <div class="hero-meta">
+      <span><span class="live-dot"></span>Kamis, 25 Jun 2026</span>
+      <span>#032</span>
+      <span>5 menit baca</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="artikel-body">
+
+    <p>Pernah merasa bosan dengan menu lalapan yang itu-itu saja? Atau mungkin ingin menanam sesuatu yang tidak cuma cantik di mata, tapi juga bermanfaat di meja makan? Kenikir (<em>Cosmos caudatus</em>) adalah jawabannya. Tanaman yang sering dianggap "gulma" atau tanaman liar ini sebenarnya adalah harta karun tersembunyi di pekarangan rumah.</p>
+
+    <div class="content-img-wrap">
+      <img src="../images/kenikir.jpg" alt="Kenikir segar hasil panen dari pekarangan Villa Ciracas">
+      <div class="content-img-caption">Kenikir segar siap petik dari pekarangan — gratis, organik, tanpa pestisida 🌿</div>
+    </div>
+
+    <h2>Mengapa Harus Menanam <em>Kenikir</em>?</h2>
+    <p>Kenikir memiliki aroma khas yang segar dan rasa yang sedikit getir namun bikin nagih. Selain rasanya yang unik, kenikir dikenal memiliki banyak manfaat kesehatan, seperti sebagai antioksidan alami dan membantu melancarkan pencernaan. Menanamnya sendiri di rumah menjamin lalapan yang kita konsumsi 100% organik, tanpa pestisida kimia.</p>
+
+    <div class="ekspresi-card semangat" style="background:rgba(76,175,125,0.05);border:1px solid rgba(76,175,125,0.2);">
+      <img src="../images/ekspresi/ekspresi_semangat.webp" alt="Om Opan semangat">
+      <p>"Tanaman 'gulma' ternyata lalapan sultan — siapa sangka, bray!"</p>
+    </div>
+
+    <h2>Tips Menanam Kenikir di <em>Lahan Sempit</em></h2>
+    <p>Kabar baiknya, kenikir sangat mudah tumbuh, bahkan di dalam botol plastik bekas sekalipun. Berikut adalah langkah praktisnya:</p>
+    <ul>
+      <li><strong style="color:var(--cream)">Pemilihan Media Tanam:</strong> Gunakan campuran tanah subur dan kompos dengan perbandingan 2:1 agar nutrisi tercukupi.</li>
+      <li><strong style="color:var(--cream)">Wadah:</strong> Botol bekas berukuran 1,5 liter sudah sangat cukup. Pastikan memberi lubang di bagian bawah untuk sirkulasi air (drainase).</li>
+      <li><strong style="color:var(--cream)">Penyinaran:</strong> Kenikir menyukai cahaya matahari penuh. Pastikan menaruhnya di area yang terkena sinar matahari agar daunnya tumbuh rimbun.</li>
+      <li><strong style="color:var(--cream)">Penyiraman:</strong> Cukup siram sekali sehari, terutama saat cuaca terik seperti di Jakarta belakangan ini.</li>
+    </ul>
+
+    <h2>Cara <em>Mengolah</em> Kenikir</h2>
+    <p>Kenikir paling nikmat disantap sebagai lalapan mentah. Cukup petik pucuk daunnya yang muda, cuci bersih di air mengalir, dan siap dicocol dengan sambal terasi atau sambal dadak favorit Om Opan. Aroma khasnya benar-benar bisa menambah nafsu makan!</p>
+
+    <div class="ekspresi-card" style="background:rgba(200,151,42,0.05);border:1px solid rgba(200,151,42,0.15);">
+      <img src="../images/ekspresi/ekspresi_senang.webp" alt="Om Opan senang">
+      <p>"Cocol sambal dadak, kelar satu piring tanpa sadar."</p>
+    </div>
+
+    <a href="https://youtube.com/shorts/s2zS95gAtyg" target="_blank" rel="noopener" class="yt-thumb-wrap">
+      <img src="https://i.ytimg.com/vi/s2zS95gAtyg/hqdefault.jpg" alt="YouTube Shorts: Kenikir Lalapan Sultan">
+      <div class="yt-play-btn">
+        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <div class="yt-thumb-label">▶ Tonton di YouTube Shorts</div>
+    </a>
+
+    <div class="kesimpulan-box">
+      <h3>Kesimpulan</h3>
+      <p>Memanfaatkan pekarangan sempit dengan menanam tanaman konsumsi seperti kenikir adalah langkah awal kemandirian pangan skala rumah tangga. Selain hemat, kita jadi tahu persis apa yang kita makan.</p>
+      <p>Jadi, tunggu apa lagi? Ayo mulai menanam kenikir di botol bekasmu hari ini!</p>
+      <span class="sign-off">Tetap autodidak, tetap berkah! 🏴</span>
+    </div>
+
+    <div class="hashtag-block">
+      <span class="hashtag">#UrbanFarming</span>
+      <span class="hashtag">#Kenikir</span>
+      <span class="hashtag">#Tabulampot</span>
+      <span class="hashtag">#LahanSempit</span>
+      <span class="hashtag">#VillaCiracas</span>
+    </div>
+
+    <div class="cta-block">
+      <p>Punya tanaman 'gulma sultan' lain di pekarangan lo? Cerita di komentar bawah, atau tanya Om Opan langsung lewat chatbot di pojok kiri bawah.</p>
+      <div class="cta-links">
+        <a class="cta-btn" href="https://opanowski.github.io/opanowski/blog/index.html">📋 Log Harian Lainnya</a>
+        <a class="cta-btn" href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="post-nav">
+  <a href="https://opanowski.github.io/opanowski/blog/index.html">← Log Harian</a>
+  <a href="blog-kedondong-mini.html">← Kedondong Mini: Si Asam Manis</a>
+  <a href="https://opanowski.github.io/opanowski/">🏠 Portal Utama</a>
+</div>
+
+<footer>
+  Bunker Opanowski — Kenikir, Lalapan Sultan dari Pekarangan
+  <span class="updated-tag"><span class="live-dot"></span>Jun 2026</span>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61560342106832" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook
+    </a>
+    <a href="https://www.instagram.com/opanowski/" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> Instagram
+    </a>
+    <a href="https://www.youtube.com/channel/UCgsJ-a0Cg20xdsn-e_42-yQ" target="_blank" rel="noopener">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg> YouTube
+    </a>
+    <a href="https://www.tiktok.com/@opanowski" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.threads.com/@opanowski" target="_blank" rel="noopener">Threads</a>
+    <a href="https://x.com/AjjahTyo93183" target="_blank" rel="noopener">X</a>
+    <a href="https://open.spotify.com/show/0IjFXGMOWSwEfNLuZPrqxx" target="_blank" rel="noopener">Spotify</a>
+  </div>
+</footer>
+
+<!-- KOMENTAR -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem 3rem">
+  <div style="border-top:1px solid #2e3248;padding-top:2rem;margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8972A;margin-bottom:1.2rem">💬 Komentar</div>
+    <script src="https://utteranc.es/client.js" repo="opanowski/opanowski" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </div>
+</div>
+<script src="/opanowski/donate-widget.js"></script>
+
+<script>
+  window.addEventListener('scroll', function () {
+    var bar = document.getElementById('progress-bar');
+    var h = document.documentElement;
+    var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = scrolled + '%';
+  });
+</script>
+
+<!-- OMOPAN-CHAT-INJECTED -->
+<style>
+  #omopan-fab{position:fixed;bottom:24px;left:24px;width:56px;height:56px;border-radius:50%;background:#1a7f5a;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.22);z-index:9999;transition:transform 0.2s;font-size:24px;}
+  #omopan-fab:hover{transform:scale(1.08);}
+  #omopan-notif{position:absolute;top:-4px;right:-4px;background:#e24b4a;color:#fff;font-size:10px;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:sans-serif;}
+  #omopan-window{position:fixed;bottom:92px;left:12px;right:12px;width:auto;max-width:360px;height:420px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.18);display:flex;flex-direction:column;overflow:hidden;z-index:10000;font-family:sans-serif;transition:opacity 0.2s,transform 0.2s;}
+  #omopan-window.omopan-hidden{opacity:0;pointer-events:none;transform:translateY(12px);}
+  #omopan-header{background:#1a7f5a;padding:12px 14px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .omopan-avatar{width:36px;height:36px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#1a7f5a;flex-shrink:0;}
+  .omopan-hname{margin:0;font-size:14px;font-weight:600;color:#fff;line-height:1.3;}
+  .omopan-hstatus{margin:0;font-size:11px;color:#a8e6ce;line-height:1.3;}
+  #omopan-close{margin-left:auto;background:none;border:none;color:#fff;cursor:pointer;font-size:22px;line-height:1;padding:0;}
+  #omopan-messages{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#f5f5f0;}
+  .omopan-bubble{max-width:82%;padding:8px 12px;border-radius:14px;font-size:13px;line-height:1.5;word-break:break-word;}
+  .omopan-bot{background:#fff;color:#222;border-bottom-left-radius:4px;align-self:flex-start;box-shadow:0 1px 3px rgba(0,0,0,0.07);}
+  .omopan-user{background:#1a7f5a;color:#fff;border-bottom-right-radius:4px;align-self:flex-end;}
+  .omopan-typing{color:#888;font-style:italic;}
+  #omopan-footer{padding:10px;background:#fff;border-top:0.5px solid #e0e0e0;display:flex;align-items:center;gap:8px;flex-shrink:0;position:relative;bottom:0;box-sizing:border-box;width:100%;z-index:10000;}
+  #omopan-input{flex:1;min-width:0;border:0.5px solid #d0d0d0;border-radius:20px;padding:10px 14px;font-size:13px;outline:none;font-family:sans-serif;box-sizing:border-box;-webkit-appearance:none;display:block;}
+  #omopan-send{background:#1a7f5a;border:none;border-radius:50%;width:44px;height:44px;min-width:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+  #omopan-send svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;}
+  @media(max-width:400px){#omopan-window{left:8px;right:8px;}}
+  @media(max-height:500px){#omopan-window{height:260px;bottom:80px;}}
+</style>
+<button id="omopan-fab" onclick="omopanToggle()" aria-label="Tanya Om Opan">🌿<span id="omopan-notif">1</span></button>
+<div id="omopan-window" class="omopan-hidden">
+  <div id="omopan-header">
+    <div class="omopan-avatar">OP</div>
+    <div><p class="omopan-hname">Om Opan</p><p class="omopan-hstatus">Online — siap ngobrol!</p></div>
+    <button id="omopan-close" onclick="omopanToggle()">×</button>
+  </div>
+  <div id="omopan-messages">
+    <div class="omopan-bubble omopan-bot">Halo bro! Gw Om Opan 👋 Ada yang mau ditanyain soal Bunker, urban farming, atau apapun? Santai aja!</div>
+  </div>
+  <div id="omopan-footer">
+    <input id="omopan-input" placeholder="Ketik pesan..." onkeydown="if(event.key==='Enter')omopanSend()" />
+    <button id="omopan-send" onclick="omopanSend()" aria-label="Kirim"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </div>
+</div>
+<script>
+  const OMOPAN_WORKER_URL="https://bunker-omopan.opanowski.workers.dev";
+  let omopanHistory=[];
+  function omopanToggle(){const w=document.getElementById("omopan-window");const n=document.getElementById("omopan-notif");w.classList.toggle("omopan-hidden");if(n)n.style.display="none";}
+  function omopanAddBubble(text,role){const msgs=document.getElementById("omopan-messages");const div=document.createElement("div");div.className="omopan-bubble "+(role==="user"?"omopan-user":"omopan-bot");if(role==="typing"){div.classList.add("omopan-typing");div.id="omopan-typing";}div.textContent=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;div.scrollIntoView({block:"nearest",behavior:"smooth"});return div;}
+  async function omopanSend(){const input=document.getElementById("omopan-input");const msg=input.value.trim();if(!msg)return;omopanAddBubble(msg,"user");omopanHistory.push({role:"user",content:msg});input.value="";if('ontouchstart' in window){input.blur();}else{input.focus();}omopanAddBubble("Om Opan lagi mikir...","typing");try{const res=await fetch(OMOPAN_WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:omopanHistory})});const data=await res.json();const reply=data.reply||"Waduh, error nih gw. Coba lagi ya bro 😅";const t=document.getElementById("omopan-typing");if(t)t.remove();omopanAddBubble(reply,"bot");omopanHistory.push({role:"assistant",content:reply});}catch(e){const t=document.getElementById("omopan-typing");if(t)t.remove();omopanAddBubble("Koneksi error nih bro, coba lagi bentar 😅","bot");}}
+</script>
+</body>
+</html>
