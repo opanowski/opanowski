@@ -38,6 +38,15 @@ const CARD_ACCENTS = [
 
 const LATEST_POSTS = [
   {
+    number: "032",
+    date: "25 Jun 2026",
+    title: "Kenikir: Lalapan 'Sultan' dari Pekarangan Sendiri",
+    subtitle: "Kenikir sering dianggap gulma, padahal lalapan organik gratis yang gampang ditanam di botol bekas. Tips menanam dan mengolahnya dari pekarangan Villa Ciracas.",
+    tags: ["Urban Farming", "Tabulampot", "Villa Ciracas"],
+    emoji: "🌿",
+    url: "/opanowski/blog/blog-kenikir.html"
+  },
+  {
     number: "031",
     date: "25 Jun 2026",
     title: "Kedondong Mini: Si Asam Manis yang Gak Pernah Kenal Libur Berbuah",
@@ -54,15 +63,6 @@ const LATEST_POSTS = [
     tags: ["Tiny PC", "Linux", "Produktivitas"],
     emoji: "💻",
     url: "/opanowski/blog/blog-xiaoxin-tiny-pc.html"
-  },
-  {
-    number: "029",
-    date: "11 Jun 2026",
-    title: "Ngoding Rasa Sauna: Jakarta 35° dan Semangat yang Gak Kendor",
-    subtitle: "Termometer 35 derajat di dalam Bunker, kipas cuma mindahin udara panas, Mac jadul berasa heater. Tapi pejuang konten Ciracas pantang mundur — ini cerita survive ngoding di Jakarta yang lagi menyala.",
-    tags: ["Lifestyle", "Jakarta", "Villa Ciracas"],
-    emoji: "🔥",
-    url: "/opanowski/blog/blog-panas-jakarta.html"
   },
 ];
 
